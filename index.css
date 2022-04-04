@@ -1,0 +1,277 @@
+@import url('https://fonts.googleapis.com/css2?family=Arizonia&family=Caveat&family=Codystar:wght@300&family=Courgette&family=Croissant+One&family=Eater&family=Faster+One&family=Fjalla+One&family=Frijole&family=Germania+One&family=Great+Vibes&family=Hurricane&family=Kaushan+Script&family=Lobster&family=Mea+Culpa&family=Monsieur+La+Doulaise&family=Notable&family=Pacifico&family=Permanent+Marker&family=Playball&family=Press+Start+2P&family=Quicksand&family=Rochester&family=Rubik+Beastly&family=Rubik+Glitch&family=Ruslan+Display&family=Sacramento&family=Sevillana&family=Shadows+Into+Light&family=Shojumaru&family=Sofia&family=Staatliches&family=Tangerine&family=Teko:wght@700&family=Unica+One&display=swap');
+
+*{
+    margin:0;
+    padding: 0;
+    outline: none;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+body{
+    height: 150vh;
+}
+header{
+    background-color: #00AFC1;
+    padding: 4px 12px;
+    display: flex;
+    justify-content: space-between;
+    z-index: 1;
+    box-shadow: 0px 12px 33px rgb(0, 0, 0);
+    position: sticky;
+    top: 0;
+}
+header>h3{
+    font-size: 34px;
+    color: whitesmoke;
+}
+span{
+    font-family: 'Rubik Glitch', cursive;
+    margin: 0px 2px;
+    color: orangered;
+    letter-spacing: 3px;
+}
+header>ul{
+    display: flex;
+    margin-right: 22px;
+}
+ul a{
+    margin: auto;
+    color: aliceblue;
+    border-radius: 22px;
+    transition: background-color,transform .6s ease-in;
+}
+ul a:hover{
+    color: rgb(255, 51, 0);
+    background-color: aliceblue;
+    transform: scale(1.2);
+    margin-left: 8px;
+}
+ul li{
+    margin: auto 12px;
+    font-size: 24px;
+    font-weight: 800;
+}
+main{
+    margin: auto;
+    width: 70%;
+}
+#about,#contribute{
+    margin: 50px 0px;
+    padding: 22px;
+    text-align: center;
+}
+#about>h2,#contribute>h2{
+    font-size: 44px;
+    font-family: 'Ruslan Display', cursive;
+}
+#about>img{
+    margin: 30px auto;
+    width: 80%;
+    height: 400px;
+}
+#contribute>h2{
+    color: #e9211a;
+}
+#about>p,#contribute>p{
+    width: 60%;
+    margin: 32px auto;
+    font-size: 22px;
+    text-align: center;
+    font-weight: 700;
+}
+.effects{
+    display: flex;
+    flex-direction: column;
+}
+.effect-title{
+    font-family: 'Quicksand', sans-serif;
+}
+.container {
+    width: 70%;
+    margin: auto;
+    padding: 32px;
+    z-index: 2;
+    justify-items: center;
+}
+em{
+    color: orangered;
+}
+.effect-code{
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    font-size: 32px;
+    padding: 30px;
+}
+.effect-code>a{
+    color: crimson;
+}
+footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: grey;
+    text-align: center;
+}
+footer>h2{
+    margin: 12px;
+    font-size: 32px;
+}
+.social_icons,.icons{
+    width: fit-content;
+    display: flex;
+    margin: auto;
+    padding: 20px;
+
+}
+.social_icons a:hover,.icons a:hover{
+    transform: scale(1.5);
+}
+.social_icons a,.icons a{
+    transition: transform .2s .4s ease-out;
+    margin: 2px;
+}
+.social_icons img,.icons  img{
+    width: 60px;
+    height: 60px;
+}
+/* ###------------------------------ Effects -------------------------------------### */
+
+
+/* --------------------- // add your styles from here onwards // -------------------- */
+
+.wrapper1,.wrapper2{  /* add your wrapper class here*/
+    margin: 12px;
+    padding: 30px;
+}
+
+
+/* ----------------------------------  UI-1 css code ------------------------------------ */
+
+.card1 {
+    margin: 42px auto;
+    position: relative;
+    width: 200px;
+    height: 350px;
+    background: url("./assets/img1.jpg") center/cover;
+    border-radius: .5em;
+    overflow: hidden;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, -1);
+    cursor: pointer;
+}
+
+.layer {
+    position: absolute;
+    display: flex;
+    bottom: -10px;
+    left: 0;
+    width: 290px;
+}
+
+.layer span {
+    display: block;
+    width: 69px;
+    height: 120px;
+    margin: 0;
+    background-color: rgba(2, 2, 2, .623);
+    transform: translateY(200px);
+    transition: .3s ease-in-out;
+}
+
+.text {
+    position: absolute;
+    top: 1em;
+    left: 10px;
+    z-index: 1;
+    transform: translateY(200px);
+    transition: 1s ease-in-out;
+
+}
+
+.card1:hover .layer .text {
+    transform: translateY(0);
+}
+
+.card1:hover .layer span {
+    transform: translateY(0);
+}
+
+.text h4 {
+    font-size: 16px;
+    padding: .3em;
+    font-weight: bolder;
+    color: #bfbfbf;
+    text-shadow: 0 1px 2px #ccc;
+}
+
+.text p {
+    font-size: .7em;
+    padding: .3em;
+    color: #bfbfbf;
+}
+
+.layer span:nth-child(1) {
+    transition-delay: .1s;
+}
+
+.layer span:nth-child(2) {
+    transition-delay: .2s;
+}
+
+.layer span:nth-child(3) {
+    transition-delay: .3s;
+}
+
+/* -------------------------------  UI-2 css code --------------------------------- */
+
+.card2{
+    position: relative;
+    text-align: center;
+    background-color: rgb(157, 121, 192);
+    box-shadow: 2px 3px 24px #3d3d3d;
+    width: 300px;
+    height: 300px;
+    margin: 20px auto;
+    transition: color,transform .4s .3s ease-in-out;
+
+    border-radius: 3%;
+    z-index: 1;
+    overflow: hidden;
+    
+}
+.card2 img{
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    margin: 16px auto;
+    box-shadow: 0px 68px 55px white;
+}
+@keyframes popup {
+    100%{
+        transform: translate(0,220px);
+    }
+}
+.card2::before{
+    content: "";
+    position: absolute;
+    left: 0%;
+    bottom: 200px;
+    min-width: 320px;
+    min-height: 340px;
+    background-color: rgb(83, 53, 182);
+    z-index: -1;
+}
+.card2:hover{
+    color: orangered;
+    transform: scale(.9);
+}
+.card2:hover::before{
+    animation: popup 1s .2s forwards;
+}
+.card2 h3{
+    font-size: 32px;
+    font-weight: 800;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
