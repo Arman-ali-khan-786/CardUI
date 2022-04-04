@@ -1,7 +1,7 @@
 # CARDUi
 
 <p align="center">
-  <img src="./assets/CARDUi.png" width="80%">
+  <img src="./assets/CARDUi.png" width="80%" height="600px">
   <br><br>
   <samp>
     Hi there :wave:,
