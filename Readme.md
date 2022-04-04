@@ -23,6 +23,10 @@ If you are Looking for Amazing Card User Interface(UI) Designs and Effecs for yo
 - CSS
 - JavaScript( if required can use it)
 
+## what you have to do in order to Contribute
+- create some attractive/awesome Card Ui's with amazing effects as simply as that
+- don't change anythings else apart from adding your UI designs
+
 ## How to do Contribution to this Project ?
 
 > 1. first fork this repo 
