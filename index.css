@@ -241,7 +241,7 @@ footer > h2 {
   box-shadow: 2px 3px 24px #3d3d3d;
   width: 300px;
   height: 300px;
-  margin: 20px;
+  margin: 20px auto;
   transition: color, transform 0.4s 0.3s ease-in-out;
 
   border-radius: 3%;
@@ -413,7 +413,6 @@ footer > h2 {
   }
   .container {
     width: 100%;
-    background-color: #240747;
     margin: 0px;
     padding: 24px;
     z-index: 2;
@@ -426,12 +425,90 @@ footer > h2 {
     margin: 12px;
     padding: 20px;
   }
+  .effect-code {
+    width: 100%;
+    font-size: 28px;
+    padding: 30px;
+  }
+  .social_icons img {
+    width: 50px;
+    height: 50px;
+  }
+
+   /* ////////////////// break-point code for ui-1 card  ///////////////////// */
   .card1 {
     margin: 42px auto;
     position: relative;
   }
-  .social_icons img{
-      width: 50px;
-      height: 50px;
+  
+}
+
+@media screen and (max-width: 360px) {
+  ul li {
+    margin: auto 4px;
+    font-size: 12px;
+    font-weight: 600;
+  }
+  .wrapper1,
+  .wrapper2,
+  .wrapper3 {
+    /* add your wrapper class here*/
+    margin: 6px;
+    padding: 12px;
+  }
+  #contribute > h2 {
+    font-size: 20px;
+  }
+  footer > h2 {
+    font-size: 12px;
+  }
+  #contribute > p{
+    font-size: 12px;
+  }
+  .social_icons img {
+    width: 30px;
+    height: 30px;
+  }
+  /* ////////////////// break-point code for ui-2 card  ///////////////////// */
+  .card2 {
+    width: 200px;
+    height: 220px;
+    margin: 20px auto;
+  }
+  .card2 img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 12px auto;
+    box-shadow: 0px 58px 45px white;
+  }
+  @keyframes popup {
+    100% {
+      transform: translate(0, 160px);
+    }
+  }
+  .card2::before {
+    bottom: 150px;
+    min-width: 220px;
+    min-height: 240px;
+  }
+  .card2 h3 {
+    font-size: 22px;
+    font-weight: 700;
+  }
+  /* ////////////////// break-point code for ui-3 card  ///////////////////// */
+  
+  .card3 {
+    width: 200px;
+    height: 380px;
+  }
+  .card__name {
+    margin-top: 15px;
+    font-size: 1em;
+  } 
+  .btn {
+    line-height: 1;
+    margin: .5em;
+    width: 10rem;
   }
 }
