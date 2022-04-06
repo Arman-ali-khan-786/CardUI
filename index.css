@@ -137,7 +137,7 @@ footer > h2 {
 }
 .social_icons a,
 .icons a {
-  transition: transform 0.2s 0.4s ease-out;
+  transition: transform 0.2s ease-out;
   margin: 2px;
 }
 .social_icons img,
