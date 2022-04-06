@@ -81,9 +81,9 @@ main {
 #contribute > p {
   width: 60%;
   margin: 32px auto;
-  font-size: 22px;
+  font-size: 27px;
   text-align: center;
-  font-weight: 700;
+  font-family: 'Inconsolata', monospace;
 }
 .effects {
   display: flex;
@@ -145,6 +145,7 @@ footer > h2 {
   width: 60px;
   height: 60px;
 }
+
 /* ###------------------------------ Effects -------------------------------------### */
 
 /* --------------------- // add your styles from here onwards // -------------------- */
