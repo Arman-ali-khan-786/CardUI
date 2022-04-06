@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Arizonia&family=Caveat&family=Codystar:wght@300&family=Courgette&family=Croissant+One&family=Eater&family=Faster+One&family=Fjalla+One&family=Frijole&family=Germania+One&family=Great+Vibes&family=Hurricane&family=Kaushan+Script&family=Lobster&family=Mea+Culpa&family=Monsieur+La+Doulaise&family=Notable&family=Pacifico&family=Permanent+Marker&family=Playball&family=Press+Start+2P&family=Quicksand&family=Rochester&family=Rubik+Beastly&family=Rubik+Glitch&family=Ruslan+Display&family=Sacramento&family=Sevillana&family=Shadows+Into+Light&family=Shojumaru&family=Sofia&family=Staatliches&family=Tangerine&family=Teko:wght@700&family=Unica+One&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Ceviche+One&family=Dancing+Script&family=Fruktur&family=Oswald:wght@200;300&family=PT+Sans&family=Playfair+Display&family=Smooch&display=swap');
 
 * {
   margin: 0;
@@ -151,7 +152,9 @@ footer > h2 {
 
 .wrapper1,
 .wrapper2,
-.wrapper3 {
+.wrapper3,
+.wrapper4 
+{
   /* add your wrapper class here*/
   margin: 12px;
   padding: 30px;
@@ -380,6 +383,72 @@ footer > h2 {
 .btn:focus {
   outline: 2px dotted #55d7dc;
 }
+/* -------------------------------  UI-4 css code --------------------------------- */
+
+.card4{
+  background: linear-gradient(to right, #2c5364, #203a43, #0f2020);
+  font-family: 'Ceviche One', cursive;
+    width: 250px;
+    height: 250px;
+    margin: 20px auto;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.288);
+    border-radius: 23px;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.user_name{
+    margin-bottom: 5px;
+    font-size: 2rem;
+}
+.skill{
+    color: rgb(194, 194, 196);
+}
+
+.card4 img{
+    width: 100px;
+    height: 100px;
+    margin-top: 20px;
+    border-radius: 50%;
+}
+.card4::before{
+    content: "";
+    background-color: rgba(233, 230, 227, 0.753);
+    width: 500px;
+    height: 50px;
+    position: absolute;
+    top: -50px;
+    z-index: -1;
+
+}
+@keyframes slider {
+    100%{
+        transform: translateY(300px);
+    }
+}
+.card4:hover::before{
+    animation: slider 1s .3s alternate infinite;
+}
+
+
+.icons a{
+    margin-top: 15px;
+    text-decoration: none;
+    font-size:xx-large;
+    margin-left: 5px;
+}
+
+.icons .hi:hover{
+    transform: translate(0, -10px);
+}
+
+
 
 /* ------------------------------------------------------------------------------------------------------------- */
 /* ----------------------------------------->>>>>> Break Points <<<<<<<<---------------------------------------- */
@@ -511,4 +580,25 @@ footer > h2 {
     margin: .5em;
     width: 10rem;
   }
+
+    /* ////////////////// break-point code for ui-4 card  ///////////////////// */
+
+    .card4{
+      width: 180px;
+      height: 250px;
+    }
+    .user_name{
+      font-size: 1rem;
+      margin: 14px auto;
+  }
+  
+  .card4 img{
+      width: 70px;
+      height: 70px;
+      margin-bottom: 12px;
+  }
+  .icons a{
+    font-size: 24px;
+    margin-left: 3px;
+}
 }
