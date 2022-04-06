@@ -82,9 +82,10 @@ main {
 #contribute > p {
   width: 60%;
   margin: 32px auto;
-  font-size: 22px;
+  font-size: 25px;
   text-align: center;
   font-weight: 700;
+  font-family: 'Quicksand', sans-serif;
 }
 .effects {
   display: flex;
