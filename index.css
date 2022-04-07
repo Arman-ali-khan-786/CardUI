@@ -13,20 +13,21 @@
 body {
   display: flex;
   flex-direction: column;
+  background: linear-gradient(225deg, #00b1ff, rgb(104 255 0 / 75%) 100%) no-repeat;
 }
 header {
-  background-color: #00afc1;
-  padding: 4px 12px;
+  background-color: #bcbcbcb5;
+  padding: 12px 12px;
   display: flex;
   justify-content: space-between;
   z-index: 10;
-  box-shadow: 0px 12px 33px rgb(0, 0, 0);
+  box-shadow: -1px -2px 15px 10px rgb(188 184 184 / 79%);
   position: sticky;
   top: 0;
 }
 header > h3 {
   font-size: 34px;
-  color: whitesmoke;
+  color: black;
 }
 span {
   font-family: "Rubik Glitch", cursive;
@@ -42,18 +43,20 @@ ul a {
   margin: auto;
   color: aliceblue;
   border-radius: 22px;
-  transition: background-color, transform 0.6s ease-in;
+  transition: all 0.4s ease-in-out;
+  padding: 5px;
 }
 ul a:hover {
   color: rgb(255, 51, 0);
   background-color: aliceblue;
   transform: scale(1.2);
-  margin-left: 8px;
+  padding: 2px;
 }
 ul li {
   margin: auto 12px;
   font-size: 24px;
   font-weight: 800;
+  color: black;
 }
 main {
   margin: auto;
@@ -76,7 +79,7 @@ main {
   height: 400px;
 }
 #contribute > h2 {
-  color: #e9211a;
+  color: red;
 }
 #about > p,
 #contribute > p {
@@ -102,7 +105,7 @@ main {
   justify-items: center;
 }
 em {
-  color: orangered;
+  color: red;
 }
 .effect-code {
   width: 50%;
@@ -119,7 +122,7 @@ footer {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  background-color: grey;
+  background-color: #ffffffb3;
   text-align: center;
 }
 footer > h2 {
