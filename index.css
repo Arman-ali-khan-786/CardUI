@@ -454,7 +454,8 @@ footer > h2 {
 
 
 
-/* Harshit's card css */
+/* -------------------------------  UI-5 css code --------------------------------- */
+
 .sub-head{
   margin-left: 3rem;
 }
@@ -599,6 +600,7 @@ footer > h2 {
     height: 50px;
   }
 
+  
    /* ////////////////// break-point code for ui-1 card  ///////////////////// */
   .card1 {
     margin: 42px auto;
