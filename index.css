@@ -16,12 +16,12 @@ body {
   background: linear-gradient(225deg, #00b1ff, rgb(104 255 0 / 75%) 100%) no-repeat;
 }
 header {
-  background-color: #bcbcbcb5;
+  background-color: #bcbcbc;
   padding: 12px 12px;
   display: flex;
   justify-content: space-between;
   z-index: 10;
-  box-shadow: -1px -2px 15px 10px rgb(188 184 184 / 79%);
+  box-shadow: rgb(188 184 184) 1px 10px 20px 14px;
   position: sticky;
   top: 0;
 }
@@ -157,7 +157,7 @@ footer > h2 {
 .wrapper1,
 .wrapper2,
 .wrapper3,
-.wrapper4 
+.wrapper4
 {
   /* add your wrapper class here*/
   margin: 12px;
@@ -453,13 +453,11 @@ footer > h2 {
 }
 
 
-
-/* -------------------------------  UI-5 css code --------------------------------- */
-
-.sub-head{
+/* Harshit's card css */
+/* .sub-head{
   margin-left: 3rem;
-}
-.card {
+} */
+.card5 {
   position: relative;
   top: 50%;
   left: 50%;
@@ -468,21 +466,22 @@ footer > h2 {
   height: 360px;
   background: #000;
   margin-top: 13rem;
+  box-shadow: 2px 3px 24px #3d3d3d
 }
-.card .image {
+.card5 .image {
   width: 100%;
   height: 100%;
   overflow: hidden;
 }
-.card .image img {
+.card5 .image img {
   width: 100%;
   transition: .5s;
 }
-.card:hover .image img {
+.card5:hover .image img {
   opacity: .5;
   transform: translateX(30%);/*100%*/
 }
-.card .details {
+.card5 .details {
   position: absolute;
   top: 0;
   left: 0;
@@ -493,10 +492,10 @@ footer > h2 {
   transform-origin: left;
   transform: perspective(2000px) rotateY(-90deg);
 }
-.card:hover .details {
+.card5:hover .details {
   transform: perspective(2000px) rotateY(0deg);
 }
-.card .details .center {
+.card5 .details .center {
   padding: 20px;
   text-align: center;
   background: #fff;
@@ -504,7 +503,7 @@ footer > h2 {
   top: 50%;
   transform: translateY(-50%);
 }
-.card .details .center h1 {
+.card5 .details .center h1 {
   margin: 0;
   padding: 0;
   color: #ff3636;
@@ -512,26 +511,26 @@ footer > h2 {
   font-size: 20px;
   text-transform: uppercase;
 }
-.card .details .center h1 label {
+.card5 .details .center h1 label {
   font-size: 14px;
   color: #262626 !important;
 }
-.card .details .center p {
+.card5 .details .center p {
   margin: 10px 0;
   padding: 0;
   color: #262626;
 }
-.card .details .center ul {
+.card5 .details .center ul {
   margin: 10px auto 0;
   padding: 0;
   display: table;
 }
-.card .details .center ul li {
+.card5 .details .center ul li {
   list-style: none !important;
   margin: 0 5px !important;
   float: left !important;
 }
-.card .details .center ul li a {
+.card5 .details .center ul li a {
   display: block !important;
   background: #262626 !important;
   color: #fff !important;
@@ -541,9 +540,10 @@ footer > h2 {
   text-align: center !important;
   transform: .5s !important;
 }
-.card .details .center ul li a:hover {
+.card5 .details .center ul li a:hover {
   background: #ff3636 !important;
 }
+
 
 
 /* ------------------------------------------------------------------------------------------------------------- */
@@ -600,7 +600,6 @@ footer > h2 {
     height: 50px;
   }
 
-  
    /* ////////////////// break-point code for ui-1 card  ///////////////////// */
   .card1 {
     margin: 42px auto;
