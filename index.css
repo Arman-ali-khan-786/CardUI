@@ -157,7 +157,8 @@ footer > h2 {
 .wrapper1,
 .wrapper2,
 .wrapper3,
-.wrapper4
+.wrapper4,
+.wrapper5
 {
   /* add your wrapper class here*/
   margin: 12px;
@@ -452,11 +453,9 @@ footer > h2 {
     transform: translate(0, -10px);
 }
 
-
+/* -------------------------------  UI-5 css code --------------------------------- */
 /* Harshit's card css */
-/* .sub-head{
-  margin-left: 3rem;
-} */
+
 .card5 {
   position: relative;
   top: 50%;
