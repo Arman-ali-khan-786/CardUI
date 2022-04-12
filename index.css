@@ -16,12 +16,12 @@ body {
   background: linear-gradient(225deg, #00b1ff, rgb(104 255 0 / 75%) 100%) no-repeat;
 }
 header {
-  background-color: #bcbcbc;
+  background-color: #f5be00;
   padding: 12px 12px;
   display: flex;
   justify-content: space-between;
   z-index: 10;
-  box-shadow: rgb(188 184 184) 1px 10px 20px 14px;
+  box-shadow: rgb(255 193 0) 0px 8px 20px 10px;
   position: sticky;
   top: 0;
 }
@@ -157,8 +157,7 @@ footer > h2 {
 .wrapper1,
 .wrapper2,
 .wrapper3,
-.wrapper4,
-.wrapper5
+.wrapper4
 {
   /* add your wrapper class here*/
   margin: 12px;
@@ -453,9 +452,11 @@ footer > h2 {
     transform: translate(0, -10px);
 }
 
-/* -------------------------------  UI-5 css code --------------------------------- */
-/* Harshit's card css */
 
+/* Harshit's card css */
+/* .sub-head{
+  margin-left: 3rem;
+} */
 .card5 {
   position: relative;
   top: 50%;
