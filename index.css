@@ -28,6 +28,7 @@ header {
 header > h3 {
   font-size: 34px;
   color: black;
+  font-family: 'Noto Serif', serif;
 }
 span {
   font-family: "Rubik Glitch", cursive;
@@ -57,6 +58,8 @@ ul li {
   font-size: 24px;
   font-weight: 800;
   color: black;
+  font-family: 'PT Sans', sans-serif;
+
 }
 main {
   margin: auto;
@@ -88,14 +91,14 @@ main {
   font-size: 25px;
   text-align: center;
   font-weight: 700;
-  font-family: 'Quicksand', sans-serif;
+  font-family: 'PT Sans', sans-serif;
 }
 .effects {
   display: flex;
   flex-direction: column;
 }
 .effect-title {
-  font-family: "Quicksand", sans-serif;
+  font-family: 'PT Sans', sans-serif;
 }
 .container {
   width: 70%;
