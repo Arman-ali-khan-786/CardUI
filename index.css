@@ -16,12 +16,12 @@ body {
   background: linear-gradient(225deg, #00b1ff, rgb(104 255 0 / 75%) 100%) no-repeat;
 }
 header {
-  background-color: #f5be00;
+  background-color: #01ff89;
   padding: 12px 12px;
   display: flex;
   justify-content: space-between;
   z-index: 10;
-  box-shadow: rgb(255 193 0) 0px 8px 20px 10px;
+  box-shadow: 2px 3px 12px black;
   position: sticky;
   top: 0;
 }
