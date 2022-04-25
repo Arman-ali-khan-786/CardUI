@@ -125,7 +125,7 @@ footer {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  background-color: #ffffffb3;
+  background-color: lightblue;
   text-align: center;
 }
 footer > h2 {
