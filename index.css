@@ -89,11 +89,10 @@ main {
 #contribute > p {
   width: 60%;
   margin: 32px auto;
-  font-size: 25px;
+  font-size: 22px;
   text-align: center;
   font-weight: 700;
-  font-family: 'PT Sans', sans-serif;
-}
+  font-family: 'Fjalla One', sans-serif;}
 .effects {
   display: flex;
   flex-direction: column;
