@@ -13,7 +13,8 @@
 body {
   display: flex;
   flex-direction: column;
-  background: linear-gradient(225deg, #00b1ff, rgb(104 255 0 / 75%) 100%) no-repeat;
+  background: linear-gradient(225deg, #1180a2, rgba(13, 203, 245, 0.75) 100%) no-repeat;
+
 }
 header {
   background-color: #01ff89;
