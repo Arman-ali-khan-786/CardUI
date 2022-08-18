@@ -17,18 +17,18 @@ body {
 
 }
 header {
-  background-color: #01ff89;
+  background-color: #dd01ff;
   padding: 12px 12px;
   display: flex;
   justify-content: space-between;
   z-index: 10;
-  box-shadow: 2px 3px 12px black;
+  box-shadow: 2px 3px 12px white;
   position: sticky;
   top: 0;
 }
-header > h3 {
-  font-size: 34px;
-  color: black;
+header > h3 a {
+  font-size: 30px;
+  color: beige;
   font-family: 'Noto Serif', serif;
 }
 span {
@@ -39,27 +39,27 @@ span {
 }
 header > ul {
   display: flex;
-  margin-right: 22px;
-}
-ul a {
-  margin: auto;
-  color: aliceblue;
-  border-radius: 22px;
-  transition: all 0.4s ease-in-out;
-  padding: 5px;
-}
-ul a:hover {
-  color: rgb(255, 51, 0);
-  background-color: aliceblue;
-  transform: scale(1.2);
-  padding: 2px;
+  /* margin-right: 22px; */
 }
 ul li {
+  margin: auto;
+  color: aliceblue;
+  transition: all 0.4s ease-in-out;
+
+}
+ul a:hover {
+  color: rgb(91, 144, 194);
+  background-color: aliceblue;
+  transform: scale(1.2);
+  border-radius: 22px;
+    padding: 8px;
+}
+ul li a{
   margin: auto 12px;
-  font-size: 24px;
-  font-weight: 800;
+  font-weight: 500;
   color: black;
   font-family: 'PT Sans', sans-serif;
+
 
 }
 main {
@@ -123,25 +123,29 @@ em {
 footer {
   width: 100%;
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   justify-content: space-around;
   background-color: lightblue;
   text-align: center;
+  padding: 12px;
 }
-footer > h2 {
-  margin: 12px;
-  font-size: 32px;
+footer > p {
+  font-size: 17px;
+  color: #203a43;
+}
+footer p span{
+  color: rgb(24, 45, 150);
 }
 .social_icons,
 .icons {
   width: fit-content;
   display: flex;
   margin: auto;
-  padding: 20px;
+  gap: .4rem;
 }
 .social_icons a:hover,
 .icons a:hover {
-  transform: scale(1.5);
+  transform: scale(1.2);
 }
 .social_icons a,
 .icons a {
@@ -661,8 +665,8 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
     padding: 30px;
   }
   .social_icons img {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
   }
 
    /* ////////////////// break-point code for ui-1 card  ///////////////////// */
