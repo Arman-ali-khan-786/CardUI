@@ -17,7 +17,7 @@ body {
 
 }
 header {
-  background-color: #dd01ff;
+  background-color: #9a9c6a;
   padding: 12px 12px;
   display: flex;
   justify-content: space-between;
@@ -39,11 +39,12 @@ span {
 }
 header > ul {
   display: flex;
-  /* margin-right: 22px; */
+  margin-right: 22px;
 }
 ul li {
   margin: auto;
   color: aliceblue;
+  /* padding: 12px; */
   transition: all 0.4s ease-in-out;
 
 }
@@ -52,12 +53,13 @@ ul a:hover {
   background-color: aliceblue;
   transform: scale(1.2);
   border-radius: 22px;
-    padding: 8px;
+  padding: 10px 16px;
 }
 ul li a{
-  margin: auto 12px;
+  margin: auto 5px;
   font-weight: 500;
   color: black;
+  font-size: 20px;
   font-family: 'PT Sans', sans-serif;
 
 
