@@ -120,42 +120,53 @@ em {
 .effect-code > a {
   color: crimson;
 }
-footer {
-  width: 100%;
-  display: flex;
-  flex-direction: column-reverse;
-  justify-content: space-around;
-  background-color: lightblue;
-  text-align: center;
-  padding: 12px;
-}
-footer > p {
-  font-size: 17px;
-  color: #203a43;
-}
-footer p span{
-  color: rgb(24, 45, 150);
-}
-.social_icons,
 .icons {
   width: fit-content;
   display: flex;
   margin: auto;
   gap: .4rem;
 }
-.social_icons a:hover,
 .icons a:hover {
   transform: scale(1.2);
 }
-.social_icons a,
 .icons a {
   transition: transform 0.2s ease-out;
   margin: 2px;
 }
-.social_icons img,
 .icons img {
   width: 60px;
   height: 60px;
+}
+/* ###------------------------------ footer design -------------------------------------### */
+footer{
+  background-color: #087c8b;
+  color: white;
+  font-size: min(5vw, 16px);
+  font-family: monospace;
+}
+#footer-container {
+  width: 70%;
+  margin: auto;
+  padding: 5px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 2px solid white;
+}
+.social_icons {
+  width: 200px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+footer a .fa {
+  color: white;
+  font-size: 30px;
+  border-radius: 50%;
+}
+footer .fa:not(.fa-copyright):hover {
+  color: #000;
 }
 /* ###------------------------------ Effects -------------------------------------### */
 
@@ -664,9 +675,8 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
     font-size: 28px;
     padding: 30px;
   }
-  .social_icons img {
-    width: 40px;
-    height: 40px;
+  #footer-container {
+    width: 100%;
   }
 
    /* ////////////////// break-point code for ui-1 card  ///////////////////// */
@@ -699,9 +709,8 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
   #contribute > p{
     font-size: 12px;
   }
-  .social_icons img {
-    width: 30px;
-    height: 30px;
+  footer {
+    font-size: 12px;
   }
   /* ////////////////// break-point code for ui-2 card  ///////////////////// */
   .card2 {
