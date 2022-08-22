@@ -154,7 +154,7 @@ footer{
   border-top: 2px solid white;
 }
 .social_icons {
-  width: 300px;
+  width: 200px;
   height: 60px;
   display: flex;
   align-items: center;
@@ -163,13 +163,10 @@ footer{
 footer a .fa {
   color: white;
   font-size: 30px;
-  padding: 8px;
-  margin: 7px;
   border-radius: 50%;
 }
 footer .fa:not(.fa-copyright):hover {
   color: #000;
-  background-color: rgba(255, 255, 255, 0.863);
 }
 /* ###------------------------------ Effects -------------------------------------### */
 
@@ -678,9 +675,8 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
     font-size: 28px;
     padding: 30px;
   }
-  .social_icons img {
-    width: 40px;
-    height: 40px;
+  #footer-container {
+    width: 100%;
   }
 
    /* ////////////////// break-point code for ui-1 card  ///////////////////// */
@@ -713,9 +709,8 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
   #contribute > p{
     font-size: 12px;
   }
-  .social_icons img {
-    width: 30px;
-    height: 30px;
+  footer {
+    font-size: 12px;
   }
   /* ////////////////// break-point code for ui-2 card  ///////////////////// */
   .card2 {
