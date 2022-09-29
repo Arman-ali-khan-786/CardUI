@@ -13,7 +13,8 @@
 body {
   display: flex;
   flex-direction: column;
-  background: linear-gradient(225deg, #1180a2, rgba(13, 203, 245, 0.75) 100%) no-repeat;
+  /* background: linear-gradient(225deg, #1180a2, rgba(13, 203, 245, 0.75) 100%) no-repeat; */
+  background-color: #1180a2;
 
 }
 header {
@@ -775,4 +776,36 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
     font-size: 24px;
     margin-left: 3px;
 }
+}
+.dark-mode {
+  background-color: #1e201f;
+  color: white;
+}
+.light-mode {
+  background-color: #1180a2;
+  color: black;
+}
+.btn{
+  height: 57px;
+  width: 153px;
+  background-color: mediumseagreen;
+  color: moccasin;
+  border: solid black 1px;
+  border-radius: 10px;
+  margin: 10px;
+  box-shadow: gray 10px 10px 10px;
+  display: inline-block;
+  text-align: center;
+  line-height: 32px;
+}
+
+.btn:hover{
+  transition: 0.7s;
+  transform: translate(-10px,-10px);
+  box-shadow: gray 20px 20px 18px;
+}
+.btn:active{
+  transition: 0.2s;
+  transform: translate(5px,5px);
+  box-shadow: gray 5px 5px 5px;
 }
