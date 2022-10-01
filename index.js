@@ -12,3 +12,5 @@ img.onclick = function(){
   this.classList.toggle("active");
   icons.classList.toggle("active");}
   // ---------------------------------- Ui-7 Js code  ends-------------------------------------
+  
+  
