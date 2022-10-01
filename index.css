@@ -72,6 +72,15 @@ ul li a{
   font-family: 'Manrope', sans-serif !important; 
   font-family: 'Roboto Mono', monospace !important;
 }
+/* ###------------------------------ bannerImage start here -------------------------------------### */
+
+@media only screen and (max-width: 600px) {
+  #banner_image {
+    width: 50% !important;
+    height: 50% !important;
+  }
+}
+
 
 main {
   margin: auto;
