@@ -21,6 +21,26 @@ body {
   padding: 50px;
   text-align: center;
 }
+
+/* Gradient Scroll Bar */
+
+/* width */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 100vh;
+  background: #1f2937;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(rgb(134, 239, 172), rgb(59, 130, 246), rgb(147, 51, 234));
+}
+
+
 header {
   background-color: #dd01ff;
   padding: 12px 12px;
