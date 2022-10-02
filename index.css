@@ -318,7 +318,8 @@ footer .fa:not(.fa-copyright):hover {
 .wrapper4,
 .wrapper5,
 .wrapper6,
-.wrapper7
+.wrapper7,
+.wrapper8
 {
   /* add your wrapper class here*/
   margin: 12px;
@@ -820,7 +821,100 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
   background:linear-gradient(45deg, #1505c6, #f80653)
 } 
 
+/* -------------------------------  UI-8 css code --------------------------------- */
+.card8{
+  background-image: url('assets/elaina.jpg');
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+  width: 300px;
+  height: 400px;
+  margin: auto;
+  border-radius: 10px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.8) , -3px -3px 10px rgba(0, 0, 0, 0.8);
+  transition: .3s all ease;
+}
+.card8:hover{
+  transform: scale(0.95);
+  box-shadow: 7px 7px 15px rgba(0, 0, 0, 0.9) , -6px -6px 15px rgba(0, 0, 0, 0.9);
+}
+.image-black{
+  transition: .3s all ease;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.card8:hover .image-black{
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.side-media{
+  transition: .3s all ease;
+  position: absolute;
+  overflow: hidden;
+  padding-top: 15px;
+  background-color: #CDF0EA;
+  width: 0;
+  height: 100%;
+}
+.side-media li {
+  transition: .3s all ease;
+  margin-left: -100px;
+  margin-bottom: 15px;
+}
+.side-media li a span:hover{
+  transform: rotate(360deg);
+}
+.side-media li a span{
+  color: #000;
+  transition: .3s all ease;
+}
+.card8:hover .side-media{
+  width: 70px;
+}
+.card8:hover .side-media li{
+  margin-left: 0;
+}
+.card8:hover .side-media li:nth-child(1){
+  transition-delay: .1s;
+}
+.card8:hover .side-media li:nth-child(2){
+  transition-delay: .2s;
+}
+.card8:hover .side-media li:nth-child(3){
+  transition-delay: .3s;
+}
+.card8:hover .side-media li:nth-child(4){
+  transition-delay: .4s;
+}
+.card-content8{
+  background-color: #CDF0EA;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  text-align: start;
+  padding: 10px 20px;
+}
 
+.wrap-btn8{
+  transition: .6s all ease;
+  height: 0;
+  overflow: hidden;
+}
+.btn-follow8{
+  background-color: #E94560;
+  letter-spacing: 0.6px;
+  margin-top: 10px;
+  border: 0px solid;
+  padding: 10px 22px;
+  border-radius: 8px;
+}
+.btn-follow8 a{
+  color: white;
+}
+.card8:hover .wrap-btn8{
+  height: 50px;
+}
 
 
 /* ----------------------------------------->>>>>> Break Points <<<<<<<<---------------------------------------- */
@@ -861,7 +955,8 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
   }
   .wrapper1,
   .wrapper2,
-  .wrapper3 {
+  .wrapper3,
+  .wrapper8 {
     /* add your wrapper class here*/
     margin: 12px;
     padding: 20px;
@@ -971,4 +1066,10 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
     font-size: 24px;
     margin-left: 3px;
 }
+
+  /* ////////////////// break-point code for ui-8 card  ///////////////////// */
+  .card8{
+    width: 250px;
+    height: 350px;
+  }
 }
