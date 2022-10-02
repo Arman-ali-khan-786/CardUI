@@ -1,5 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=Arizonia&family=Caveat&family=Codystar:wght@300&family=Courgette&family=Croissant+One&family=Eater&family=Faster+One&family=Fjalla+One&family=Frijole&family=Germania+One&family=Great+Vibes&family=Hurricane&family=Kaushan+Script&family=Lobster&family=Mea+Culpa&family=Monsieur+La+Doulaise&family=Notable&family=Pacifico&family=Permanent+Marker&family=Playball&family=Press+Start+2P&family=Quicksand&family=Rochester&family=Rubik+Beastly&family=Rubik+Glitch&family=Ruslan+Display&family=Sacramento&family=Sevillana&family=Shadows+Into+Light&family=Shojumaru&family=Sofia&family=Staatliches&family=Tangerine&family=Teko:wght@700&family=Unica+One&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Ceviche+One&family=Dancing+Script&family=Fruktur&family=Oswald:wght@200;300&family=PT+Sans&family=Playfair+Display&family=Smooch&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300&family=Roboto+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
 
 * {
   margin: 0;
@@ -16,6 +19,26 @@ body {
   background: linear-gradient(225deg, #1180a2, rgba(13, 203, 245, 0.75) 100%) no-repeat;
 
 }
+
+/* Gradient Scroll Bar */
+
+/* width */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 100vh;
+  background: #1f2937;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(rgb(134, 239, 172), rgb(59, 130, 246), rgb(147, 51, 234));
+}
+
+
 header {
   background-color: #dd01ff;
   padding: 12px 12px;
@@ -32,7 +55,7 @@ header > h3 a {
   font-family: 'Noto Serif', serif;
 }
 span {
-  font-family: "Rubik Glitch", cursive;
+  font-family: 'Roboto Mono', monospace;
   margin: 0px 2px;
   color: orangered;
   letter-spacing: 3px;
@@ -59,9 +82,26 @@ ul li a{
   font-weight: 500;
   color: black;
   font-family: 'PT Sans', sans-serif;
-
-
 }
+
+/* ###------------------------------ Fonts for body start here -------------------------------------### */
+#RobotoMono {
+  font-family: 'Roboto Mono', monospace !important;
+}
+#Manrope {
+  font-family: 'Manrope', sans-serif !important; 
+  font-family: 'Roboto Mono', monospace !important;
+}
+/* ###------------------------------ bannerImage start here -------------------------------------### */
+
+@media only screen and (max-width: 600px) {
+  #banner_image {
+    width: 50% !important;
+    height: 50% !important;
+  }
+}
+
+
 main {
   margin: auto;
   width: 70%;
@@ -75,7 +115,7 @@ main {
 #about > h2,
 #contribute > h2 {
   font-size: 44px;
-  font-family: "Ruslan Display", cursive;
+  font-family: 'Roboto Mono', monospace;
 }
 #about > img {
   margin: 30px auto;
@@ -108,7 +148,7 @@ main {
   justify-items: center;
 }
 em {
-  color: red;
+  color: black;
 }
 .effect-code {
   width: 50%;
@@ -866,6 +906,7 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
     width: 200px;
     height: 220px;
     margin: 20px auto;
+    
   }
   .card2 img {
     width: 100px;
