@@ -32,9 +32,8 @@ darkModeBtn.addEventListener('click', () => {
 // ---------------------------------- Ui-7 Js code starts here -------------------------------------
         
             const img = document.querySelector("img");
-            const icons = document.querySelector(".icons");
+            const icon = document.querySelector(".icons");
             img.onclick = function(){
               this.classList.toggle("active");
               icons.classList.toggle("active");}
 
-// ---------------------------------- Ui-7 Js code ends here -------------------------------------
