@@ -1,8 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=Arizonia&family=Caveat&family=Codystar:wght@300&family=Courgette&family=Croissant+One&family=Eater&family=Faster+One&family=Fjalla+One&family=Frijole&family=Germania+One&family=Great+Vibes&family=Hurricane&family=Kaushan+Script&family=Lobster&family=Mea+Culpa&family=Monsieur+La+Doulaise&family=Notable&family=Pacifico&family=Permanent+Marker&family=Playball&family=Press+Start+2P&family=Quicksand&family=Rochester&family=Rubik+Beastly&family=Rubik+Glitch&family=Ruslan+Display&family=Sacramento&family=Sevillana&family=Shadows+Into+Light&family=Shojumaru&family=Sofia&family=Staatliches&family=Tangerine&family=Teko:wght@700&family=Unica+One&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Ceviche+One&family=Dancing+Script&family=Fruktur&family=Oswald:wght@200;300&family=PT+Sans&family=Playfair+Display&family=Smooch&display=swap');
+
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300&family=Roboto+Mono&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
 
 * {
   margin: 0;
@@ -17,12 +17,7 @@ body {
   display: flex;
   flex-direction: column;
   background: linear-gradient(225deg, #1180a2, rgba(13, 203, 245, 0.75) 100%) no-repeat;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins',sans-serif;
-  padding: 50px;
-  text-align: center;
+
 }
 
 /* Gradient Scroll Bar */
@@ -182,101 +177,6 @@ em {
   width: 60px;
   height: 60px;
 }
-
-.container1{
-  height: 250px;
-  width: 250px;
-  overflow: hidden;
-  margin: 0 auto;
-  border-radius: 50%;
-  transition: all 0.3s ease-in-out;
-  box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.3);
-  background: linear-gradient(45deg, #960fb1, #2aacc7);
-}
-/* hover-> changes the zoom in zoom out changes */
- .container1:hover{
-  height: 470px;
-  width: 350px;
-  border-radius: 5px;
-  box-shadow: 0px 1px 35px 0px rgba(0,0,0,0.3);
-} 
-/* saikiran css start */
-.container1 .wrappers img{
-  position: relative;
-  z-index: 20;
-  border-radius: 50%;
-  display: block;
-  height: 200px;
-  width: 200px;
-  border: 5px solid #fff;
-  object-fit: cover;
-  margin: 20px auto;
-  transition: all 0.3s ease;
-}
-.container1:hover .wrappers img.active{
-  height: 470px;
-  width: 350px;
-  margin: 0px auto;
-  border: none;
-  border-radius: 5px;
-}
-.wrappers .title{
-  color: #fff;
-  padding: 15px;
-  font-size: 30px;
-  font-weight: 500;
-  padding-top: 55px;
-  line-height: 25px;
-}
-.wrappers .title:hover,.title:active{
-  color: rgb(238, 101, 15);
-  
-
-}
-.wrappers .place{
-  padding-bottom: 20px;
-  color: #fff;
-  font-size: 17px;
-  line-height: 0px;
-  margin: 10px 0;
-}
-.content{
-  color: #fff;
-  font-size: 17px;
-  margin-top: 10px;
-  padding: 1px 20px 10px 20px;
-}
-.content .buttons{
-  display: flex;
- 
-  
-}
-.buttons .btn{
-  height: 65px;
-  width: 1000px;
-  margin: 0 5px;
- 
-}
-.buttons .btn button{
-
-  height: 110%;
-  width: 150%;
-  background: rgb(237, 243, 237);
-  border: none;
-  outline: none;
-  cursor: pointer;
-  font-size: 17px;
-  font-weight: 500;
-  border-radius: 5px;
-  transition: all 0.3s;
-}
-.btn button:hover{
-  transform: scale(0.95); 
-  color: #fff;
-  background:linear-gradient(45deg, #08cb1b, #0338f8);
-}
-
-/* saikiran css end */
 /* ###------------------------------ footer design -------------------------------------### */
 footer{
   background-color: #087c8b;
@@ -320,6 +220,7 @@ footer .fa:not(.fa-copyright):hover {
 .wrapper6,
 .wrapper7,
 .wrapper8
+
 {
   /* add your wrapper class here*/
   margin: 12px;
@@ -768,9 +669,105 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
 .title-black {
   color: black;
 }
-/* Saikioran's code */
+.container1{
+  height: 250px;
+  width: 250px;
+  overflow: hidden;
+  margin: 0 auto;
+  border-radius: 50%;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.3);
+  background: linear-gradient(45deg, #960fb1, #2aacc7);
+}
 
- .card7 .container1 .icons{
+ .container1:hover{
+  height: 470px;
+  width: 350px;
+  border-radius: 5px;
+  box-shadow: 0px 1px 35px 0px rgba(0,0,0,0.3);
+} 
+/* saikiran css start */
+.container1 .wrappers img{
+  position: relative;
+  z-index: 20;
+  border-radius: 50%;
+  display: block;
+  height: 200px;
+  width: 200px;
+  border: 5px solid #fff;
+  object-fit: cover;
+  margin: 20px auto;
+  transition: all 0.3s ease;
+}
+.container1:hover .wrappers img.active{
+  height: 470px;
+  width: 350px;
+  margin: 0px auto;
+  border: none;
+  border-radius: 5px;
+}
+.wrappers .title{
+  color: #fff;
+  padding: 15px;
+  padding-left: 70px;
+  font-size: 30px;
+  font-weight: 500;
+  padding-top: 55px;
+  line-height: 25px;
+}
+.wrappers .title:hover,.title:active{
+  color: rgb(238, 101, 15);
+  
+
+}
+.wrappers .place{
+  padding-bottom: 20px;
+  padding-left: 115px;
+  font-family:Arial, Helvetica, sans-serif;
+  color: #fff;
+  font-size: 17px;
+  line-height: 0px;
+  margin: 10px 0;
+}
+.content{
+  color: #fff;
+  font-size: 17px;
+  margin-top: 10px;
+  padding: 1px 20px 10px 20px;
+}
+.content .buttons{
+  display: flex;
+ 
+  
+}
+.buttons .btn{
+  height: 65px;
+  width: 1000px;
+  margin: 0 5px;
+ 
+}
+.buttons .btn button{
+
+  height: 110%;
+  width: 150%;
+  background: rgb(237, 243, 237);
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 17px;
+  font-weight: 500;
+  border-radius: 5px;
+  transition: all 0.3s;
+}
+.btn button:hover{
+  transform: scale(0.95); 
+  color: #fff;
+  background:linear-gradient(45deg, #08cb1b, #0338f8);
+}
+
+
+
+.card7 .container1 .icons{
   position: relative;
   margin-top: -225px;
   margin-left: 10px;
@@ -780,8 +777,8 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
   display: none;
 }
 .container1 .icons li{
-  height: 40px;
-  width: 40px;
+  height: 37px;
+  width: 35px;
   margin: 5px 0;
   opacity: 0;
   margin-left: -100px;
@@ -819,7 +816,7 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
   transform: scale(0.9);
   color: #fff;
   background:linear-gradient(45deg, #1505c6, #f80653)
-} 
+}  
 
 /* -------------------------------  UI-8 css code --------------------------------- */
 .card8{
@@ -1008,6 +1005,7 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
     width: 200px;
     height: 220px;
     margin: 20px auto;
+    
   }
   .card2 img {
     width: 100px;
