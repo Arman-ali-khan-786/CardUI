@@ -1071,3 +1071,57 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
     height: 350px;
   }
 }
+
+/* -------------------------------  UI-10 css code --------------------------------- */
+
+.card10 {
+  width: 12rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content10 {
+  text-align: center;
+  position: relative;
+  transition: all 2.25s;
+  background-color: rgb(127, 204, 240);
+  padding: 5em;
+  transform-style: preserve-3d;
+}
+
+.card10:hover .content10 {
+  transform: rotateY(0.5turn);
+}
+
+.front10,
+.back10 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  padding: 2em;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+
+.title10 {
+  transform: translateZ(5rem);
+  font-size: 1rem;
+}
+
+.subtitle10 {
+  transform: translateZ(2rem);
+}
+
+.back10 {
+  transform: rotateY(0.5turn);
+  background-color: #009bff;
+}
+
+.description10 {
+  transform: translateZ(3rem);
+}
+
