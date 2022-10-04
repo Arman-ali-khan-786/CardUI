@@ -30,6 +30,7 @@ darkModeBtn.addEventListener('click', () => {
 // ---------------------------------- Ui-4 Js code -------------------------------------
 
 // ---------------------------------- Ui-7 Js code starts here -------------------------------------
+// ---------------------------------- Ui-9 Js code -------------------------------------
         
             const img = document.querySelector("img");
             const icon = document.querySelector(".icons");
