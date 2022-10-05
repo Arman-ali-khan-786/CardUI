@@ -916,11 +916,11 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
 
 
 /* -------------------------------  UI-9 css code --------------------------------- */
-.container9 {
+.container10 {
   display: flex;
   justify-content: center;
 }
-.card9 {
+.card10 {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -931,7 +931,7 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
   transition: box-shadow 300ms ease-in-out;
 }
 
-.card9 > img {
+.card10 > img {
   z-index: 1;
   transform-origin: bottom;
   transition: scale 300ms ease-in-out;
@@ -950,19 +950,19 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
   transition: scale 300ms ease-in-out;
 }
 
-.card9:hover .circle  {
+.card10:hover .circle  {
   scale: 2.5;
 }
 
-.card9:hover img {
+.card10:hover img {
   scale: 1.05;
 }
 
-.card9:hover {
+.card10:hover {
   box-shadow: 5px 5px 20px rgb(60, 60, 60), -5px -5px 20px rgb(60, 60, 60);
 }
 
-.card9:hover .links span {
+.card10:hover .links span {
   rotate: 360deg;
 }
 
