@@ -917,16 +917,6 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
 
 /* -------------------------------  UI-9 css code --------------------------------- */
 
-.wrapper9 .effect-title em.raghav-rama {
-  background: linear-gradient(to bottom, #00000000 0%, #ff99cc 100%);
-  color: #077512;
-  transition: 1s;
-}
-.wrapper9 .effect-title em.raghav-rama:hover {
-  text-decoration: underline;
-  text-decoration-thickness: 4px;
-  text-decoration-color:  rgba(11, 142, 172, 0.75)
-}
 .wrapper9 .card9 {
   display: block;
   position: relative; /* check */
