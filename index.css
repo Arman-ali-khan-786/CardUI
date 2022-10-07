@@ -219,7 +219,8 @@ footer .fa:not(.fa-copyright):hover {
 .wrapper5,
 .wrapper6,
 .wrapper7,
-.wrapper8
+.wrapper8,
+.wrapper9
 
 {
   /* add your wrapper class here*/
@@ -912,6 +913,132 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
 .card8:hover .wrap-btn8{
   height: 50px;
 }
+
+
+/* -------------------------------  UI-9 css code --------------------------------- */
+
+.wrapper9 .card9 {
+  display: block;
+  position: relative; /* check */
+  margin: 50px auto;
+  height: 300px;
+  width: 300px;
+  overflow: hidden;
+  background: linear-gradient(45deg, #ff99cc, #1180a2, #ff99cc, #1180a2);
+  border-radius: 7px;
+  background-size: 500% 100%;
+  box-shadow: 6px 6px 13px 0px rgba(0,0,0,.4), -6px -6px 13px 0px rgba(0,0,0,0.4);
+  transition: .45s cubic-bezier(0, 0, 0.56, 2.58);
+}
+.wrapper9 .card9:hover {
+  transform: scale(.9);
+  animation: gradient 1.5s infinite linear;
+  border-radius: 25px;
+}
+@keyframes gradient {
+  0% {
+		background-position: 0% 0%;
+	}
+	100% {
+		background-position: 100% 0%;
+	}
+}
+.wrapper9 .card9 .contents {
+  width: inherit;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.wrapper9 .card9 .contents .gh-avatar {
+  padding-top: 10px;
+  text-align: center;
+  border-radius: 40%;
+}
+.wrapper9 .card9 .contents .gh-avatar img {
+  border-radius: 40%;
+  width: 70px;
+  height: 70px;
+}
+.wrapper9 .card9 .contents .details {
+  padding-top: 130px;
+  padding-bottom: 20px;
+  width: inherit;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  align-items: center;
+  gap: 3px;
+  transition: .4s ease-out
+}
+.wrapper9 .card9:hover .contents .details {
+  padding-top: 20px;
+}
+.wrapper9 .card9 .contents .details p {
+  background-color: rgba(240, 248, 255, 0.548);
+  border: 2px solid #1180a280;
+  border-radius: 10px;
+  font-size: 24px;
+  padding: 0px 6px;
+  color: #06580f;
+  font-weight: bold;
+  transition: all .4s ease-out;
+}
+.wrapper9 .card9 .contents .details p.skill {
+  font-size: 19px;
+  font-weight: normal;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.wrapper9 .card9 .contents .details p.uname {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.wrapper9 .card9:hover .contents .details p:hover {
+  box-shadow: 1px 1px 12px rgba(0,0,0,.3), -1px -1px 12px rgba(0,0,0,.3);
+}
+.wrapper9 .card9 .contents .strip {
+  margin-top: 10px;
+  position: relative;
+  height: 70px;
+  background-color: rgba(240, 248, 255, 0.4);
+  transition: all .4s ease-out;
+}
+.wrapper9 .card9:hover .contents .strip {
+  margin-top: 60px;
+  box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.5), -1px -1px 5px rgba(0, 0, 0, 0.5);
+}
+.wrapper9 .card9 .contents .reach-out {
+  display: flex;
+  flex-direction: row;
+  gap: 3px;
+  justify-content: center;
+}
+.wrapper9 .card9 .contents .reach-out .reach-out-icons {
+  height: 40px;
+  width: 40px;
+}
+.wrapper9 .card9 .contents .reach-out a {
+  margin-top: 300px;
+  transition: all .4s ease-out;
+}
+.wrapper9 .card9:hover .contents .reach-out a {
+  transition-delay: .2s;
+}
+.wrapper9 .card9:hover .contents .reach-out a {
+  margin-top: 10px;
+}
+.wrapper9 .card9:hover .contents .reach-out a:nth-child(1) {
+  transition-delay: .1s;
+}
+.wrapper9 .card9:hover .contents .reach-out a:nth-child(2) {
+  transition-delay: .2s;
+}
+.wrapper9 .card9:hover .contents .reach-out a:nth-child(3) {
+  transition-delay: .3s;
+}
+
+
 
 
 /* ----------------------------------------->>>>>> Break Points <<<<<<<<---------------------------------------- */
