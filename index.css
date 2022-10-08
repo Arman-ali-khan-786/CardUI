@@ -40,12 +40,14 @@ body {
 
 
 header {
-  background-color: #dd01ff;
+  background-color: #bf8d36;
   padding: 12px 12px;
   display: flex;
   justify-content: space-between;
   z-index: 10;
-  box-shadow: 2px 3px 12px white;
+  box-shadow: 2px 3px 12px rgb(88, 88, 88);
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
   position: sticky;
   top: 0;
 }
@@ -1133,6 +1135,89 @@ border: 1px solid rgba(255, 255, 255, 0.3);
   transition: 0.4s;
   color: #000;
 }
+
+/* -------------------------------  UI-10 css code --------------------------------- */
+.container10 {
+  display: flex;
+  justify-content: center;
+}
+.card10 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  background-color: black;
+  border-radius: 30px;
+  overflow: hidden;
+  transition: box-shadow 300ms ease-in-out;
+}
+
+.card10 > img {
+  z-index: 1;
+  transform-origin: bottom;
+  transition: scale 300ms ease-in-out;
+}
+
+.circle {
+  position: absolute;
+  top: 22%;
+  left: 13%;
+  content: "";
+  width: 300px;
+  height: 300px;
+  background-color: white;
+  border-radius: 50%;
+  scale: 0;
+  transition: scale 300ms ease-in-out;
+}
+
+.card10:hover .circle  {
+  scale: 2.5;
+}
+
+.card10:hover img {
+  scale: 1.05;
+}
+
+.card10:hover {
+  box-shadow: 5px 5px 20px rgb(60, 60, 60), -5px -5px 20px rgb(60, 60, 60);
+}
+
+.card10:hover .links span {
+  rotate: 360deg;
+  color: black;
+}
+
+.detailz {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  z-index: 10;
+  color: black;
+  margin-top: 30px;
+}
+
+.links {
+  display: flex;
+  margin-top: 10px;
+}
+
+.links li {
+  margin-inline: 10px;
+}
+
+.links span {
+  color: rgb(210, 210, 210);
+  transition: all 200ms ease-in;
+}
+
+.links span:hover {
+  color: #1f2937;
+}
+
 
 
 
