@@ -31,13 +31,14 @@
 
 /* changing the color scheme according to the dark background */
 header.active{
-    background: purple;
+    background: rgb(96, 96, 96);
+     box-shadow: 2px 3px 12px rgb(45, 45, 45);
 }
 .header-tag.active{
-    color: white;
+    color: rgb(188, 188, 188);
 }
 body.active{
-    background: #320064;
+    background: #37155a;
     color: white;
 }
 em.active,.effect-code>a.active{

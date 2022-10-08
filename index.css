@@ -40,12 +40,14 @@ body {
 
 
 header {
-  background-color: #dd01ff;
+  background-color: #bf8d36;
   padding: 12px 12px;
   display: flex;
   justify-content: space-between;
   z-index: 10;
-  box-shadow: 2px 3px 12px white;
+  box-shadow: 2px 3px 12px rgb(88, 88, 88);
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
   position: sticky;
   top: 0;
 }
