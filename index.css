@@ -1038,15 +1038,15 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
   transition-delay: .3s;
 }
 
-/* -------------------------------  UI-10 css code --------------------------------- */
-.card10 .imagebox{
+/* -------------------------------  UI-11 css code --------------------------------- */
+.card11 .imagebox{
   position: relative;
   height: 100%;
   width: 100%;
   transform: translateY(-80px);
   z-index: 10;
 }
- .card10{
+ .card11{
   background: rgba(224, 224, 224, 0.2);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -1065,7 +1065,7 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
   cursor: pointer;
 } 
 
-.card10:hover{
+.card11:hover{
  height: 320px; 
  /* From https://css.glass */
 background: rgba(255, 255, 255, 0.2);
@@ -1075,26 +1075,26 @@ backdrop-filter: blur(5px);
 -webkit-backdrop-filter: blur(5px);
 border: 1px solid rgba(255, 255, 255, 0.3);
 }
-.card10 img{
+.card11 img{
   width: 100%;
   border-radius: 10px;
   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.5);
   
 }
-.card10 .content{
+.card11 .content{
   padding: 20px 20px;
   text-align: center;
   transform: translateY(-500px);
   opacity: 0;
   transform: 0.3s;
 }
-.card10 .content #desc{
+.card11 .content #desc{
   width: 250px!important;
   position: relative;
   right:55px;
   top: 40px;
 }
-.content .social-handle10{
+.content .social-handle11{
   position: relative;
   right: 10px;
   top: 10px;
@@ -1106,11 +1106,11 @@ border: 1px solid rgba(255, 255, 255, 0.3);
   margin-left: 6px;
   margin-right: 6px;
 }
-.card10:hover > .content{
+.card11:hover > .content{
   transform: translateY(-240px);
   opacity: 1;
 }
-.card10 .content h2{
+.card11 .content h2{
   font-family: 'Roboto', sans-serif;
   color: #040404;
   width: 200px;
@@ -1119,16 +1119,16 @@ border: 1px solid rgba(255, 255, 255, 0.3);
   top: 15px;
   font-size: 29px;
 }
-.card10 .content h3{
+.card11 .content h3{
   font-family: 'Sansita', sans-serif;
   color: rgb(27, 29, 58);
   font-size: 23px!important;
 
 }
-.card10 .content i{
+.card11 .content i{
   padding: 10px;
 }
-.card10 .content i:hover{
+.card11 .content i:hover{
   transform: translateY(10px);
   transition: 0.4s;
   color: #000;
