@@ -1218,8 +1218,85 @@ border: 1px solid rgba(255, 255, 255, 0.3);
   transform: translateY(10px);
   transition: 0.4s;
   color: #000;
+  font-size: medium;
+}
+/* ----------------------------card-12 css------------------------------------------ */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap");
+
+
+
+.card12 {
+  padding: 15px;
+  width: 350px;
+  background: rgb(113, 160, 24);
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: 0 10px 15px rgba(238, 4, 4, 0.7);
+  user-select: none;
 }
 
+.cover-photo12 {
+  position: relative;
+  background: url(https://img.freepik.com/free-vector/gradient-mountain-landscape_23-2149162009.jpg?w=2000);
+  background-size: cover;
+  height: 180px;
+  border-radius: 5px 5px 0 0;
+}
+
+.profile12 {
+  position: absolute;
+  width: 120px;
+  bottom: -60px;
+  left: 15px;
+  border-radius: 50%;
+  border: 2px solid #222;
+  background: #222;
+  padding: 5px;
+}
+
+.profile-name12 {
+  font-size: 20px;
+  margin: 25px 0 0 120px;
+  color: #fff;
+}
+
+.about12 {
+  margin-top: 30px;
+  line-height: 1.6;
+}
+
+.btn12 {
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+  font-weight: 500;
+  background-color: transparent;
+  border: 1px solid #137570;
+  color: #137570;
+  padding: 10px 30px;
+  border-radius: 30px;
+  margin: 30px 0 10px;
+}
+
+.btn12:hover {
+  cursor: pointer;
+  background-color: #137570;
+  font-weight: medium;
+  box-shadow: 0 0 10px rgb(169, 205, 235);
+  color: white;
+}
+
+.icons12 img {
+  width: 40px;
+  border-radius: 50%;
+  margin: 10px 5px;
+  transition: background 0.5s;
+}
+
+.icons12 img:hover {
+  background: #ffffff;
+  box-shadow: 0 0 10px rgb(169, 205, 235);
+}
 /* ----------------------------------------->>>>>> Break Points <<<<<<<<---------------------------------------- */
 /* ------------------------------------------------------------------------------------------------------------- */
 
