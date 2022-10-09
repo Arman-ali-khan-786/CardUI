@@ -1016,7 +1016,8 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
   gap: 3px;
   justify-content: center;
 }
-.wrapper9 .card9 .contents .reach-out .reach-out-icons {
+.wrapper9 .card9 .contents .reach-out span {
+  color: black;
   height: 40px;
   width: 40px;
 }
