@@ -42,12 +42,14 @@ body {
 }
 
 header {
-  background-color: #dd01ff;
+  background-color: #bf8d36;
   padding: 12px 12px;
   display: flex;
   justify-content: space-between;
   z-index: 10;
-  box-shadow: 2px 3px 12px white;
+  box-shadow: 2px 3px 12px rgb(88, 88, 88);
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
   position: sticky;
   top: 0;
 }
@@ -1005,7 +1007,8 @@ footer .fa:not(.fa-copyright):hover {
   gap: 3px;
   justify-content: center;
 }
-.wrapper9 .card9 .contents .reach-out .reach-out-icons {
+.wrapper9 .card9 .contents .reach-out span {
+  color: black;
   height: 40px;
   width: 40px;
 }
@@ -1029,6 +1032,189 @@ footer .fa:not(.fa-copyright):hover {
   transition-delay: 0.3s;
 }
 
+ master
+
+
+/* -------------------------------  UI-10 css code --------------------------------- */
+.container10 {
+  display: flex;
+  justify-content: center;
+}
+.card10 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  background-color: black;
+  border-radius: 30px;
+  overflow: hidden;
+  transition: box-shadow 300ms ease-in-out;
+}
+
+.card10 > img {
+  z-index: 1;
+  transform-origin: bottom;
+  transition: scale 300ms ease-in-out;
+}
+
+.circle {
+  position: absolute;
+  top: 22%;
+  left: 13%;
+  content: "";
+  width: 300px;
+  height: 300px;
+  background-color: white;
+  border-radius: 50%;
+  scale: 0;
+  transition: scale 300ms ease-in-out;
+}
+
+.card10:hover .circle  {
+  scale: 2.5;
+}
+
+.card10:hover img {
+  scale: 1.05;
+}
+
+.card10:hover {
+  box-shadow: 5px 5px 20px rgb(60, 60, 60), -5px -5px 20px rgb(60, 60, 60);
+}
+
+.card10:hover .links span {
+  rotate: 360deg;
+  color: black;
+}
+
+.detailz {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  z-index: 10;
+  color: black;
+  margin-top: 30px;
+}
+
+.links {
+  display: flex;
+  margin-top: 10px;
+}
+
+.links li {
+  margin-inline: 10px;
+}
+
+.links span {
+  color: rgb(210, 210, 210);
+  transition: all 200ms ease-in;
+}
+
+.links span:hover {
+  color: #1f2937;
+}
+
+
+/* -------------------------------  UI-11 css code --------------------------------- */
+.card11 .imagebox{
+  position: relative;
+  height: 100%;
+  width: 100%;
+  transform: translateY(-80px);
+  z-index: 10;
+}
+ .card11{
+  background: rgba(224, 224, 224, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(224, 224, 224, 0.3);
+  background: linear-gradient(45deg, rgba(224, 224, 224, 0.2),rgba(224, 224, 224, 0.2));
+  width: 280px;
+  height: 180px;
+  margin: 0px auto;
+  position:relative;
+  border-radius: 10px;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.5);
+  transition: 0.3s;
+  padding:  30px 50px;
+  cursor: pointer;
+} 
+
+.card11:hover{
+ height: 320px; 
+ /* From https://css.glass */
+background: rgba(255, 255, 255, 0.2);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(255, 255, 255, 0.3);
+}
+.card11 img{
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.5);
+  
+}
+.card11 .content{
+  padding: 20px 20px;
+  text-align: center;
+  transform: translateY(-500px);
+  opacity: 0;
+  transform: 0.3s;
+}
+.card11 .content #desc{
+  width: 250px!important;
+  position: relative;
+  right:55px;
+  top: 40px;
+}
+.content .social-handle11{
+  position: relative;
+  right: 10px;
+  top: 10px;
+  margin-top: 50px!important;
+}
+.content .handles-icon{
+  width: 30px!important;
+  height: 30px!important;
+  margin-left: 6px;
+  margin-right: 6px;
+}
+.card11:hover > .content{
+  transform: translateY(-240px);
+  opacity: 1;
+}
+.card11 .content h2{
+  font-family: 'Roboto', sans-serif;
+  color: #040404;
+  width: 200px;
+  position: relative;
+  right: 28px;
+  top: 15px;
+  font-size: 29px;
+}
+.card11 .content h3{
+  font-family: 'Sansita', sans-serif;
+  color: rgb(27, 29, 58);
+  font-size: 23px!important;
+
+}
+.card11 .content i{
+  padding: 10px;
+}
+.card11 .content i:hover{
+  transform: translateY(10px);
+  transition: 0.4s;
+  color: #000;
+}
+
+ master
 /* ----------------------------------------->>>>>> Break Points <<<<<<<<---------------------------------------- */
 /* ------------------------------------------------------------------------------------------------------------- */
 
