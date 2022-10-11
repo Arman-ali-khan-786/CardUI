@@ -3,6 +3,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@300&family=Roboto+Mono&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&family=Quicksand:wght@400;500;600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital@1&family=Dancing+Script&family=Indie+Flower&family=Lora:ital@1&display=swap');
 * {
   margin: 0;
   padding: 0;
@@ -1214,7 +1215,143 @@ border: 1px solid rgba(255, 255, 255, 0.3);
   color: #000;
 }
 
- master
+/*------------------------UI-12 css code-------------------------*/
+
+.wrapper12
+{
+    margin: 2px;
+    padding: 2px;
+    box-sizing: border-box;
+    font-family: 'DM Sans','Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: #010615;
+    border-radius: 15px;
+}
+
+body
+{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    
+
+}
+
+.wrapper12 .container
+{
+  position: relative;
+ width: 300px;
+ height: 300px;
+ display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px;
+    margin-left: 25em;
+    transition: 0.5s;
+  
+
+}
+.wrapper12 .container:hover
+{
+    height: 400px;
+
+}
+.wrapper12 .container .imgBox
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.wrapper12 .container .imgBox img
+{
+    max-width: 75%;
+    opacity: 0.1;
+    transition: 0.5s;
+    margin-left: 25px;
+    margin-bottom: 2px;
+}
+.wrapper12 .container:hover .imgBox img
+{
+     max-width: 80%;
+    opacity: 1;
+}
+.wrapper12 .container::before
+{
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background:whitesmoke ;
+    z-index: -1;
+}
+.wrapper12 .container::after
+{
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background:whitesmoke ;
+    z-index: -2;
+    filter: blur(40px);
+}
+.wrapper12 .container::before,
+.wrapper12 .container::after
+{
+    background: linear-gradient(235deg,rgb(24, 154, 42),blue,rgb(255, 255, 255));
+}
+
+
+.wrapper12 .container .content
+{
+    position: absolute;
+    bottom: 0;
+    
+    left: 10px;
+    right: 10px;
+    bottom: 2px;
+    height: 80px;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.wrapper12 .container:hover .content
+{
+    opacity: 1;
+    text-align: center;
+}
+.wrapper12 .container .content h2
+{
+    font-size: 25px;
+    color: wheat;
+    font-weight: 500;
+    line-height: 30px;
+    letter-spacing: 1px;
+
+}
+.wrapper12 .container .content span
+{
+    font-size: 20px;
+    color: wheat;
+    font-weight: 200;
+    
+    letter-spacing: 2px;
+    
+}
+
+
+
 /* ----------------------------------------->>>>>> Break Points <<<<<<<<---------------------------------------- */
 /* ------------------------------------------------------------------------------------------------------------- */
 
