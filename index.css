@@ -1,7 +1,8 @@
+
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@300&family=Roboto+Mono&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&family=Quicksand:wght@400;500;600&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -17,6 +18,7 @@ body {
   /* background: linear-gradient(225deg, #1180a2, rgba(13, 203, 245, 0.75) 100%)
     no-repeat; */
   /* background-color: #f5f5f5; */
+
 }
 
 /* Gradient Scroll Bar */
@@ -91,6 +93,7 @@ ul a:hover {
   color: rgb(91, 144, 194);
   background-color: aliceblue;
   transform: scale(1.2);
+
   border-radius: 5px;
   padding: 8px;
 }
@@ -129,7 +132,9 @@ main {
 #about > h2,
 #contribute > h2 {
   font-size: 44px;
+
   font-family: "Roboto Mono", monospace;
+
 }
 #about > img {
   margin: 30px auto;
@@ -147,14 +152,18 @@ main {
   font-size: 22px;
   text-align: center;
   font-weight: 700;
+
   font-family: "Fjalla One", sans-serif;
+
 }
 .effects {
   display: flex;
   flex-direction: column;
 }
 .effect-title {
+
   font-family: "PT Sans", sans-serif;
+
 }
 .container {
   width: 70%;
@@ -193,8 +202,10 @@ em {
   width: 60px;
   height: 60px;
 }
+
 /* ###------------------------------ footer design -------------------------------------### */
 footer {
+
   background-color: #07092f;
   background: rgb(34, 195, 131);
   background: linear-gradient(
@@ -203,9 +214,10 @@ footer {
     rgba(91, 182, 220, 1) 56%,
     rgba(167, 45, 253, 1) 100%
   );
+
   color: white;
   font-size: min(5vw, 16px);
-  font-family: monospace;
+  font-family: "Quicksand", serif;
 }
 #footer-container {
   width: 70%;
@@ -246,7 +258,9 @@ footer .fa:not(.fa-copyright):hover {
 .wrapper7,
 .wrapper8,
 .wrapper9 {
+
   position: relative;
+
   /* add your wrapper class here*/
   margin: 12px;
   padding: 30px;
@@ -1060,6 +1074,8 @@ footer .fa:not(.fa-copyright):hover {
   transition-delay: 0.3s;
 }
 
+ master
+
 
 
 /* -------------------------------  UI-10 css code --------------------------------- */
@@ -1242,6 +1258,8 @@ border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 
+
+
 /* ----------------------------------------->>>>>> Break Points <<<<<<<<---------------------------------------- */
 /* ------------------------------------------------------------------------------------------------------------- */
 
@@ -1379,6 +1397,7 @@ border: 1px solid rgba(255, 255, 255, 0.3);
   .user_name {
     font-size: 1rem;
     margin: 14px auto;
+
   }
 
   .card4 img {
@@ -1386,6 +1405,7 @@ border: 1px solid rgba(255, 255, 255, 0.3);
     height: 70px;
     margin-bottom: 12px;
   }
+
   .icons a {
     font-size: 24px;
     margin-left: 3px;
@@ -1397,3 +1417,4 @@ border: 1px solid rgba(255, 255, 255, 0.3);
     height: 350px;
   }
 }
+
