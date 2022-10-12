@@ -1,8 +1,8 @@
-
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@300&family=Roboto+Mono&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&family=Quicksand:wght@400;500;600&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -12,11 +12,11 @@
   box-sizing: border-box;
   scroll-behavior: smooth;
 }
+
 body {
   display: flex;
   flex-direction: column;
-  background: linear-gradient(225deg, #1180a2, rgba(13, 203, 245, 0.75) 100%)
-    no-repeat;
+  background: linear-gradient(225deg, #1180a2, rgba(13, 203, 245, 0.75) 100%) no-repeat;
 }
 
 /* Gradient Scroll Bar */
@@ -34,11 +34,9 @@ body {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(
-    rgb(134, 239, 172),
-    rgb(59, 130, 246),
-    rgb(147, 51, 234)
-  );
+  background: linear-gradient(rgb(134, 239, 172),
+      rgb(59, 130, 246),
+      rgb(147, 51, 234));
 }
 
 header {
@@ -53,26 +51,31 @@ header {
   position: sticky;
   top: 0;
 }
-header > h3 a {
+
+header>h3 a {
   font-size: 30px;
   color: beige;
   font-family: "Merriweather", serif;
 }
+
 span {
   font-family: "Merriweather", serif;
   margin: 0px 2px;
   color: orangered;
   letter-spacing: 3px;
 }
-header > ul {
+
+header>ul {
   display: flex;
   /* margin-right: 22px; */
 }
+
 ul li {
   margin: auto;
   color: aliceblue;
   transition: all 0.4s ease-in-out;
 }
+
 ul a:hover {
   color: rgb(91, 144, 194);
   background-color: aliceblue;
@@ -80,6 +83,7 @@ ul a:hover {
   border-radius: 22px;
   padding: 8px;
 }
+
 ul li a {
   margin: auto 12px;
   font-weight: 500;
@@ -91,9 +95,11 @@ ul li a {
 #Merriweather {
   font-family: "Merriweather", serif !important;
 }
+
 #Quicksand {
   font-family: "Quicksand", serif !important;
 }
+
 /* ###------------------------------ bannerImage start here -------------------------------------### */
 
 @media only screen and (max-width: 600px) {
@@ -107,27 +113,32 @@ main {
   margin: auto;
   width: 70%;
 }
+
 #about,
 #contribute {
   margin: 50px 0px;
   padding: 22px;
   text-align: center;
 }
-#about > h2,
-#contribute > h2 {
+
+#about>h2,
+#contribute>h2 {
   font-size: 44px;
   font-family: "Quicksand", serif;
 }
-#about > img {
+
+#about>img {
   margin: 30px auto;
   width: 80%;
   height: 400px;
 }
-#contribute > h2 {
+
+#contribute>h2 {
   color: red;
 }
-#about > p,
-#contribute > p {
+
+#about>p,
+#contribute>p {
   width: 60%;
   margin: 32px auto;
   font-size: 22px;
@@ -135,13 +146,16 @@ main {
   font-weight: 700;
   font-family: "Quicksand", serif;
 }
+
 .effects {
   display: flex;
   flex-direction: column;
 }
+
 .effect-title {
   font-family: "Merriweather", serif;
 }
+
 .container {
   width: 70%;
   margin: auto;
@@ -149,9 +163,11 @@ main {
   z-index: 2;
   justify-items: center;
 }
+
 em {
   color: black;
 }
+
 .effect-code {
   width: 50%;
   margin: auto;
@@ -159,22 +175,27 @@ em {
   font-size: 32px;
   padding: 30px;
 }
-.effect-code > a {
+
+.effect-code>a {
   color: crimson;
 }
+
 .icons {
   width: fit-content;
   display: flex;
   margin: auto;
   gap: 0.4rem;
 }
+
 .icons a:hover {
   transform: scale(1.2);
 }
+
 .icons a {
   transition: transform 0.2s ease-out;
   margin: 2px;
 }
+
 .icons img {
   width: 60px;
   height: 60px;
@@ -187,6 +208,7 @@ footer {
   font-size: min(5vw, 16px);
   font-family: "Quicksand", serif;
 }
+
 #footer-container {
   width: 70%;
   margin: auto;
@@ -196,6 +218,7 @@ footer {
   align-items: center;
   border-top: 2px solid white;
 }
+
 .social_icons {
   width: 200px;
   height: 60px;
@@ -203,14 +226,17 @@ footer {
   align-items: center;
   justify-content: space-around;
 }
+
 footer a .fa {
   color: white;
   font-size: 30px;
   border-radius: 50%;
 }
+
 footer .fa:not(.fa-copyright):hover {
   color: #000;
 }
+
 /* ###------------------------------ Effects -------------------------------------### */
 
 /* --------------------- // add your styles from here onwards // -------------------- */
@@ -320,6 +346,7 @@ footer .fa:not(.fa-copyright):hover {
   z-index: 1;
   overflow: hidden;
 }
+
 .card2 img {
   width: 140px;
   height: 140px;
@@ -327,11 +354,13 @@ footer .fa:not(.fa-copyright):hover {
   margin: 16px auto;
   box-shadow: 0px 68px 55px white;
 }
+
 @keyframes popup {
   100% {
     transform: translate(0, 220px);
   }
 }
+
 .card2::before {
   content: "";
   position: absolute;
@@ -342,13 +371,16 @@ footer .fa:not(.fa-copyright):hover {
   background-color: rgb(83, 53, 182);
   z-index: -1;
 }
+
 .card2:hover {
   color: orangered;
   transform: scale(0.9);
 }
+
 .card2:hover::before {
   animation: popup 1s 0.2s forwards;
 }
+
 .card2 h3 {
   font-size: 32px;
   font-weight: 800;
@@ -369,6 +401,7 @@ footer .fa:not(.fa-copyright):hover {
   box-shadow: 2px 3px 24px black;
   color: black;
 }
+
 .card__name {
   margin-top: 15px;
   font-size: 1.5em;
@@ -452,6 +485,7 @@ footer .fa:not(.fa-copyright):hover {
 .btn:focus {
   outline: 2px dotted #55d7dc;
 }
+
 /* -------------------------------  UI-4 css code --------------------------------- */
 
 .card4 {
@@ -476,6 +510,7 @@ footer .fa:not(.fa-copyright):hover {
   margin-bottom: 5px;
   font-size: 2rem;
 }
+
 .skill {
   color: rgb(194, 194, 196);
 }
@@ -486,6 +521,7 @@ footer .fa:not(.fa-copyright):hover {
   margin-top: 20px;
   border-radius: 50%;
 }
+
 .card4::before {
   content: "";
   background-color: rgba(233, 230, 227, 0.753);
@@ -495,11 +531,13 @@ footer .fa:not(.fa-copyright):hover {
   top: -50px;
   z-index: -1;
 }
+
 @keyframes slider {
   100% {
     transform: translateY(300px);
   }
 }
+
 .card4:hover::before {
   animation: slider 1s 0.3s alternate infinite;
 }
@@ -530,33 +568,41 @@ footer .fa:not(.fa-copyright):hover {
   margin-top: 13rem;
   box-shadow: 2px 3px 24px #3d3d3d;
 }
+
 .card5 .image {
   width: 100%;
   height: 100%;
   overflow: hidden;
 }
+
 .card5 .image img {
   width: 100%;
   transition: 0.5s;
 }
+
 .card5:hover .image img {
   opacity: 0.5;
-  transform: translateX(30%); /*100%*/
+  transform: translateX(30%);
+  /*100%*/
 }
+
 .card5 .details {
   position: absolute;
   top: 0;
   left: 0;
-  width: 70%; /*100%*/
+  width: 70%;
+  /*100%*/
   height: 100%;
   background: #b50404;
   transition: 0.5s;
   transform-origin: left;
   transform: perspective(2000px) rotateY(-90deg);
 }
+
 .card5:hover .details {
   transform: perspective(2000px) rotateY(0deg);
 }
+
 .card5 .details .center {
   padding: 20px;
   text-align: center;
@@ -565,6 +611,7 @@ footer .fa:not(.fa-copyright):hover {
   top: 50%;
   transform: translateY(-50%);
 }
+
 .card5 .details .center h1 {
   margin: 0;
   padding: 0;
@@ -573,25 +620,30 @@ footer .fa:not(.fa-copyright):hover {
   font-size: 20px;
   text-transform: uppercase;
 }
+
 .card5 .details .center h1 label {
   font-size: 14px;
   color: #262626 !important;
 }
+
 .card5 .details .center p {
   margin: 10px 0;
   padding: 0;
   color: #262626;
 }
+
 .card5 .details .center ul {
   margin: 10px auto 0;
   padding: 0;
   display: table;
 }
+
 .card5 .details .center ul li {
   list-style: none !important;
   margin: 0 5px !important;
   float: left !important;
 }
+
 .card5 .details .center ul li a {
   display: block !important;
   background: #262626 !important;
@@ -602,6 +654,7 @@ footer .fa:not(.fa-copyright):hover {
   text-align: center !important;
   transform: 0.5s !important;
 }
+
 .card5 .details .center ul li a:hover {
   background: #ff3636 !important;
 }
@@ -654,6 +707,7 @@ footer .fa:not(.fa-copyright):hover {
   box-shadow: 5px 5px 30px 15px rgba(0, 0, 0, 0.25),
     -5px -5px 30px 15px rgba(0, 0, 0, 0.22);
 }
+
 .handles {
   display: flex;
   justify-content: center;
@@ -667,6 +721,7 @@ footer .fa:not(.fa-copyright):hover {
 .title-black {
   color: black;
 }
+
 .container1 {
   height: 250px;
   width: 250px;
@@ -684,6 +739,7 @@ footer .fa:not(.fa-copyright):hover {
   border-radius: 5px;
   box-shadow: 0px 1px 35px 0px rgba(0, 0, 0, 0.3);
 }
+
 /* saikiran css start */
 .container1 .wrappers img {
   position: relative;
@@ -697,6 +753,7 @@ footer .fa:not(.fa-copyright):hover {
   margin: 20px auto;
   transition: all 0.3s ease;
 }
+
 .container1:hover .wrappers img.active {
   height: 470px;
   width: 350px;
@@ -704,6 +761,7 @@ footer .fa:not(.fa-copyright):hover {
   border: none;
   border-radius: 5px;
 }
+
 .wrappers .title {
   color: #fff;
   padding: 15px;
@@ -713,10 +771,12 @@ footer .fa:not(.fa-copyright):hover {
   padding-top: 55px;
   line-height: 25px;
 }
+
 .wrappers .title:hover,
 .title:active {
   color: rgb(238, 101, 15);
 }
+
 .wrappers .place {
   padding-bottom: 20px;
   padding-left: 115px;
@@ -726,20 +786,24 @@ footer .fa:not(.fa-copyright):hover {
   line-height: 0px;
   margin: 10px 0;
 }
+
 .content {
   color: #fff;
   font-size: 17px;
   margin-top: 10px;
   padding: 1px 20px 10px 20px;
 }
+
 .content .buttons {
   display: flex;
 }
+
 .buttons .btn {
   height: 65px;
   width: 1000px;
   margin: 0 5px;
 }
+
 .buttons .btn button {
   height: 110%;
   width: 150%;
@@ -752,6 +816,7 @@ footer .fa:not(.fa-copyright):hover {
   border-radius: 5px;
   transition: all 0.3s;
 }
+
 .btn button:hover {
   transform: scale(0.95);
   color: #fff;
@@ -764,9 +829,11 @@ footer .fa:not(.fa-copyright):hover {
   margin-left: 10px;
   list-style: none;
 }
+
 .container1.icons.active {
   display: none;
 }
+
 .container1 .icons li {
   height: 37px;
   width: 35px;
@@ -775,19 +842,24 @@ footer .fa:not(.fa-copyright):hover {
   margin-left: -100px;
   transition: all 0.5s ease;
 }
+
 .container1:hover .icons li {
   opacity: 1;
   margin-left: 7px;
 }
+
 .container1:hover .icons li:nth-child(2) {
   transition-delay: 0.2s;
 }
+
 .container1:hover .icons li:nth-child(3) {
   transition-delay: 0.3s;
 }
+
 .container1:hover .icons li:nth-child(4) {
   transition-delay: 0.4s;
 }
+
 .container1:hover .icons li:nth-child(5) {
   transition-delay: 0.4s;
 }
@@ -823,19 +895,23 @@ footer .fa:not(.fa-copyright):hover {
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.8), -3px -3px 10px rgba(0, 0, 0, 0.8);
   transition: 0.3s all ease;
 }
+
 .card8:hover {
   transform: scale(0.95);
   box-shadow: 7px 7px 15px rgba(0, 0, 0, 0.9), -6px -6px 15px rgba(0, 0, 0, 0.9);
 }
+
 .image-black {
   transition: 0.3s all ease;
   position: absolute;
   width: 100%;
   height: 100%;
 }
+
 .card8:hover .image-black {
   background-color: rgba(0, 0, 0, 0.5);
 }
+
 .side-media {
   transition: 0.3s all ease;
   position: absolute;
@@ -845,36 +921,46 @@ footer .fa:not(.fa-copyright):hover {
   width: 0;
   height: 100%;
 }
+
 .side-media li {
   transition: 0.3s all ease;
   margin-left: -100px;
   margin-bottom: 15px;
 }
+
 .side-media li a span:hover {
   transform: rotate(360deg);
 }
+
 .side-media li a span {
   color: #000;
   transition: 0.3s all ease;
 }
+
 .card8:hover .side-media {
   width: 70px;
 }
+
 .card8:hover .side-media li {
   margin-left: 0;
 }
+
 .card8:hover .side-media li:nth-child(1) {
   transition-delay: 0.1s;
 }
+
 .card8:hover .side-media li:nth-child(2) {
   transition-delay: 0.2s;
 }
+
 .card8:hover .side-media li:nth-child(3) {
   transition-delay: 0.3s;
 }
+
 .card8:hover .side-media li:nth-child(4) {
   transition-delay: 0.4s;
 }
+
 .card-content8 {
   background-color: #cdf0ea;
   width: 100%;
@@ -889,6 +975,7 @@ footer .fa:not(.fa-copyright):hover {
   height: 0;
   overflow: hidden;
 }
+
 .btn-follow8 {
   background-color: #e94560;
   letter-spacing: 0.6px;
@@ -897,9 +984,11 @@ footer .fa:not(.fa-copyright):hover {
   padding: 10px 22px;
   border-radius: 8px;
 }
+
 .btn-follow8 a {
   color: white;
 }
+
 .card8:hover .wrap-btn8 {
   height: 50px;
 }
@@ -908,7 +997,8 @@ footer .fa:not(.fa-copyright):hover {
 
 .wrapper9 .card9 {
   display: block;
-  position: relative; /* check */
+  position: relative;
+  /* check */
   margin: 50px auto;
   height: 300px;
   width: 300px;
@@ -920,19 +1010,23 @@ footer .fa:not(.fa-copyright):hover {
     -6px -6px 13px 0px rgba(0, 0, 0, 0.4);
   transition: 0.45s cubic-bezier(0, 0, 0.56, 2.58);
 }
+
 .wrapper9 .card9:hover {
   transform: scale(0.9);
   animation: gradient 1.5s infinite linear;
   border-radius: 25px;
 }
+
 @keyframes gradient {
   0% {
     background-position: 0% 0%;
   }
+
   100% {
     background-position: 100% 0%;
   }
 }
+
 .wrapper9 .card9 .contents {
   width: inherit;
   position: absolute;
@@ -940,16 +1034,19 @@ footer .fa:not(.fa-copyright):hover {
   flex-direction: column;
   justify-content: center;
 }
+
 .wrapper9 .card9 .contents .gh-avatar {
   padding-top: 10px;
   text-align: center;
   border-radius: 40%;
 }
+
 .wrapper9 .card9 .contents .gh-avatar img {
   border-radius: 40%;
   width: 70px;
   height: 70px;
 }
+
 .wrapper9 .card9 .contents .details {
   padding-top: 130px;
   padding-bottom: 20px;
@@ -962,9 +1059,11 @@ footer .fa:not(.fa-copyright):hover {
   gap: 3px;
   transition: 0.4s ease-out;
 }
+
 .wrapper9 .card9:hover .contents .details {
   padding-top: 20px;
 }
+
 .wrapper9 .card9 .contents .details p {
   background-color: rgba(240, 248, 255, 0.548);
   border: 2px solid #1180a280;
@@ -975,12 +1074,14 @@ footer .fa:not(.fa-copyright):hover {
   font-weight: bold;
   transition: all 0.4s ease-out;
 }
+
 .wrapper9 .card9 .contents .details p.skill {
   font-size: 19px;
   font-weight: normal;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
+
 .wrapper9 .card9 .contents .details p.uname {
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
@@ -989,6 +1090,7 @@ footer .fa:not(.fa-copyright):hover {
 .wrapper9 .card9:hover .contents .details p:hover {
   box-shadow: 1px 1px 12px rgba(0, 0, 0, 0.3), -1px -1px 12px rgba(0, 0, 0, 0.3);
 }
+
 .wrapper9 .card9 .contents .strip {
   margin-top: 10px;
   position: relative;
@@ -996,50 +1098,57 @@ footer .fa:not(.fa-copyright):hover {
   background-color: rgba(240, 248, 255, 0.4);
   transition: all 0.4s ease-out;
 }
+
 .wrapper9 .card9:hover .contents .strip {
   margin-top: 60px;
   box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.5),
     -1px -1px 5px rgba(0, 0, 0, 0.5);
 }
+
 .wrapper9 .card9 .contents .reach-out {
   display: flex;
   flex-direction: row;
   gap: 3px;
   justify-content: center;
 }
+
 .wrapper9 .card9 .contents .reach-out span {
   color: black;
   height: 40px;
   width: 40px;
 }
+
 .wrapper9 .card9 .contents .reach-out a {
   margin-top: 300px;
   transition: all 0.4s ease-out;
 }
+
 .wrapper9 .card9:hover .contents .reach-out a {
   transition-delay: 0.2s;
 }
+
 .wrapper9 .card9:hover .contents .reach-out a {
   margin-top: 10px;
 }
+
 .wrapper9 .card9:hover .contents .reach-out a:nth-child(1) {
   transition-delay: 0.1s;
 }
+
 .wrapper9 .card9:hover .contents .reach-out a:nth-child(2) {
   transition-delay: 0.2s;
 }
+
 .wrapper9 .card9:hover .contents .reach-out a:nth-child(3) {
   transition-delay: 0.3s;
 }
-
- master
-
 
 /* -------------------------------  UI-10 css code --------------------------------- */
 .container10 {
   display: flex;
   justify-content: center;
 }
+
 .card10 {
   position: relative;
   display: flex;
@@ -1049,9 +1158,10 @@ footer .fa:not(.fa-copyright):hover {
   border-radius: 30px;
   overflow: hidden;
   transition: box-shadow 300ms ease-in-out;
+  max-width: 400px;
 }
 
-.card10 > img {
+.card10>img {
   z-index: 1;
   transform-origin: bottom;
   transition: scale 300ms ease-in-out;
@@ -1070,7 +1180,7 @@ footer .fa:not(.fa-copyright):hover {
   transition: scale 300ms ease-in-out;
 }
 
-.card10:hover .circle  {
+.card10:hover .circle {
   scale: 2.5;
 }
 
@@ -1119,78 +1229,86 @@ footer .fa:not(.fa-copyright):hover {
 
 
 /* -------------------------------  UI-11 css code --------------------------------- */
-.card11 .imagebox{
+.card11 .imagebox {
   position: relative;
   height: 100%;
   width: 100%;
   transform: translateY(-80px);
   z-index: 10;
 }
- .card11{
+
+.card11 {
   background: rgba(224, 224, 224, 0.2);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   border: 1px solid rgba(224, 224, 224, 0.3);
-  background: linear-gradient(45deg, rgba(224, 224, 224, 0.2),rgba(224, 224, 224, 0.2));
+  background: linear-gradient(45deg, rgba(224, 224, 224, 0.2), rgba(224, 224, 224, 0.2));
   width: 280px;
   height: 180px;
   margin: 0px auto;
-  position:relative;
+  position: relative;
   border-radius: 10px;
   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.5);
   transition: 0.3s;
-  padding:  30px 50px;
+  padding: 30px 50px;
   cursor: pointer;
-} 
-
-.card11:hover{
- height: 320px; 
- /* From https://css.glass */
-background: rgba(255, 255, 255, 0.2);
-border-radius: 16px;
-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-backdrop-filter: blur(5px);
--webkit-backdrop-filter: blur(5px);
-border: 1px solid rgba(255, 255, 255, 0.3);
 }
-.card11 img{
+
+.card11:hover {
+  height: 320px;
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.card11 img {
   width: 100%;
   border-radius: 10px;
   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.5);
-  
+
 }
-.card11 .content{
+
+.card11 .content {
   padding: 20px 20px;
   text-align: center;
   transform: translateY(-500px);
   opacity: 0;
   transform: 0.3s;
 }
-.card11 .content #desc{
-  width: 250px!important;
+
+.card11 .content #desc {
+  width: 250px !important;
   position: relative;
-  right:55px;
+  right: 55px;
   top: 40px;
 }
-.content .social-handle11{
+
+.content .social-handle11 {
   position: relative;
   right: 10px;
   top: 10px;
-  margin-top: 50px!important;
+  margin-top: 50px !important;
 }
-.content .handles-icon{
-  width: 30px!important;
-  height: 30px!important;
+
+.content .handles-icon {
+  width: 30px !important;
+  height: 30px !important;
   margin-left: 6px;
   margin-right: 6px;
 }
-.card11:hover > .content{
+
+.card11:hover>.content {
   transform: translateY(-240px);
   opacity: 1;
 }
-.card11 .content h2{
+
+.card11 .content h2 {
   font-family: 'Roboto', sans-serif;
   color: #040404;
   width: 200px;
@@ -1199,51 +1317,60 @@ border: 1px solid rgba(255, 255, 255, 0.3);
   top: 15px;
   font-size: 29px;
 }
-.card11 .content h3{
+
+.card11 .content h3 {
   font-family: 'Sansita', sans-serif;
   color: rgb(27, 29, 58);
-  font-size: 23px!important;
+  font-size: 23px !important;
 
 }
-.card11 .content i{
+
+.card11 .content i {
   padding: 10px;
 }
-.card11 .content i:hover{
+
+.card11 .content i:hover {
   transform: translateY(10px);
   transition: 0.4s;
   color: #000;
 }
 
- master
 /* ----------------------------------------->>>>>> Break Points <<<<<<<<---------------------------------------- */
 /* ------------------------------------------------------------------------------------------------------------- */
 
 @media screen and (max-width: 500px) {
+
   header {
     padding: 8px;
   }
-  header > h3,
-  footer > h2 {
+
+  header>h3,
+  footer>h2 {
     font-size: 22px;
   }
-  header > ul {
+
+  header>ul {
     margin-right: 20px;
   }
+
   ul li {
     margin: auto 10px;
     font-size: 18px;
     font-weight: 700;
   }
+
   main,
   .container {
     width: 100%;
   }
-  #about > p,
-  #contribute > p {
+
+  #about>p,
+  #contribute>p {
     width: 80%;
     margin: 28px auto;
     font-size: 20px;
   }
+
   .container {
     width: 100%;
     margin: 0px;
@@ -1251,6 +1378,7 @@ border: 1px solid rgba(255, 255, 255, 0.3);
     z-index: 2;
     justify-items: center;
   }
+
   .wrapper1,
   .wrapper2,
   .wrapper3,
@@ -1259,11 +1387,13 @@ border: 1px solid rgba(255, 255, 255, 0.3);
     margin: 12px;
     padding: 20px;
   }
+
   .effect-code {
     width: 100%;
     font-size: 28px;
     padding: 30px;
   }
+
   #footer-container {
     width: 100%;
   }
@@ -1281,6 +1411,7 @@ border: 1px solid rgba(255, 255, 255, 0.3);
     font-size: 12px;
     font-weight: 600;
   }
+
   .wrapper1,
   .wrapper2,
   .wrapper3 {
@@ -1288,24 +1419,30 @@ border: 1px solid rgba(255, 255, 255, 0.3);
     margin: 6px;
     padding: 12px;
   }
-  #contribute > h2 {
+
+  #contribute>h2 {
     font-size: 20px;
   }
-  footer > h2 {
+
+  footer>h2 {
     font-size: 12px;
   }
-  #contribute > p {
+
+  #contribute>p {
     font-size: 12px;
   }
+
   footer {
     font-size: 12px;
   }
+
   /* ////////////////// break-point code for ui-2 card  ///////////////////// */
   .card2 {
     width: 200px;
     height: 220px;
     margin: 20px auto;
   }
+
   .card2 img {
     width: 100px;
     height: 100px;
@@ -1313,30 +1450,36 @@ border: 1px solid rgba(255, 255, 255, 0.3);
     margin: 12px auto;
     box-shadow: 0px 58px 45px white;
   }
+
   @keyframes popup {
     100% {
       transform: translate(0, 160px);
     }
   }
+
   .card2::before {
     bottom: 150px;
     min-width: 220px;
     min-height: 240px;
   }
+
   .card2 h3 {
     font-size: 22px;
     font-weight: 700;
   }
+
   /* ////////////////// break-point code for ui-3 card  ///////////////////// */
 
   .card3 {
     width: 200px;
     height: 380px;
   }
+
   .card__name {
     margin-top: 15px;
     font-size: 1em;
   }
+
   .btn {
     line-height: 1;
     margin: 0.5em;
@@ -1349,6 +1492,7 @@ border: 1px solid rgba(255, 255, 255, 0.3);
     width: 180px;
     height: 250px;
   }
+
   .user_name {
     font-size: 1rem;
     margin: 14px auto;
@@ -1359,6 +1503,7 @@ border: 1px solid rgba(255, 255, 255, 0.3);
     height: 70px;
     margin-bottom: 12px;
   }
+
   .icons a {
     font-size: 24px;
     margin-left: 3px;
@@ -1370,4 +1515,3 @@ border: 1px solid rgba(255, 255, 255, 0.3);
     height: 350px;
   }
 }
-
