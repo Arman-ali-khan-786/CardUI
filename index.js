@@ -37,3 +37,13 @@ darkModeBtn.addEventListener('click', () => {
               this.classList.toggle("active");
               icons.classList.toggle("active");}
 
+              // ---------------------------------- Ui-12 Js code -------------------------------------
+
+function addClass(){
+    document.querySelector(".card12 img").classList.add("new");
+    document.querySelector(".card12 img").classList.remove("old");
+}
+function removeClass(){
+    document.querySelector(".card12 img").classList.add("old");
+    document.querySelector(".card12 img").classList.remove("new");
+}
