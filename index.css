@@ -1442,6 +1442,85 @@ footer .fa:not(.fa-copyright):hover {
   background-color: var(--clr-neutral-400);
 }
 
+/* -------------------------------  UI-13 css code --------------------------------- */
+
+.border{
+  height: 369px;
+  width: 290px;
+  background: transparent;
+  border-radius: 10px;
+  transition: border 1s;
+  position: relative;
+}
+
+  .border:hover{
+    border: 1px solid white;
+  }
+
+.card{
+  height: 379px;
+  width: 300px;
+  background: grey;
+  border-radius: 10px;
+  transition: background 0.8s;
+  overflow: hidden;
+  background: black;
+  box-shadow: 0 70px 63px -60px #000000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.card0{
+  background: url('https://i.pinimg.com/736x/8f/a0/51/8fa051251f5ac2d0b756027089fbffde--terry-o-neill-al-pacino.jpg') center center no-repeat;
+  background-size: 300px;
+}
+
+  .card0:hover{
+    background: url('https://i.pinimg.com/736x/8f/a0/51/8fa051251f5ac2d0b756027089fbffde--terry-o-neill-al-pacino.jpg') left center no-repeat;
+    background-size: 600px;
+  }
+
+.n{
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: white;
+  margin: 20px;
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.fa{
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.card0:hover .fa { 
+  opacity: 1;
+}
+.card0:hover .n { 
+  opacity: 1;
+}
+
+.icons{
+  position: absolute;
+  fill: #fff;
+  color: #fff;
+  height: 130px;
+  top: 226px;
+  width: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+a i{
+  fill: #fff;
+  color: #fff;
+}
+
+
 /* ----------------------------------------->>>>>> Break Points <<<<<<<<---------------------------------------- */
 /* ------------------------------------------------------------------------------------------------------------- */
 
