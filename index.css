@@ -249,7 +249,8 @@ footer .fa:not(.fa-copyright):hover {
 .wrapper6,
 .wrapper7,
 .wrapper8,
-.wrapper9 {
+.wrapper9,
+.wrapper13 {
   /* add your wrapper class here*/
   margin: 12px;
   padding: 30px;
@@ -1622,3 +1623,116 @@ footer .fa:not(.fa-copyright):hover {
     height: 350px;
   }
 }
+/* ----------------------------------  UI-13 css code ------------------------------------ */
+
+.card13 {
+  display: grid;
+  place-content: center;
+  margin-top: 2rem;     
+  position: relative;
+  width: 100%;
+  font-family: 'Roboto';
+}
+
+.card13 .card13-box {
+  position: relative;
+  width: 350px;
+  height: 400px;
+  background-image: linear-gradient(9deg, #fd6494,  #43e7ad, #9572fc);   
+  border-radius: 20px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  -webkit-box-shadow:0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  overflow: hidden;   
+}
+
+.card13 .card13-box .card13-badger  {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fd6494;
+  transition: all 0.5s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;  
+  transition-delay: 0.25s; 
+  
+}
+
+.card13 .card13-box:hover .card13-badger {
+  top: 40px;
+  left: calc(50% - 50px);
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  transition-delay: 0s;  
+  transition: all 0.5s ease-in-out;
+}
+
+.card13 .card13-box .card13-badger  {
+  font-size: 5rem;
+  color: #f2ddf8; 
+ transition: all 0.2s ease-in-out;
+  transition-delay: 0.25s;   
+    
+}
+
+.card13 .card13-box:hover .card13-badger  {
+  font-size:2em;
+  transition-delay: 0s;   
+}
+
+.card13 .card13-box .content {
+ font-weight: 300;
+  line-height: 1.5em;
+  color: #f2ddf8; 
+  margin-top: 200px;;  
+  padding: 50px;
+  position: relative;
+  text-align: center;
+  transform: scale(0);
+  transition: 0.5s;
+  transition-delay: 0s;   
+  z-index: 1;
+}
+
+.card13 .card13-box:hover .content {
+  transform: scale(1);
+  transition: transform 0.5s ease-in-out;
+}
+
+.card13 .card13-box .content h2 {
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.card13 .card13-box:hover .content .card13-icons {
+  display: flex;
+  font-size: 2rem;
+  gap: 1.5rem;
+  margin-top: 1rem;
+  opacity:1;
+  
+}
+
+.card13-icons li > a {
+color: #f2ddf8; 
+background: none;
+transform: scale(1); 
+transition: color 0.2s ease-in-out;
+padding: 8px;
+}
+
+.card13-icons li > a:hover {
+color:#9c8288;
+transform: scale(1); 
+background: none;
+transition: color 0.2s ease-in-out;
+border-radius: 0;
+}
+
+
+
+/* ----------------------------------  End for UI-13 css code ------------------------------------ */
