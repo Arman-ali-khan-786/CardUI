@@ -17,6 +17,7 @@ body {
   display: flex;
   flex-direction: column;
   background: linear-gradient(225deg, #1180a2, rgba(13, 203, 245, 0.75) 100%) no-repeat;
+  overflow-x: hidden;
 }
 
 /* Gradient Scroll Bar */
@@ -202,40 +203,74 @@ em {
 }
 
 /* ###------------------------------ footer design -------------------------------------### */
-footer {
-  background-color: #087c8b;
-  color: white;
-  font-size: min(5vw, 16px);
-  font-family: "Quicksand", serif;
-}
 
-#footer-container {
-  width: 70%;
-  margin: auto;
-  padding: 5px 20px;
+footer{
+  width: 100vw;
+  background-color: rgb(84, 38, 38);
+  color: white;
+  position: absolute;
+  left: 0;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  border-top: 2px solid white;
+  border-top: 3px solid white;
+  overflow-y: hidden;
 }
 
-.social_icons {
-  width: 200px;
-  height: 60px;
+.left-footer{
+  margin: 0 2em;
+  text-align: center;
+  line-height: 1.25em;
+  translate: 0 10px;
+}
+
+.right-footer{
+  margin: 0 3em;
   display: flex;
-  align-items: center;
-  justify-content: space-around;
+  flex-direction: row;
 }
 
-footer a .fa {
-  color: white;
-  font-size: 30px;
+.fa-copyright{
+  margin-bottom: 10px;
+}
+.fa:not(.fa-copyright){
+  margin: 10px;
+  color: black;
+  scale: 0.8;
+  transition: 1s;
+  z-index: 3;
+}
+.social-container{
+  background-color: white;
   border-radius: 50%;
+  display: block;
+  margin: 1em;
+  border: 2px solid white;
+  overflow: hidden;
+  z-index: 1;
+  transition: 1s ease-in;
+}
+.social-container:hover .fa{
+  color: white;
+  rotate: 360deg;
 }
 
-footer .fa:not(.fa-copyright):hover {
-  color: #000;
+.social-container:hover{
+  top: 0;
+  background-color: red;
 }
+.social-container:nth-child(1):hover{
+  background-color: #e1306c;
+}
+.social-container:nth-child(2):hover{
+  background-color: #0088CC;
+}
+.social-container:nth-child(3):hover{
+  background-color: #0e76a8;
+}
+.social-container:nth-child(4):hover{
+  background-color: #000000;
+}
+
 
 /* ###------------------------------ Effects -------------------------------------### */
 
