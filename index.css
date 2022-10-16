@@ -1736,3 +1736,151 @@ border-radius: 0;
 
 
 /* ----------------------------------  End for UI-13 css code ------------------------------------ */
+
+/*---------------------------------- starting of UI-14 css code -----------------------------------*/
+
+
+:root {
+  --d: 700ms;
+  --e: cubic-bezier(0.19, 1, 0.22, 1);
+}
+.page-content {
+  display: flex;
+  flex-wrap: wrap;
+  grid-gap: 1.3vw;
+  padding: 1vw;
+  justify-content: left;
+  /* width: 100vw; */
+  max-width: 1024px;
+  margin: 0 auto;
+}
+@media (min-width: 600px) {
+  .page-content {
+    grid-template-columns: repeat(2, 1fr);
+ }
+}
+@media (min-width: 800px) {
+  .page-content {
+    grid-template-columns: repeat(4, 1fr);
+ }
+}
+.card14 {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  padding: 1vw;
+  margin:2vw auto;
+  width: 18vw;
+  height: 25vw !important;
+  border-radius: 1vw;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 2px 2px rgba(0, 0, 0, 0.1), 0 4px 4px rgba(0, 0, 0, 0.1), 0 8px 8px rgba(0, 0, 0, 0.1), 0 16px 16px rgba(0, 0, 0, 0.1);
+}
+@media (min-width: 600px) {
+  .card14 {
+    height: 350px;
+ }
+}
+.card14:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 110%;
+  background-size: cover;
+  background-position: 0 0;
+  transition: transform calc(var(--d) * 1.5) var(--e);
+  pointer-events: none;
+}
+.card14:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200%;
+  pointer-events: none;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.009) 11.7%, rgba(0, 0, 0, 0.034) 22.1%, rgba(0, 0, 0, 0.072) 31.2%, rgba(0, 0, 0, 0.123) 39.4%, rgba(0, 0, 0, 0.182) 46.6%, rgba(0, 0, 0, 0.249) 53.1%, rgba(0, 0, 0, 0.320) 58.9%, rgba(0, 0, 0, 0.394) 64.3%, rgba(0, 0, 0, 0.468) 69.3%, rgba(0, 0, 0, 0.540) 74.1%, rgba(0, 0, 0, 0.607) 78.8%, rgba(0, 0, 0, 0.668) 83.6%, rgba(0, 0, 0, 0.721) 88.7%, rgba(0, 0, 0, 0.762) 94.1%, rgba(0, 0, 0, 0.790) 100%);
+  transform: translateY(-50%);
+  transition: transform calc(var(--d) * 2) var(--e);
+}
+.card14:before {
+  background-image: url(https://image.winudf.com/v2/image1/Y29tLmZyZXNoZW52aXJvbm1lbnQuY29vbHdhbGxwYXBlcnNoZF9zY3JlZW5fMF8xNTk4OTcwMDU3XzA3MQ/screen-0.jpg?fakeurl=1&type=.webp);
+}
+.content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 1vw;
+  transition: transform var(--d) var(--e);
+  z-index: 1;
+}
+
+.MyName14 {
+  font-size: 1.3vw;
+  font-weight: bold;
+  line-height: 1.2;
+}
+.Info14 {
+  margin: 2vw;
+  font-size: 1.125vw;
+  font-style: italic;
+  line-height: 1.35;
+  color: #fcfffa;
+}
+.connent{
+ display: flex;
+}
+.bttn {
+  cursor: pointer;
+  margin: 1.3vw 0.3vw;
+  filter: grayscale(1);
+  border: none;
+}
+.bttn:hover {
+  filter: grayscale(0);
+  transition: all 0.5s;
+}
+
+@media (hover: hover) and (min-width: 600px) {
+  .card14:after {
+    transform: translateY(0);
+ }
+  .content {
+    transform: translateY(calc(100% - 4.5rem));
+ }
+  .content > *:not(.MyName14) {
+    opacity: 0;
+    transform: translateY(1rem);
+    transition: transform var(--d) var(--e), opacity var(--d) var(--e);
+ }
+  .card14:hover, .card14:focus-within {
+    align-items: center;
+ }
+  .card14:hover:before, .card14:focus-within:before {
+    transform: translateY(-4%);
+    filter: blur(8px);
+    transition: all 0.7s;
+ }
+  .card14:hover:after, .card14:focus-within:after {
+    transform: translateY(-50%);
+ }
+  .card14:hover .content, .card14:focus-within .content {
+    transform: translateY(0);
+ }
+  .card14:hover .content > *:not(.MyName14), .card14:focus-within .content > *:not(.MyName14) {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: calc(var(--d) / 8);
+ }
+  .card14:focus-within:before, .card14:focus-within:after, .card14:focus-within .content, .card14:focus-within .content > *:not(.MyName14) {
+    transition-duration: 0s;
+ }
+}
+
