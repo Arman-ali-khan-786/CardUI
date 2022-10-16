@@ -250,7 +250,8 @@ footer .fa:not(.fa-copyright):hover {
 .wrapper7,
 .wrapper8,
 .wrapper9,
-.wrapper13 {
+.wrapper13,
+.wrapper14 {
   /* add your wrapper class here*/
   margin: 12px;
   padding: 30px;
@@ -669,7 +670,7 @@ footer .fa:not(.fa-copyright):hover {
   flex-wrap: wrap;
 }
 
-.card {
+.wrapper6 .card {
   margin: 30px auto;
   width: 300px;
   height: 300px;
@@ -703,7 +704,7 @@ footer .fa:not(.fa-copyright):hover {
   height: 40px;
 }
 
-.card:hover {
+.wrapper6 .card:hover {
   transform: scale(0.9, 0.9);
   box-shadow: 5px 5px 30px 15px rgba(0, 0, 0, 0.25),
     -5px -5px 30px 15px rgba(0, 0, 0, 0.22);
@@ -1736,3 +1737,131 @@ border-radius: 0;
 
 
 /* ----------------------------------  End for UI-13 css code ------------------------------------ */
+
+/* ----------------------------------  UI-14 css code ------------------------------------ */
+.card14 .container {
+  width: fit-content;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card14 .container .card {
+  position: relative;
+  border-radius: 10px;
+}
+
+.card14 .container .card .icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #f00;
+  transition: 0.7s;
+  z-index: 1;
+  box-shadow: 0 -5px 15px rgba(57, 57, 57, 0.8);
+}
+
+.card14 .container .card:nth-child(1) .icon {
+  background: #e07768;
+}
+
+.card14 .container .card .icon .fa {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 80px;
+  transition: 0.7s;
+  color: #fff;
+}
+
+.card14 i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 80px;
+  transition: 0.7s;
+  color: #fff;
+}
+
+.card14 .container .card .face {
+  width: 300px;
+  height: 200px;
+  transition: 0.5s;
+}
+
+.card14 .container .card .face.face1 {
+  position: relative;
+  background: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  transform: translateY(100px);
+}
+
+.card14 .container .card:hover .face.face1 {
+  background: #ff0057;
+  transform: translateY(0px);
+}
+
+.card14 .container .card .face.face1 .content {
+  opacity: 1;
+  transition: 0.5s;
+}
+
+.card14 .container .card:hover .face.face1 .content {
+  opacity: 1;
+}
+
+.card14 .container .card .face.face1 .content i {
+  max-width: 100px;
+}
+
+.card14 .container .card .face.face2 {
+  position: relative;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+  box-shadow: 0 5px 15px rgba(57, 57, 57, 0.8);
+  transform: translateY(-100px);
+}
+
+.card14 .container .card:hover .face.face2 {
+  transform: translateY(0);
+}
+
+.card14 .container .card .face.face2 .content p {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  color: #414141;
+}
+
+.card14 .container .card .face.face2 .content h3 {
+  margin: 0 0 10px 0;
+  padding: 0;
+  color: #fff;
+  font-size: 24px;
+  text-align: center;
+  color: #414141;
+}
+
+.card14 .container a {
+  text-decoration: none;
+  color: #414141;
+}
+
+.card14 #nme:hover  {
+  font-weight: bold;
+  text-decoration: underline;
+  color: #0338f8;
+}
+
+/* ----------------------------------  End for UI-14 css code ------------------------------------ */
