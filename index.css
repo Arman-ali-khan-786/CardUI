@@ -204,8 +204,10 @@ em {
   height: 60px;
 }
 
-/* ###------------------------------ footer design -------------------------------------### */
-footer {
+
+/* ###------------------------------ main page footer design -------------------------------------### */
+
+#footer {
   background-color: #087c8b;
   color: white;
   font-size: min(5vw, 16px);
@@ -215,29 +217,74 @@ footer {
 #footer-container {
   width: 70%;
   margin: auto;
-  padding: 5px 20px;
+  padding: 5px 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-top: 2px solid white;
 }
+.left-footer{
+  display: flex;
+  flex-direction: column;
+}
 
 .social_icons {
-  width: 200px;
-  height: 60px;
+  margin: 5px;
   display: flex;
-  align-items: center;
-  justify-content: space-around;
+  flex-direction: row;
 }
-
-footer a .fa {
-  color: white;
-  font-size: 30px;
+.fa-copyright{
+  margin-bottom: 10px;
+}
+.main_social{
+  margin: 10px;
+  color: black;
+  scale: 0.8;
+  transition: 1s;
+  z-index: 3;
+}
+.social-container{
+  background-color: white;
   border-radius: 50%;
+  display: block;
+  margin: 1em;
+  border: 2px solid white;
+  overflow: hidden;
+  z-index: 1;
+  transition: 1s ease-in;
+}
+.social-container:hover .main_social{
+  color: white;
+  rotate: 360deg;
 }
 
-footer .fa:not(.fa-copyright):hover {
-  color: #000;
+.social-container:hover{
+  top: 0;
+}
+.social-container:nth-child(1):hover{
+  background-color: #e1306c;
+}
+.social-container:nth-child(2):hover{
+  background-color: #0088CC;
+}
+.social-container:nth-child(3):hover{
+  background-color: #0e76a8;
+}
+.social-container:nth-child(4):hover{
+  background-color: #000000;
+}
+
+@media (max-width:890px) {
+  .social_icons{
+    scale: 0.7;
+    translate: -12%;
+  }
+}
+@media (max-width:620px) {
+  .social_icons{
+    scale: 0.5;
+    translate: -15%;
+  }
 }
 
 /* ###------------------------------ Effects -------------------------------------### */
