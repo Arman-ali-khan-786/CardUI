@@ -16,7 +16,8 @@
 body {
   display: flex;
   flex-direction: column;
-  background: linear-gradient(225deg, #1180a2, rgba(13, 203, 245, 0.75) 100%) no-repeat;
+  background: linear-gradient(225deg, #1180a2, rgba(13, 203, 245, 0.75) 100%)
+    no-repeat;
 }
 
 /* Gradient Scroll Bar */
@@ -34,9 +35,11 @@ body {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(rgb(134, 239, 172),
-      rgb(59, 130, 246),
-      rgb(147, 51, 234));
+  background: linear-gradient(
+    rgb(134, 239, 172),
+    rgb(59, 130, 246),
+    rgb(147, 51, 234)
+  );
 }
 
 header {
@@ -52,7 +55,7 @@ header {
   top: 0;
 }
 
-header>h3 a {
+header > h3 a {
   font-size: 30px;
   color: beige;
   font-family: "Merriweather", serif;
@@ -65,7 +68,7 @@ span {
   letter-spacing: 3px;
 }
 
-header>ul {
+header > ul {
   display: flex;
   /* margin-right: 22px; */
 }
@@ -121,24 +124,24 @@ main {
   text-align: center;
 }
 
-#about>h2,
-#contribute>h2 {
+#about > h2,
+#contribute > h2 {
   font-size: 44px;
   font-family: "Quicksand", serif;
 }
 
-#about>img {
+#about > img {
   margin: 30px auto;
   width: 80%;
   height: 400px;
 }
 
-#contribute>h2 {
+#contribute > h2 {
   color: red;
 }
 
-#about>p,
-#contribute>p {
+#about > p,
+#contribute > p {
   width: 60%;
   margin: 32px auto;
   font-size: 22px;
@@ -176,7 +179,7 @@ em {
   padding: 30px;
 }
 
-.effect-code>a {
+.effect-code > a {
   color: crimson;
 }
 
@@ -212,75 +215,29 @@ footer {
 #footer-container {
   width: 70%;
   margin: auto;
-  padding: 5px 10px;
+  padding: 5px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-top: 2px solid white;
 }
-.left-footer{
-  display: flex;
-  flex-direction: column;
-}
 
 .social_icons {
-  margin: 5px;
+  width: 200px;
+  height: 60px;
   display: flex;
-  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
 }
-.fa-copyright{
-  margin-bottom: 10px;
-}
-.fa:not(.fa-copyright){
-  margin: 10px;
-  color: black;
-  scale: 0.8;
-  transition: 1s;
-  z-index: 3;
-}
-.social-container{
-  background-color: white;
-  border-radius: 50%;
-  display: block;
-  margin: 1em;
-  border: 2px solid white;
-  overflow: hidden;
-  z-index: 1;
-  transition: 1s ease-in;
-}
-.social-container:hover .fa{
+
+footer a .fa {
   color: white;
-  rotate: 360deg;
+  font-size: 30px;
+  border-radius: 50%;
 }
 
-.social-container:hover{
-  top: 0;
-  background-color: red;
-}
-.social-container:nth-child(1):hover{
-  background-color: #e1306c;
-}
-.social-container:nth-child(2):hover{
-  background-color: #0088CC;
-}
-.social-container:nth-child(3):hover{
-  background-color: #0e76a8;
-}
-.social-container:nth-child(4):hover{
-  background-color: #000000;
-}
-
-@media (max-width:890px) {
-  .social_icons{
-    scale: 0.7;
-    translate: -12%;
-  }
-}
-@media (max-width:620px) {
-  .social_icons{
-    scale: 0.5;
-    translate: -15%;
-  }
+footer .fa:not(.fa-copyright):hover {
+  color: #000;
 }
 
 /* ###------------------------------ Effects -------------------------------------### */
@@ -1209,7 +1166,7 @@ footer {
   max-width: 400px;
 }
 
-.card10>img {
+.card10 > img {
   z-index: 1;
   transform-origin: bottom;
   transition: scale 300ms ease-in-out;
@@ -1246,7 +1203,7 @@ footer {
 }
 
 .detailz {
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -1275,7 +1232,6 @@ footer {
   color: #1f2937;
 }
 
-
 /* -------------------------------  UI-11 css code --------------------------------- */
 .card11 .imagebox {
   position: relative;
@@ -1292,7 +1248,11 @@ footer {
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   border: 1px solid rgba(224, 224, 224, 0.3);
-  background: linear-gradient(45deg, rgba(224, 224, 224, 0.2), rgba(224, 224, 224, 0.2));
+  background: linear-gradient(
+    45deg,
+    rgba(224, 224, 224, 0.2),
+    rgba(224, 224, 224, 0.2)
+  );
   width: 280px;
   height: 180px;
   margin: 0px auto;
@@ -1319,7 +1279,6 @@ footer {
   width: 100%;
   border-radius: 10px;
   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.5);
-
 }
 
 .card11 .content {
@@ -1351,13 +1310,13 @@ footer {
   margin-right: 6px;
 }
 
-.card11:hover>.content {
+.card11:hover > .content {
   transform: translateY(-240px);
   opacity: 1;
 }
 
 .card11 .content h2 {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   color: #040404;
   width: 200px;
   position: relative;
@@ -1367,10 +1326,9 @@ footer {
 }
 
 .card11 .content h3 {
-  font-family: 'Sansita', sans-serif;
+  font-family: "Sansita", sans-serif;
   color: rgb(27, 29, 58);
   font-size: 23px !important;
-
 }
 
 .card11 .content i {
@@ -1385,15 +1343,15 @@ footer {
 }
 /* ----------------------------card-12 css------------------------------------------ */
 /* -------------------------------  UI-12 css code --------------------------------- */
-:root{
-  --clr-neutral-900: hsl(207,19%,9%);
-  --clr-neutral-100: hsl(0,0%,100%);
+:root {
+  --clr-neutral-900: hsl(207, 19%, 9%);
+  --clr-neutral-100: hsl(0, 0%, 100%);
   --clr-accent-400: rgb(239, 251, 14);
 }
 
 *,
 *::before,
-*::after{
+*::after {
   box-sizing: border-box;
 }
 /* body{
@@ -1405,45 +1363,44 @@ footer {
   font-family: sans-serif;
   padding-right: 0em;
 } */
-.card12{
+.card12 {
   color: var(--clr-neutral-100);
   background-image: url("assets/pexels-pixabay-356056.jpg");
   background-size: cover;
   padding: 10rem 0 0;
   margin: auto;
-  max-width: 35ch;   
+  max-width: 35ch;
   border-radius: 0.5rem;
   overflow: hidden;
   transition: transform 500ms ease;
-  
 }
 .card12:hover,
 .card12:focus-within {
   transform: scale(1.05);
 }
-.card-content{
+.card-content {
   --padding: 1.5rem;
   padding: var(--padding);
   background: linear-gradient(
-      hsl(0 0% 0% / 0),
-      hsl(20 0% 0% / 0.3) 20%,
-      hsl(0 0% 0% / 1)
+    hsl(0 0% 0% / 0),
+    hsl(20 0% 0% / 0.3) 20%,
+    hsl(0 0% 0% / 1)
   );
   transform: translateY(65%);
   transition: transform 500ms ease;
 }
-.card-content .social-handle-12{
+.card-content .social-handle-12 {
   display: flex;
   align-items: center;
   right: 10px;
   top: 10px;
   margin-top: 50px !important;
 }
-.card12:hover .card-content{
+.card12:hover .card-content {
   transform: translateY(0);
   transition-delay: 500ms;
 }
-.card-content > *:not(.card-title){
+.card-content > *:not(.card-title) {
   opacity: 0;
   transition: opacity 500ms linear;
 }
@@ -1452,31 +1409,30 @@ footer {
   opacity: 1;
   transition-delay: 1000ms;
 }
-.card-title{
+.card-title {
   position: relative;
   width: max-content;
   /* outline: 1px solid red; */
 }
-.card-title::after{
+.card-title::after {
   content: "";
   position: absolute;
   height: 4px;
-  left: calc(var(--padding) * -1 );
+  left: calc(var(--padding) * -1);
   bottom: -2px;
   width: calc(100% + var(--padding));
   background: var(--clr-accent-400);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 500ms ease;
-
 }
-.card12:hover .card-title::after{
+.card12:hover .card-title::after {
   transform: scaleX(1);
 }
-.card-body{
+.card-body {
   color: rgb(255 255 255/0.85);
 }
-.button{
+.button {
   cursor: pointer;
   display: inline;
   text-decoration: none;
@@ -1486,7 +1442,7 @@ footer {
   border-radius: 0.25em;
 }
 .button:hover,
-.button:focus{
+.button:focus {
   background-color: var(--clr-neutral-400);
 }
 
@@ -1494,17 +1450,16 @@ footer {
 /* ------------------------------------------------------------------------------------------------------------- */
 
 @media screen and (max-width: 500px) {
-
   header {
     padding: 8px;
   }
 
-  header>h3,
-  footer>h2 {
+  header > h3,
+  footer > h2 {
     font-size: 22px;
   }
 
-  header>ul {
+  header > ul {
     margin-right: 20px;
   }
 
@@ -1519,8 +1474,8 @@ footer {
     width: 100%;
   }
 
-  #about>p,
-  #contribute>p {
+  #about > p,
+  #contribute > p {
     width: 80%;
     margin: 28px auto;
     font-size: 20px;
@@ -1575,15 +1530,15 @@ footer {
     padding: 12px;
   }
 
-  #contribute>h2 {
+  #contribute > h2 {
     font-size: 20px;
   }
 
-  footer>h2 {
+  footer > h2 {
     font-size: 12px;
   }
 
-  #contribute>p {
+  #contribute > p {
     font-size: 12px;
   }
 
@@ -1675,24 +1630,24 @@ footer {
 .card13 {
   display: grid;
   place-content: center;
-  margin-top: 2rem;     
+  margin-top: 2rem;
   position: relative;
   width: 100%;
-  font-family: 'Roboto';
+  font-family: "Roboto";
 }
 
 .card13 .card13-box {
   position: relative;
   width: 350px;
   height: 400px;
-  background-image: linear-gradient(9deg, #fd6494,  #43e7ad, #9572fc);   
+  background-image: linear-gradient(9deg, #fd6494, #43e7ad, #9572fc);
   border-radius: 20px;
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-  -webkit-box-shadow:0 8px 32px 0 rgba(0, 0, 0, 0.37);
-  overflow: hidden;   
+  -webkit-box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  overflow: hidden;
 }
 
-.card13 .card13-box .card13-badger  {
+.card13 .card13-box .card13-badger {
   position: absolute;
   top: 0;
   left: 0;
@@ -1703,9 +1658,8 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 2;  
-  transition-delay: 0.25s; 
-  
+  z-index: 2;
+  transition-delay: 0.25s;
 }
 
 .card13 .card13-box:hover .card13-badger {
@@ -1714,34 +1668,33 @@ footer {
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  transition-delay: 0s;  
+  transition-delay: 0s;
   transition: all 0.5s ease-in-out;
 }
 
-.card13 .card13-box .card13-badger  {
+.card13 .card13-box .card13-badger {
   font-size: 5rem;
-  color: #f2ddf8; 
- transition: all 0.2s ease-in-out;
-  transition-delay: 0.25s;   
-    
+  color: #f2ddf8;
+  transition: all 0.2s ease-in-out;
+  transition-delay: 0.25s;
 }
 
-.card13 .card13-box:hover .card13-badger  {
-  font-size:2em;
-  transition-delay: 0s;   
+.card13 .card13-box:hover .card13-badger {
+  font-size: 2em;
+  transition-delay: 0s;
 }
 
 .card13 .card13-box .content {
- font-weight: 300;
+  font-weight: 300;
   line-height: 1.5em;
-  color: #f2ddf8; 
-  margin-top: 200px;;  
+  color: #f2ddf8;
+  margin-top: 200px;
   padding: 50px;
   position: relative;
   text-align: center;
   transform: scale(0);
   transition: 0.5s;
-  transition-delay: 0s;   
+  transition-delay: 0s;
   z-index: 1;
 }
 
@@ -1760,27 +1713,24 @@ footer {
   font-size: 2rem;
   gap: 1.5rem;
   margin-top: 1rem;
-  opacity:1;
-  
+  opacity: 1;
 }
 
 .card13-icons li > a {
-color: #f2ddf8; 
-background: none;
-transform: scale(1); 
-transition: color 0.2s ease-in-out;
-padding: 8px;
+  color: #f2ddf8;
+  background: none;
+  transform: scale(1);
+  transition: color 0.2s ease-in-out;
+  padding: 8px;
 }
 
 .card13-icons li > a:hover {
-color:#9c8288;
-transform: scale(1); 
-background: none;
-transition: color 0.2s ease-in-out;
-border-radius: 0;
+  color: #9c8288;
+  transform: scale(1);
+  background: none;
+  transition: color 0.2s ease-in-out;
+  border-radius: 0;
 }
-
-
 
 /* ----------------------------------  End for UI-13 css code ------------------------------------ */
 
@@ -1905,11 +1855,12 @@ border-radius: 0;
   color: #414141;
 }
 
-.card14 #nme:hover  {
+.card14 #nme:hover {
   font-weight: bold;
   text-decoration: underline;
   color: #0338f8;
 }
+
 
 /* ----------------------------------  End for UI-14 css code ------------------------------------ */
 /* ---------------------------------- UI-15 css code ------------------------------------ */
