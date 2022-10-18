@@ -1859,5 +1859,123 @@ footer .fa:not(.fa-copyright):hover {
   color: #0338f8;
 }
 
-
 /* ----------------------------------  End for UI-14 css code ------------------------------------ */
+
+/* ----------------------------------  UI-16 css code ------------------------------------ */
+.container16 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.effect-title16 {
+  padding-bottom: 100px;
+}
+
+.card16 {
+  position: relative;
+  width: 350px;
+  height: 190px;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 35px 80px rgba(0, 0, 0, 0.15);
+  transition: 0.5s;
+}
+
+.card16:hover {
+  height: 450px;
+}
+
+.imgBox {
+  position: absolute;
+  left: 50%;
+  top: -50px;
+  transform: translateX(-50%);
+  width: 150px;
+  height: 150px;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.35);
+  overflow: hidden;
+  transition: 0.5s;
+}
+
+.card16:hover .imgBox {
+  width: 250px;
+  height: 250px;
+}
+
+.imgBox img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.content16 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.card16 .content16 .details16 {
+  padding: 40px;
+  text-align: center;
+  width: 100%;
+  transition: 0.5s;
+  transform: translateY(150px);
+}
+
+.card16:hover .content16 .details16 {
+  transform: translateY(0px);
+}
+
+.card16 .content16 .details16 h2 {
+  font-size: 1.25em;
+  font-weight: 600;
+  color: #555;
+  line-height: 1.2em;
+}
+
+.card16 .content16 .details16 h2 span {
+  font-size: 0.75em;
+  font-weight: 500;
+  opacity: 0.5;
+}
+
+.card16 .content16 .details16 .data16 {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0px;
+}
+
+.contact16 {
+  text-decoration: none;
+}
+
+.social16 {
+  margin: 0px 30px;
+}
+
+.card16 .content16 .details16 button {
+  padding: 10px 30px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  font-size: 1em;
+  font-weight: 500;
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+}
+
+.card16 .content16 .details16 button:hover {
+  background: #fff;
+  color: #000;
+  outline: 1px solid #000;
+}
