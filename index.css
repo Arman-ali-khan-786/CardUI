@@ -297,6 +297,7 @@ footer {
 .wrapper8,
 .wrapper9,
 .wrapper13,
+.wrapper15,
 .wrapper16{
   /* add your wrapper class here*/
   margin: 12px;
@@ -822,7 +823,7 @@ footer {
 
 .wrappers .title:hover,
 .title:active {
-  color: rgb(238, 101, 15);
+  color: rgb(238, 101, 15); 
 }
 
 .wrappers .place {
@@ -1913,7 +1914,6 @@ border-radius: 0;
 
 /* ----------------------------------  End for UI-14 css code ------------------------------------ */
 /* ---------------------------------- UI-15 css code ------------------------------------ */
-
 .card15{
   background: white;
   padding: 1rem;
@@ -1940,31 +1940,33 @@ margin-bottom:2rem;
  color: black;
  font-size: 18px;
 }  
-.fa {
+#ips_icon{
   padding: 12px;
   font-size: 30px;
   width: 50px;
   padding-left: 7px;
   padding-right:7px;
   margin-left:10px;
-  margin-right:8px;
-margin-bottom:8px;
-margin-top:8px;
+  margin-right:6px;
+  margin-bottom:8px;
+  margin-top:8px;
   text-align: center;
   text-decoration: none;
   cursor: pointer;
   color: black;
   border-radius: 50%;
 }
-.fa:hover{
-color: black;
-transition: 0.9s;
+
+#ips_icon:hover{
+  color: black;
+  transition: 0.9s;
   transform: rotateY(180deg);
 }
+
 .card15:hover{
   background-image: url(https://images.pexels.com/photos/1309766/pexels-photo-1309766.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
   transition: 2s;
-  color: black;
+  color: rgb(0, 0, 0);
 }
 .container{
   align-items: center;
