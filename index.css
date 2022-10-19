@@ -1936,7 +1936,7 @@ footer .fa:not(.fa-copyright):hover {
   background-image: url(https://image.winudf.com/v2/image1/Y29tLmZyZXNoZW52aXJvbm1lbnQuY29vbHdhbGxwYXBlcnNoZF9zY3JlZW5fMF8xNTk4OTcwMDU3XzA3MQ/screen-0.jpg?fakeurl=1&type=.webp);
 
 }
-.content {
+.contet {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -1977,10 +1977,10 @@ footer .fa:not(.fa-copyright):hover {
   .card15:after {
     transform: translateY(0);
  }
-  .content {
+  .contet {
     transform: translateY(calc(100% - 4.5rem));
  }
-  .content > *:not(.MyName15) {
+  .contet > *:not(.MyName15) {
     opacity: 0;
     transform: translateY(1rem);
     transition: transform var(--d) var(--e), opacity var(--d) var(--e);
@@ -1996,18 +1996,18 @@ footer .fa:not(.fa-copyright):hover {
   .card15:hover:after, .card15:focus-within:after {
     transform: translateY(-50%);
  }
-  .card15:hover .content, .card15:focus-within .content {
+  .card15:hover .contet, .card15:focus-within .contet {
     transform: translateY(0);
  }
-  .card15:hover .content > *:not(.MyName15), .card15:focus-within .content > *:not(.MyName15) {
+  .card15:hover .contet > *:not(.MyName15), .card15:focus-within .contet > *:not(.MyName15) {
     opacity: 1;
     transform: translateY(0);
     transition-delay: calc(var(--d) / 8);
  }
-  .card15:focus-within:before, .card15:focus-within:after, .card15:focus-within .content, .card15:focus-within .content > *:not(.MyName15) {
+  .card15:focus-within:before, .card15:focus-within:after, .card15:focus-within .contet, .card15:focus-within .contet > *:not(.MyName15) {
     transition-duration: 0s;
  }
 }
 
 
-/* ----------------------------------  Start for UI-15 css code ------------------------------------ */
+/* ----------------------------------  End for UI-15 css code ------------------------------------ */
