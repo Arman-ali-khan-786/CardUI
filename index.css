@@ -1445,6 +1445,8 @@ footer .fa:not(.fa-copyright):hover {
   background-color: var(--clr-neutral-400);
 }
 
+
+
 /* ----------------------------------------->>>>>> Break Points <<<<<<<<---------------------------------------- */
 /* ------------------------------------------------------------------------------------------------------------- */
 
@@ -1731,7 +1733,7 @@ footer .fa:not(.fa-copyright):hover {
   border-radius: 0;
 }
 
-/* ----------------------------------  End for UI-13 css code ------------------------------------ */
+/* ----------------------------------  End for UI-13 css code ------------------------------------ */ 
 
 /* ----------------------------------  UI-14 css code ------------------------------------ */
 .card14 .container {
@@ -1861,3 +1863,156 @@ footer .fa:not(.fa-copyright):hover {
 
 
 /* ----------------------------------  End for UI-14 css code ------------------------------------ */
+
+
+/* -------------------------------  UI-15 css code --------------------------------- */
+
+.wrapper15
+{
+    margin: 2px;
+    padding: 2px;
+    box-sizing: border-box;
+    font-family: 'DM Sans','Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: #010615;
+    border-radius: 15px;
+}
+/* 
+body
+{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    
+
+} */
+
+.wrapper15 .container
+{
+  position: relative;
+ width: 300px;
+ height: 300px;
+ display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px;
+    margin-left: 25em;
+    transition: 0.5s;
+  
+
+}
+.wrapper15 .container:hover
+{
+    height: 400px;
+
+}
+.wrapper15 .container .imgBox
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.wrapper15 .container .imgBox img
+{
+    max-width: 75%;
+    opacity: 0.1;
+    transition: 0.5s;
+    margin-left: 25px;
+    margin-bottom: 2px;
+}
+.wrapper15 .container:hover .imgBox img
+{
+     max-width: 80%;
+    opacity: 1;
+}
+.wrapper15 .container::before
+{
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background:whitesmoke ;
+    z-index: -1;
+}
+.wrapper15 .container::after
+{
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background:whitesmoke ;
+    z-index: -2;
+    filter: blur(40px);
+}
+.wrapper15 .container::before,
+.wrapper15 .container::after
+{
+    background: linear-gradient(235deg,rgb(24, 154, 42),blue,rgb(255, 255, 255));
+}
+
+
+.wrapper15 .container .content
+{
+    position: absolute;
+    bottom: 0;
+    
+    left: 10px;
+    right: 10px;
+    bottom: 12px;
+    height: 80px;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.wrapper15 .container:hover .content
+{
+    opacity: 1;
+    text-align: center;
+}
+.wrapper15 .container .content h2
+{
+    font-size: 25px;
+    color: wheat;
+    font-weight: 500;
+    line-height: 30px;
+    letter-spacing: 1px;
+
+}
+.wrapper15 .container .content span
+{
+    font-size: 20px;
+    color: wheat;
+    font-weight: 200;
+    
+    letter-spacing: 2px;
+    
+}
+.wrapper15 .container .content .socials{
+  opacity: 0.8;
+  height: 50px;
+  text-align: center;
+  background-color: #d5e1e0;
+  display: flex;
+  justify-content: space-around;
+}
+.wrapper15 .socials img
+{
+  opacity: 1;
+  width: 50px;
+}
+
+/* ----------------------------------  End for UI-15 css code ------------------------------------ */ 
+
+
