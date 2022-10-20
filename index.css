@@ -1861,3 +1861,58 @@ footer .fa:not(.fa-copyright):hover {
 
 
 /* ----------------------------------  End for UI-14 css code ------------------------------------ */
+
+/* ----------------------------------  UI-15 css code ------------------------------------ */
+
+.container15 {
+  z-index: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.wrapper15 .card15 {
+  margin: 30px auto;
+  width: 300px;
+  height: 300px;
+  border-radius: 40px;
+  box-shadow: 5px 5px 30px 7px rgba(196, 49, 49, 0.25),
+    -5px -5px 30px 7px rgba(224, 94, 94, 0.22);
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.card15 .card_image15 img {
+  width: 300px;
+  height: 300px;
+  border-radius: 40px;
+  object-fit: cover;
+}
+
+.card15 .card_title15 {
+  text-align: center;
+  color: white;
+  border-radius: 0px 0px 40px 40px;
+  font-family: sans-serif;
+  font-weight: 600;
+  font-size: 30px;
+  margin-top: -160px;
+  height: 40px;
+}
+
+.wrapper15 .card15:hover {
+  transform: scale(0.9, 0.9);
+  box-shadow: 5px 5px 30px 15px rgba(232, 87, 87, 0.25),
+    -5px -5px 30px 15px rgba(223, 89, 89, 0.22);
+}
+
+.social_icon {
+  position: relative;
+  bottom: -60px;
+  background-color: wheat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* ----------------------------------  End for UI-15 css code ------------------------------------ */
