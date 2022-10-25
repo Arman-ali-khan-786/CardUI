@@ -15,7 +15,7 @@ guidelines**
 * Pull requests will be merged after being **reviewed** by a mentor or PA.
 
 We love pull requests from everyone. By participating in this project, you
-agree to abide by the [Code Of Conduct](https://github.com/Arman-ali-khan-786/CardUI/blob/master/COD).
+agree to abide by the [Code Of Conduct](./CODE_OF_CONDUCT.md).
 
 ## Steps
 
