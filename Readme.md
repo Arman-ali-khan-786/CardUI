@@ -82,5 +82,4 @@ git push -u origin main
 
 > 11. then come back to Github and create a pull request and wait for it to be merged ..
 
-### telegram channel link : "https://t.me/cardui_hackodex"
 ### Website : "https://arman-ali-khan-786.github.io/CardUI/"
