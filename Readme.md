@@ -14,7 +14,7 @@
 
 ## About CardUi
 
-If you are Looking for Amazing Card User Interface(UI) Designs and Effecs for your Projects/websites, then CardUi website is a one stop solution for you. CardUi contains awesome card UI effects for you to use.
+If you are Looking for Amazing Card User Interface (UI) Designs and Effects for your Projects/websites, then CardUi website is a one stop solution for you. CardUi contains awesome card UI effects for you to use.
 
 
 ## Tech Stacks :
