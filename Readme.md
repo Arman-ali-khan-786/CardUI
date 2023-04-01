@@ -29,6 +29,11 @@ If you are Looking for Amazing Card User Interface(UI) Designs and Effecs for yo
 
 ## How to do Contribution to this Project ?
 
+- In general there are two ways in which you can contribute to this project :
+
+-1) Go through the website if you find any bug or problem just raise an issue for the same
+-2) And for the second way just follow the following steps :point_down:
+
 > 1. first fork this repo 
 
 > 2. make a directory/folder on your local system and initial it,
