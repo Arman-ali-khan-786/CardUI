@@ -2,6 +2,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@300&family=Roboto+Mono&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&family=Quicksand:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
+@import url("https://use.fontawesome.com/releases/v5.8.1/css/all.css");
 
 * {
   margin: 0;
@@ -204,7 +206,6 @@ em {
   height: 60px;
 }
 
-
 /* ###------------------------------ main page footer design -------------------------------------### */
 
 #footer {
@@ -223,7 +224,7 @@ em {
   align-items: center;
   border-top: 2px solid white;
 }
-.left-footer{
+.left-footer {
   display: flex;
   flex-direction: column;
 }
@@ -233,17 +234,17 @@ em {
   display: flex;
   flex-direction: row;
 }
-.fa-copyright{
+.fa-copyright {
   margin-bottom: 10px;
 }
-.main_social{
+.main_social {
   margin: 10px;
   color: black;
   scale: 0.8;
   transition: 1s;
   z-index: 3;
 }
-.social-container{
+.social-container {
   background-color: white;
   border-radius: 50%;
   display: block;
@@ -253,35 +254,35 @@ em {
   z-index: 1;
   transition: 1s ease-in;
 }
-.social-container:hover .main_social{
+.social-container:hover .main_social {
   color: white;
   rotate: 360deg;
 }
 
-.social-container:hover{
+.social-container:hover {
   top: 0;
 }
-.social-container:nth-child(1):hover{
+.social-container:nth-child(1):hover {
   background-color: #e1306c;
 }
-.social-container:nth-child(2):hover{
-  background-color: #0088CC;
+.social-container:nth-child(2):hover {
+  background-color: #0088cc;
 }
-.social-container:nth-child(3):hover{
+.social-container:nth-child(3):hover {
   background-color: #0e76a8;
 }
-.social-container:nth-child(4):hover{
+.social-container:nth-child(4):hover {
   background-color: #000000;
 }
 
-@media (max-width:890px) {
-  .social_icons{
+@media (max-width: 890px) {
+  .social_icons {
     scale: 0.7;
     translate: -12%;
   }
 }
-@media (max-width:620px) {
-  .social_icons{
+@media (max-width: 620px) {
+  .social_icons {
     scale: 0.5;
     translate: -15%;
   }
@@ -303,7 +304,7 @@ em {
 .wrapper13,
 .wrapper15,
 .wrapper16,
-.wrapper17{
+.wrapper17 {
   /* add your wrapper class here*/
   margin: 12px;
   padding: 30px;
@@ -828,7 +829,7 @@ em {
 
 .wrappers .title:hover,
 .title:active {
-  color: rgb(238, 101, 15); 
+  color: rgb(238, 101, 15);
 }
 
 .wrappers .place {
@@ -1783,7 +1784,6 @@ em {
 
 /* ----------------------------------  End for UI-13 css code ------------------------------------ */
 
-
 /* ----------------------------------  UI-14 css code ------------------------------------ */
 .card14 .container {
   width: fit-content;
@@ -1910,14 +1910,13 @@ em {
   color: #0338f8;
 }
 
-
 /* ----------------------------------  End for UI-14 css code ------------------------------------ */
 /* ---------------------------------- UI-15 css code ------------------------------------ */
-.card15{
+.card15 {
   background: white;
   padding: 1rem;
   border: black;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   background-image: url(https://images.pexels.com/photos/163117/keyboard-white-computer-keyboard-desktop-163117.jpeg?auto=compress&cs=tinysrgb&w=600);
   width: 250px;
   height: 350px;
@@ -1925,30 +1924,30 @@ em {
   align-content: center;
   margin: 42px auto;
   position: relative;
- box-shadow:  5px 5px 15px rgba(57, 57, 57, 0.9);
-  }
+  box-shadow: 5px 5px 15px rgba(57, 57, 57, 0.9);
+}
 
 .card-header {
-font-size: 1.5rem;
-margin-bottom:2rem;
-}  
-.card-header h2{
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+.card-header h2 {
   color: black;
 }
-.card-body{
- color: black;
- font-size: 18px;
-}  
-#ips_icon{
+.card-body {
+  color: black;
+  font-size: 18px;
+}
+#ips_icon {
   padding: 12px;
   font-size: 30px;
   width: 50px;
   padding-left: 7px;
-  padding-right:7px;
-  margin-left:10px;
-  margin-right:6px;
-  margin-bottom:8px;
-  margin-top:8px;
+  padding-right: 7px;
+  margin-left: 10px;
+  margin-right: 6px;
+  margin-bottom: 8px;
+  margin-top: 8px;
   text-align: center;
   text-decoration: none;
   cursor: pointer;
@@ -1956,34 +1955,24 @@ margin-bottom:2rem;
   border-radius: 50%;
 }
 
-#ips_icon:hover{
+#ips_icon:hover {
   color: black;
   transition: 0.9s;
   transform: rotateY(180deg);
 }
 
-.card15:hover{
+.card15:hover {
   background-image: url(https://images.pexels.com/photos/1309766/pexels-photo-1309766.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
   transition: 2s;
   color: rgb(0, 0, 0);
 }
-.container{
+.container {
   align-items: center;
 }
-.card15:hover h2:hover{
+.card15:hover h2:hover {
   color: black;
 }
 /* ----------------------------------  End for UI-15 css code ------------------------------------ */
-
-
-
-
-
-
-
-
-
-
 
 /* ----------------------------------  Start for UI-16 css code ------------------------------------ */
 
@@ -2004,12 +1993,12 @@ margin-bottom:2rem;
 @media (min-width: 600px) {
   .page-content {
     grid-template-columns: repeat(2, 1fr);
- }
+  }
 }
 @media (min-width: 800px) {
   .page-content {
     grid-template-columns: repeat(4, 1fr);
- }
+  }
 }
 .card16 {
   position: relative;
@@ -2017,21 +2006,23 @@ margin-bottom:2rem;
   align-items: flex-end;
   overflow: hidden;
   padding: 1vw;
-  margin:2vw auto;
+  margin: 2vw auto;
   width: 18vw;
   height: 25vw !important;
   border-radius: 1vw;
   text-align: center;
   color: rgb(255, 255, 255);
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 2px 2px rgba(0, 0, 0, 0.1), 0 4px 4px rgba(0, 0, 0, 0.1), 0 8px 8px rgba(0, 0, 0, 0.1), 0 16px 16px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 2px 2px rgba(0, 0, 0, 0.1),
+    0 4px 4px rgba(0, 0, 0, 0.1), 0 8px 8px rgba(0, 0, 0, 0.1),
+    0 16px 16px rgba(0, 0, 0, 0.1);
 }
 @media (min-width: 600px) {
   .card16 {
     height: 350px;
- }
+  }
 }
 .card16:before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -2043,7 +2034,7 @@ margin-bottom:2rem;
   pointer-events: none;
 }
 .card16:after {
-  content: '';
+  content: "";
   display: block;
   position: absolute;
   top: 0;
@@ -2051,13 +2042,30 @@ margin-bottom:2rem;
   width: 100%;
   height: 200%;
   pointer-events: none;
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.009) 11.7%, rgba(0, 0, 0, 0.034) 22.1%, rgba(0, 0, 0, 0.072) 31.2%, rgba(0, 0, 0, 0.123) 39.4%, rgba(0, 0, 0, 0.182) 46.6%, rgba(0, 0, 0, 0.249) 53.1%, rgba(0, 0, 0, 0.320) 58.9%, rgba(0, 0, 0, 0.394) 64.3%, rgba(0, 0, 0, 0.468) 69.3%, rgba(0, 0, 0, 0.540) 74.1%, rgba(0, 0, 0, 0.607) 78.8%, rgba(0, 0, 0, 0.668) 83.6%, rgba(0, 0, 0, 0.721) 88.7%, rgba(0, 0, 0, 0.762) 94.1%, rgba(0, 0, 0, 0.790) 100%);
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.009) 11.7%,
+    rgba(0, 0, 0, 0.034) 22.1%,
+    rgba(0, 0, 0, 0.072) 31.2%,
+    rgba(0, 0, 0, 0.123) 39.4%,
+    rgba(0, 0, 0, 0.182) 46.6%,
+    rgba(0, 0, 0, 0.249) 53.1%,
+    rgba(0, 0, 0, 0.32) 58.9%,
+    rgba(0, 0, 0, 0.394) 64.3%,
+    rgba(0, 0, 0, 0.468) 69.3%,
+    rgba(0, 0, 0, 0.54) 74.1%,
+    rgba(0, 0, 0, 0.607) 78.8%,
+    rgba(0, 0, 0, 0.668) 83.6%,
+    rgba(0, 0, 0, 0.721) 88.7%,
+    rgba(0, 0, 0, 0.762) 94.1%,
+    rgba(0, 0, 0, 0.79) 100%
+  );
   transform: translateY(-50%);
   transition: transform calc(var(--d) * 2) var(--e);
 }
 .card16:before {
   background-image: url(https://image.winudf.com/v2/image1/Y29tLmZyZXNoZW52aXJvbm1lbnQuY29vbHdhbGxwYXBlcnNoZF9zY3JlZW5fMF8xNTk4OTcwMDU3XzA3MQ/screen-0.jpg?fakeurl=1&type=.webp);
-
 }
 .contet {
   position: relative;
@@ -2082,8 +2090,8 @@ margin-bottom:2rem;
   line-height: 1.35;
   color: #fcfffa;
 }
-.connent{
- display: flex;
+.connent {
+  display: flex;
 }
 .bttn {
   cursor: pointer;
@@ -2099,44 +2107,50 @@ margin-bottom:2rem;
 @media (hover: hover) and (min-width: 600px) {
   .card16:after {
     transform: translateY(0);
- }
+  }
   .contet {
     transform: translateY(calc(100% - 4.5rem));
- }
+  }
   .contet > *:not(.MyName16) {
     opacity: 0;
     transform: translateY(1rem);
     transition: transform var(--d) var(--e), opacity var(--d) var(--e);
- }
-  .card16:hover, .card16:focus-within {
+  }
+  .card16:hover,
+  .card16:focus-within {
     align-items: center;
- }
-  .card16:hover:before, .card16:focus-within:before {
+  }
+  .card16:hover:before,
+  .card16:focus-within:before {
     transform: translateY(-4%);
     filter: blur(8px);
     transition: all 0.7s;
- }
-  .card16:hover:after, .card16:focus-within:after {
+  }
+  .card16:hover:after,
+  .card16:focus-within:after {
     transform: translateY(-50%);
- }
-  .card16:hover .contet, .card16:focus-within .contet {
+  }
+  .card16:hover .contet,
+  .card16:focus-within .contet {
     transform: translateY(0);
- }
-  .card16:hover .contet > *:not(.MyName16), .card16:focus-within .contet > *:not(.MyName16) {
+  }
+  .card16:hover .contet > *:not(.MyName16),
+  .card16:focus-within .contet > *:not(.MyName16) {
     opacity: 1;
     transform: translateY(0);
     transition-delay: calc(var(--d) / 8);
- }
-  .card16:focus-within:before, .card16:focus-within:after, .card16:focus-within .contet, .card16:focus-within .contet > *:not(.MyName16) {
+  }
+  .card16:focus-within:before,
+  .card16:focus-within:after,
+  .card16:focus-within .contet,
+  .card16:focus-within .contet > *:not(.MyName16) {
     transition-duration: 0s;
- }
+  }
 }
-
 
 /* ----------------------------------  End for UI-16 css code ------------------------------------ */
 
 /* ----------------------------------  Start for Subrat's UI-16 css code ------------------------------------ */
-
 
 .container16 {
   position: relative;
@@ -2147,7 +2161,6 @@ margin-bottom:2rem;
   box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.3);
   transition: 0.3s ease-out;
   border-radius: 10px;
-
 }
 
 .container16:hover {
@@ -2200,8 +2213,8 @@ margin-bottom:2rem;
 
 .container16 ul li a {
   display: flex;
- justify-content: center;
- align-items: center;
+  justify-content: center;
+  align-items: center;
   height: 50px;
   width: 50px;
   color: black !important;
@@ -2211,39 +2224,38 @@ margin-bottom:2rem;
   overflow: hidden;
   opacity: 0;
   transform: translateY(200px);
-  background-color: rgb(239, 239, 239) ; 
-  border:1px solid white;
+  background-color: rgb(239, 239, 239);
+  border: 1px solid white;
   transition: transform 0.3s ease-out, opacity 0.3s ease-out;
 }
-.container16 ul li a span{
- color: rgb(37, 37, 37);
- position: relative;
- left: 1px;
- 
+.container16 ul li a span {
+  color: rgb(37, 37, 37);
+  position: relative;
+  left: 1px;
 }
 
-.container16:hover>ul>li>a {
+.container16:hover > ul > li > a {
   opacity: 1;
   transform: translateY(130px);
 }
 
-.container16:hover>ul>li:nth-child(1) a {
+.container16:hover > ul > li:nth-child(1) a {
   transition-delay: 0.3s;
 }
 
-.container16:hover>ul>li:nth-child(2) a {
+.container16:hover > ul > li:nth-child(2) a {
   transition-delay: 0.2s;
 }
 
-.container16:hover>ul>li:nth-child(3) a {
+.container16:hover > ul > li:nth-child(3) a {
   transition-delay: 0.1s;
 }
 
-.container16:hover>ul>li:nth-child(4) a {
+.container16:hover > ul > li:nth-child(4) a {
   transition-delay: 0.2s;
 }
 
-.container16:hover>ul>li:nth-child(5) a {
+.container16:hover > ul > li:nth-child(5) a {
   transition-delay: 0.3s;
 }
 
@@ -2253,7 +2265,6 @@ margin-bottom:2rem;
   width: 100%;
   height: 100%;
   background-color: #000;
-
 }
 
 .container16 .info {
@@ -2278,14 +2289,119 @@ margin-bottom:2rem;
   background-color: white;
   font-size: 32px;
 }
-.container16 ul li a:hover span{
+.container16 ul li a:hover span {
   bottom: -1px;
   color: black;
 }
-
-.card17{
+.card17 {
   display: flex;
   justify-content: center;
+}
+
+/* ----------------------------------  Start for Sidhartha's UI-17 css code ------------------------------------ */
+
+.container17 {
+  position: relative;
+  height: 500px;
+  width: 400px;
+  overflow: hidden;
+  background: black;
+  box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.3);
+  transition: 0.3s ease-out;
+  border-radius: 10px;
+}
+.card18 {
+  display: flex;
+  justify-content: center;
+}
+.hero {
+  display: inline-block;
+  position: relative;
+  width: 400px;
+  min-width: 400px;
+  height: 500px;
+  border-radius: 30px;
+  background-image: url(assets/card-17_background.gif);
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.3);
+  margin: 30px;
+}
+
+.hero-profile-img {
+  height: 50%;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.hero-description-bk {
+  background-image: linear-gradient(0deg, #fc466b, #3f5efb);
+  border-radius: 30px;
+  position: absolute;
+  top: 55%;
+  left: -5px;
+  height: 65%;
+  width: 108%;
+  transform: skew(19deg, -9deg);
+}
+
+.hero-description {
+  position: absolute;
+  color: #fff;
+  font-weight: 900;
+  left: 80px;
+  font-size: 20px;
+  /* bottom: 26%; */
+  top: 23rem;
+  /* text-transform: uppercase; */
+  margin: 20px 10px;
+  padding: 10px 15px;
+  border-width: 3px;
+  border: 2px solid rgb(218, 159, 51);
+}
+.hero-description:hover {
+  top: 22.5rem;
+  box-shadow: -10px 5px 5px rgb(218, 159, 51);
+  transition-duration: 1.5s;
+}
+
+.icons {
+  position: absolute;
+  width: 100%;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  -ms-align-items: center;
+  margin: 20px auto;
+  align-items: center;
+  justify-content: center;
+}
+.icons i {
+  color: #fff;
+  font-size: 36px;
+  -webkit-transition: all 0.5s linear;
+  -o-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+}
+
+.icons li {
+  display: inline-block;
+  margin: 10px;
+  padding: 10px;
+}
+.icons li:hover i {
+  -webkit-transform: rotate(360deg) scale(2);
+  -ms-transform: rotate(360deg) scale(2);
+  -o-transform: rotate(360deg) scale(2);
+  transform: rotate(360deg) scale(1.5);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 /* ----------------------------------  End for Subrat's UI-16 css code ------------------------------------ */
