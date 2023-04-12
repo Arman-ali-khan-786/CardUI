@@ -2290,63 +2290,223 @@ margin-bottom:2rem;
 
 /* ----------------------------------  End for Subrat's UI-16 css code ------------------------------------ */
 
-/* ..........Source Code button style start........ */
-.cta {
-  position: relative;
-  margin: auto;
-  padding: 12px 18px;
-  transition: all 0.2s ease;
-  border: none;
-  background: none;
-  cursor: pointer;
- }
- 
- .cta:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: block;
-  border-radius: 50px;
-  background: #b88f49;
-  width: 45px;
-  height: 45px;
-  transition: all 0.3s ease;
- }
- 
- .cta span {
-  position: relative;
-  font-family: "Ubuntu", sans-serif;
-  font-size: 18px;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  /* color: #234567; */
-  color: rgb(48, 45, 45);
- }
- 
- .cta svg {
-  position: relative;
-  top: 0;
-  margin-left: 10px;
-  fill: none;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke: #234567;
-  stroke-width: 2;
-  transform: translateX(-5px);
-  transition: all 0.3s ease;
- }
- 
- .cta:hover:before {
-  width: 100%;
-  background: #bf8d36;
- }
- 
- .cta:hover svg {
-  transform: translateX(0);
- }
- 
- .cta:active {
-  transform: scale(0.95);
- }
-/* ...........Source Code button style end......... */
+
+
+/* ----------------------------------  Start for Ritvik's UI-17 css code ------------------------------------ */
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+ .wrapperabc
+{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   min-height: 100vh;
+}
+.cardabc
+{
+    position: relative;
+    width: 350px;
+    height: 210px;
+    background: linear-gradient(90deg,#2852e9,#45a247);
+    transition: 0.5s;
+}
+.cardabc:hover
+{
+    height: 500px;
+}
+.cardabc .lines
+{
+    position: absolute;
+    inset: 0;
+    background: #000;
+    overflow: hidden;
+}
+.cardabc .lines::before
+{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 600px;
+    height: 120px;
+    background: linear-gradient(transparent,#79ff03,
+    #79ff03,#79ff03,transparent);
+    animation: animate 4s linear infinite;
+}
+@keyframes animate
+{
+    0%
+    {
+        transform: translate(-50%,-50%) rotate(0deg);
+    }
+    100%
+    {
+        transform: translate(-50%,-50%) rotate(360deg);
+    }
+}
+.cardabc .lines::after
+{
+    content: '';
+    position: absolute;
+    inset: 3px;
+    background: #292929;
+}
+.cardabc .imgBx
+{
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 150px;
+    background: #000;
+    transition: 0.5s;
+    z-index: 1;
+    overflow: hidden;
+}
+.cardabc:hover .imgBx 
+{
+    width: 250px;
+    height: 250px;
+}
+.cardabc .imgBx::before
+{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 500px;
+    height: 150px;
+    transform: translate(-50%,-50%);
+    background: linear-gradient(transparent,#ff3c7b,#ff3c7b,#ff3c7b,transparent);
+    animation: animate2 6s linear infinite;
+}
+@keyframes animate2
+{
+    0%
+    {
+        transform: translate(-50%,-50%) rotate(360deg);
+    }
+    100%
+    {
+        transform: translate(-50%,-50%) rotate(0deg);
+    }
+}
+.cardabc .imgBx::after
+{
+    content: '';
+    position: absolute;
+    inset: 3px;
+    background: #292929;
+}
+.cardabc .imgBx img
+{
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    z-index: 1;
+    width: 140px;
+    height: 140px;
+}
+.cardabc:hover .imgBx img
+{
+    width: 240px;
+    height: 240px;
+}
+.cardabc .contentx
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.cardabc .contentx .details
+{
+    padding: 40px;
+    text-align: center;
+    width: 100%;
+    transition: 0.5s;
+    transform: translateY(132px);
+}
+.cardabc:hover .contentx .details
+{
+    transform: translateY(100px);
+}
+.cardabc .contentx .details h2
+{
+    font-size: 1.23em;
+    font-weight: 600;
+    color: #45f3ff;
+    line-height: 1.2em;
+    padding-top: 20px;
+}
+.cardabc .contentx .details h2 span
+{
+    font-size: 0.75em;
+    font-weight: 500;
+    color: #fff;
+
+}
+.cardabc .contentx .details .links
+{
+    width: 20px;
+    height: 20px;
+    justify-content: space-between;
+}
+.cardabc .contentx .details .actionBtn
+{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding-top: 50px;
+}
+.cardabc .contentx .details .actionBtn button{
+    padding: 10px 30px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    font-size: 1em;
+    font-weight: 600;
+    background: #45f3ff;
+    color: #222;
+    cursor: pointer;
+    opacity: 0.9;
+}
+.cardabc .contentx .details .actionBtn button:nth-child(2)
+{
+    background: #fff;
+}
+.cardabc .contentx .details .actionBtn button:hover
+{
+    opacity: 1;
+    background-image: linear-gradient(135deg,orange,cyan);
+}
+.links img{
+    height: 45px;
+    width: 45px;
+    margin: 5px 11px 5px 11px;
+}
+.links{
+    display: flex;
+    justify-content: space-between;
+}
+.links img:hover{
+    border: solid 1px #555;
+  background-color: #eed;
+  box-shadow: 10px -10px  rgba(0,0,0,0.6);
+  -moz-box-shadow: 10px -10px  rgba(0,0,0,0.6);
+  -webkit-box-shadow: 10px -10px  rgba(0,0,0,0.6);
+  -o-box-shadow: 10px -10px  rgba(0,0,0,0.6);
+  border-radius:100px;
+
+}
+/* ----------------------------------  End for Ritvik's UI-17 css code ------------------------------------ */
