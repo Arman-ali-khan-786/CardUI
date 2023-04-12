@@ -1,0 +1,49 @@
+.dark-mode-btn{
+    position: absolute;
+    translate: 600% 30%;
+    color: white;
+    cursor: pointer;
+}
+.dark-mode-btn::after{
+    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-sun'%3E%3Ccircle cx='12' cy='12' r='5'%3E%3C/circle%3E%3Cline x1='12' y1='1' x2='12' y2='3'%3E%3C/line%3E%3Cline x1='12' y1='21' x2='12' y2='23'%3E%3C/line%3E%3Cline x1='4.22' y1='4.22' x2='5.64' y2='5.64'%3E%3C/line%3E%3Cline x1='18.36' y1='18.36' x2='19.78' y2='19.78'%3E%3C/line%3E%3Cline x1='1' y1='12' x2='3' y2='12'%3E%3C/line%3E%3Cline x1='21' y1='12' x2='23' y2='12'%3E%3C/line%3E%3Cline x1='4.22' y1='19.78' x2='5.64' y2='18.36'%3E%3C/line%3E%3Cline x1='18.36' y1='5.64' x2='19.78' y2='4.22'%3E%3C/line%3E%3C/svg%3E");
+}
+.dark-mode-btn:hover{
+    scale: 1.2;
+}
+
+.dark-mode-btn.active{
+
+}
+.dark-mode-btn.active::after{
+    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-moon'%3E%3Cpath d='M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z'%3E%3C/path%3E%3C/svg%3E");
+}
+
+@media screen and (max-width: 450px){
+    .dark-mode-btn{
+        translate: 480% 30%;
+        scale: .8;
+    }
+    .effects{
+        translate: 30%;
+    }
+}
+
+
+/* changing the color scheme according to the dark background */
+header.active{
+    background: rgb(96, 96, 96);
+     box-shadow: 2px 3px 12px rgb(45, 45, 45);
+}
+.header-tag.active{
+    color: rgb(188, 188, 188);
+}
+body.active{
+    background: #37155a;
+    color: white;
+}
+em.active,.effect-code>a.active{
+    color: #cf6679;
+}
+#contribute>h2.active{
+    color: lightblue;
+}
