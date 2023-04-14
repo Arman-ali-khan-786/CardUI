@@ -2352,7 +2352,7 @@ margin-bottom:2rem;
 /* ...........Source Code button style end......... */
 
 /* ----------------------------------  Start for Ritvik's UI-17 css code ------------------------------------ */
-*
+.wrapper17
 {
     margin: 0;
     padding: 0;
@@ -2569,3 +2569,185 @@ margin-bottom:2rem;
 
 }
 /* ----------------------------------  End for Ritvik's UI-17 css code ------------------------------------ */
+/* ----------------------------------  start of Vijay's UI-19 css code ------------------------------------ */
+.wrapper19{
+  box-sizing: border-box;
+  font-family: Consolas;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 40px 0;
+}
+.wrapper19 .box{
+  position:relative;
+  width: 420px;
+  height: 570px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px 30px;
+  transition:0.5s;
+
+}
+.wrapper19 .box::before{
+  content: '';
+  position: absolute;
+  top:0;
+  left: 50px;
+  width: 70%;
+  height: 100%;
+  background: white;
+  border-radius: 8px;
+  transform: skewX(15deg);
+  transition: 0.5s;
+
+}.wrapper19 .box::after{
+  content: '';
+  position: absolute;
+  top:0;
+  left: 50px;
+  width: 70%;
+  height: 100%;
+  background: white;
+  border-radius: 8px;
+  transform: skew(15deg);
+  transition: 0.5s;
+  filter: blur(30px);
+  transition: 0.5s;
+}
+.wrapper19 .box:hover:before,.wrapper19 .box:hover:after{
+  transform: skewX(0deg);
+  left: 40px;
+  width:calc(100%-90px);
+}
+.wrapper19 .box:nth-child(1):before,.wrapper19 .box:nth-child(1):after
+{
+background: linear-gradient(315deg,#ffbc00,#ff0578);
+
+}
+.wrapper19 .box span{
+  display:block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 50;
+  pointer-events:none;
+}
+.wrapper19 .box span::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  background: rgba(255, 255,255,0.1);
+  backdrop-filter: blur(10px);
+  opacity: 0;
+  transition: 0.5s;
+  animation: animate3 2s ease-in-out infinite;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  animation-delay: -1s;
+}
+.wrapper19 .box span::after{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  background: rgba(255, 255,255,0.1);
+  backdrop-filter: blur(10px);
+  opacity: 0;
+  transition: 0.5s;
+  animation: animate3 2s linear infinite;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+.wrapper19 .box:hover span::before{
+  top: -30px;
+  left: -70px;
+  width: 100px;
+  height: 100px;
+  opacity: 1;
+}
+.wrapper19 .box:hover span::after{
+  bottom: -30px;
+  right: -50px;
+  width: 100px;
+  height: 100px;
+  opacity: 1;
+}
+@keyframes animate3{
+  0%,100%{
+    transform:translateY(10px);
+  }
+  50%{
+    transform:translateY(-10px);
+  }
+}
+.content19{
+  position: relative;
+  left: 0;
+  padding: 20px 40px;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
+  transform: 0.5s;
+  color: #fff;
+  z-index: 1;
+}
+.wrapper19 .box:hover .content19{
+  left: -25px;
+  padding: 60px 40px;
+}
+.wrapper19 .box .content19 h2{
+  font-size: 2em;
+  color: #fff;
+  margin-bottom: 10px;
+}
+.wrapper19 .box .content19 p{
+  font-size: 1.1em;
+  margin-bottom: 10px;
+  line-height: 1.4em;
+  color: #000;
+}
+.wrapper19 .box .content19 .btnF{
+  display: inline-block;
+  font-size: 1.1em;
+  color: #111;
+  background: white;
+  padding: 10px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 700;
+  margin-top: 5px;
+}
+.wrapper19 .box .content19 .btnF:hover{
+  background: linear-gradient(210deg,rgb(255, 0, 221),rgb(0, 255, 153));
+  color: white;
+}
+
+.wrapper19 .box .container19 .brand a{
+  
+  background: none;
+}
+.wrapper19 .content19 .brand{
+  margin-top: 30px;
+  display: flex;
+  gap: 1rem;
+  font-size: 2rem;
+  opacity: 0.55;
+}
+.wrapper19 .content19:hover .brand {
+  margin-top: 30px;
+  display: flex;
+  font-size: 2rem;
+  gap: 1.5rem;
+  background: none;
+  opacity: 1;
+}
