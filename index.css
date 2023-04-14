@@ -112,6 +112,13 @@ ul li a {
   }
 }
 
+@media only screen and (max-width: 700px) {
+  main {
+    margin: auto;
+    width: 100% !important;
+  }
+}
+
 main {
   margin: auto;
   width: 70%;
@@ -162,6 +169,7 @@ main {
 .container {
   width: 70%;
   margin: auto;
+  margin-top: 40px;
   padding: 32px;
   z-index: 2;
   justify-items: center;
@@ -1501,6 +1509,7 @@ em {
 @media screen and (max-width: 500px) {
   header {
     padding: 8px;
+    width: 100%;
   }
 
   header > h3,
@@ -1533,6 +1542,7 @@ em {
   .container {
     width: 100%;
     margin: 0px;
+    margin-top: 50px;
     padding: 24px;
     z-index: 2;
     justify-items: center;
@@ -1544,7 +1554,7 @@ em {
   .wrapper8 {
     /* add your wrapper class here*/
     margin: 12px;
-    padding: 20px;
+    padding: 12px;
   }
 
   .effect-code {
