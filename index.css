@@ -2621,7 +2621,7 @@ margin-bottom:2rem;
 .wrapper19 .box:hover:before,.wrapper19 .box:hover:after{
   transform: skewX(0deg);
   left: 40px;
-  
+  width: calc(100%-90px);
 }
 .wrapper19 .box:nth-child(1):before,.wrapper19 .box:nth-child(1):after
 {
@@ -2706,7 +2706,7 @@ background: linear-gradient(315deg,#ffbc00,#ff0578);
 }
 .wrapper19 .box:hover .content19{
   left: -25px;
-  padding: 60px 0px 60px 40px;
+  padding: 60px 9px 60px 40px;
 }
 .wrapper19 .box .content19 h2{
   font-size: 2em;
@@ -2753,6 +2753,7 @@ background: linear-gradient(315deg,#ffbc00,#ff0578);
   gap: 1.5rem;
   background: none;
   opacity: 1;
+  margin-right: 31px;
 }
 @media screen and (max-width:768px) {
   .wrapper19 .box .content19 .creator{
