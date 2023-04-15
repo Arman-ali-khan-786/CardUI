@@ -2621,7 +2621,7 @@ margin-bottom:2rem;
 .wrapper19 .box:hover:before,.wrapper19 .box:hover:after{
   transform: skewX(0deg);
   left: 40px;
-  width:calc(100%-90px);
+  
 }
 .wrapper19 .box:nth-child(1):before,.wrapper19 .box:nth-child(1):after
 {
@@ -2756,10 +2756,14 @@ background: linear-gradient(315deg,#ffbc00,#ff0578);
 }
 @media screen and (max-width:768px) {
   .wrapper19 .box .content19 .creator{
-    clear: right;
+    clear: both;
     margin-bottom: 20px;
-    margin-left: 5%;
-    margin-right: 5%;
+    margin-left: 15%;
+    margin-right: 0%;
+  }
+  .wrapper19 .box .content19 p{
+    display: flex;
+    flex-direction: column;
   }
   .wrapper19 .box .content19 img {
       width:100%;
