@@ -2364,7 +2364,8 @@ margin-bottom:2rem;
    display: flex;
    justify-content: center;
    align-items: center;
-   min-height: 100vh;
+   min-height: fit-content;
+   padding: 50px;
 }
 .cardabc
 {
@@ -2578,6 +2579,7 @@ margin-bottom:2rem;
   justify-content: center;
   flex-wrap: wrap;
   padding: 40px 0;
+  
 }
 .wrapper19 .box{
   position:relative;
@@ -2669,14 +2671,14 @@ background: linear-gradient(315deg,#ffbc00,#ff0578);
 }
 .wrapper19 .box:hover span::before{
   top: -30px;
-  left: -70px;
+  left: 55px;
   width: 100px;
   height: 100px;
   opacity: 1;
 }
 .wrapper19 .box:hover span::after{
   bottom: -30px;
-  right: -50px;
+  right: 45px;
   width: 100px;
   height: 100px;
   opacity: 1;
@@ -2691,7 +2693,7 @@ background: linear-gradient(315deg,#ffbc00,#ff0578);
 }
 .content19{
   position: relative;
-  left: 0;
+  left: 0px;
   padding: 20px 40px;
   background: rgba(255, 255, 255, 0.05);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -2700,6 +2702,7 @@ background: linear-gradient(315deg,#ffbc00,#ff0578);
   transform: 0.5s;
   color: #fff;
   z-index: 1;
+  width: fit-content;
 }
 .wrapper19 .box:hover .content19{
   left: -25px;
@@ -2751,3 +2754,24 @@ background: linear-gradient(315deg,#ffbc00,#ff0578);
   background: none;
   opacity: 1;
 }
+@media screen and (max-width:768px) {
+  .wrapper19 .box .content19 .creator{
+    clear: right;
+    margin-bottom: 20px;
+    margin-left: 0%;
+    margin-right: 0%;
+  }
+  .wrapper19 .box .content19 img {
+      width:100%;
+
+  }
+  .wrapper19 {
+      max-width:100%;
+      width: 100%;
+  }
+  .container19{
+      width:100%;
+      float:left;
+      margin:0;
+  }
+  }
