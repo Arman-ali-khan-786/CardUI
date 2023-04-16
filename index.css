@@ -223,29 +223,36 @@ em {
 }
 
 #footer-container {
-  width: 70%;
+  width: 100%;
   margin: auto;
   padding: 5px 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-top: 2px solid white;
+  border-top: 0px solid white;
 }
 .left-footer{
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  padding-left: 20px;
 }
 
 .social_icons {
-  margin: 5px;
+  margin: 2.5px;
   display: flex;
   flex-direction: row;
+  padding-right: 10px;
 }
 .fa-copyright{
-  margin-bottom: 10px;
+  margin-bottom: 5px;
+  margin-right: 5px;
+}
+
+.footer>p{
+margin-bottom: 5px;
 }
 .main_social{
-  margin: 10px;
+  margin: 2.5px;
   color: black;
   scale: 0.8;
   transition: 1s;
@@ -255,11 +262,11 @@ em {
   background-color: white;
   border-radius: 50%;
   display: block;
-  margin: 1em;
-  border: 2px solid white;
+  margin: 1vh;
+  border: 0.5px solid white;
   overflow: hidden;
   z-index: 1;
-  transition: 1s ease-in;
+  transition: 0.25sec ease-in;
 }
 .social-container:hover .main_social{
   color: white;
