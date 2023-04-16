@@ -2,306 +2,323 @@
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@300&family=Roboto+Mono&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&family=Quicksand:wght@400;500;600&display=swap");
-
 * {
-  margin: 0;
-  padding: 0;
-  outline: none;
-  list-style: none;
-  text-decoration: none;
-  box-sizing: border-box;
-  scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+    outline: none;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 body {
-  display: flex;
-  flex-direction: column;
-  background: linear-gradient(225deg, #1180a2, rgba(13, 203, 245, 0.75) 100%)
-    no-repeat;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(225deg, #1180a2, rgba(13, 203, 245, 0.75) 100%) no-repeat;
 }
+
 
 /* Gradient Scroll Bar */
 
+
 /* width */
+
 ::-webkit-scrollbar {
-  width: 12px;
+    width: 12px;
 }
+
 
 /* Track */
+
 ::-webkit-scrollbar-track {
-  border-radius: 100vh;
-  background: #1f2937;
+    border-radius: 100vh;
+    background: #1f2937;
 }
 
+
 /* Handle */
+
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(
-    rgb(134, 239, 172),
-    rgb(59, 130, 246),
-    rgb(147, 51, 234)
-  );
+    background: linear-gradient( rgb(134, 239, 172), rgb(59, 130, 246), rgb(147, 51, 234));
 }
 
 header {
-  background-color: #bf8d36;
-  padding: 12px 12px;
-  display: flex;
-  justify-content: space-between;
-  z-index: 10;
-  box-shadow: 2px 3px 12px rgb(88, 88, 88);
-  border-bottom-left-radius: 15px;
-  border-bottom-right-radius: 15px;
-  position: sticky;
-  top: 0;
+    background-color: #bf8d36;
+    padding: 12px 12px;
+    display: flex;
+    justify-content: space-between;
+    z-index: 10;
+    box-shadow: 2px 3px 12px rgb(88, 88, 88);
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    position: sticky;
+    top: 0;
 }
 
-header > h3 a {
-  font-size: 30px;
-  color: beige;
-  font-family: "Merriweather", serif;
+header>h3 a {
+    font-size: 30px;
+    color: beige;
+    font-family: "Merriweather", serif;
 }
 
 span {
-  font-family: "Merriweather", serif;
-  margin: 0px 2px;
-  color: orangered;
-  letter-spacing: 3px;
+    font-family: "Merriweather", serif;
+    margin: 0px 2px;
+    color: orangered;
+    letter-spacing: 3px;
 }
 
-header > ul {
-  display: flex;
-  /* margin-right: 22px; */
+header>ul {
+    display: flex;
+    /* margin-right: 22px; */
 }
 
 ul li {
-  margin: auto;
-  color: aliceblue;
-  transition: all 0.4s ease-in-out;
+    margin: auto;
+    color: aliceblue;
+    transition: all 0.4s ease-in-out;
 }
 
 ul a:hover {
-  color: rgb(91, 144, 194);
-  background-color: aliceblue;
-  transform: scale(1.2);
-  border-radius: 22px;
-  padding: 8px;
+    color: rgb(91, 144, 194);
+    background-color: aliceblue;
+    transform: scale(1.2);
+    border-radius: 22px;
+    padding: 8px;
 }
 
 ul li a {
-  margin: auto 12px;
-  font-weight: 500;
-  color: black;
-  font-family: "Quicksand", serif;
+    margin: auto 12px;
+    font-weight: 500;
+    color: black;
+    font-family: "Quicksand", serif;
 }
 
+
 /* ###------------------------------ Fonts for body start here -------------------------------------### */
+
 #Merriweather {
-  font-family: "Merriweather", serif !important;
+    font-family: "Merriweather", serif !important;
 }
 
 #Quicksand {
-  font-family: "Quicksand", serif !important;
+    font-family: "Quicksand", serif !important;
 }
+
 
 /* ###------------------------------ bannerImage start here -------------------------------------### */
 
 @media only screen and (max-width: 600px) {
-  #banner_image {
-    width: 50% !important;
-    height: 50% !important;
-  }
+    #banner_image {
+        width: 50% !important;
+        height: 50% !important;
+    }
 }
 
 @media only screen and (max-width: 700px) {
-  main {
-    margin: auto;
-    width: 100% !important;
-  }
+    main {
+        margin: auto;
+        width: 100% !important;
+    }
 }
 
 main {
-  margin: auto;
-  width: 70%;
+    margin: auto;
+    width: 70%;
 }
 
 #about,
 #contribute {
-  margin: 50px 0px;
-  padding: 22px;
-  text-align: center;
+    margin: 50px 0px;
+    padding: 22px;
+    text-align: center;
 }
 
-#about > h2,
-#contribute > h2 {
-  font-size: 44px;
-  font-family: "Quicksand", serif;
+#about>h2,
+#contribute>h2 {
+    font-size: 44px;
+    font-family: "Quicksand", serif;
 }
 
-#about > img {
-  margin: 30px auto;
-  width: 80%;
-  height: 400px;
+#about>img {
+    margin: 30px auto;
+    width: 80%;
+    height: 400px;
 }
 
-#contribute > h2 {
-  color: red;
+#contribute>h2 {
+    color: red;
 }
 
-#about > p,
-#contribute > p {
-  width: 60%;
-  margin: 32px auto;
-  font-size: 22px;
-  text-align: center;
-  font-weight: 700;
-  font-family: "Quicksand", serif;
+#about>p,
+#contribute>p {
+    width: 60%;
+    margin: 32px auto;
+    font-size: 22px;
+    text-align: center;
+    font-weight: 700;
+    font-family: "Quicksand", serif;
 }
 
 .effects {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 
 .effect-title {
-  font-family: "Merriweather", serif;
+    font-family: "Merriweather", serif;
 }
 
 .container {
-  width: 70%;
-  margin: auto;
-  margin-top: 40px;
-  padding: 32px;
-  z-index: 2;
-  justify-items: center;
+    width: 70%;
+    margin: auto;
+    margin-top: 40px;
+    padding: 32px;
+    z-index: 2;
+    justify-items: center;
 }
 
 em {
-  color: black;
+    color: black;
 }
 
 .effect-code {
-  width: 50%;
-  margin: auto;
-  text-align: center;
-  font-size: 32px;
-  padding: 30px;
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    font-size: 32px;
+    padding: 30px;
 }
 
-.effect-code > a {
-  color: crimson;
+.effect-code>a {
+    color: crimson;
 }
 
 .icons {
-  width: fit-content;
-  display: flex;
-  margin: auto;
-  gap: 0.4rem;
+    width: fit-content;
+    display: flex;
+    margin: auto;
+    gap: 0.4rem;
 }
 
 .icons a:hover {
-  transform: scale(1.2);
+    transform: scale(1.2);
 }
 
 .icons a {
-  transition: transform 0.2s ease-out;
-  margin: 2px;
+    transition: transform 0.2s ease-out;
+    margin: 2px;
 }
 
 .icons img {
-  width: 60px;
-  height: 60px;
+    width: 60px;
+    height: 60px;
 }
+
 
 /* ###------------------------------ main page footer design -------------------------------------### */
 
 #footer {
-  background-color: #087c8b;
-  color: white;
-  font-size: min(5vw, 16px);
-  font-family: "Quicksand", serif;
+    background-color: #087c8b;
+    color: white;
+    font-size: min(5vw, 16px);
+    font-family: "Quicksand", serif;
 }
 
 #footer-container {
-  width: 100%;
-  margin: auto;
-  padding: 5px 10px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-top: 0px solid white;
+    width: 100%;
+    margin: auto;
+    padding: 5px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 0px solid white;
 }
+
 .left-footer {
-  display: flex;
-  flex-direction: row;
-  padding-left: 20px;
+    display: flex;
+    flex-direction: row;
+    padding-left: 20px;
 }
 
 .social_icons {
-  margin: 2.5px;
-  display: flex;
-  flex-direction: row;
-  padding-right: 10px;
-}
-.fa-copyright{
-  margin-bottom: 5px;
-  margin-right: 5px;
+    margin: 2.5px;
+    display: flex;
+    flex-direction: row;
+    padding-right: 10px;
 }
 
-.footer>p{
-margin-bottom: 5px;
+.fa-copyright {
+    margin-bottom: 5px;
+    margin-right: 5px;
 }
-.main_social{
-  margin: 2.5px;
-  color: black;
-  scale: 0.8;
-  transition: 1s;
-  z-index: 3;
+
+.footer>p {
+    margin-bottom: 5px;
 }
+
+.main_social {
+    margin: 2.5px;
+    color: black;
+    scale: 0.8;
+    transition: 1s;
+    z-index: 3;
+}
+
 .social-container {
-  background-color: white;
-  border-radius: 50%;
-  display: block;
-  margin: 1vh;
-  border: 0.5px solid white;
-  overflow: hidden;
-  z-index: 1;
-  transition: 0.25sec ease-in;
+    background-color: white;
+    border-radius: 50%;
+    display: block;
+    margin: 1vh;
+    border: 0.5px solid white;
+    overflow: hidden;
+    z-index: 1;
+    transition: 0.25sec ease-in;
 }
+
 .social-container:hover .main_social {
-  color: white;
-  rotate: 360deg;
+    color: white;
+    rotate: 360deg;
 }
 
 .social-container:hover {
-  top: 0;
+    top: 0;
 }
+
 .social-container:nth-child(1):hover {
-  background-color: #e1306c;
+    background-color: #e1306c;
 }
+
 .social-container:nth-child(2):hover {
-  background-color: #0088cc;
+    background-color: #0088cc;
 }
+
 .social-container:nth-child(3):hover {
-  background-color: #0e76a8;
+    background-color: #0e76a8;
 }
+
 .social-container:nth-child(4):hover {
-  background-color: #000000;
+    background-color: #000000;
 }
 
 @media (max-width: 890px) {
-  .social_icons {
-    scale: 0.7;
-    translate: -12%;
-  }
-}
-@media (max-width: 620px) {
-  .social_icons {
-    scale: 0.5;
-    translate: -15%;
-  }
+    .social_icons {
+        scale: 0.7;
+        translate: -12%;
+    }
 }
 
+@media (max-width: 620px) {
+    .social_icons {
+        scale: 0.5;
+        translate: -15%;
+    }
+}
+
+
 /* ###------------------------------ Effects -------------------------------------### */
+
 
 /* --------------------- // add your styles from here onwards // -------------------- */
 
@@ -318,1105 +335,1119 @@ margin-bottom: 5px;
 .wrapper15,
 .wrapper16,
 .wrapper17 {
-  /* add your wrapper class here*/
-  margin: 12px;
-  padding: 30px;
+    /* add your wrapper class here*/
+    margin: 12px;
+    padding: 30px;
 }
+
 
 /* ----------------------------------  UI-1 css code ------------------------------------ */
 
 .card1 {
-  margin: 42px auto;
-  position: relative;
-  width: 200px;
-  height: 350px;
-  background: url("./assets/img1.webp") center/cover;
-  border-radius: 0.5em;
-  overflow: hidden;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, -1);
-  cursor: pointer;
+    margin: 42px auto;
+    position: relative;
+    width: 200px;
+    height: 350px;
+    background: url("./assets/img1.webp") center/cover;
+    border-radius: 0.5em;
+    overflow: hidden;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, -1);
+    cursor: pointer;
 }
 
 .layer {
-  position: absolute;
-  display: flex;
-  bottom: -10px;
-  left: 0;
-  width: 290px;
+    position: absolute;
+    display: flex;
+    bottom: -10px;
+    left: 0;
+    width: 290px;
 }
 
 .layer span {
-  display: block;
-  width: 69px;
-  height: 120px;
-  margin: 0;
-  background-color: rgba(2, 2, 2, 0.623);
-  transform: translateY(200px);
-  transition: 0.3s ease-in-out;
+    display: block;
+    width: 69px;
+    height: 120px;
+    margin: 0;
+    background-color: rgba(2, 2, 2, 0.623);
+    transform: translateY(200px);
+    transition: 0.3s ease-in-out;
 }
 
 .text {
-  position: absolute;
-  top: 1em;
-  left: 10px;
-  z-index: 1;
-  transform: translateY(200px);
-  transition: 1s ease-in-out;
+    position: absolute;
+    top: 1em;
+    left: 10px;
+    z-index: 1;
+    transform: translateY(200px);
+    transition: 1s ease-in-out;
 }
 
 .card1:hover .layer .text {
-  transform: translateY(0);
+    transform: translateY(0);
 }
 
 .card1:hover .layer span {
-  transform: translateY(0);
+    transform: translateY(0);
 }
 
 .text h4 {
-  font-size: 16px;
-  padding: 0.3em;
-  font-weight: bolder;
-  color: #bfbfbf;
-  text-shadow: 0 1px 2px #ccc;
+    font-size: 16px;
+    padding: 0.3em;
+    font-weight: bolder;
+    color: #bfbfbf;
+    text-shadow: 0 1px 2px #ccc;
 }
 
 .text p {
-  font-size: 0.7em;
-  padding: 0.3em;
-  color: #bfbfbf;
+    font-size: 0.7em;
+    padding: 0.3em;
+    color: #bfbfbf;
 }
 
 .layer span:nth-child(1) {
-  transition-delay: 0.1s;
+    transition-delay: 0.1s;
 }
 
 .layer span:nth-child(2) {
-  transition-delay: 0.2s;
+    transition-delay: 0.2s;
 }
 
 .layer span:nth-child(3) {
-  transition-delay: 0.3s;
+    transition-delay: 0.3s;
 }
+
 
 /* -------------------------------  UI-2 css code --------------------------------- */
 
 .card2 {
-  position: relative;
-  text-align: center;
-  background-color: rgb(157, 121, 192);
-  box-shadow: 2px 3px 24px #3d3d3d;
-  width: 300px;
-  height: 300px;
-  margin: 20px auto;
-  transition: color, transform 0.4s 0.3s ease-in-out;
-
-  border-radius: 3%;
-  z-index: 1;
-  overflow: hidden;
+    position: relative;
+    text-align: center;
+    background-color: rgb(157, 121, 192);
+    box-shadow: 2px 3px 24px #3d3d3d;
+    width: 300px;
+    height: 300px;
+    margin: 20px auto;
+    transition: color, transform 0.4s 0.3s ease-in-out;
+    border-radius: 3%;
+    z-index: 1;
+    overflow: hidden;
 }
 
 .card2 img {
-  width: 140px;
-  height: 140px;
-  border-radius: 50%;
-  margin: 16px auto;
-  box-shadow: 0px 68px 55px white;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    margin: 16px auto;
+    box-shadow: 0px 68px 55px white;
 }
 
 @keyframes popup {
-  100% {
-    transform: translate(0, 220px);
-  }
+    100% {
+        transform: translate(0, 220px);
+    }
 }
 
 .card2::before {
-  content: "";
-  position: absolute;
-  left: 0%;
-  bottom: 200px;
-  min-width: 320px;
-  min-height: 340px;
-  background-color: rgb(83, 53, 182);
-  z-index: -1;
+    content: "";
+    position: absolute;
+    left: 0%;
+    bottom: 200px;
+    min-width: 320px;
+    min-height: 340px;
+    background-color: rgb(83, 53, 182);
+    z-index: -1;
 }
 
 .card2:hover {
-  color: orangered;
-  transform: scale(0.9);
+    color: orangered;
+    transform: scale(0.9);
 }
 
 .card2:hover::before {
-  animation: popup 1s 0.2s forwards;
+    animation: popup 1s 0.2s forwards;
 }
 
 .card2 h3 {
-  font-size: 32px;
-  font-weight: 800;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 32px;
+    font-weight: 800;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
+
 
 /* -------------------------------  UI-3 css code --------------------------------- */
 
 .card3 {
-  background-color: #00aaa0;
-  width: 300px;
-  height: 450px;
-  margin: 30px auto;
-  border-radius: 5px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  box-shadow: 2px 3px 24px black;
-  color: black;
+    background-color: #00aaa0;
+    width: 300px;
+    height: 450px;
+    margin: 30px auto;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 2px 3px 24px black;
+    color: black;
 }
 
 .card__name {
-  margin-top: 15px;
-  font-size: 1.5em;
+    margin-top: 15px;
+    font-size: 1.5em;
 }
 
 .card__image {
-  height: 160px;
-  width: 160px;
-  border-radius: 50%;
-  border: 5px solid #272133;
-  margin-top: 20px;
-  box-shadow: 10px 10px 50px #facf5a;
+    height: 160px;
+    width: 160px;
+    border-radius: 50%;
+    border: 5px solid #272133;
+    margin-top: 20px;
+    box-shadow: 10px 10px 50px #facf5a;
 }
 
 .draw-border {
-  box-shadow: inset 0 0 0 4px black;
-  color: #240747;
-  -webkit-transition: color 0.25s 0.0833333333s;
-  transition: color 0.25s 0.0833333333s;
-  position: relative;
+    box-shadow: inset 0 0 0 4px black;
+    color: #240747;
+    -webkit-transition: color 0.25s 0.0833333333s;
+    transition: color 0.25s 0.0833333333s;
+    position: relative;
 }
 
 .draw-border::before,
 .draw-border::after {
-  border: 0 solid transparent;
-  box-sizing: border-box;
-  content: "";
-  pointer-events: none;
-  position: absolute;
-  width: 0rem;
-  height: 0;
-  bottom: 0;
-  right: 0;
+    border: 0 solid transparent;
+    box-sizing: border-box;
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    width: 0rem;
+    height: 0;
+    bottom: 0;
+    right: 0;
 }
 
 .draw-border::before {
-  border-bottom-width: 4px;
-  border-left-width: 4px;
+    border-bottom-width: 4px;
+    border-left-width: 4px;
 }
 
 .draw-border::after {
-  border-top-width: 4px;
-  border-right-width: 4px;
+    border-top-width: 4px;
+    border-right-width: 4px;
 }
 
 .draw-border:hover {
-  color: #ffe593;
+    color: #ffe593;
 }
 
 .draw-border:hover::before,
 .draw-border:hover::after {
-  border-color: #eb196e;
-  -webkit-transition: border-color 0s, width 0.25s, height 0.25s;
-  transition: border-color 0s, width 0.25s, height 0.25s;
-  width: 100%;
-  height: 100%;
+    border-color: #eb196e;
+    -webkit-transition: border-color 0s, width 0.25s, height 0.25s;
+    transition: border-color 0s, width 0.25s, height 0.25s;
+    width: 100%;
+    height: 100%;
 }
 
 .draw-border:hover::before {
-  -webkit-transition-delay: 0s, 0s, 0.25s;
-  transition-delay: 0s, 0s, 0.25s;
+    -webkit-transition-delay: 0s, 0s, 0.25s;
+    transition-delay: 0s, 0s, 0.25s;
 }
 
 .draw-border:hover::after {
-  -webkit-transition-delay: 0s, 0.25s, 0s;
-  transition-delay: 0s, 0.25s, 0s;
+    -webkit-transition-delay: 0s, 0.25s, 0s;
+    transition-delay: 0s, 0.25s, 0s;
 }
 
 .btn {
-  background: none;
-  border: none;
-  cursor: pointer;
-  line-height: 1.5;
-  font: 700 1.2rem "Roboto Slab", sans-serif;
-  padding: 0.75em 2em;
-  letter-spacing: 0.05rem;
-  margin: 1em;
-  width: 13rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    line-height: 1.5;
+    font: 700 1.2rem "Roboto Slab", sans-serif;
+    padding: 0.75em 2em;
+    letter-spacing: 0.05rem;
+    margin: 1em;
+    width: 13rem;
 }
 
 .btn:focus {
-  outline: 2px dotted #55d7dc;
+    outline: 2px dotted #55d7dc;
 }
+
 
 /* -------------------------------  UI-4 css code --------------------------------- */
 
 .card4 {
-  background: linear-gradient(to right, #2c5364, #203a43, #0f2020);
-  font-family: "Ceviche One", cursive;
-  width: 250px;
-  height: 250px;
-  margin: 20px auto;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.288);
-  border-radius: 23px;
-  flex-direction: column;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
+    background: linear-gradient(to right, #2c5364, #203a43, #0f2020);
+    font-family: "Ceviche One", cursive;
+    width: 250px;
+    height: 250px;
+    margin: 20px auto;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.288);
+    border-radius: 23px;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
 }
 
 .user_name {
-  margin-bottom: 5px;
-  font-size: 2rem;
+    margin-bottom: 5px;
+    font-size: 2rem;
 }
 
 .skill {
-  color: rgb(194, 194, 196);
+    color: rgb(194, 194, 196);
 }
 
 .card4 img {
-  width: 100px;
-  height: 100px;
-  margin-top: 20px;
-  border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    margin-top: 20px;
+    border-radius: 50%;
 }
 
 .card4::before {
-  content: "";
-  background-color: rgba(233, 230, 227, 0.753);
-  width: 500px;
-  height: 50px;
-  position: absolute;
-  top: -50px;
-  z-index: -1;
+    content: "";
+    background-color: rgba(233, 230, 227, 0.753);
+    width: 500px;
+    height: 50px;
+    position: absolute;
+    top: -50px;
+    z-index: -1;
 }
 
 @keyframes slider {
-  100% {
-    transform: translateY(300px);
-  }
+    100% {
+        transform: translateY(300px);
+    }
 }
 
 .card4:hover::before {
-  animation: slider 1s 0.3s alternate infinite;
+    animation: slider 1s 0.3s alternate infinite;
 }
 
 .icons a {
-  margin-top: 15px;
-  text-decoration: none;
-  font-size: xx-large;
-  margin-left: 5px;
+    margin-top: 15px;
+    text-decoration: none;
+    font-size: xx-large;
+    margin-left: 5px;
 }
 
 .icons .hi:hover {
-  transform: translate(0, -10px);
+    transform: translate(0, -10px);
 }
 
+
 /* Harshit's card css */
+
+
 /* .sub-head{
   margin-left: 3rem;
 } */
+
 .card5 {
-  position: relative;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 360px;
-  height: 360px;
-  background: #000;
-  margin-top: 13rem;
-  box-shadow: 2px 3px 24px #3d3d3d;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 360px;
+    height: 360px;
+    background: #000;
+    margin-top: 13rem;
+    box-shadow: 2px 3px 24px #3d3d3d;
 }
 
 .card5 .image {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
 }
 
 .card5 .image img {
-  width: 100%;
-  transition: 0.5s;
+    width: 100%;
+    transition: 0.5s;
 }
 
 .card5:hover .image img {
-  opacity: 0.5;
-  transform: translateX(30%);
-  /*100%*/
+    opacity: 0.5;
+    transform: translateX(30%);
+    /*100%*/
 }
 
 .card5 .details {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 70%;
-  /*100%*/
-  height: 100%;
-  background: #b50404;
-  transition: 0.5s;
-  transform-origin: left;
-  transform: perspective(2000px) rotateY(-90deg);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 70%;
+    /*100%*/
+    height: 100%;
+    background: #b50404;
+    transition: 0.5s;
+    transform-origin: left;
+    transform: perspective(2000px) rotateY(-90deg);
 }
 
 .card5:hover .details {
-  transform: perspective(2000px) rotateY(0deg);
+    transform: perspective(2000px) rotateY(0deg);
 }
 
 .card5 .details .center {
-  padding: 20px;
-  text-align: center;
-  background: #fff;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+    padding: 20px;
+    text-align: center;
+    background: #fff;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .card5 .details .center h1 {
-  margin: 0;
-  padding: 0;
-  color: #ff3636;
-  line-height: 20px;
-  font-size: 20px;
-  text-transform: uppercase;
+    margin: 0;
+    padding: 0;
+    color: #ff3636;
+    line-height: 20px;
+    font-size: 20px;
+    text-transform: uppercase;
 }
 
 .card5 .details .center h1 label {
-  font-size: 14px;
-  color: #262626 !important;
+    font-size: 14px;
+    color: #262626 !important;
 }
 
 .card5 .details .center p {
-  margin: 10px 0;
-  padding: 0;
-  color: #262626;
+    margin: 10px 0;
+    padding: 0;
+    color: #262626;
 }
 
 .card5 .details .center ul {
-  margin: 10px auto 0;
-  padding: 0;
-  display: table;
+    margin: 10px auto 0;
+    padding: 0;
+    display: table;
 }
 
 .card5 .details .center ul li {
-  list-style: none !important;
-  margin: 0 5px !important;
-  float: left !important;
+    list-style: none !important;
+    margin: 0 5px !important;
+    float: left !important;
 }
 
 .card5 .details .center ul li a {
-  display: block !important;
-  background: #262626 !important;
-  color: #fff !important;
-  width: 30px !important;
-  height: 30px !important;
-  line-height: 30px !important;
-  text-align: center !important;
-  transform: 0.5s !important;
+    display: block !important;
+    background: #262626 !important;
+    color: #fff !important;
+    width: 30px !important;
+    height: 30px !important;
+    line-height: 30px !important;
+    text-align: center !important;
+    transform: 0.5s !important;
 }
 
 .card5 .details .center ul li a:hover {
-  background: #ff3636 !important;
+    background: #ff3636 !important;
 }
 
+
 /*Divyanshu card*/
+
 .cards-list {
-  z-index: 0;
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
+    z-index: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 .wrapper6 .card {
-  margin: 30px auto;
-  width: 300px;
-  height: 300px;
-  border-radius: 40px;
-  box-shadow: 5px 5px 30px 7px rgba(0, 0, 0, 0.25),
-    -5px -5px 30px 7px rgba(0, 0, 0, 0.22);
-  cursor: pointer;
-  transition: 0.4s;
+    margin: 30px auto;
+    width: 300px;
+    height: 300px;
+    border-radius: 40px;
+    box-shadow: 5px 5px 30px 7px rgba(0, 0, 0, 0.25), -5px -5px 30px 7px rgba(0, 0, 0, 0.22);
+    cursor: pointer;
+    transition: 0.4s;
 }
 
 .card .card_image {
-  width: inherit;
-  height: inherit;
-  border-radius: 40px;
+    width: inherit;
+    height: inherit;
+    border-radius: 40px;
 }
 
 .card .card_image img {
-  width: inherit;
-  height: inherit;
-  border-radius: 40px;
-  object-fit: cover;
+    width: inherit;
+    height: inherit;
+    border-radius: 40px;
+    object-fit: cover;
 }
 
 .card .card_title {
-  text-align: center;
-  border-radius: 0px 0px 40px 40px;
-  font-family: sans-serif;
-  font-weight: bold;
-  font-size: 30px;
-  margin-top: -80px;
-  height: 40px;
+    text-align: center;
+    border-radius: 0px 0px 40px 40px;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+    margin-top: -80px;
+    height: 40px;
 }
 
 .wrapper6 .card:hover {
-  transform: scale(0.9, 0.9);
-  box-shadow: 5px 5px 30px 15px rgba(0, 0, 0, 0.25),
-    -5px -5px 30px 15px rgba(0, 0, 0, 0.22);
+    transform: scale(0.9, 0.9);
+    box-shadow: 5px 5px 30px 15px rgba(0, 0, 0, 0.25), -5px -5px 30px 15px rgba(0, 0, 0, 0.22);
 }
 
 .handles {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .title-white {
-  color: white;
+    color: white;
 }
 
 .title-black {
-  color: black;
+    color: black;
 }
 
 .container1 {
-  height: 250px;
-  width: 250px;
-  overflow: hidden;
-  margin: 0 auto;
-  border-radius: 50%;
-  transition: all 0.3s ease-in-out;
-  box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.3);
-  background: linear-gradient(45deg, #960fb1, #2aacc7);
+    height: 250px;
+    width: 250px;
+    overflow: hidden;
+    margin: 0 auto;
+    border-radius: 50%;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(45deg, #960fb1, #2aacc7);
 }
 
 .container1:hover {
-  height: 470px;
-  width: 350px;
-  border-radius: 5px;
-  box-shadow: 0px 1px 35px 0px rgba(0, 0, 0, 0.3);
+    height: 470px;
+    width: 350px;
+    border-radius: 5px;
+    box-shadow: 0px 1px 35px 0px rgba(0, 0, 0, 0.3);
 }
 
+
 /* saikiran css start */
+
 .container1 .wrappers img {
-  position: relative;
-  z-index: 5;
-  border-radius: 50%;
-  display: block;
-  height: 200px;
-  width: 200px;
-  border: 5px solid #fff;
-  object-fit: cover;
-  margin: 20px auto;
-  transition: all 0.3s ease;
+    position: relative;
+    z-index: 5;
+    border-radius: 50%;
+    display: block;
+    height: 200px;
+    width: 200px;
+    border: 5px solid #fff;
+    object-fit: cover;
+    margin: 20px auto;
+    transition: all 0.3s ease;
 }
 
 .container1:hover .wrappers img.active {
-  height: 470px;
-  width: 350px;
-  margin: 0px auto;
-  border: none;
-  border-radius: 5px;
+    height: 470px;
+    width: 350px;
+    margin: 0px auto;
+    border: none;
+    border-radius: 5px;
 }
 
 .wrappers .title {
-  color: #fff;
-  padding: 15px;
-  padding-left: 70px;
-  font-size: 30px;
-  font-weight: 500;
-  padding-top: 55px;
-  line-height: 25px;
+    color: #fff;
+    padding: 15px;
+    padding-left: 70px;
+    font-size: 30px;
+    font-weight: 500;
+    padding-top: 55px;
+    line-height: 25px;
 }
 
 .wrappers .title:hover,
 .title:active {
-  color: rgb(238, 101, 15);
+    color: rgb(238, 101, 15);
 }
 
 .wrappers .place {
-  padding-bottom: 20px;
-  padding-left: 115px;
-  font-family: Arial, Helvetica, sans-serif;
-  color: #fff;
-  font-size: 17px;
-  line-height: 0px;
-  margin: 10px 0;
+    padding-bottom: 20px;
+    padding-left: 115px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff;
+    font-size: 17px;
+    line-height: 0px;
+    margin: 10px 0;
 }
 
 .content {
-  color: #fff;
-  font-size: 17px;
-  margin-top: 10px;
-  padding: 1px 20px 10px 20px;
+    color: #fff;
+    font-size: 17px;
+    margin-top: 10px;
+    padding: 1px 20px 10px 20px;
 }
 
 .content .buttons {
-  display: flex;
+    display: flex;
 }
 
 .buttons .btn {
-  height: 65px;
-  width: 1000px;
-  margin: 0 5px;
+    height: 65px;
+    width: 1000px;
+    margin: 0 5px;
 }
 
 .buttons .btn button {
-  height: 110%;
-  width: 150%;
-  background: rgb(237, 243, 237);
-  border: none;
-  outline: none;
-  cursor: pointer;
-  font-size: 17px;
-  font-weight: 500;
-  border-radius: 5px;
-  transition: all 0.3s;
+    height: 110%;
+    width: 150%;
+    background: rgb(237, 243, 237);
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 17px;
+    font-weight: 500;
+    border-radius: 5px;
+    transition: all 0.3s;
 }
 
 .btn button:hover {
-  transform: scale(0.95);
-  color: #fff;
-  background: linear-gradient(45deg, #08cb1b, #0338f8);
+    transform: scale(0.95);
+    color: #fff;
+    background: linear-gradient(45deg, #08cb1b, #0338f8);
 }
 
 .card7 .container1 .icons {
-  position: relative;
-  margin-top: -225px;
-  margin-left: 10px;
-  list-style: none;
+    position: relative;
+    margin-top: -225px;
+    margin-left: 10px;
+    list-style: none;
 }
 
 .container1.icons.active {
-  display: none;
+    display: none;
 }
 
 .container1 .icons li {
-  height: 37px;
-  width: 35px;
-  margin: 5px 0;
-  opacity: 0;
-  margin-left: -100px;
-  transition: all 0.5s ease;
+    height: 37px;
+    width: 35px;
+    margin: 5px 0;
+    opacity: 0;
+    margin-left: -100px;
+    transition: all 0.5s ease;
 }
 
 .container1:hover .icons li {
-  opacity: 1;
-  margin-left: 7px;
+    opacity: 1;
+    margin-left: 7px;
 }
 
 .container1:hover .icons li:nth-child(2) {
-  transition-delay: 0.2s;
+    transition-delay: 0.2s;
 }
 
 .container1:hover .icons li:nth-child(3) {
-  transition-delay: 0.3s;
+    transition-delay: 0.3s;
 }
 
 .container1:hover .icons li:nth-child(4) {
-  transition-delay: 0.4s;
+    transition-delay: 0.4s;
 }
 
 .container1:hover .icons li:nth-child(5) {
-  transition-delay: 0.4s;
+    transition-delay: 0.4s;
 }
 
 .container1 .icons li a {
-  color: #7b00e0;
-  height: 100%;
-  width: 100%;
-  border-radius: 50%;
-  background: rgb(242, 237, 237);
-  display: block;
-  line-height: 40px;
-  transition: all 0.3s;
+    color: #7b00e0;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    background: rgb(242, 237, 237);
+    display: block;
+    line-height: 40px;
+    transition: all 0.3s;
 }
 
 .container1 .icons li a:hover {
-  transform: scale(0.9);
-  color: #fff;
-  background: linear-gradient(45deg, #1505c6, #f80653);
+    transform: scale(0.9);
+    color: #fff;
+    background: linear-gradient(45deg, #1505c6, #f80653);
 }
 
+
 /* -------------------------------  UI-8 css code --------------------------------- */
+
 .card8 {
-  background-image: url("assets/elaina.webp");
-  background-position: center;
-  background-size: cover;
-  position: relative;
-  overflow: hidden;
-  width: 300px;
-  height: 400px;
-  margin: auto;
-  border-radius: 10px;
-  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.8), -3px -3px 10px rgba(0, 0, 0, 0.8);
-  transition: 0.3s all ease;
+    background-image: url("assets/elaina.webp");
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+    width: 300px;
+    height: 400px;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.8), -3px -3px 10px rgba(0, 0, 0, 0.8);
+    transition: 0.3s all ease;
 }
 
 .card8:hover {
-  transform: scale(0.95);
-  box-shadow: 7px 7px 15px rgba(0, 0, 0, 0.9), -6px -6px 15px rgba(0, 0, 0, 0.9);
+    transform: scale(0.95);
+    box-shadow: 7px 7px 15px rgba(0, 0, 0, 0.9), -6px -6px 15px rgba(0, 0, 0, 0.9);
 }
 
 .image-black {
-  transition: 0.3s all ease;
-  position: absolute;
-  width: 100%;
-  height: 100%;
+    transition: 0.3s all ease;
+    position: absolute;
+    width: 100%;
+    height: 100%;
 }
 
 .card8:hover .image-black {
-  background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .side-media {
-  transition: 0.3s all ease;
-  position: absolute;
-  overflow: hidden;
-  padding-top: 15px;
-  background-color: #cdf0ea;
-  width: 0;
-  height: 100%;
+    transition: 0.3s all ease;
+    position: absolute;
+    overflow: hidden;
+    padding-top: 15px;
+    background-color: #cdf0ea;
+    width: 0;
+    height: 100%;
 }
 
 .side-media li {
-  transition: 0.3s all ease;
-  margin-left: -100px;
-  margin-bottom: 15px;
+    transition: 0.3s all ease;
+    margin-left: -100px;
+    margin-bottom: 15px;
 }
 
 .side-media li a span:hover {
-  transform: rotate(360deg);
+    transform: rotate(360deg);
 }
 
 .side-media li a span {
-  color: #000;
-  transition: 0.3s all ease;
+    color: #000;
+    transition: 0.3s all ease;
 }
 
 .card8:hover .side-media {
-  width: 70px;
+    width: 70px;
 }
 
 .card8:hover .side-media li {
-  margin-left: 0;
+    margin-left: 0;
 }
 
 .card8:hover .side-media li:nth-child(1) {
-  transition-delay: 0.1s;
+    transition-delay: 0.1s;
 }
 
 .card8:hover .side-media li:nth-child(2) {
-  transition-delay: 0.2s;
+    transition-delay: 0.2s;
 }
 
 .card8:hover .side-media li:nth-child(3) {
-  transition-delay: 0.3s;
+    transition-delay: 0.3s;
 }
 
 .card8:hover .side-media li:nth-child(4) {
-  transition-delay: 0.4s;
+    transition-delay: 0.4s;
 }
 
 .card-content8 {
-  background-color: #cdf0ea;
-  width: 100%;
-  position: absolute;
-  bottom: 0;
-  text-align: start;
-  padding: 10px 20px;
+    background-color: #cdf0ea;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    text-align: start;
+    padding: 10px 20px;
 }
 
 .wrap-btn8 {
-  transition: 0.6s all ease;
-  height: 0;
-  overflow: hidden;
+    transition: 0.6s all ease;
+    height: 0;
+    overflow: hidden;
 }
 
 .btn-follow8 {
-  background-color: #e94560;
-  letter-spacing: 0.6px;
-  margin-top: 10px;
-  border: 0px solid;
-  padding: 10px 22px;
-  border-radius: 8px;
+    background-color: #e94560;
+    letter-spacing: 0.6px;
+    margin-top: 10px;
+    border: 0px solid;
+    padding: 10px 22px;
+    border-radius: 8px;
 }
 
 .btn-follow8 a {
-  color: white;
+    color: white;
 }
 
 .card8:hover .wrap-btn8 {
-  height: 50px;
+    height: 50px;
 }
+
 
 /* -------------------------------  UI-9 css code --------------------------------- */
 
 .wrapper9 .card9 {
-  display: block;
-  position: relative;
-  /* check */
-  margin: 50px auto;
-  height: 300px;
-  width: 300px;
-  overflow: hidden;
-  background: linear-gradient(45deg, #ff99cc, #1180a2, #ff99cc, #1180a2);
-  border-radius: 7px;
-  background-size: 500% 100%;
-  box-shadow: 6px 6px 13px 0px rgba(0, 0, 0, 0.4),
-    -6px -6px 13px 0px rgba(0, 0, 0, 0.4);
-  transition: 0.45s cubic-bezier(0, 0, 0.56, 2.58);
+    display: block;
+    position: relative;
+    /* check */
+    margin: 50px auto;
+    height: 300px;
+    width: 300px;
+    overflow: hidden;
+    background: linear-gradient(45deg, #ff99cc, #1180a2, #ff99cc, #1180a2);
+    border-radius: 7px;
+    background-size: 500% 100%;
+    box-shadow: 6px 6px 13px 0px rgba(0, 0, 0, 0.4), -6px -6px 13px 0px rgba(0, 0, 0, 0.4);
+    transition: 0.45s cubic-bezier(0, 0, 0.56, 2.58);
 }
 
 .wrapper9 .card9:hover {
-  transform: scale(0.9);
-  animation: gradient 1.5s infinite linear;
-  border-radius: 25px;
+    transform: scale(0.9);
+    animation: gradient 1.5s infinite linear;
+    border-radius: 25px;
 }
 
 @keyframes gradient {
-  0% {
-    background-position: 0% 0%;
-  }
-
-  100% {
-    background-position: 100% 0%;
-  }
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 100% 0%;
+    }
 }
 
 .wrapper9 .card9 .contents {
-  width: inherit;
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+    width: inherit;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .wrapper9 .card9 .contents .gh-avatar {
-  padding-top: 10px;
-  text-align: center;
-  border-radius: 40%;
+    padding-top: 10px;
+    text-align: center;
+    border-radius: 40%;
 }
 
 .wrapper9 .card9 .contents .gh-avatar img {
-  border-radius: 40%;
-  width: 70px;
-  height: 70px;
+    border-radius: 40%;
+    width: 70px;
+    height: 70px;
 }
 
 .wrapper9 .card9 .contents .details {
-  padding-top: 130px;
-  padding-bottom: 20px;
-  width: inherit;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  align-content: center;
-  align-items: center;
-  gap: 3px;
-  transition: 0.4s ease-out;
+    padding-top: 130px;
+    padding-bottom: 20px;
+    width: inherit;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+    gap: 3px;
+    transition: 0.4s ease-out;
 }
 
 .wrapper9 .card9:hover .contents .details {
-  padding-top: 20px;
+    padding-top: 20px;
 }
 
 .wrapper9 .card9 .contents .details p {
-  background-color: rgba(240, 248, 255, 0.548);
-  border: 2px solid #1180a280;
-  border-radius: 10px;
-  font-size: 24px;
-  padding: 0px 6px;
-  color: #06580f;
-  font-weight: bold;
-  transition: all 0.4s ease-out;
+    background-color: rgba(240, 248, 255, 0.548);
+    border: 2px solid #1180a280;
+    border-radius: 10px;
+    font-size: 24px;
+    padding: 0px 6px;
+    color: #06580f;
+    font-weight: bold;
+    transition: all 0.4s ease-out;
 }
 
 .wrapper9 .card9 .contents .details p.skill {
-  font-size: 19px;
-  font-weight: normal;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    font-size: 19px;
+    font-weight: normal;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
 .wrapper9 .card9 .contents .details p.uname {
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
 }
 
 .wrapper9 .card9:hover .contents .details p:hover {
-  box-shadow: 1px 1px 12px rgba(0, 0, 0, 0.3), -1px -1px 12px rgba(0, 0, 0, 0.3);
+    box-shadow: 1px 1px 12px rgba(0, 0, 0, 0.3), -1px -1px 12px rgba(0, 0, 0, 0.3);
 }
 
 .wrapper9 .card9 .contents .strip {
-  margin-top: 10px;
-  position: relative;
-  height: 70px;
-  background-color: rgba(240, 248, 255, 0.4);
-  transition: all 0.4s ease-out;
+    margin-top: 10px;
+    position: relative;
+    height: 70px;
+    background-color: rgba(240, 248, 255, 0.4);
+    transition: all 0.4s ease-out;
 }
 
 .wrapper9 .card9:hover .contents .strip {
-  margin-top: 60px;
-  box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.5),
-    -1px -1px 5px rgba(0, 0, 0, 0.5);
+    margin-top: 60px;
+    box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.5), -1px -1px 5px rgba(0, 0, 0, 0.5);
 }
 
 .wrapper9 .card9 .contents .reach-out {
-  display: flex;
-  flex-direction: row;
-  gap: 3px;
-  justify-content: center;
+    display: flex;
+    flex-direction: row;
+    gap: 3px;
+    justify-content: center;
 }
 
 .wrapper9 .card9 .contents .reach-out span {
-  color: black;
-  height: 40px;
-  width: 40px;
+    color: black;
+    height: 40px;
+    width: 40px;
 }
 
 .wrapper9 .card9 .contents .reach-out a {
-  margin-top: 300px;
-  transition: all 0.4s ease-out;
+    margin-top: 300px;
+    transition: all 0.4s ease-out;
 }
 
 .wrapper9 .card9:hover .contents .reach-out a {
-  transition-delay: 0.2s;
+    transition-delay: 0.2s;
 }
 
 .wrapper9 .card9:hover .contents .reach-out a {
-  margin-top: 10px;
+    margin-top: 10px;
 }
 
 .wrapper9 .card9:hover .contents .reach-out a:nth-child(1) {
-  transition-delay: 0.1s;
+    transition-delay: 0.1s;
 }
 
 .wrapper9 .card9:hover .contents .reach-out a:nth-child(2) {
-  transition-delay: 0.2s;
+    transition-delay: 0.2s;
 }
 
 .wrapper9 .card9:hover .contents .reach-out a:nth-child(3) {
-  transition-delay: 0.3s;
+    transition-delay: 0.3s;
 }
 
+
 /* -------------------------------  UI-10 css code --------------------------------- */
+
 .container10 {
-  display: flex;
-  justify-content: center;
+    display: flex;
+    justify-content: center;
 }
 
 .card10 {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: baseline;
-  background-color: black;
-  border-radius: 30px;
-  overflow: hidden;
-  transition: box-shadow 300ms ease-in-out;
-  max-width: 400px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    background-color: black;
+    border-radius: 30px;
+    overflow: hidden;
+    transition: box-shadow 300ms ease-in-out;
+    max-width: 400px;
 }
 
-.card10 > img {
-  z-index: 1;
-  transform-origin: bottom;
-  transition: scale 300ms ease-in-out;
+.card10>img {
+    z-index: 1;
+    transform-origin: bottom;
+    transition: scale 300ms ease-in-out;
 }
 
 .circle {
-  position: absolute;
-  top: 22%;
-  left: 13%;
-  content: "";
-  width: 300px;
-  height: 300px;
-  background-color: white;
-  border-radius: 50%;
-  scale: 0;
-  transition: scale 300ms ease-in-out;
+    position: absolute;
+    top: 22%;
+    left: 13%;
+    content: "";
+    width: 300px;
+    height: 300px;
+    background-color: white;
+    border-radius: 50%;
+    scale: 0;
+    transition: scale 300ms ease-in-out;
 }
 
 .card10:hover .circle {
-  scale: 2.5;
+    scale: 2.5;
 }
 
 .card10:hover img {
-  scale: 1.05;
+    scale: 1.05;
 }
 
 .card10:hover {
-  box-shadow: 5px 5px 20px rgb(60, 60, 60), -5px -5px 20px rgb(60, 60, 60);
+    box-shadow: 5px 5px 20px rgb(60, 60, 60), -5px -5px 20px rgb(60, 60, 60);
 }
 
 .card10:hover .links span {
-  rotate: 360deg;
-  color: black;
+    rotate: 360deg;
+    color: black;
 }
 
 .detailz {
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: absolute;
-  z-index: 10;
-  color: black;
-  margin-top: 30px;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    z-index: 10;
+    color: black;
+    margin-top: 30px;
 }
 
 .links {
-  display: flex;
-  margin-top: 10px;
+    display: flex;
+    margin-top: 10px;
 }
 
 .links li {
-  margin-inline: 10px;
+    margin-inline: 10px;
 }
 
 .links span {
-  color: rgb(210, 210, 210);
-  transition: all 200ms ease-in;
+    color: rgb(210, 210, 210);
+    transition: all 200ms ease-in;
 }
 
 .links span:hover {
-  color: #1f2937;
+    color: #1f2937;
 }
 
+
 /* -------------------------------  UI-11 css code --------------------------------- */
+
 .card11 .imagebox {
-  position: relative;
-  height: 100%;
-  width: 100%;
-  transform: translateY(-80px);
-  z-index: 10;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    transform: translateY(-80px);
+    z-index: 10;
 }
 
 .card11 {
-  background: rgba(224, 224, 224, 0.2);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-  border: 1px solid rgba(224, 224, 224, 0.3);
-  background: linear-gradient(
-    45deg,
-    rgba(224, 224, 224, 0.2),
-    rgba(224, 224, 224, 0.2)
-  );
-  width: 280px;
-  height: 180px;
-  margin: 0px auto;
-  position: relative;
-  border-radius: 10px;
-  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.5);
-  transition: 0.3s;
-  padding: 30px 50px;
-  cursor: pointer;
+    background: rgba(224, 224, 224, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(224, 224, 224, 0.3);
+    background: linear-gradient( 45deg, rgba(224, 224, 224, 0.2), rgba(224, 224, 224, 0.2));
+    width: 280px;
+    height: 180px;
+    margin: 0px auto;
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.5);
+    transition: 0.3s;
+    padding: 30px 50px;
+    cursor: pointer;
 }
 
 .card11:hover {
-  height: 320px;
-  /* From https://css.glass */
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+    height: 320px;
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .card11 img {
-  width: 100%;
-  border-radius: 10px;
-  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.5);
 }
 
 .card11 .content {
-  padding: 20px 20px;
-  text-align: center;
-  transform: translateY(-500px);
-  opacity: 0;
-  transform: 0.3s;
+    padding: 20px 20px;
+    text-align: center;
+    transform: translateY(-500px);
+    opacity: 0;
+    transform: 0.3s;
 }
 
 .card11 .content #desc {
-  width: 250px !important;
-  position: relative;
-  right: 55px;
-  top: 40px;
+    width: 250px !important;
+    position: relative;
+    right: 55px;
+    top: 40px;
 }
 
 .content .social-handle11 {
-  position: relative;
-  right: 10px;
-  top: 10px;
-  margin-top: 50px !important;
+    position: relative;
+    right: 10px;
+    top: 10px;
+    margin-top: 50px !important;
 }
 
 .content .handles-icon {
-  width: 30px !important;
-  height: 30px !important;
-  margin-left: 6px;
-  margin-right: 6px;
+    width: 30px !important;
+    height: 30px !important;
+    margin-left: 6px;
+    margin-right: 6px;
 }
 
-.card11:hover > .content {
-  transform: translateY(-240px);
-  opacity: 1;
+.card11:hover>.content {
+    transform: translateY(-240px);
+    opacity: 1;
 }
 
 .card11 .content h2 {
-  font-family: "Roboto", sans-serif;
-  color: #040404;
-  width: 200px;
-  position: relative;
-  right: 28px;
-  top: 15px;
-  font-size: 29px;
+    font-family: "Roboto", sans-serif;
+    color: #040404;
+    width: 200px;
+    position: relative;
+    right: 28px;
+    top: 15px;
+    font-size: 29px;
 }
 
 .card11 .content h3 {
-  font-family: "Sansita", sans-serif;
-  color: rgb(27, 29, 58);
-  font-size: 23px !important;
+    font-family: "Sansita", sans-serif;
+    color: rgb(27, 29, 58);
+    font-size: 23px !important;
 }
 
 .card11 .content i {
-  padding: 10px;
+    padding: 10px;
 }
 
 .card11 .content i:hover {
-  transform: translateY(10px);
-  transition: 0.4s;
-  color: #000;
-  font-size: medium;
+    transform: translateY(10px);
+    transition: 0.4s;
+    color: #000;
+    font-size: medium;
 }
+
+
 /* ----------------------------card-12 css------------------------------------------ */
+
+
 /* -------------------------------  UI-12 css code --------------------------------- */
+
 :root {
-  --clr-neutral-900: hsl(207, 19%, 9%);
-  --clr-neutral-100: hsl(0, 0%, 100%);
-  --clr-accent-400: rgb(239, 251, 14);
+    --clr-neutral-900: hsl(207, 19%, 9%);
+    --clr-neutral-100: hsl(0, 0%, 100%);
+    --clr-accent-400: rgb(239, 251, 14);
 }
 
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
+
+
 /* body{
   display: grid;
   min-height: 100vh;
@@ -1426,1488 +1457,1686 @@ margin-bottom: 5px;
   font-family: sans-serif;
   padding-right: 0em;
 } */
+
 .card12 {
-  color: var(--clr-neutral-100);
-  background-image: url("assets/pexels-pixabay-356056.jpg");
-  background-size: cover;
-  padding: 10rem 0 0;
-  margin: auto;
-  max-width: 35ch;
-  border-radius: 0.5rem;
-  overflow: hidden;
-  transition: transform 500ms ease;
+    color: var(--clr-neutral-100);
+    background-image: url("assets/pexels-pixabay-356056.jpg");
+    background-size: cover;
+    padding: 10rem 0 0;
+    margin: auto;
+    max-width: 35ch;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    transition: transform 500ms ease;
 }
+
 .card12:hover,
 .card12:focus-within {
-  transform: scale(1.05);
-}
-.card-content {
-  --padding: 1.5rem;
-  padding: var(--padding);
-  background: linear-gradient(
-    hsl(0 0% 0% / 0),
-    hsl(20 0% 0% / 0.3) 20%,
-    hsl(0 0% 0% / 1)
-  );
-  transform: translateY(65%);
-  transition: transform 500ms ease;
-}
-.card-content .social-handle-12 {
-  display: flex;
-  align-items: center;
-  right: 10px;
-  top: 10px;
-  margin-top: 50px !important;
-}
-.card12:hover .card-content {
-  transform: translateY(0);
-  transition-delay: 500ms;
-}
-.card-content > *:not(.card-title) {
-  opacity: 0;
-  transition: opacity 500ms linear;
+    transform: scale(1.05);
 }
 
-.card12:hover .card-content > *:not(.card-title) {
-  opacity: 1;
-  transition-delay: 1000ms;
+.card-content {
+    --padding: 1.5rem;
+    padding: var(--padding);
+    background: linear-gradient( hsl(0 0% 0% / 0), hsl(20 0% 0% / 0.3) 20%, hsl(0 0% 0% / 1));
+    transform: translateY(65%);
+    transition: transform 500ms ease;
 }
+
+.card-content .social-handle-12 {
+    display: flex;
+    align-items: center;
+    right: 10px;
+    top: 10px;
+    margin-top: 50px !important;
+}
+
+.card12:hover .card-content {
+    transform: translateY(0);
+    transition-delay: 500ms;
+}
+
+.card-content>*:not(.card-title) {
+    opacity: 0;
+    transition: opacity 500ms linear;
+}
+
+.card12:hover .card-content>*:not(.card-title) {
+    opacity: 1;
+    transition-delay: 1000ms;
+}
+
 .card-title {
-  position: relative;
-  width: max-content;
-  /* outline: 1px solid red; */
+    position: relative;
+    width: max-content;
+    /* outline: 1px solid red; */
 }
+
 .card-title::after {
-  content: "";
-  position: absolute;
-  height: 4px;
-  left: calc(var(--padding) * -1);
-  bottom: -2px;
-  width: calc(100% + var(--padding));
-  background: var(--clr-accent-400);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 500ms ease;
+    content: "";
+    position: absolute;
+    height: 4px;
+    left: calc(var(--padding) * -1);
+    bottom: -2px;
+    width: calc(100% + var(--padding));
+    background: var(--clr-accent-400);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 500ms ease;
 }
+
 .card12:hover .card-title::after {
-  transform: scaleX(1);
+    transform: scaleX(1);
 }
+
 .card-body {
-  color: rgb(255 255 255/0.85);
+    color: rgb(255 255 255/0.85);
 }
+
 .button {
-  cursor: pointer;
-  display: inline;
-  text-decoration: none;
-  color: var(--clr-neutral-900);
-  background-color: lightgoldenrodyellow;
-  padding: 0.5em 1em;
-  border-radius: 0.25em;
+    cursor: pointer;
+    display: inline;
+    text-decoration: none;
+    color: var(--clr-neutral-900);
+    background-color: lightgoldenrodyellow;
+    padding: 0.5em 1em;
+    border-radius: 0.25em;
 }
+
 .button:hover,
 .button:focus {
-  background-color: var(--clr-neutral-400);
+    background-color: var(--clr-neutral-400);
 }
 
+
 /* ----------------------------------------->>>>>> Break Points <<<<<<<<---------------------------------------- */
+
+
 /* ------------------------------------------------------------------------------------------------------------- */
 
 @media screen and (max-width: 500px) {
-  header {
-    padding: 8px;
-    width: 100%;
-  }
-
-  header > h3,
-  footer > h2 {
-    font-size: 22px;
-  }
-
-  header > ul {
-    margin-right: 20px;
-  }
-
-  ul li {
-    margin: auto 10px;
-    font-size: 18px;
-    font-weight: 700;
-  }
-
-  main,
-  .container {
-    width: 100%;
-  }
-
-  #about > p,
-  #contribute > p {
-    width: 80%;
-    margin: 28px auto;
-    font-size: 20px;
-  }
-
-  .container {
-    width: 100%;
-    margin: 0px;
-    margin-top: 50px;
-    padding: 24px;
-    z-index: 2;
-    justify-items: center;
-  }
-
-  .wrapper1,
-  .wrapper2,
-  .wrapper3,
-  .wrapper8 {
-    /* add your wrapper class here*/
-    margin: 12px;
-    padding: 12px;
-  }
-
-  .effect-code {
-    width: 100%;
-    font-size: 28px;
-    padding: 30px;
-  }
-
-  #footer-container {
-    width: 100%;
-  }
-
-  /* ////////////////// break-point code for ui-1 card  ///////////////////// */
-  .card1 {
-    margin: 42px auto;
-    position: relative;
-  }
+    header {
+        padding: 8px;
+        width: 100%;
+    }
+    header>h3,
+    footer>h2 {
+        font-size: 22px;
+    }
+    header>ul {
+        margin-right: 20px;
+    }
+    ul li {
+        margin: auto 10px;
+        font-size: 18px;
+        font-weight: 700;
+    }
+    main,
+    .container {
+        width: 100%;
+    }
+    #about>p,
+    #contribute>p {
+        width: 80%;
+        margin: 28px auto;
+        font-size: 20px;
+    }
+    .container {
+        width: 100%;
+        margin: 0px;
+        margin-top: 50px;
+        padding: 24px;
+        z-index: 2;
+        justify-items: center;
+    }
+    .wrapper1,
+    .wrapper2,
+    .wrapper3,
+    .wrapper8 {
+        /* add your wrapper class here*/
+        margin: 12px;
+        padding: 12px;
+    }
+    .effect-code {
+        width: 100%;
+        font-size: 28px;
+        padding: 30px;
+    }
+    #footer-container {
+        width: 100%;
+    }
+    /* ////////////////// break-point code for ui-1 card  ///////////////////// */
+    .card1 {
+        margin: 42px auto;
+        position: relative;
+    }
 }
 
 @media screen and (max-width: 360px) {
-  ul li {
-    margin: auto 4px;
-    font-size: 12px;
-    font-weight: 600;
-  }
-
-  .wrapper1,
-  .wrapper2,
-  .wrapper3 {
-    /* add your wrapper class here*/
-    margin: 6px;
-    padding: 12px;
-  }
-
-  #contribute > h2 {
-    font-size: 20px;
-  }
-
-  footer > h2 {
-    font-size: 12px;
-  }
-
-  #contribute > p {
-    font-size: 12px;
-  }
-
-  footer {
-    font-size: 12px;
-  }
-
-  /* ////////////////// break-point code for ui-2 card  ///////////////////// */
-  .card2 {
-    width: 200px;
-    height: 220px;
-    margin: 20px auto;
-  }
-
-  .card2 img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    margin: 12px auto;
-    box-shadow: 0px 58px 45px white;
-  }
-
-  @keyframes popup {
-    100% {
-      transform: translate(0, 160px);
+    ul li {
+        margin: auto 4px;
+        font-size: 12px;
+        font-weight: 600;
     }
-  }
-
-  .card2::before {
-    bottom: 150px;
-    min-width: 220px;
-    min-height: 240px;
-  }
-
-  .card2 h3 {
-    font-size: 22px;
-    font-weight: 700;
-  }
-
-  /* ////////////////// break-point code for ui-3 card  ///////////////////// */
-
-  .card3 {
-    width: 200px;
-    height: 380px;
-  }
-
-  .card__name {
-    margin-top: 15px;
-    font-size: 1em;
-  }
-
-  .btn {
-    line-height: 1;
-    margin: 0.5em;
-    width: 10rem;
-  }
-
-  /* ////////////////// break-point code for ui-4 card  ///////////////////// */
-
-  .card4 {
-    width: 180px;
-    height: 250px;
-  }
-
-  .user_name {
-    font-size: 1rem;
-    margin: 14px auto;
-  }
-
-  .card4 img {
-    width: 70px;
-    height: 70px;
-    margin-bottom: 12px;
-  }
-
-  .icons a {
-    font-size: 24px;
-    margin-left: 3px;
-  }
-
-  /* ////////////////// break-point code for ui-8 card  ///////////////////// */
-  .card8 {
-    width: 250px;
-    height: 350px;
-  }
+    .wrapper1,
+    .wrapper2,
+    .wrapper3 {
+        /* add your wrapper class here*/
+        margin: 6px;
+        padding: 12px;
+    }
+    #contribute>h2 {
+        font-size: 20px;
+    }
+    footer>h2 {
+        font-size: 12px;
+    }
+    #contribute>p {
+        font-size: 12px;
+    }
+    footer {
+        font-size: 12px;
+    }
+    /* ////////////////// break-point code for ui-2 card  ///////////////////// */
+    .card2 {
+        width: 200px;
+        height: 220px;
+        margin: 20px auto;
+    }
+    .card2 img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        margin: 12px auto;
+        box-shadow: 0px 58px 45px white;
+    }
+    @keyframes popup {
+        100% {
+            transform: translate(0, 160px);
+        }
+    }
+    .card2::before {
+        bottom: 150px;
+        min-width: 220px;
+        min-height: 240px;
+    }
+    .card2 h3 {
+        font-size: 22px;
+        font-weight: 700;
+    }
+    /* ////////////////// break-point code for ui-3 card  ///////////////////// */
+    .card3 {
+        width: 200px;
+        height: 380px;
+    }
+    .card__name {
+        margin-top: 15px;
+        font-size: 1em;
+    }
+    .btn {
+        line-height: 1;
+        margin: 0.5em;
+        width: 10rem;
+    }
+    /* ////////////////// break-point code for ui-4 card  ///////////////////// */
+    .card4 {
+        width: 180px;
+        height: 250px;
+    }
+    .user_name {
+        font-size: 1rem;
+        margin: 14px auto;
+    }
+    .card4 img {
+        width: 70px;
+        height: 70px;
+        margin-bottom: 12px;
+    }
+    .icons a {
+        font-size: 24px;
+        margin-left: 3px;
+    }
+    /* ////////////////// break-point code for ui-8 card  ///////////////////// */
+    .card8 {
+        width: 250px;
+        height: 350px;
+    }
 }
+
+
 /* ----------------------------------  UI-13 css code ------------------------------------ */
 
 .card13 {
-  display: grid;
-  place-content: center;
-  margin-top: 2rem;
-  position: relative;
-  width: 100%;
-  font-family: "Roboto";
+    display: grid;
+    place-content: center;
+    margin-top: 2rem;
+    position: relative;
+    width: 100%;
+    font-family: "Roboto";
 }
 
 .card13 .card13-box {
-  position: relative;
-  width: 350px;
-  height: 400px;
-  background-image: linear-gradient(9deg, #fd6494, #43e7ad, #9572fc);
-  border-radius: 20px;
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-  -webkit-box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-  overflow: hidden;
+    position: relative;
+    width: 350px;
+    height: 400px;
+    background-image: linear-gradient(9deg, #fd6494, #43e7ad, #9572fc);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    -webkit-box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    overflow: hidden;
 }
 
 .card13 .card13-box .card13-badger {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #fd6494;
-  transition: all 0.5s ease-in-out;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 2;
-  transition-delay: 0.25s;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fd6494;
+    transition: all 0.5s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    transition-delay: 0.25s;
 }
 
 .card13 .card13-box:hover .card13-badger {
-  top: 40px;
-  left: calc(50% - 50px);
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  transition-delay: 0s;
-  transition: all 0.5s ease-in-out;
+    top: 40px;
+    left: calc(50% - 50px);
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    transition-delay: 0s;
+    transition: all 0.5s ease-in-out;
 }
 
 .card13 .card13-box .card13-badger {
-  font-size: 5rem;
-  color: #f2ddf8;
-  transition: all 0.2s ease-in-out;
-  transition-delay: 0.25s;
+    font-size: 5rem;
+    color: #f2ddf8;
+    transition: all 0.2s ease-in-out;
+    transition-delay: 0.25s;
 }
 
 .card13 .card13-box:hover .card13-badger {
-  font-size: 2em;
-  transition-delay: 0s;
+    font-size: 2em;
+    transition-delay: 0s;
 }
 
 .card13 .card13-box .content {
-  font-weight: 300;
-  line-height: 1.5em;
-  color: #f2ddf8;
-  margin-top: 200px;
-  padding: 50px;
-  position: relative;
-  text-align: center;
-  transform: scale(0);
-  transition: 0.5s;
-  transition-delay: 0s;
-  z-index: 1;
+    font-weight: 300;
+    line-height: 1.5em;
+    color: #f2ddf8;
+    margin-top: 200px;
+    padding: 50px;
+    position: relative;
+    text-align: center;
+    transform: scale(0);
+    transition: 0.5s;
+    transition-delay: 0s;
+    z-index: 1;
 }
 
 .card13 .card13-box:hover .content {
-  transform: scale(1);
-  transition: transform 0.5s ease-in-out;
+    transform: scale(1);
+    transition: transform 0.5s ease-in-out;
 }
 
 .card13 .card13-box .content h2 {
-  margin-top: 10px;
-  margin-bottom: 5px;
+    margin-top: 10px;
+    margin-bottom: 5px;
 }
 
 .card13 .card13-box:hover .content .card13-icons {
-  display: flex;
-  font-size: 2rem;
-  gap: 1.5rem;
-  margin-top: 1rem;
-  opacity: 1;
+    display: flex;
+    font-size: 2rem;
+    gap: 1.5rem;
+    margin-top: 1rem;
+    opacity: 1;
 }
 
-.card13-icons li > a {
-  color: #f2ddf8;
-  background: none;
-  transform: scale(1);
-  transition: color 0.2s ease-in-out;
-  padding: 8px;
+.card13-icons li>a {
+    color: #f2ddf8;
+    background: none;
+    transform: scale(1);
+    transition: color 0.2s ease-in-out;
+    padding: 8px;
 }
 
-.card13-icons li > a:hover {
-  color: #9c8288;
-  transform: scale(1);
-  background: none;
-  transition: color 0.2s ease-in-out;
-  border-radius: 0;
+.card13-icons li>a:hover {
+    color: #9c8288;
+    transform: scale(1);
+    background: none;
+    transition: color 0.2s ease-in-out;
+    border-radius: 0;
 }
+
 
 /* ----------------------------------  End for UI-13 css code ------------------------------------ */
 
+
 /* ----------------------------------  UI-14 css code ------------------------------------ */
+
 .card14 .container {
-  width: fit-content;
-  position: relative;
-  display: flex;
-  justify-content: space-between;
+    width: fit-content;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
 }
 
 .card14 .container .card {
-  position: relative;
-  border-radius: 10px;
+    position: relative;
+    border-radius: 10px;
 }
 
 .card14 .container .card .icon {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #f00;
-  transition: 0.7s;
-  z-index: 1;
-  box-shadow: 0 -5px 15px rgba(57, 57, 57, 0.8);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #f00;
+    transition: 0.7s;
+    z-index: 1;
+    box-shadow: 0 -5px 15px rgba(57, 57, 57, 0.8);
 }
 
 .card14 .container .card:nth-child(1) .icon {
-  background: #e07768;
+    background: #e07768;
 }
 
 .card14 .container .card .icon .fa {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 80px;
-  transition: 0.7s;
-  color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 80px;
+    transition: 0.7s;
+    color: #fff;
 }
 
 .card14 i {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 80px;
-  transition: 0.7s;
-  color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 80px;
+    transition: 0.7s;
+    color: #fff;
 }
 
 .card14 .container .card .face {
-  width: 300px;
-  height: 200px;
-  transition: 0.5s;
+    width: 300px;
+    height: 200px;
+    transition: 0.5s;
 }
 
 .card14 .container .card .face.face1 {
-  position: relative;
-  background: #333;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1;
-  transform: translateY(100px);
+    position: relative;
+    background: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    transform: translateY(100px);
 }
 
 .card14 .container .card:hover .face.face1 {
-  background: #ff0057;
-  transform: translateY(0px);
+    background: #ff0057;
+    transform: translateY(0px);
 }
 
 .card14 .container .card .face.face1 .content {
-  opacity: 1;
-  transition: 0.5s;
+    opacity: 1;
+    transition: 0.5s;
 }
 
 .card14 .container .card:hover .face.face1 .content {
-  opacity: 1;
+    opacity: 1;
 }
 
 .card14 .container .card .face.face1 .content i {
-  max-width: 100px;
+    max-width: 100px;
 }
 
 .card14 .container .card .face.face2 {
-  position: relative;
-  background: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  box-sizing: border-box;
-  box-shadow: 0 5px 15px rgba(57, 57, 57, 0.8);
-  transform: translateY(-100px);
+    position: relative;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    box-shadow: 0 5px 15px rgba(57, 57, 57, 0.8);
+    transform: translateY(-100px);
 }
 
 .card14 .container .card:hover .face.face2 {
-  transform: translateY(0);
+    transform: translateY(0);
 }
 
 .card14 .container .card .face.face2 .content p {
-  margin: 0;
-  padding: 0;
-  text-align: center;
-  color: #414141;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: #414141;
 }
 
 .card14 .container .card .face.face2 .content h3 {
-  margin: 0 0 10px 0;
-  padding: 0;
-  color: #fff;
-  font-size: 24px;
-  text-align: center;
-  color: #414141;
+    margin: 0 0 10px 0;
+    padding: 0;
+    color: #fff;
+    font-size: 24px;
+    text-align: center;
+    color: #414141;
 }
 
 .card14 .container a {
-  text-decoration: none;
-  color: #414141;
+    text-decoration: none;
+    color: #414141;
 }
 
 .card14 #nme:hover {
-  font-weight: bold;
-  text-decoration: underline;
-  color: #0338f8;
+    font-weight: bold;
+    text-decoration: underline;
+    color: #0338f8;
 }
 
+
 /* ----------------------------------  End for UI-14 css code ------------------------------------ */
+
+
 /* ---------------------------------- UI-15 css code ------------------------------------ */
+
 .card15 {
-  background: white;
-  padding: 1rem;
-  border: black;
-  border-radius: 0.5rem;
-  background-image: url(https://images.pexels.com/photos/163117/keyboard-white-computer-keyboard-desktop-163117.jpeg?auto=compress&cs=tinysrgb&w=600);
-  width: 250px;
-  height: 350px;
-  background-position: center;
-  align-content: center;
-  margin: 42px auto;
-  position: relative;
-  box-shadow: 5px 5px 15px rgba(57, 57, 57, 0.9);
+    background: white;
+    padding: 1rem;
+    border: black;
+    border-radius: 0.5rem;
+    background-image: url(https://images.pexels.com/photos/163117/keyboard-white-computer-keyboard-desktop-163117.jpeg?auto=compress&cs=tinysrgb&w=600);
+    width: 250px;
+    height: 350px;
+    background-position: center;
+    align-content: center;
+    margin: 42px auto;
+    position: relative;
+    box-shadow: 5px 5px 15px rgba(57, 57, 57, 0.9);
 }
 
 .card-header {
-  font-size: 1.5rem;
-  margin-bottom: 2rem;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
 }
+
 .card-header h2 {
-  color: black;
+    color: black;
 }
+
 .card-body {
-  color: black;
-  font-size: 18px;
+    color: black;
+    font-size: 18px;
 }
+
 #ips_icon {
-  padding: 12px;
-  font-size: 30px;
-  width: 50px;
-  padding-left: 7px;
-  padding-right: 7px;
-  margin-left: 10px;
-  margin-right: 6px;
-  margin-bottom: 8px;
-  margin-top: 8px;
-  text-align: center;
-  text-decoration: none;
-  cursor: pointer;
-  color: black;
-  border-radius: 50%;
+    padding: 12px;
+    font-size: 30px;
+    width: 50px;
+    padding-left: 7px;
+    padding-right: 7px;
+    margin-left: 10px;
+    margin-right: 6px;
+    margin-bottom: 8px;
+    margin-top: 8px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    color: black;
+    border-radius: 50%;
 }
 
 #ips_icon:hover {
-  color: black;
-  transition: 0.9s;
-  transform: rotateY(180deg);
+    color: black;
+    transition: 0.9s;
+    transform: rotateY(180deg);
 }
 
 .card15:hover {
-  background-image: url(https://images.pexels.com/photos/1309766/pexels-photo-1309766.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
-  transition: 2s;
-  color: rgb(0, 0, 0);
+    background-image: url(https://images.pexels.com/photos/1309766/pexels-photo-1309766.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+    transition: 2s;
+    color: rgb(0, 0, 0);
 }
+
 .container {
-  align-items: center;
+    align-items: center;
 }
+
 .card15:hover h2:hover {
-  color: black;
+    color: black;
 }
+
+
 /* ----------------------------------  End for UI-15 css code ------------------------------------ */
+
 
 /* ----------------------------------  Start for UI-16 css code ------------------------------------ */
 
 :root {
-  --d: 700ms;
-  --e: cubic-bezier(0.19, 1, 0.22, 1);
+    --d: 700ms;
+    --e: cubic-bezier(0.19, 1, 0.22, 1);
 }
+
 .page-content {
-  display: flex;
-  flex-wrap: wrap;
-  grid-gap: 1.3vw;
-  padding: 1vw;
-  justify-content: left;
-  /* width: 100vw; */
-  max-width: 1024px;
-  margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    grid-gap: 1.3vw;
+    padding: 1vw;
+    justify-content: left;
+    /* width: 100vw; */
+    max-width: 1024px;
+    margin: 0 auto;
 }
+
 @media (min-width: 600px) {
-  .page-content {
-    grid-template-columns: repeat(2, 1fr);
-  }
+    .page-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
+
 @media (min-width: 800px) {
-  .page-content {
-    grid-template-columns: repeat(4, 1fr);
-  }
+    .page-content {
+        grid-template-columns: repeat(4, 1fr);
+    }
 }
+
 .card16 {
-  position: relative;
-  display: flex;
-  align-items: flex-end;
-  overflow: hidden;
-  padding: 1vw;
-  margin: 2vw auto;
-  width: 18vw;
-  height: 25vw !important;
-  border-radius: 1vw;
-  text-align: center;
-  color: rgb(255, 255, 255);
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 2px 2px rgba(0, 0, 0, 0.1),
-    0 4px 4px rgba(0, 0, 0, 0.1), 0 8px 8px rgba(0, 0, 0, 0.1),
-    0 16px 16px rgba(0, 0, 0, 0.1);
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+    padding: 1vw;
+    margin: 2vw auto;
+    width: 18vw;
+    height: 25vw !important;
+    border-radius: 1vw;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 2px 2px rgba(0, 0, 0, 0.1), 0 4px 4px rgba(0, 0, 0, 0.1), 0 8px 8px rgba(0, 0, 0, 0.1), 0 16px 16px rgba(0, 0, 0, 0.1);
 }
+
 @media (min-width: 600px) {
-  .card16 {
-    height: 350px;
-  }
+    .card16 {
+        height: 350px;
+    }
 }
+
 .card16:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 110%;
-  background-size: cover;
-  background-position: 0 0;
-  transition: transform calc(var(--d) * 1.5) var(--e);
-  pointer-events: none;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 110%;
+    background-size: cover;
+    background-position: 0 0;
+    transition: transform calc(var(--d) * 1.5) var(--e);
+    pointer-events: none;
 }
+
 .card16:after {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 200%;
-  pointer-events: none;
-  background-image: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0) 0%,
-    rgba(0, 0, 0, 0.009) 11.7%,
-    rgba(0, 0, 0, 0.034) 22.1%,
-    rgba(0, 0, 0, 0.072) 31.2%,
-    rgba(0, 0, 0, 0.123) 39.4%,
-    rgba(0, 0, 0, 0.182) 46.6%,
-    rgba(0, 0, 0, 0.249) 53.1%,
-    rgba(0, 0, 0, 0.32) 58.9%,
-    rgba(0, 0, 0, 0.394) 64.3%,
-    rgba(0, 0, 0, 0.468) 69.3%,
-    rgba(0, 0, 0, 0.54) 74.1%,
-    rgba(0, 0, 0, 0.607) 78.8%,
-    rgba(0, 0, 0, 0.668) 83.6%,
-    rgba(0, 0, 0, 0.721) 88.7%,
-    rgba(0, 0, 0, 0.762) 94.1%,
-    rgba(0, 0, 0, 0.79) 100%
-  );
-  transform: translateY(-50%);
-  transition: transform calc(var(--d) * 2) var(--e);
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 200%;
+    pointer-events: none;
+    background-image: linear-gradient( to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.009) 11.7%, rgba(0, 0, 0, 0.034) 22.1%, rgba(0, 0, 0, 0.072) 31.2%, rgba(0, 0, 0, 0.123) 39.4%, rgba(0, 0, 0, 0.182) 46.6%, rgba(0, 0, 0, 0.249) 53.1%, rgba(0, 0, 0, 0.32) 58.9%, rgba(0, 0, 0, 0.394) 64.3%, rgba(0, 0, 0, 0.468) 69.3%, rgba(0, 0, 0, 0.54) 74.1%, rgba(0, 0, 0, 0.607) 78.8%, rgba(0, 0, 0, 0.668) 83.6%, rgba(0, 0, 0, 0.721) 88.7%, rgba(0, 0, 0, 0.762) 94.1%, rgba(0, 0, 0, 0.79) 100%);
+    transform: translateY(-50%);
+    transition: transform calc(var(--d) * 2) var(--e);
 }
+
 .card16:before {
-  background-image: url(https://image.winudf.com/v2/image1/Y29tLmZyZXNoZW52aXJvbm1lbnQuY29vbHdhbGxwYXBlcnNoZF9zY3JlZW5fMF8xNTk4OTcwMDU3XzA3MQ/screen-0.jpg?fakeurl=1&type=.webp);
+    background-image: url(https://image.winudf.com/v2/image1/Y29tLmZyZXNoZW52aXJvbm1lbnQuY29vbHdhbGxwYXBlcnNoZF9zY3JlZW5fMF8xNTk4OTcwMDU3XzA3MQ/screen-0.jpg?fakeurl=1&type=.webp);
 }
+
 .contet {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  padding: 1vw;
-  transition: transform var(--d) var(--e);
-  z-index: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 1vw;
+    transition: transform var(--d) var(--e);
+    z-index: 1;
 }
 
 .MyName16 {
-  font-size: 1.3vw;
-  font-weight: bold;
-  line-height: 1.2;
+    font-size: 1.3vw;
+    font-weight: bold;
+    line-height: 1.2;
 }
+
 .Info16 {
-  margin: 2vw;
-  font-size: 1.125vw;
-  font-style: italic;
-  line-height: 1.35;
-  color: #fcfffa;
+    margin: 2vw;
+    font-size: 1.125vw;
+    font-style: italic;
+    line-height: 1.35;
+    color: #fcfffa;
 }
+
 .connent {
-  display: flex;
+    display: flex;
 }
+
 .bttn {
-  cursor: pointer;
-  margin: 1.3vw 0.3vw;
-  filter: grayscale(1);
-  border: none;
+    cursor: pointer;
+    margin: 1.3vw 0.3vw;
+    filter: grayscale(1);
+    border: none;
 }
+
 .bttn:hover {
-  filter: grayscale(0);
-  transition: all 0.5s;
+    filter: grayscale(0);
+    transition: all 0.5s;
 }
 
 @media (hover: hover) and (min-width: 600px) {
-  .card16:after {
-    transform: translateY(0);
-  }
-  .contet {
-    transform: translateY(calc(100% - 4.5rem));
-  }
-  .contet > *:not(.MyName16) {
-    opacity: 0;
-    transform: translateY(1rem);
-    transition: transform var(--d) var(--e), opacity var(--d) var(--e);
-  }
-  .card16:hover,
-  .card16:focus-within {
-    align-items: center;
-  }
-  .card16:hover:before,
-  .card16:focus-within:before {
-    transform: translateY(-4%);
-    filter: blur(8px);
-    transition: all 0.7s;
-  }
-  .card16:hover:after,
-  .card16:focus-within:after {
-    transform: translateY(-50%);
-  }
-  .card16:hover .contet,
-  .card16:focus-within .contet {
-    transform: translateY(0);
-  }
-  .card16:hover .contet > *:not(.MyName16),
-  .card16:focus-within .contet > *:not(.MyName16) {
-    opacity: 1;
-    transform: translateY(0);
-    transition-delay: calc(var(--d) / 8);
-  }
-  .card16:focus-within:before,
-  .card16:focus-within:after,
-  .card16:focus-within .contet,
-  .card16:focus-within .contet > *:not(.MyName16) {
-    transition-duration: 0s;
-  }
+    .card16:after {
+        transform: translateY(0);
+    }
+    .contet {
+        transform: translateY(calc(100% - 4.5rem));
+    }
+    .contet>*:not(.MyName16) {
+        opacity: 0;
+        transform: translateY(1rem);
+        transition: transform var(--d) var(--e), opacity var(--d) var(--e);
+    }
+    .card16:hover,
+    .card16:focus-within {
+        align-items: center;
+    }
+    .card16:hover:before,
+    .card16:focus-within:before {
+        transform: translateY(-4%);
+        filter: blur(8px);
+        transition: all 0.7s;
+    }
+    .card16:hover:after,
+    .card16:focus-within:after {
+        transform: translateY(-50%);
+    }
+    .card16:hover .contet,
+    .card16:focus-within .contet {
+        transform: translateY(0);
+    }
+    .card16:hover .contet>*:not(.MyName16),
+    .card16:focus-within .contet>*:not(.MyName16) {
+        opacity: 1;
+        transform: translateY(0);
+        transition-delay: calc(var(--d) / 8);
+    }
+    .card16:focus-within:before,
+    .card16:focus-within:after,
+    .card16:focus-within .contet,
+    .card16:focus-within .contet>*:not(.MyName16) {
+        transition-duration: 0s;
+    }
 }
 
+
 /* ----------------------------------  End for UI-16 css code ------------------------------------ */
+
 
 /* ----------------------------------  Start for Subrat's UI-16 css code ------------------------------------ */
 
 .container16 {
-  position: relative;
-  height: 500px;
-  width: 400px;
-  overflow: hidden;
-  background: black;
-  box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.3);
-  transition: 0.3s ease-out;
-  border-radius: 10px;
+    position: relative;
+    height: 500px;
+    width: 400px;
+    overflow: hidden;
+    background: black;
+    box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.3);
+    transition: 0.3s ease-out;
+    border-radius: 10px;
 }
 
 .container16:hover {
-  box-shadow: 0px 1px 35px 0px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 1px 35px 0px rgba(0, 0, 0, 0.3);
 }
 
 .container16 .image {
-  background: #000;
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  z-index: 2;
-  transition: transform 0.3s ease-out;
+    background: #000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+    transition: transform 0.3s ease-out;
 }
 
 .container16:hover .image {
-  transform: translateY(-100px);
+    transform: translateY(-100px);
 }
 
 .container16 .image img {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  transition: opacity 0.3s ease-out;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s ease-out;
 }
 
 .container16:hover .image img {
-  opacity: 0.7;
+    opacity: 0.7;
 }
 
 .container16:hover .image {
-  transform: translateY(-100px);
+    transform: translateY(-100px);
 }
 
 .container16 ul {
-  display: flex;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 3;
-  list-style: none;
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    list-style: none;
 }
 
 .container16 ul li {
-  margin: 0 5px;
+    margin: 0 5px;
 }
 
 .container16 ul li a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 50px;
-  width: 50px;
-  color: black !important;
-  line-height: 50px;
-  font-size: 25px;
-  border-radius: 50%;
-  overflow: hidden;
-  opacity: 0;
-  transform: translateY(200px);
-  background-color: rgb(239, 239, 239);
-  border: 1px solid white;
-  transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 50px;
+    color: black !important;
+    line-height: 50px;
+    font-size: 25px;
+    border-radius: 50%;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(200px);
+    background-color: rgb(239, 239, 239);
+    border: 1px solid white;
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
 }
+
 .container16 ul li a span {
-  color: rgb(37, 37, 37);
-  position: relative;
-  left: 1px;
+    color: rgb(37, 37, 37);
+    position: relative;
+    left: 1px;
 }
 
-.container16:hover > ul > li > a {
-  opacity: 1;
-  transform: translateY(130px);
+.container16:hover>ul>li>a {
+    opacity: 1;
+    transform: translateY(130px);
 }
 
-.container16:hover > ul > li:nth-child(1) a {
-  transition-delay: 0.3s;
+.container16:hover>ul>li:nth-child(1) a {
+    transition-delay: 0.3s;
 }
 
-.container16:hover > ul > li:nth-child(2) a {
-  transition-delay: 0.2s;
+.container16:hover>ul>li:nth-child(2) a {
+    transition-delay: 0.2s;
 }
 
-.container16:hover > ul > li:nth-child(3) a {
-  transition-delay: 0.1s;
+.container16:hover>ul>li:nth-child(3) a {
+    transition-delay: 0.1s;
 }
 
-.container16:hover > ul > li:nth-child(4) a {
-  transition-delay: 0.2s;
+.container16:hover>ul>li:nth-child(4) a {
+    transition-delay: 0.2s;
 }
 
-.container16:hover > ul > li:nth-child(5) a {
-  transition-delay: 0.3s;
+.container16:hover>ul>li:nth-child(5) a {
+    transition-delay: 0.3s;
 }
 
 .container16 .content {
-  position: relative;
-  right: 10px;
-  width: 100%;
-  height: 100%;
-  background-color: #000;
+    position: relative;
+    right: 10px;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
 }
 
 .container16 .info {
-  position: absolute;
-  bottom: 20px;
-  text-align: center;
-  width: 100%;
-  color: whitesmoke;
-  line-height: 26px;
+    position: absolute;
+    bottom: 20px;
+    text-align: center;
+    width: 100%;
+    color: whitesmoke;
+    line-height: 26px;
 }
 
 .container16 .info h2 {
-  font-size: 27px;
-  margin: 3px 0;
+    font-size: 27px;
+    margin: 3px 0;
 }
 
 .container16 .info span {
-  color: rgb(161, 161, 161);
+    color: rgb(161, 161, 161);
 }
 
 .container16 ul li a:hover {
-  background-color: white;
-  font-size: 32px;
+    background-color: white;
+    font-size: 32px;
 }
+
 .container16 ul li a:hover span {
-  bottom: -1px;
-  color: black;
+    bottom: -1px;
+    color: black;
 }
 
 .card17 {
-  display: flex;
-  justify-content: center;
+    display: flex;
+    justify-content: center;
 }
+
 
 /* ----------------------------------  End for Subrat's UI-16 css code ------------------------------------ */
 
+
 /* ..........Source Code button style start........ */
+
 .cta {
-  position: relative;
-  margin: auto;
-  padding: 12px 18px;
-  transition: all 0.2s ease;
-  border: none;
-  background: none;
-  cursor: pointer;
+    position: relative;
+    margin: auto;
+    padding: 12px 18px;
+    transition: all 0.2s ease;
+    border: none;
+    background: none;
+    cursor: pointer;
 }
 
 .cta:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: block;
-  border-radius: 50px;
-  background: #b88f49;
-  width: 45px;
-  height: 45px;
-  transition: all 0.3s ease;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    border-radius: 50px;
+    background: #b88f49;
+    width: 45px;
+    height: 45px;
+    transition: all 0.3s ease;
 }
 
 .cta span {
-  position: relative;
-  font-family: "Ubuntu", sans-serif;
-  font-size: 18px;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  /* color: #234567; */
-  color: rgb(48, 45, 45);
+    position: relative;
+    font-family: "Ubuntu", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    /* color: #234567; */
+    color: rgb(48, 45, 45);
 }
 
 .cta svg {
-  position: relative;
-  top: 0;
-  margin-left: 10px;
-  fill: none;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke: #234567;
-  stroke-width: 2;
-  transform: translateX(-5px);
-  transition: all 0.3s ease;
+    position: relative;
+    top: 0;
+    margin-left: 10px;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke: #234567;
+    stroke-width: 2;
+    transform: translateX(-5px);
+    transition: all 0.3s ease;
 }
 
 .cta:hover:before {
-  width: 100%;
-  background: #bf8d36;
+    width: 100%;
+    background: #bf8d36;
 }
 
 .cta:hover svg {
-  transform: translateX(0);
+    transform: translateX(0);
 }
 
 .cta:active {
-  transform: scale(0.95);
+    transform: scale(0.95);
 }
+
+
 /* ...........Source Code button style end......... */
 
+
 /* ----------------------------------  Start for Ritvik's UI-17 css code ------------------------------------ */
+
 .wrapper17 {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
 }
+
 .abc {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: fit-content;
-  padding: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: fit-content;
+    padding: 50px;
 }
+
 .cardabc {
-  position: relative;
-  width: 350px;
-  height: 210px;
-  background: linear-gradient(90deg, #2852e9, #45a247);
-  transition: 0.5s;
+    position: relative;
+    width: 350px;
+    height: 210px;
+    background: linear-gradient(90deg, #2852e9, #45a247);
+    transition: 0.5s;
 }
+
 .cardabc:hover {
-  height: 500px;
+    height: 500px;
 }
+
 .cardabc .lines {
-  position: absolute;
-  inset: 0;
-  background: #000;
-  overflow: hidden;
+    position: absolute;
+    inset: 0;
+    background: #000;
+    overflow: hidden;
 }
+
 .cardabc .lines::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 600px;
-  height: 120px;
-  background: linear-gradient(
-    transparent,
-    #79ff03,
-    #79ff03,
-    #79ff03,
-    transparent
-  );
-  animation: animate 4s linear infinite;
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 120px;
+    background: linear-gradient( transparent, #79ff03, #79ff03, #79ff03, transparent);
+    animation: animate 4s linear infinite;
 }
+
 @keyframes animate {
-  0% {
-    transform: translate(-50%, -50%) rotate(0deg);
-  }
-  100% {
-    transform: translate(-50%, -50%) rotate(360deg);
-  }
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
 }
+
 .cardabc .lines::after {
-  content: "";
-  position: absolute;
-  inset: 3px;
-  background: #292929;
+    content: "";
+    position: absolute;
+    inset: 3px;
+    background: #292929;
 }
+
 .cardabc .imgBx {
-  position: absolute;
-  top: -50px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 150px;
-  height: 150px;
-  background: #000;
-  transition: 0.5s;
-  z-index: 1;
-  overflow: hidden;
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 150px;
+    background: #000;
+    transition: 0.5s;
+    z-index: 1;
+    overflow: hidden;
 }
+
 .cardabc:hover .imgBx {
-  width: 250px;
-  height: 250px;
+    width: 250px;
+    height: 250px;
 }
+
 .cardabc .imgBx::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 500px;
-  height: 150px;
-  transform: translate(-50%, -50%);
-  background: linear-gradient(
-    transparent,
-    #ff3c7b,
-    #ff3c7b,
-    #ff3c7b,
-    transparent
-  );
-  animation: animate2 6s linear infinite;
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 500px;
+    height: 150px;
+    transform: translate(-50%, -50%);
+    background: linear-gradient( transparent, #ff3c7b, #ff3c7b, #ff3c7b, transparent);
+    animation: animate2 6s linear infinite;
 }
+
 @keyframes animate2 {
-  0% {
-    transform: translate(-50%, -50%) rotate(360deg);
-  }
-  100% {
-    transform: translate(-50%, -50%) rotate(0deg);
-  }
+    0% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
 }
+
 .cardabc .imgBx::after {
-  content: "";
-  position: absolute;
-  inset: 3px;
-  background: #292929;
+    content: "";
+    position: absolute;
+    inset: 3px;
+    background: #292929;
 }
+
 .cardabc .imgBx img {
-  position: absolute;
-  top: 5px;
-  left: 5px;
-  z-index: 1;
-  width: 140px;
-  height: 140px;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    z-index: 1;
+    width: 140px;
+    height: 140px;
 }
+
 .cardabc:hover .imgBx img {
-  width: 240px;
-  height: 240px;
+    width: 240px;
+    height: 240px;
 }
+
 .cardabc .contentx {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
 }
+
 .cardabc .contentx .details {
-  padding: 40px;
-  text-align: center;
-  width: 100%;
-  transition: 0.5s;
-  transform: translateY(132px);
+    padding: 40px;
+    text-align: center;
+    width: 100%;
+    transition: 0.5s;
+    transform: translateY(132px);
 }
+
 .cardabc:hover .contentx .details {
-  transform: translateY(100px);
+    transform: translateY(100px);
 }
+
 .cardabc .contentx .details h2 {
-  font-size: 1.23em;
-  font-weight: 600;
-  color: #45f3ff;
-  line-height: 1.2em;
-  padding-top: 20px;
+    font-size: 1.23em;
+    font-weight: 600;
+    color: #45f3ff;
+    line-height: 1.2em;
+    padding-top: 20px;
 }
+
 .cardabc .contentx .details h2 span {
-  font-size: 0.75em;
-  font-weight: 500;
-  color: #fff;
+    font-size: 0.75em;
+    font-weight: 500;
+    color: #fff;
 }
+
 .cardabc .contentx .details .links {
-  width: 20px;
-  height: 20px;
-  justify-content: space-between;
+    width: 20px;
+    height: 20px;
+    justify-content: space-between;
 }
+
 .cardabc .contentx .details .actionBtn {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  padding-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding-top: 50px;
 }
+
 .cardabc .contentx .details .actionBtn button {
-  padding: 10px 30px;
-  border: none;
-  outline: none;
-  border-radius: 5px;
-  font-size: 1em;
-  font-weight: 600;
-  background: #45f3ff;
-  color: #222;
-  cursor: pointer;
-  opacity: 0.9;
+    padding: 10px 30px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    font-size: 1em;
+    font-weight: 600;
+    background: #45f3ff;
+    color: #222;
+    cursor: pointer;
+    opacity: 0.9;
 }
+
 .cardabc .contentx .details .actionBtn button:nth-child(2) {
-  background: #fff;
+    background: #fff;
 }
+
 .cardabc .contentx .details .actionBtn button:hover {
-  opacity: 1;
-  background-image: linear-gradient(135deg, orange, cyan);
+    opacity: 1;
+    background-image: linear-gradient(135deg, orange, cyan);
 }
+
 .links img {
-  height: 45px;
-  width: 45px;
-  margin: 5px 11px 5px 11px;
+    height: 45px;
+    width: 45px;
+    margin: 5px 11px 5px 11px;
 }
+
 .links {
-  display: flex;
-  justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
 }
+
 .links img:hover {
-  border: solid 1px #555;
-  background-color: #eed;
-  box-shadow: 10px -10px rgba(0, 0, 0, 0.6);
-  -moz-box-shadow: 10px -10px rgba(0, 0, 0, 0.6);
-  -webkit-box-shadow: 10px -10px rgba(0, 0, 0, 0.6);
-  -o-box-shadow: 10px -10px rgba(0, 0, 0, 0.6);
-  border-radius: 100px;
+    border: solid 1px #555;
+    background-color: #eed;
+    box-shadow: 10px -10px rgba(0, 0, 0, 0.6);
+    -moz-box-shadow: 10px -10px rgba(0, 0, 0, 0.6);
+    -webkit-box-shadow: 10px -10px rgba(0, 0, 0, 0.6);
+    -o-box-shadow: 10px -10px rgba(0, 0, 0, 0.6);
+    border-radius: 100px;
 }
+
+
 /* ----------------------------------  End for Ritvik's UI-17 css code ------------------------------------ */
+
+
 /* ----------------------------------  start of Vijay's UI-19 css code ------------------------------------ */
+
 .wrapper19 {
-  box-sizing: border-box;
-  font-family: Consolas;
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  padding: 40px 0;
+    box-sizing: border-box;
+    font-family: Consolas;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 40px 0;
 }
+
 .wrapper19 .box {
-  position: relative;
-  width: 420px;
-  height: 570px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 40px 30px;
-  transition: 0.5s;
+    position: relative;
+    width: 420px;
+    height: 570px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px 30px;
+    transition: 0.5s;
 }
+
 .wrapper19 .box::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 50px;
-  width: 70%;
-  height: 100%;
-  background: white;
-  border-radius: 8px;
-  transform: skewX(15deg);
-  transition: 0.5s;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50px;
+    width: 70%;
+    height: 100%;
+    background: white;
+    border-radius: 8px;
+    transform: skewX(15deg);
+    transition: 0.5s;
 }
+
 .wrapper19 .box::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 50px;
-  width: 70%;
-  height: 100%;
-  background: white;
-  border-radius: 8px;
-  transform: skew(15deg);
-  transition: 0.5s;
-  filter: blur(30px);
-  transition: 0.5s;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50px;
+    width: 70%;
+    height: 100%;
+    background: white;
+    border-radius: 8px;
+    transform: skew(15deg);
+    transition: 0.5s;
+    filter: blur(30px);
+    transition: 0.5s;
 }
+
 .wrapper19 .box:hover:before,
 .wrapper19 .box:hover:after {
-  transform: skewX(0deg);
-  left: 40px;
-  width: calc(100%-90px);
+    transform: skewX(0deg);
+    left: 40px;
+    width: calc(100%-90px);
 }
+
 .wrapper19 .box:nth-child(1):before,
 .wrapper19 .box:nth-child(1):after {
-  background: linear-gradient(315deg, #ffbc00, #ff0578);
+    background: linear-gradient(315deg, #ffbc00, #ff0578);
 }
+
 .wrapper19 .box span {
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 50;
-  pointer-events: none;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 50;
+    pointer-events: none;
 }
+
 .wrapper19 .box span::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  opacity: 0;
-  transition: 0.5s;
-  animation: animate3 2s ease-in-out infinite;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-  animation-delay: -1s;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    transition: 0.5s;
+    animation: animate3 2s ease-in-out infinite;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    animation-delay: -1s;
 }
+
 .wrapper19 .box span::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  opacity: 0;
-  transition: 0.5s;
-  animation: animate3 2s linear infinite;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    transition: 0.5s;
+    animation: animate3 2s linear infinite;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
+
 .wrapper19 .box:hover span::before {
-  top: -30px;
-  left: 55px;
-  width: 100px;
-  height: 100px;
-  opacity: 1;
+    top: -30px;
+    left: 55px;
+    width: 100px;
+    height: 100px;
+    opacity: 1;
 }
+
 .wrapper19 .box:hover span::after {
-  bottom: -30px;
-  right: 45px;
-  width: 100px;
-  height: 100px;
-  opacity: 1;
+    bottom: -30px;
+    right: 45px;
+    width: 100px;
+    height: 100px;
+    opacity: 1;
 }
+
 @keyframes animate3 {
-  0%,
-  100% {
-    transform: translateY(10px);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
+    0%,
+    100% {
+        transform: translateY(10px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
 }
+
 .content19 {
-  position: relative;
-  left: 0px;
-  padding: 20px 40px;
-  background: rgba(255, 255, 255, 0.05);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  backdrop-filter: blur(10px);
-  transform: 0.5s;
-  color: #fff;
-  z-index: 1;
-  width: fit-content;
+    position: relative;
+    left: 0px;
+    padding: 20px 40px;
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    backdrop-filter: blur(10px);
+    transform: 0.5s;
+    color: #fff;
+    z-index: 1;
+    width: fit-content;
 }
+
 .wrapper19 .box:hover .content19 {
-  left: -25px;
-  padding: 60px 9px 60px 40px;
+    left: -25px;
+    padding: 60px 9px 60px 40px;
 }
+
 .wrapper19 .box .content19 h2 {
-  font-size: 2em;
-  color: #fff;
-  margin-bottom: 10px;
+    font-size: 2em;
+    color: #fff;
+    margin-bottom: 10px;
 }
+
 .wrapper19 .box .content19 p {
-  font-size: 1.1em;
-  margin-bottom: 10px;
-  line-height: 1.4em;
-  color: #000;
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    line-height: 1.4em;
+    color: #000;
 }
+
 .wrapper19 .box .content19 .btnF {
-  display: inline-block;
-  font-size: 1.1em;
-  color: #111;
-  background: white;
-  padding: 10px;
-  border-radius: 4px;
-  text-decoration: none;
-  font-weight: 700;
-  margin-top: 5px;
+    display: inline-block;
+    font-size: 1.1em;
+    color: #111;
+    background: white;
+    padding: 10px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 700;
+    margin-top: 5px;
 }
+
 .wrapper19 .box .content19 .btnF:hover {
-  background: linear-gradient(210deg, rgb(255, 0, 221), rgb(0, 255, 153));
-  color: white;
+    background: linear-gradient(210deg, rgb(255, 0, 221), rgb(0, 255, 153));
+    color: white;
 }
 
 .wrapper19 .box .container19 .brand a {
-  background: none;
+    background: none;
 }
+
 .wrapper19 .content19 .brand {
-  margin-top: 30px;
-  display: flex;
-  gap: 1rem;
-  font-size: 2rem;
-  opacity: 0.55;
-}
-.wrapper19 .content19:hover .brand {
-  margin-top: 30px;
-  display: flex;
-  font-size: 2rem;
-  gap: 1.5rem;
-  background: none;
-  opacity: 1;
-  margin-right: 31px;
-}
-@media screen and (max-width: 768px) {
-  .wrapper19 .box .content19 .creator {
-    clear: both;
-    margin-bottom: 20px;
-    margin-left: 15%;
-    margin-right: 0%;
-  }
-  .wrapper19 .box .content19 p {
+    margin-top: 30px;
     display: flex;
-    flex-direction: column;
-  }
-  .wrapper19 .box .content19 img {
-    width: 100%;
-  }
-  .wrapper19 {
-    max-width: 100%;
-    width: 100%;
-  }
-  .container19 {
-    width: 100%;
-    float: left;
-    margin: 0;
-  }
+    gap: 1rem;
+    font-size: 2rem;
+    opacity: 0.55;
 }
+
+.wrapper19 .content19:hover .brand {
+    margin-top: 30px;
+    display: flex;
+    font-size: 2rem;
+    gap: 1.5rem;
+    background: none;
+    opacity: 1;
+    margin-right: 31px;
+}
+
+@media screen and (max-width: 768px) {
+    .wrapper19 .box .content19 .creator {
+        clear: both;
+        margin-bottom: 20px;
+        margin-left: 15%;
+        margin-right: 0%;
+    }
+    .wrapper19 .box .content19 p {
+        display: flex;
+        flex-direction: column;
+    }
+    .wrapper19 .box .content19 img {
+        width: 100%;
+    }
+    .wrapper19 {
+        max-width: 100%;
+        width: 100%;
+    }
+    .container19 {
+        width: 100%;
+        float: left;
+        margin: 0;
+    }
+}
+
 
 /* ----------------------------------  Start for Sidhartha's UI-18 css code ------------------------------------ */
 
 .container-19 {
-  font-family: "Open Sans", sans-serif;
-  margin: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 100px 10px;
+    font-family: "Open Sans", sans-serif;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 100px 10px;
 }
 
 .card19 {
-  display: inline-block;
-  position: relative;
-  width: 400px;
-  min-width: 400px;
-  height: 500px;
-  border-radius: 30px;
-  background-image: url(assets/card-20_background.gif);
-  background-size: cover;
-  background-repeat: no-repeat;
-  overflow: hidden;
-  color: whitesmoke;
-  box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.3);
-  margin: 30px;
+    display: inline-block;
+    position: relative;
+    width: 400px;
+    min-width: 400px;
+    height: 500px;
+    border-radius: 30px;
+    background-image: url(assets/card-20_background.gif);
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    color: whitesmoke;
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.3);
+    margin: 30px;
 }
 
 .hero-profile-img {
-  height: 50%;
-  border-radius: 50%;
-  border: 3px solid #fff;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
+    height: 50%;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
 }
 
 .hero-description-bk {
-  background-image: linear-gradient(0deg, #fc466b, #3f5efb);
-  border-radius: 30px;
-  position: absolute;
-  top: 55%;
-  left: -5px;
-  height: 65%;
-  width: 108%;
-  transform: skew(19deg, -9deg);
+    background-image: linear-gradient(0deg, #fc466b, #3f5efb);
+    border-radius: 30px;
+    position: absolute;
+    top: 55%;
+    left: -5px;
+    height: 65%;
+    width: 108%;
+    transform: skew(19deg, -9deg);
 }
 
 .profile-icons {
-  position: absolute;
-  padding: 20px;
-  width: 100%;
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flex;
-  display: -o-flex;
-  display: flex;
-  -ms-align-items: center;
-  align-items: center;
-  justify-content: center;
+    position: absolute;
+    padding: 20px;
+    width: 100%;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    -ms-align-items: center;
+    align-items: center;
+    justify-content: center;
 }
+
 .profile-icons i {
-  color: #fff;
-  font-size: 36px;
-  -webkit-transition: all 0.5s linear;
-  -o-transition: all 0.5s linear;
-  transition: all 0.5s linear;
+    color: #fff;
+    font-size: 36px;
+    -webkit-transition: all 0.5s linear;
+    -o-transition: all 0.5s linear;
+    transition: all 0.5s linear;
 }
 
 .profile-icons li {
-  display: inline-block;
-  margin: 10px;
-  padding: 10px;
+    display: inline-block;
+    margin: 10px;
+    padding: 10px;
 }
+
 .profile-icons li:hover i {
-  -webkit-transform: rotate(360deg) scale(2);
-  -ms-transform: rotate(360deg) scale(2);
-  -o-transform: rotate(360deg) scale(2);
-  transform: rotate(360deg) scale(1.5);
-  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); */
+    -webkit-transform: rotate(360deg) scale(2);
+    -ms-transform: rotate(360deg) scale(2);
+    -o-transform: rotate(360deg) scale(2);
+    transform: rotate(360deg) scale(1.5);
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); */
 }
 
 .about {
-  /* background: #d8aa2a; */
-  color: #f5c540;
-  padding: 7em 0 0 0;
-  text-transform: capitalize;
-  line-height: 62px;
-  margin: auto;
-
-  /* -webkit-perspective: 1000px; <-NB */
+    /* background: #d8aa2a; */
+    color: #f5c540;
+    padding: 7em 0 0 0;
+    text-transform: capitalize;
+    line-height: 62px;
+    margin: auto;
+    /* -webkit-perspective: 1000px; <-NB */
 }
 
 .cube {
-  width: 200px;
-  text-align: center;
-  margin: 0 auto;
-
-  -webkit-transition: -webkit-transform 0.3s;
-  transition: transform 0.3s; /* Animate the transform properties */
-
-  -webkit-transform-style: preserve-3d;
-  transform-style: preserve-3d; /* <-NB */
-  height: 100px;
+    width: 200px;
+    text-align: center;
+    margin: 0 auto;
+    -webkit-transition: -webkit-transform 0.3s;
+    transition: transform 0.3s;
+    /* Animate the transform properties */
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    /* <-NB */
+    height: 100px;
 }
+
 .front,
 .back {
-  background: black;
-  border: 10px solid;
-  border-image-slice: 1;
-  border-width: 5px;
-  border-image-source: linear-gradient(to right, red, orange);
+    background: black;
+    border: 10px solid;
+    border-image-slice: 1;
+    border-width: 5px;
+    border-image-source: linear-gradient(to right, red, orange);
 }
+
 .front {
-  -webkit-transform: translateZ(50px);
-  transform: translateZ(50px);
+    -webkit-transform: translateZ(50px);
+    transform: translateZ(50px);
 }
+
 .back {
-  -webkit-transform: rotateX(-90deg) translateZ(-50px);
-  transform: rotateX(-90deg) translateZ(-50px);
+    -webkit-transform: rotateX(-90deg) translateZ(-50px);
+    transform: rotateX(-90deg) translateZ(-50px);
 }
+
+
 /* rotation */
+
 .cube:hover {
-  -webkit-transform: rotateX(89deg);
-  transform: rotateX(90deg);
+    -webkit-transform: rotateX(89deg);
+    transform: rotateX(90deg);
 }
+
+
+/* start for charvi's card UI css */
+
+.row {
+    padding: 100px;
+}
+
+.card_20 {
+    position: relative;
+    height: 500px;
+    width: 50%;
+    justify-content: center;
+    transition: ease all 2.3s;
+    perspective: 1200px;
+    left: 25%;
+    /* padding-top: 40px; */
+    /* padding-bottom: 80px; */
+}
+
+.card_20:hover .cover_20 {
+    transform: rotateX(0deg) rotateY(-180deg);
+}
+
+.card_20:hover .cover_20:before {
+    transform: translateZ(30px);
+}
+
+.card_20:hover .cover_20:after {
+    background-color: black;
+}
+
+.card_20:hover .cover_20 h1 {
+    transform: translateZ(100px);
+}
+
+.card_20:hover .cover_20 .tech {
+    transform: translateZ(60px);
+}
+
+.card_20:hover .cover_20 a {
+    transform: translateZ(-60px) rotatey(-180deg);
+}
+
+.card_20 .cover_20 {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    transform-style: preserve-3d;
+    transition: ease all 2.3s;
+    background-size: cover_20;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.card_20 .cover_20:before {
+    content: "";
+    position: absolute;
+    border: 5px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    z-index: 2;
+    transition: ease all 2.3s;
+    transform-style: preserve-3d;
+    transform: translateZ(0px);
+}
+
+.card_20 .cover_20:after {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    z-index: 2;
+    transition: ease all 1.3s;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.card_20 .cover_20.item-20 {
+    background-image: url(./assets/card20.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.card_20 .cover_20 h1 {
+    font-weight: 600;
+    position: absolute;
+    bottom: 55px;
+    left: 50px;
+    color: white;
+    transform-style: preserve-3d;
+    transition: ease all 2.3s;
+    z-index: 3;
+    font-size: 3em;
+    transform: translateZ(0px);
+}
+
+.card_20 .cover_20 .tech {
+    font-weight: 200;
+    position: absolute;
+    top: 55px;
+    right: 50px;
+    color: white;
+    transform-style: preserve-3d;
+    transition: ease all 2.3s;
+    z-index: 4;
+    font-size: 2em;
+    transform: translateZ(0px);
+}
+
+.card_20 .card_20-back {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: #0b0f08;
+    transform-style: preserve-3d;
+    transition: ease all 2.3s;
+    transform: translateZ(-1px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card_20 .card_20-back a {
+    transform-style: preserve-3d;
+    transition: ease transform 2.3s, ease background 0.5s;
+    transform: translateZ(-1px) rotatey(-180deg);
+    background: transparent;
+    border: 1px solid white;
+    font-weight: 200;
+    font-size: 2em;
+    color: white;
+    padding: 14px 32px;
+    outline: none;
+    text-decoration: none;
+}
+
+.card_20 .card_20-back a:hover {
+    background-color: white;
+    color: #0b0f08;
+}
+
+
+/* end for charvi's card UI css */
