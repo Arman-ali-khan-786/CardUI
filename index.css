@@ -16,7 +16,7 @@
 body {
   display: flex;
   flex-direction: column;
-  background: linear-gradient(225deg, #1180a2, rgba(13, 203, 245, 0.75) 100%)
+  background: #8892b6
     no-repeat;
 }
 
@@ -35,15 +35,11 @@ body {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(
-    rgb(134, 239, 172),
-    rgb(59, 130, 246),
-    rgb(147, 51, 234)
-  );
+  background:#64ffda;
 }
 
 header {
-  background-color: #bf8d36;
+  background-color: #0a192f;
   padding: 12px 12px;
   display: flex;
   justify-content: space-between;
@@ -75,7 +71,7 @@ header > ul {
 
 ul li {
   margin: auto;
-  color: aliceblue;
+  color: #64ffda;
   transition: all 0.4s ease-in-out;
 }
 
@@ -90,7 +86,7 @@ ul a:hover {
 ul li a {
   margin: auto 12px;
   font-weight: 500;
-  color: black;
+  color: #64ffda;
   font-family: "Quicksand", serif;
 }
 
@@ -216,7 +212,7 @@ em {
 /* ###------------------------------ main page footer design -------------------------------------### */
 
 #footer {
-  background-color: #087c8b;
+  background-color: #0a192f;
   color: white;
   font-size: min(5vw, 16px);
   font-family: "Quicksand", serif;
