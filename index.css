@@ -208,7 +208,6 @@ em {
   height: 60px;
 }
 
-
 /* ###------------------------------ main page footer design -------------------------------------### */
 
 #footer {
@@ -227,7 +226,7 @@ em {
   align-items: center;
   border-top: 0px solid white;
 }
-.left-footer{
+.left-footer {
   display: flex;
   flex-direction: row;
   padding-left: 20px;
@@ -254,7 +253,7 @@ margin-bottom: 5px;
   transition: 1s;
   z-index: 3;
 }
-.social-container{
+.social-container {
   background-color: white;
   border-radius: 50%;
   display: block;
@@ -264,35 +263,35 @@ margin-bottom: 5px;
   z-index: 1;
   transition: 0.25sec ease-in;
 }
-.social-container:hover .main_social{
+.social-container:hover .main_social {
   color: white;
   rotate: 360deg;
 }
 
-.social-container:hover{
+.social-container:hover {
   top: 0;
 }
-.social-container:nth-child(1):hover{
+.social-container:nth-child(1):hover {
   background-color: #e1306c;
 }
-.social-container:nth-child(2):hover{
-  background-color: #0088CC;
+.social-container:nth-child(2):hover {
+  background-color: #0088cc;
 }
-.social-container:nth-child(3):hover{
+.social-container:nth-child(3):hover {
   background-color: #0e76a8;
 }
-.social-container:nth-child(4):hover{
+.social-container:nth-child(4):hover {
   background-color: #000000;
 }
 
-@media (max-width:890px) {
-  .social_icons{
+@media (max-width: 890px) {
+  .social_icons {
     scale: 0.7;
     translate: -12%;
   }
 }
-@media (max-width:620px) {
-  .social_icons{
+@media (max-width: 620px) {
+  .social_icons {
     scale: 0.5;
     translate: -15%;
   }
@@ -314,7 +313,7 @@ margin-bottom: 5px;
 .wrapper13,
 .wrapper15,
 .wrapper16,
-.wrapper17{
+.wrapper17 {
   /* add your wrapper class here*/
   margin: 12px;
   padding: 30px;
@@ -839,7 +838,7 @@ margin-bottom: 5px;
 
 .wrappers .title:hover,
 .title:active {
-  color: rgb(238, 101, 15); 
+  color: rgb(238, 101, 15);
 }
 
 .wrappers .place {
@@ -1796,7 +1795,6 @@ margin-bottom: 5px;
 
 /* ----------------------------------  End for UI-13 css code ------------------------------------ */
 
-
 /* ----------------------------------  UI-14 css code ------------------------------------ */
 .card14 .container {
   width: fit-content;
@@ -1923,14 +1921,13 @@ margin-bottom: 5px;
   color: #0338f8;
 }
 
-
 /* ----------------------------------  End for UI-14 css code ------------------------------------ */
 /* ---------------------------------- UI-15 css code ------------------------------------ */
-.card15{
+.card15 {
   background: white;
   padding: 1rem;
   border: black;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   background-image: url(https://images.pexels.com/photos/163117/keyboard-white-computer-keyboard-desktop-163117.jpeg?auto=compress&cs=tinysrgb&w=600);
   width: 250px;
   height: 350px;
@@ -1938,30 +1935,30 @@ margin-bottom: 5px;
   align-content: center;
   margin: 42px auto;
   position: relative;
- box-shadow:  5px 5px 15px rgba(57, 57, 57, 0.9);
-  }
+  box-shadow: 5px 5px 15px rgba(57, 57, 57, 0.9);
+}
 
 .card-header {
-font-size: 1.5rem;
-margin-bottom:2rem;
-}  
-.card-header h2{
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+.card-header h2 {
   color: black;
 }
-.card-body{
- color: black;
- font-size: 18px;
-}  
-#ips_icon{
+.card-body {
+  color: black;
+  font-size: 18px;
+}
+#ips_icon {
   padding: 12px;
   font-size: 30px;
   width: 50px;
   padding-left: 7px;
-  padding-right:7px;
-  margin-left:10px;
-  margin-right:6px;
-  margin-bottom:8px;
-  margin-top:8px;
+  padding-right: 7px;
+  margin-left: 10px;
+  margin-right: 6px;
+  margin-bottom: 8px;
+  margin-top: 8px;
   text-align: center;
   text-decoration: none;
   cursor: pointer;
@@ -1969,34 +1966,24 @@ margin-bottom:2rem;
   border-radius: 50%;
 }
 
-#ips_icon:hover{
+#ips_icon:hover {
   color: black;
   transition: 0.9s;
   transform: rotateY(180deg);
 }
 
-.card15:hover{
+.card15:hover {
   background-image: url(https://images.pexels.com/photos/1309766/pexels-photo-1309766.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
   transition: 2s;
   color: rgb(0, 0, 0);
 }
-.container{
+.container {
   align-items: center;
 }
-.card15:hover h2:hover{
+.card15:hover h2:hover {
   color: black;
 }
 /* ----------------------------------  End for UI-15 css code ------------------------------------ */
-
-
-
-
-
-
-
-
-
-
 
 /* ----------------------------------  Start for UI-16 css code ------------------------------------ */
 
@@ -2017,12 +2004,12 @@ margin-bottom:2rem;
 @media (min-width: 600px) {
   .page-content {
     grid-template-columns: repeat(2, 1fr);
- }
+  }
 }
 @media (min-width: 800px) {
   .page-content {
     grid-template-columns: repeat(4, 1fr);
- }
+  }
 }
 .card16 {
   position: relative;
@@ -2030,21 +2017,23 @@ margin-bottom:2rem;
   align-items: flex-end;
   overflow: hidden;
   padding: 1vw;
-  margin:2vw auto;
+  margin: 2vw auto;
   width: 18vw;
   height: 25vw !important;
   border-radius: 1vw;
   text-align: center;
   color: rgb(255, 255, 255);
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 2px 2px rgba(0, 0, 0, 0.1), 0 4px 4px rgba(0, 0, 0, 0.1), 0 8px 8px rgba(0, 0, 0, 0.1), 0 16px 16px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 2px 2px rgba(0, 0, 0, 0.1),
+    0 4px 4px rgba(0, 0, 0, 0.1), 0 8px 8px rgba(0, 0, 0, 0.1),
+    0 16px 16px rgba(0, 0, 0, 0.1);
 }
 @media (min-width: 600px) {
   .card16 {
     height: 350px;
- }
+  }
 }
 .card16:before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -2056,7 +2045,7 @@ margin-bottom:2rem;
   pointer-events: none;
 }
 .card16:after {
-  content: '';
+  content: "";
   display: block;
   position: absolute;
   top: 0;
@@ -2064,13 +2053,30 @@ margin-bottom:2rem;
   width: 100%;
   height: 200%;
   pointer-events: none;
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.009) 11.7%, rgba(0, 0, 0, 0.034) 22.1%, rgba(0, 0, 0, 0.072) 31.2%, rgba(0, 0, 0, 0.123) 39.4%, rgba(0, 0, 0, 0.182) 46.6%, rgba(0, 0, 0, 0.249) 53.1%, rgba(0, 0, 0, 0.320) 58.9%, rgba(0, 0, 0, 0.394) 64.3%, rgba(0, 0, 0, 0.468) 69.3%, rgba(0, 0, 0, 0.540) 74.1%, rgba(0, 0, 0, 0.607) 78.8%, rgba(0, 0, 0, 0.668) 83.6%, rgba(0, 0, 0, 0.721) 88.7%, rgba(0, 0, 0, 0.762) 94.1%, rgba(0, 0, 0, 0.790) 100%);
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.009) 11.7%,
+    rgba(0, 0, 0, 0.034) 22.1%,
+    rgba(0, 0, 0, 0.072) 31.2%,
+    rgba(0, 0, 0, 0.123) 39.4%,
+    rgba(0, 0, 0, 0.182) 46.6%,
+    rgba(0, 0, 0, 0.249) 53.1%,
+    rgba(0, 0, 0, 0.32) 58.9%,
+    rgba(0, 0, 0, 0.394) 64.3%,
+    rgba(0, 0, 0, 0.468) 69.3%,
+    rgba(0, 0, 0, 0.54) 74.1%,
+    rgba(0, 0, 0, 0.607) 78.8%,
+    rgba(0, 0, 0, 0.668) 83.6%,
+    rgba(0, 0, 0, 0.721) 88.7%,
+    rgba(0, 0, 0, 0.762) 94.1%,
+    rgba(0, 0, 0, 0.79) 100%
+  );
   transform: translateY(-50%);
   transition: transform calc(var(--d) * 2) var(--e);
 }
 .card16:before {
   background-image: url(https://image.winudf.com/v2/image1/Y29tLmZyZXNoZW52aXJvbm1lbnQuY29vbHdhbGxwYXBlcnNoZF9zY3JlZW5fMF8xNTk4OTcwMDU3XzA3MQ/screen-0.jpg?fakeurl=1&type=.webp);
-
 }
 .contet {
   position: relative;
@@ -2095,8 +2101,8 @@ margin-bottom:2rem;
   line-height: 1.35;
   color: #fcfffa;
 }
-.connent{
- display: flex;
+.connent {
+  display: flex;
 }
 .bttn {
   cursor: pointer;
@@ -2112,44 +2118,50 @@ margin-bottom:2rem;
 @media (hover: hover) and (min-width: 600px) {
   .card16:after {
     transform: translateY(0);
- }
+  }
   .contet {
     transform: translateY(calc(100% - 4.5rem));
- }
+  }
   .contet > *:not(.MyName16) {
     opacity: 0;
     transform: translateY(1rem);
     transition: transform var(--d) var(--e), opacity var(--d) var(--e);
- }
-  .card16:hover, .card16:focus-within {
+  }
+  .card16:hover,
+  .card16:focus-within {
     align-items: center;
- }
-  .card16:hover:before, .card16:focus-within:before {
+  }
+  .card16:hover:before,
+  .card16:focus-within:before {
     transform: translateY(-4%);
     filter: blur(8px);
     transition: all 0.7s;
- }
-  .card16:hover:after, .card16:focus-within:after {
+  }
+  .card16:hover:after,
+  .card16:focus-within:after {
     transform: translateY(-50%);
- }
-  .card16:hover .contet, .card16:focus-within .contet {
+  }
+  .card16:hover .contet,
+  .card16:focus-within .contet {
     transform: translateY(0);
- }
-  .card16:hover .contet > *:not(.MyName16), .card16:focus-within .contet > *:not(.MyName16) {
+  }
+  .card16:hover .contet > *:not(.MyName16),
+  .card16:focus-within .contet > *:not(.MyName16) {
     opacity: 1;
     transform: translateY(0);
     transition-delay: calc(var(--d) / 8);
- }
-  .card16:focus-within:before, .card16:focus-within:after, .card16:focus-within .contet, .card16:focus-within .contet > *:not(.MyName16) {
+  }
+  .card16:focus-within:before,
+  .card16:focus-within:after,
+  .card16:focus-within .contet,
+  .card16:focus-within .contet > *:not(.MyName16) {
     transition-duration: 0s;
- }
+  }
 }
-
 
 /* ----------------------------------  End for UI-16 css code ------------------------------------ */
 
 /* ----------------------------------  Start for Subrat's UI-16 css code ------------------------------------ */
-
 
 .container16 {
   position: relative;
@@ -2160,7 +2172,6 @@ margin-bottom:2rem;
   box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.3);
   transition: 0.3s ease-out;
   border-radius: 10px;
-
 }
 
 .container16:hover {
@@ -2213,8 +2224,8 @@ margin-bottom:2rem;
 
 .container16 ul li a {
   display: flex;
- justify-content: center;
- align-items: center;
+  justify-content: center;
+  align-items: center;
   height: 50px;
   width: 50px;
   color: black !important;
@@ -2224,39 +2235,38 @@ margin-bottom:2rem;
   overflow: hidden;
   opacity: 0;
   transform: translateY(200px);
-  background-color: rgb(239, 239, 239) ; 
-  border:1px solid white;
+  background-color: rgb(239, 239, 239);
+  border: 1px solid white;
   transition: transform 0.3s ease-out, opacity 0.3s ease-out;
 }
-.container16 ul li a span{
- color: rgb(37, 37, 37);
- position: relative;
- left: 1px;
- 
+.container16 ul li a span {
+  color: rgb(37, 37, 37);
+  position: relative;
+  left: 1px;
 }
 
-.container16:hover>ul>li>a {
+.container16:hover > ul > li > a {
   opacity: 1;
   transform: translateY(130px);
 }
 
-.container16:hover>ul>li:nth-child(1) a {
+.container16:hover > ul > li:nth-child(1) a {
   transition-delay: 0.3s;
 }
 
-.container16:hover>ul>li:nth-child(2) a {
+.container16:hover > ul > li:nth-child(2) a {
   transition-delay: 0.2s;
 }
 
-.container16:hover>ul>li:nth-child(3) a {
+.container16:hover > ul > li:nth-child(3) a {
   transition-delay: 0.1s;
 }
 
-.container16:hover>ul>li:nth-child(4) a {
+.container16:hover > ul > li:nth-child(4) a {
   transition-delay: 0.2s;
 }
 
-.container16:hover>ul>li:nth-child(5) a {
+.container16:hover > ul > li:nth-child(5) a {
   transition-delay: 0.3s;
 }
 
@@ -2266,7 +2276,6 @@ margin-bottom:2rem;
   width: 100%;
   height: 100%;
   background-color: #000;
-
 }
 
 .container16 .info {
@@ -2291,12 +2300,12 @@ margin-bottom:2rem;
   background-color: white;
   font-size: 32px;
 }
-.container16 ul li a:hover span{
+.container16 ul li a:hover span {
   bottom: -1px;
   color: black;
 }
 
-.card17{
+.card17 {
   display: flex;
   justify-content: center;
 }
@@ -2312,9 +2321,9 @@ margin-bottom:2rem;
   border: none;
   background: none;
   cursor: pointer;
- }
- 
- .cta:before {
+}
+
+.cta:before {
   content: "";
   position: absolute;
   top: 0;
@@ -2325,9 +2334,9 @@ margin-bottom:2rem;
   width: 45px;
   height: 45px;
   transition: all 0.3s ease;
- }
- 
- .cta span {
+}
+
+.cta span {
   position: relative;
   font-family: "Ubuntu", sans-serif;
   font-size: 18px;
@@ -2335,9 +2344,9 @@ margin-bottom:2rem;
   letter-spacing: 0.05em;
   /* color: #234567; */
   color: rgb(48, 45, 45);
- }
- 
- .cta svg {
+}
+
+.cta svg {
   position: relative;
   top: 0;
   margin-left: 10px;
@@ -2348,243 +2357,224 @@ margin-bottom:2rem;
   stroke-width: 2;
   transform: translateX(-5px);
   transition: all 0.3s ease;
- }
- 
- .cta:hover:before {
+}
+
+.cta:hover:before {
   width: 100%;
   background: #bf8d36;
- }
- 
- .cta:hover svg {
+}
+
+.cta:hover svg {
   transform: translateX(0);
- }
- 
- .cta:active {
+}
+
+.cta:active {
   transform: scale(0.95);
- }
+}
 /* ...........Source Code button style end......... */
 
 /* ----------------------------------  Start for Ritvik's UI-17 css code ------------------------------------ */
-.wrapper17
-{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins',sans-serif;
+.wrapper17 {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
-.abc
-{
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   min-height: fit-content;
-   padding: 50px;
+.abc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: fit-content;
+  padding: 50px;
 }
-.cardabc
-{
-    position: relative;
-    width: 350px;
-    height: 210px;
-    background: linear-gradient(90deg,#2852e9,#45a247);
-    transition: 0.5s;
+.cardabc {
+  position: relative;
+  width: 350px;
+  height: 210px;
+  background: linear-gradient(90deg, #2852e9, #45a247);
+  transition: 0.5s;
 }
-.cardabc:hover
-{
-    height: 500px;
+.cardabc:hover {
+  height: 500px;
 }
-.cardabc .lines
-{
-    position: absolute;
-    inset: 0;
-    background: #000;
-    overflow: hidden;
+.cardabc .lines {
+  position: absolute;
+  inset: 0;
+  background: #000;
+  overflow: hidden;
 }
-.cardabc .lines::before
-{
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    width: 600px;
-    height: 120px;
-    background: linear-gradient(transparent,#79ff03,
-    #79ff03,#79ff03,transparent);
-    animation: animate 4s linear infinite;
+.cardabc .lines::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 120px;
+  background: linear-gradient(
+    transparent,
+    #79ff03,
+    #79ff03,
+    #79ff03,
+    transparent
+  );
+  animation: animate 4s linear infinite;
 }
-@keyframes animate
-{
-    0%
-    {
-        transform: translate(-50%,-50%) rotate(0deg);
-    }
-    100%
-    {
-        transform: translate(-50%,-50%) rotate(360deg);
-    }
+@keyframes animate {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
 }
-.cardabc .lines::after
-{
-    content: '';
-    position: absolute;
-    inset: 3px;
-    background: #292929;
+.cardabc .lines::after {
+  content: "";
+  position: absolute;
+  inset: 3px;
+  background: #292929;
 }
-.cardabc .imgBx
-{
-    position: absolute;
-    top: -50px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 150px;
-    height: 150px;
-    background: #000;
-    transition: 0.5s;
-    z-index: 1;
-    overflow: hidden;
+.cardabc .imgBx {
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 150px;
+  height: 150px;
+  background: #000;
+  transition: 0.5s;
+  z-index: 1;
+  overflow: hidden;
 }
-.cardabc:hover .imgBx 
-{
-    width: 250px;
-    height: 250px;
+.cardabc:hover .imgBx {
+  width: 250px;
+  height: 250px;
 }
-.cardabc .imgBx::before
-{
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 500px;
-    height: 150px;
-    transform: translate(-50%,-50%);
-    background: linear-gradient(transparent,#ff3c7b,#ff3c7b,#ff3c7b,transparent);
-    animation: animate2 6s linear infinite;
+.cardabc .imgBx::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 500px;
+  height: 150px;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(
+    transparent,
+    #ff3c7b,
+    #ff3c7b,
+    #ff3c7b,
+    transparent
+  );
+  animation: animate2 6s linear infinite;
 }
-@keyframes animate2
-{
-    0%
-    {
-        transform: translate(-50%,-50%) rotate(360deg);
-    }
-    100%
-    {
-        transform: translate(-50%,-50%) rotate(0deg);
-    }
+@keyframes animate2 {
+  0% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
 }
-.cardabc .imgBx::after
-{
-    content: '';
-    position: absolute;
-    inset: 3px;
-    background: #292929;
+.cardabc .imgBx::after {
+  content: "";
+  position: absolute;
+  inset: 3px;
+  background: #292929;
 }
-.cardabc .imgBx img
-{
-    position: absolute;
-    top: 5px;
-    left: 5px;
-    z-index: 1;
-    width: 140px;
-    height: 140px;
+.cardabc .imgBx img {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  z-index: 1;
+  width: 140px;
+  height: 140px;
 }
-.cardabc:hover .imgBx img
-{
-    width: 240px;
-    height: 240px;
+.cardabc:hover .imgBx img {
+  width: 240px;
+  height: 240px;
 }
-.cardabc .contentx
-{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
+.cardabc .contentx {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
-.cardabc .contentx .details
-{
-    padding: 40px;
-    text-align: center;
-    width: 100%;
-    transition: 0.5s;
-    transform: translateY(132px);
+.cardabc .contentx .details {
+  padding: 40px;
+  text-align: center;
+  width: 100%;
+  transition: 0.5s;
+  transform: translateY(132px);
 }
-.cardabc:hover .contentx .details
-{
-    transform: translateY(100px);
+.cardabc:hover .contentx .details {
+  transform: translateY(100px);
 }
-.cardabc .contentx .details h2
-{
-    font-size: 1.23em;
-    font-weight: 600;
-    color: #45f3ff;
-    line-height: 1.2em;
-    padding-top: 20px;
+.cardabc .contentx .details h2 {
+  font-size: 1.23em;
+  font-weight: 600;
+  color: #45f3ff;
+  line-height: 1.2em;
+  padding-top: 20px;
 }
-.cardabc .contentx .details h2 span
-{
-    font-size: 0.75em;
-    font-weight: 500;
-    color: #fff;
-
+.cardabc .contentx .details h2 span {
+  font-size: 0.75em;
+  font-weight: 500;
+  color: #fff;
 }
-.cardabc .contentx .details .links
-{
-    width: 20px;
-    height: 20px;
-    justify-content: space-between;
+.cardabc .contentx .details .links {
+  width: 20px;
+  height: 20px;
+  justify-content: space-between;
 }
-.cardabc .contentx .details .actionBtn
-{
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-    padding-top: 50px;
+.cardabc .contentx .details .actionBtn {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding-top: 50px;
 }
-.cardabc .contentx .details .actionBtn button{
-    padding: 10px 30px;
-    border: none;
-    outline: none;
-    border-radius: 5px;
-    font-size: 1em;
-    font-weight: 600;
-    background: #45f3ff;
-    color: #222;
-    cursor: pointer;
-    opacity: 0.9;
+.cardabc .contentx .details .actionBtn button {
+  padding: 10px 30px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  font-size: 1em;
+  font-weight: 600;
+  background: #45f3ff;
+  color: #222;
+  cursor: pointer;
+  opacity: 0.9;
 }
-.cardabc .contentx .details .actionBtn button:nth-child(2)
-{
-    background: #fff;
+.cardabc .contentx .details .actionBtn button:nth-child(2) {
+  background: #fff;
 }
-.cardabc .contentx .details .actionBtn button:hover
-{
-    opacity: 1;
-    background-image: linear-gradient(135deg,orange,cyan);
+.cardabc .contentx .details .actionBtn button:hover {
+  opacity: 1;
+  background-image: linear-gradient(135deg, orange, cyan);
 }
-.links img{
-    height: 45px;
-    width: 45px;
-    margin: 5px 11px 5px 11px;
+.links img {
+  height: 45px;
+  width: 45px;
+  margin: 5px 11px 5px 11px;
 }
-.links{
-    display: flex;
-    justify-content: space-between;
+.links {
+  display: flex;
+  justify-content: space-between;
 }
-.links img:hover{
-    border: solid 1px #555;
+.links img:hover {
+  border: solid 1px #555;
   background-color: #eed;
-  box-shadow: 10px -10px  rgba(0,0,0,0.6);
-  -moz-box-shadow: 10px -10px  rgba(0,0,0,0.6);
-  -webkit-box-shadow: 10px -10px  rgba(0,0,0,0.6);
-  -o-box-shadow: 10px -10px  rgba(0,0,0,0.6);
-  border-radius:100px;
-
+  box-shadow: 10px -10px rgba(0, 0, 0, 0.6);
+  -moz-box-shadow: 10px -10px rgba(0, 0, 0, 0.6);
+  -webkit-box-shadow: 10px -10px rgba(0, 0, 0, 0.6);
+  -o-box-shadow: 10px -10px rgba(0, 0, 0, 0.6);
+  border-radius: 100px;
 }
 /* ----------------------------------  End for Ritvik's UI-17 css code ------------------------------------ */
 /* ----------------------------------  start of Vijay's UI-19 css code ------------------------------------ */
-.wrapper19{
+.wrapper19 {
   box-sizing: border-box;
   font-family: Consolas;
   align-items: center;
@@ -2592,23 +2582,21 @@ margin-bottom:2rem;
   justify-content: center;
   flex-wrap: wrap;
   padding: 40px 0;
-  
 }
-.wrapper19 .box{
-  position:relative;
+.wrapper19 .box {
+  position: relative;
   width: 420px;
   height: 570px;
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 40px 30px;
-  transition:0.5s;
-
+  transition: 0.5s;
 }
-.wrapper19 .box::before{
-  content: '';
+.wrapper19 .box::before {
+  content: "";
   position: absolute;
-  top:0;
+  top: 0;
   left: 50px;
   width: 70%;
   height: 100%;
@@ -2616,11 +2604,11 @@ margin-bottom:2rem;
   border-radius: 8px;
   transform: skewX(15deg);
   transition: 0.5s;
-
-}.wrapper19 .box::after{
-  content: '';
+}
+.wrapper19 .box::after {
+  content: "";
   position: absolute;
-  top:0;
+  top: 0;
   left: 50px;
   width: 70%;
   height: 100%;
@@ -2631,35 +2619,35 @@ margin-bottom:2rem;
   filter: blur(30px);
   transition: 0.5s;
 }
-.wrapper19 .box:hover:before,.wrapper19 .box:hover:after{
+.wrapper19 .box:hover:before,
+.wrapper19 .box:hover:after {
   transform: skewX(0deg);
   left: 40px;
   width: calc(100%-90px);
 }
-.wrapper19 .box:nth-child(1):before,.wrapper19 .box:nth-child(1):after
-{
-background: linear-gradient(315deg,#ffbc00,#ff0578);
-
+.wrapper19 .box:nth-child(1):before,
+.wrapper19 .box:nth-child(1):after {
+  background: linear-gradient(315deg, #ffbc00, #ff0578);
 }
-.wrapper19 .box span{
-  display:block;
+.wrapper19 .box span {
+  display: block;
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   z-index: 50;
-  pointer-events:none;
+  pointer-events: none;
 }
-.wrapper19 .box span::before{
-  content: '';
+.wrapper19 .box span::before {
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   border-radius: 8px;
-  background: rgba(255, 255,255,0.1);
+  background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
   opacity: 0;
   transition: 0.5s;
@@ -2667,44 +2655,45 @@ background: linear-gradient(315deg,#ffbc00,#ff0578);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
   animation-delay: -1s;
 }
-.wrapper19 .box span::after{
-  content: '';
+.wrapper19 .box span::after {
+  content: "";
   position: absolute;
   bottom: 0;
   right: 0;
   width: 100%;
   height: 100%;
   border-radius: 8px;
-  background: rgba(255, 255,255,0.1);
+  background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
   opacity: 0;
   transition: 0.5s;
   animation: animate3 2s linear infinite;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
-.wrapper19 .box:hover span::before{
+.wrapper19 .box:hover span::before {
   top: -30px;
   left: 55px;
   width: 100px;
   height: 100px;
   opacity: 1;
 }
-.wrapper19 .box:hover span::after{
+.wrapper19 .box:hover span::after {
   bottom: -30px;
   right: 45px;
   width: 100px;
   height: 100px;
   opacity: 1;
 }
-@keyframes animate3{
-  0%,100%{
-    transform:translateY(10px);
+@keyframes animate3 {
+  0%,
+  100% {
+    transform: translateY(10px);
   }
-  50%{
-    transform:translateY(-10px);
+  50% {
+    transform: translateY(-10px);
   }
 }
-.content19{
+.content19 {
   position: relative;
   left: 0px;
   padding: 20px 40px;
@@ -2717,22 +2706,22 @@ background: linear-gradient(315deg,#ffbc00,#ff0578);
   z-index: 1;
   width: fit-content;
 }
-.wrapper19 .box:hover .content19{
+.wrapper19 .box:hover .content19 {
   left: -25px;
   padding: 60px 9px 60px 40px;
 }
-.wrapper19 .box .content19 h2{
+.wrapper19 .box .content19 h2 {
   font-size: 2em;
   color: #fff;
   margin-bottom: 10px;
 }
-.wrapper19 .box .content19 p{
+.wrapper19 .box .content19 p {
   font-size: 1.1em;
   margin-bottom: 10px;
   line-height: 1.4em;
   color: #000;
 }
-.wrapper19 .box .content19 .btnF{
+.wrapper19 .box .content19 .btnF {
   display: inline-block;
   font-size: 1.1em;
   color: #111;
@@ -2743,16 +2732,15 @@ background: linear-gradient(315deg,#ffbc00,#ff0578);
   font-weight: 700;
   margin-top: 5px;
 }
-.wrapper19 .box .content19 .btnF:hover{
-  background: linear-gradient(210deg,rgb(255, 0, 221),rgb(0, 255, 153));
+.wrapper19 .box .content19 .btnF:hover {
+  background: linear-gradient(210deg, rgb(255, 0, 221), rgb(0, 255, 153));
   color: white;
 }
 
-.wrapper19 .box .container19 .brand a{
-  
+.wrapper19 .box .container19 .brand a {
   background: none;
 }
-.wrapper19 .content19 .brand{
+.wrapper19 .content19 .brand {
   margin-top: 30px;
   display: flex;
   gap: 1rem;
@@ -2768,28 +2756,154 @@ background: linear-gradient(315deg,#ffbc00,#ff0578);
   opacity: 1;
   margin-right: 31px;
 }
-@media screen and (max-width:768px) {
-  .wrapper19 .box .content19 .creator{
+@media screen and (max-width: 768px) {
+  .wrapper19 .box .content19 .creator {
     clear: both;
     margin-bottom: 20px;
     margin-left: 15%;
     margin-right: 0%;
   }
-  .wrapper19 .box .content19 p{
+  .wrapper19 .box .content19 p {
     display: flex;
     flex-direction: column;
   }
   .wrapper19 .box .content19 img {
-      width:100%;
-
+    width: 100%;
   }
   .wrapper19 {
-      max-width:100%;
-      width: 100%;
+    max-width: 100%;
+    width: 100%;
   }
-  .container19{
-      width:100%;
-      float:left;
-      margin:0;
+  .container19 {
+    width: 100%;
+    float: left;
+    margin: 0;
   }
-  }
+}
+
+/* ----------------------------------  Start for Sidhartha's UI-18 css code ------------------------------------ */
+
+.container-19 {
+  font-family: "Open Sans", sans-serif;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 100px 10px;
+}
+
+.card19 {
+  display: inline-block;
+  position: relative;
+  width: 400px;
+  min-width: 400px;
+  height: 500px;
+  border-radius: 30px;
+  background-image: url(assets/card-20_background.gif);
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  color: whitesmoke;
+  box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.3);
+  margin: 30px;
+}
+
+.hero-profile-img {
+  height: 50%;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.hero-description-bk {
+  background-image: linear-gradient(0deg, #fc466b, #3f5efb);
+  border-radius: 30px;
+  position: absolute;
+  top: 55%;
+  left: -5px;
+  height: 65%;
+  width: 108%;
+  transform: skew(19deg, -9deg);
+}
+
+.profile-icons {
+  position: absolute;
+  padding: 20px;
+  width: 100%;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  -ms-align-items: center;
+  align-items: center;
+  justify-content: center;
+}
+.profile-icons i {
+  color: #fff;
+  font-size: 36px;
+  -webkit-transition: all 0.5s linear;
+  -o-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+}
+
+.profile-icons li {
+  display: inline-block;
+  margin: 10px;
+  padding: 10px;
+}
+.profile-icons li:hover i {
+  -webkit-transform: rotate(360deg) scale(2);
+  -ms-transform: rotate(360deg) scale(2);
+  -o-transform: rotate(360deg) scale(2);
+  transform: rotate(360deg) scale(1.5);
+  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); */
+}
+
+.about {
+  /* background: #d8aa2a; */
+  color: #f5c540;
+  padding: 7em 0 0 0;
+  text-transform: capitalize;
+  line-height: 62px;
+  margin: auto;
+
+  /* -webkit-perspective: 1000px; <-NB */
+}
+
+.cube {
+  width: 200px;
+  text-align: center;
+  margin: 0 auto;
+
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: transform 0.3s; /* Animate the transform properties */
+
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d; /* <-NB */
+  height: 100px;
+}
+.front,
+.back {
+  background: black;
+  border: 10px solid;
+  border-image-slice: 1;
+  border-width: 5px;
+  border-image-source: linear-gradient(to right, red, orange);
+}
+.front {
+  -webkit-transform: translateZ(50px);
+  transform: translateZ(50px);
+}
+.back {
+  -webkit-transform: rotateX(-90deg) translateZ(-50px);
+  transform: rotateX(-90deg) translateZ(-50px);
+}
+/* rotation */
+.cube:hover {
+  -webkit-transform: rotateX(89deg);
+  transform: rotateX(90deg);
+}
