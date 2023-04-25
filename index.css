@@ -3163,5 +3163,48 @@ em {
     color: #0b0f08;
 }
 
+@media (min-width:300px) {
+    .card_20 {
+        height: 300px;
+        width: 300px;
+        left: 0%;
+        padding: 0;
+    }
+    .card_20 .cover_20 h1 {
+        font-size: 2rem;
+    }
+    .card_20 .cover_20 .tech {
+        font-size: 1rem;
+    }
+}
+
+@media (min-width:536px) {
+    .card_20 {
+        height: 450px;
+        width: 450px;
+        left: 2%;
+    }
+}
+
+@media (min-width:1000px) {
+    .card_20 {
+        left: 15%;
+        height: 550px;
+        width: 550px;
+    }
+    .card_20 .cover_20 h1 {
+        font-size: 3rem;
+    }
+    .card_20 .cover_20 .tech {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width:1400px) {
+    .card_20 {
+        height: 470px;
+    }
+}
+
 
 /* end for charvi's card UI css */
