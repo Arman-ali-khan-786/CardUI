@@ -359,7 +359,8 @@ em {
 .wrapper13,
 .wrapper15,
 .wrapper16,
-.wrapper17 {
+.wrapper17,
+.wrapper21 {
     /* add your wrapper class here*/
     margin: 12px;
     padding: 30px;
@@ -3162,6 +3163,74 @@ em {
     background-color: white;
     color: #0b0f08;
 }
+
+/* ----------------------------------  Start for Piyush's UI-21 css code ------------------------------------ */
+.card21{
+    width: 90%;
+    max-width: 440px;
+    color: #fff;
+    text-align: center;
+    padding: 50px 35px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255,255,255,0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgb(116, 134, 149);
+    backdrop-filter: blur(5px);
+}
+.card21:hover {
+    box-shadow: 0 0 40px rgb(169, 205, 235);
+    scale: 1.1;
+    transition: all 0.5s;
+}
+
+.card21 img{
+    width: 140px;
+    border-radius: 50%;
+    font-weight: 600;
+    margin-top: 20px;
+    box-shadow: 0 0 40px rgb(169, 205, 235);
+}
+
+.card21 p{
+    font-size: 18px;
+    margin: 10px auto;
+    max-width: 330px;
+}
+
+.card21 .links img{
+    width: 40px;
+    border-radius: 50%;
+    margin: 10px 5px;
+    transition: background 0.5s;
+}
+
+.card21 .links img:hover{
+    background: #ffffff;
+    box-shadow: 0 0 10px rgb(169, 205, 235);
+    scale: 1.5;
+}
+
+.card21 .btn{
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    font-weight: 500;
+    background-color: transparent;
+    border: 1px solid white;
+    color: #fff;
+    padding: 10px 30px;
+    border-radius: 30px;
+    margin: 30px 0 10px;
+}
+
+.card21 .btn:hover{
+    cursor: pointer;
+    background-color: white;
+    font-weight: medium;
+    box-shadow: 0 0 10px rgb(169, 205, 235);
+    color: #137570;
+}
+
 
 @media (min-width:300px) {
     .card_20 {
