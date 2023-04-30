@@ -2430,6 +2430,10 @@ em {
     transform: scale(0.95);
 }
 
+.cta > span {
+    color: #fff;
+}
+
 
 /* ...........Source Code button style end......... */
 
