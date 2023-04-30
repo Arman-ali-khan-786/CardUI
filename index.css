@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@300&family=Roboto+Mono&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&family=Quicksand:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Poppins:100,300,400,500,600,700,800, 800i, 900&display=swap");
 * {
     margin: 0;
     padding: 0;
@@ -3167,7 +3168,161 @@ em {
     color: #0b0f08;
 }
 
-@media (min-width:300px) {
+
+/* ---------------------- start of  UI - 21 -------------------------------  */
+
+.container21 {
+    position: relative;
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 80px;
+}
+
+.container21 .card {
+    position: relative;
+    width: 320px;
+    height: 450px;
+    background: #232323;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.container21 .card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #1bbfe9;
+    clip-path: circle(150px at 80% 20%);
+    transition: 0.5s ease-in-out;
+}
+
+.container21 .card:hover:before {
+    clip-path: circle(300px at 80% -20%);
+}
+
+.container21 .card:after {
+    content: "Nitin";
+    position: absolute;
+    top: 30%;
+    left: -10%;
+    font-size: 10em;
+    font-weight: 800;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.04);
+}
+
+.container21 .card .imgBx {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%);
+}
+
+.container21 .card .imgBx img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.container21 .card .contentBx {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    transition: 1s;
+    z-index: 90;
+}
+
+.container21 .card:hover .contentBx {
+    height: 260px;
+}
+
+.container21 .card .contentBx h2 {
+    position: relative;
+    font-size: 600;
+    letter-spacing: 1px;
+    color: #fff;
+}
+
+.container21 .card .contentBx .size,
+.container21 .card .contentBx .color {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 20px;
+    transition: 0.5s;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.container21 .card .contentBx .size a {
+    display: flex;
+    flex-direction: row;
+}
+
+.container21 .card:hover .contentBx .size {
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0.6s;
+}
+
+.container21 .card .contentBx .size span {
+    width: 26px;
+    height: 26px;
+    text-align: center;
+    line-height: 26px;
+    font-size: 14px;
+    display: inline-block;
+    color: #111;
+    background: #fff;
+    margin: 0 5px;
+    transition: 0.5s;
+    color: #111;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.container21 .card .contentBx .color span:nth-child(2) {
+    background: #1bbfe9;
+}
+
+.container21 .card .contentBx .color span:nth-child(3) {
+    background: #1b2fe9;
+}
+
+.container21 .card .contentBx .color span:nth-child(4) {
+    background: #080481;
+}
+
+.container21 .card .contentBx .button {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #fff;
+    border-radius: 4px;
+    margin-top: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    color: #111;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: 0.5s;
+}
+
+.container21 .card:hover .contentBx .button {
+    opacity: 1;
+    transform: translateY(0px);
+    transition-delay: 0.7s;
+}
+
+@media (min-width: 300px) {
     .card_20 {
         height: 300px;
         width: 300px;
@@ -3182,15 +3337,15 @@ em {
     }
 }
 
-@media (min-width:536px) {
+@media (min-width: 536px) {
     .card_20 {
         height: 450px;
-        width: 450px;
+        width: 550px;
         left: 2%;
     }
 }
 
-@media (min-width:1000px) {
+@media (min-width: 1000px) {
     .card_20 {
         left: 15%;
         height: 550px;
@@ -3204,7 +3359,7 @@ em {
     }
 }
 
-@media (max-width:1400px) {
+@media (max-width: 1400px) {
     .card_20 {
         height: 470px;
     }
