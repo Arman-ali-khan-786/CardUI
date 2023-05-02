@@ -2907,3 +2907,96 @@ margin-bottom: 5px;
   -webkit-transform: rotateX(89deg);
   transform: rotateX(90deg);
 }
+
+/* Start css for card no 19  */
+
+body{
+    height: 100vh;
+    background-color: #934545;
+
+}
+.container{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 25%;
+}
+.cards{
+    perspective: 1000px;
+    height: 220px;
+    width: 120px;
+    position: absolute ;
+    margin: 5px;
+}
+.cards img{
+    width: 100%;
+}
+.cards .back{
+    position: absolute;
+    transform: rotateY(0deg);
+    backface-visibility: hidden;
+    transition: transform 0.4s linear;
+}
+.cards .front{
+    position: absolute;
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+    transition: transform 0.4s linear;
+
+}
+.cards:hover .back{
+    transform: rotateY(-180deg);
+    cursor: pointer;
+}
+.cards:hover .front{
+    transform: rotateY(0deg);
+    cursor: pointer;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    margin-bottom: 70px;
+
+    text-align: center;
+    background-color: #6563f0;
+
+  }
+
+  .title {
+    color: rgb(0, 0, 0);
+    font-size: 18px;
+  }
+
+  button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: rgb(0, 0, 0);
+    background-color: rgb(64, 50, 143);
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+  }
+
+  a {
+    text-decoration: none;
+    font-size: 22px;
+    color: black;
+  }
+
+  button:hover, a:hover {
+    opacity: 0.7;
+  }
+  h1{
+    color: rgb(1, 1, 1);
+
+  }
+  p{
+    color: rgb(0, 0, 0);
+  }
+/* End css for card no 19 */
