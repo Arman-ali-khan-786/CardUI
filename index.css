@@ -12,7 +12,6 @@
     box-sizing: border-box;
     scroll-behavior: smooth;
 }
-
 body {
     display: flex;
     flex-direction: column;
@@ -680,8 +679,6 @@ em {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 360px;
-    height: 360px;
     background: #000;
     margin-top: 13rem;
     box-shadow: 2px 3px 24px #3d3d3d;
@@ -1273,7 +1270,7 @@ em {
     position: relative;
     display: flex;
     flex-direction: column;
-    align-items: baseline;
+    align-items:center;
     background-color: black;
     border-radius: 30px;
     overflow: hidden;
@@ -3168,6 +3165,29 @@ em {
     color: #0b0f08;
 }
 
+@media (max-width: 767px) {
+    .row {
+      padding: 50px;
+    }
+  
+    .card_20 {
+      height: 400px;
+      width: 80%;
+      left: 10%;
+    }
+    .card_20 .cover_20 h1 {
+      font-size: 2.5em;
+    }
+  
+    .card_20 .cover_20 .tech {
+      font-size: 1.5em;
+    }
+  
+    .card_20 .card_20-back a {
+      font-size: 1.5em;
+      padding: 10px 24px;
+    }
+  }
 
 /* ---------------------- start of  UI - 21 -------------------------------  */
 
