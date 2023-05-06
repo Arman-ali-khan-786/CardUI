@@ -3367,3 +3367,221 @@ em {
 
 
 /* end for charvi's card UI css */
+
+/* Styling for Card 22 Begins Here*/
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+
+:root {
+    --first-color: hsl(29, 80%, 58%);
+    --first-color-light: hsl(29, 80%, 70%);
+    --black-color: hsl(29, 16%, 10%);
+    --text-color: hsl(29, 8%, 65%);
+    --body-color: hsl(29, 100%, 99%);
+    --body-font: "Poppins", sans-serif;
+    --h3-font-size: 1.125rem;
+    --smaller-font-size: 0.75rem;
+    --welcome-font-size: 0.9rem;
+  }
+  
+  * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+  
+  body {
+    font-family: var(--body-font);
+    background-color: var(--text-color);
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  ul {
+    list-style: none;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .container22 {
+    height: 50vh;
+    margin-inline: 1.5rem;
+    display: grid;
+    place-items: center;
+  }
+  
+  .card22 {
+    position: relative;
+    width: 256px;
+    background-color: var(--black-color);
+    padding: 1.25rem 2rem 3rem;
+    border-radius: 1.5rem;
+    text-align: center;
+    box-shadow: 0 4px 16px hsla(29, 75%, 8%, 0.2);
+  }
+  
+  .card__img {
+    width: 96px;
+    border-radius: 50%;
+  }
+
+  .card__img::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: #1E1915;
+    opacity: 1;
+  }
+  
+  .card__border {
+    width: 110px;
+    height: 110px;
+    border: 2px solid var(--first-color);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    margin: 0 auto 0.75rem;
+  }
+  
+  .card__name {
+    color: var(--first-color);
+    font-size: var(--h3-font-size);
+    font-weight: 500;
+  }
+  
+  .card__profession {
+    color: var(--text-color);
+    font-size: var(--smaller-font-size);
+    font-weight: 500;
+  }
+  
+  .card__social {
+    width: 200px;
+    background-color: var(--first-color);
+    padding: 0.75rem;
+    border-radius: 3rem;
+    text-align: initial;
+    box-shadow: 0 8px 24px hsla(29, 75%, 56%, 0.3);
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -1.75rem;
+    margin: 0 auto;
+    overflow: hidden;
+    transform-origin: 18px 17px;
+  }
+  
+  .card__social-control {
+    position: relative;
+    transform-origin: 18px 18px;
+    transition: transform 0.45s ease;
+    transform: rotate(0);
+  }
+  
+  .card__social-toggle {
+    display: inline-flex;
+    font-size: 1.35rem;
+    padding: 0.5rem;
+    border-radius: 45%;
+    cursor: pointer;
+    position: relative;
+    z-index: 10;
+  }
+  
+  .card__social-text {
+    display: block;
+    color: var(--black-color);
+    font-size: var(--welcome-font-size);
+    font-weight: 700;
+    padding-top: 0.2rem;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+  
+  .card__social-list {
+    display: inline-flex;
+    column-gap: 0.75rem;
+    transform: rotate(135deg);
+    transform-origin: 18px 17px;
+  }
+  
+  .card__social-link {
+    display: inline-flex;
+    background-color: var(--first-color-light);
+    color: var(--black-color);
+    font-size: 1.25rem;
+    padding: 6px;
+    border-radius: 50%;
+    transition: 0.3s;
+  }
+  .card__social-link:hover{
+    opacity: 0.8;
+    font-size: 1.3rem;
+    padding: 5.7px;
+    color: var(--first-color-light);
+    background-color: var(--black-color);
+  }
+  
+  .card__social-text,
+  .card__social-list {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding-left: 3.2rem;
+  }
+  
+  .card__social-text {
+    top: 0.5rem;
+  }
+  
+  .animation .card__social-control {
+    transform: rotate(-135deg);
+  }
+  
+  .card__social.animation {
+    animation: up-animation 1s ease-in-out forwards;
+  }
+  
+  @keyframes up-animation {
+    0%,
+    100% {
+      transform: rotate(0);
+    }
+    50%,
+    60% {
+      transform: rotate(-3deg);
+    }
+    88% {
+      transform: rotate(1deg);
+    }
+  }
+  
+  .card__social.down-animation {
+    animation: down-animation 1s ease-in-out forwards;
+  }
+  
+  @keyframes down-animation {
+    0%,
+    100% {
+      transform: rotate(0);
+    }
+    50%,
+    60% {
+      transform: rotate(6deg);
+    }
+    0%,
+    88% {
+      transform: rotate(-1deg);
+    }
+  }
+  
+
+/* STyling for Card 22 Ends Here */
