@@ -3365,5 +3365,129 @@ em {
     }
 }
 
-
 /* end for charvi's card UI css */
+
+/* ----------------------------------  Start for Kaushik's UI-22 css code ------------------------------------ */
+
+.container-22 {
+    font-family: "Open Sans", sans-serif;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 100px 10px;
+}
+
+.card22 {
+    display: inline-block;
+    position: relative;
+    width: 400px;
+    min-width: 400px;
+    height: 500px;
+    border-radius: 30px;
+    background-image: url(https://cdn.dribbble.com/users/1770290/screenshots/6177702/bg_77.gif);
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    color: whitesmoke;
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.3);
+    margin: 30px;
+}
+
+.hero-profile-img {
+    height: 50%;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.hero-description-bk {
+    background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(249,232,51,1) 0%, rgba(250,196,59,1) 100.2% );
+    border-radius: 30px;
+    position: absolute;
+    top: 55%;
+    left: -5px;
+    height: 65%;
+    width: 108%;
+    transform: skew(19deg, -9deg);
+}
+
+.profile-icons {
+    position: absolute;
+    padding: 40 px;
+    width: 100%;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    -ms-align-items: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-icons i {
+    color: #fff;
+    font-size: 36px;
+    -webkit-transition: all 0.5s linear;
+    -o-transition: all 0.5s linear;
+    transition: all 0.5s linear;
+}
+
+.profile-icons li {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px;
+}
+.about {
+    /* background: #d8aa2a; */
+    color: radial-gradient( circle farthest-corner at 17.1% 22.8%,  rgba(226,24,24,1) 0%, rgba(160,6,6,1) 90% );
+    padding: 7em 0 0 0;
+    text-transform: capitalize;
+    line-height: 62px;
+    margin: auto;
+    /* -webkit-perspective: 1000px; <-NB */
+}
+.cube {
+    width: 200px;
+    text-align: center;
+    margin: 0 auto;
+    -webkit-transition: -webkit-transform 0.3s;
+    transition: transform 0.3s;
+    /* Animate the transform properties */
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    /* <-NB */
+    height: 100px;
+}
+
+.front,
+.back {
+    background: black;
+    border: 10px solid;
+    border-image-slice: 1;
+    border-width: 5px;
+    border-image-source: linear-gradient( 111.4deg,  rgba(7,7,9,1) 6.5%, rgba(27,24,113,1) 93.2% );
+}
+.front {
+    -webkit-transform: translateZ(50px);
+    transform: translateZ(50px);
+}
+
+.back {
+    -webkit-transform: rotateX(-90deg) translateZ(-50px);
+    transform: rotateX(-90deg) translateZ(-50px);
+}
+
+
+/* rotation */
+
+.cube:hover {
+    -webkit-transform: rotateX(89deg);
+    transform: rotateX(90deg);
+}
+
+/* ----------------------------------  End of Kaushik's UI-22 css code ------------------------------------ */
