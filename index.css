@@ -365,7 +365,12 @@ em {
     margin: 12px;
     padding: 30px;
 }
-
+.wrapper22 {
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
 
 /* ----------------------------------  UI-1 css code ------------------------------------ */
 
@@ -3367,3 +3372,107 @@ em {
 
 
 /* end for charvi's card UI css */
+
+/*start of piyush's card UI css */
+.card22 {
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(7px);
+    border-radius: 25px;
+    justify-self: center;
+}
+.card22:hover {
+    box-shadow: 0 0 40px rgb(169, 205, 235);
+}
+.card22 img {
+    border-radius: 50%;
+    margin: 1rem;
+}
+.card22 h2{
+    margin: 1rem;
+}
+.card22 p {
+    font-size: 18px;
+    margin: 1rem 0.5rem;
+    text-align: center;
+}
+.links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.links a img{
+    width: 2.5rem;
+    border-radius: 50%;
+    margin: 1rem 0.5rem;
+    transition: background 0.5s;
+}
+.links a img:hover {
+    background: #ffffff;
+    box-shadow: 0 0 10px rgb(169, 205, 235);
+}
+.card22 a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn {
+    padding: 0.7rem;
+    border-radius: 25px;
+    background: transparent;
+    width: 100%;
+    border: none;
+    box-shadow: 0 4px 15px rgb(116, 134, 149);
+}
+.btn:hover {
+    cursor: pointer;
+    background-color: white;
+    font-weight: medium;
+    box-shadow: 0 0 10px rgb(169, 205, 235);
+    color: #137570;
+}
+@media (min-width: 30rem) {
+    body {
+        max-width: 150rem;
+    }
+    .card22 {
+        box-shadow: 0 4px 30px rgb(116, 134, 149);
+        max-width: 20rem;
+        border-radius: 16px;
+        transition: all 0.5s;
+    }
+    .card22:hover {
+        scale: 1.02;
+        transition: all 0.5s;
+    }
+    .links a img {
+        transition: all 0.5s;
+    }
+    .links a img:hover{
+        scale: 1.2;
+        transition: all 0.5s;
+    }
+
+}
+@media (max-width: 425px) {
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 425px;
+        width: 100%;
+        height: 100vh;
+    }
+    .card22 img {
+        border-radius: 50%;
+        margin: 1rem;
+        width: 5rem;
+    }
+}
