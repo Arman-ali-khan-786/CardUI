@@ -134,7 +134,7 @@ ul li a {
 
 @media only screen and (max-width: 600px) {
     #banner_image {
-        width: 50% !important;
+        width: 75% !important;
         height: 50% !important;
     }
 }
@@ -143,6 +143,10 @@ ul li a {
     main {
         margin: auto;
         width: 100% !important;
+    }
+    #banner_image {
+        width: 75% !important;
+        height: 50% !important;
     }
 }
 
@@ -166,8 +170,8 @@ main {
 
 #about>img {
     margin: 30px auto;
-    width: 80%;
-    height: 400px;
+    width: 25%;
+    aspect-ratio: 1/1;
 }
 
 #contribute>h2 {
