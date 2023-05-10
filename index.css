@@ -11,6 +11,7 @@
     text-decoration: none;
     box-sizing: border-box;
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 body {
@@ -51,8 +52,6 @@ body {
 header {
     background-color: #bf8d36;
     padding: 12px 12px;
-    display: flex;
-    justify-content: space-between;
     z-index: 10;
     box-shadow: 2px 3px 12px rgb(88, 88, 88);
     border-bottom-left-radius: 15px;
@@ -96,12 +95,13 @@ ul li {
     margin: auto;
     color: #64ffda;
     transition: all 0.4s ease-in-out;
+    padding: 8px;
 }
 
 ul a:hover {
     color: rgb(91, 144, 194);
     background-color: aliceblue;
-    transform: scale(1.2);
+    transform: scale(1);
     border-radius: 22px;
     padding: 8px;
 }
@@ -115,6 +115,7 @@ ul li a {
     font-weight: 500;
     color: #64ffda;
     font-family: "Quicksand", serif;
+    padding: 8px;
 }
 
 
@@ -219,16 +220,18 @@ em {
 
 .icons {
     width: fit-content;
+    height: 150px;
     display: flex;
     margin: auto;
     gap: 0.4rem;
 }
 
 .icons a:hover {
-    transform: scale(1.2);
+    transform: scale(1.1);
 }
 
 .icons a {
+    height: 50%;
     transition: transform 0.2s ease-out;
     margin: 2px;
 }
@@ -242,7 +245,6 @@ em {
 /* ###------------------------------ main page footer design -------------------------------------### */
 
 #footer {
-    background-color: #087c8b;
     color: white;
     font-size: min(5vw, 16px);
     font-family: "Quicksand", serif;
@@ -253,9 +255,12 @@ em {
 }
 
 #footer-container {
+    background-color: #0a192f;
     width: 100%;
-    margin: auto;
-    padding: 5px 10px;
+    height: 60px;
+    padding: 0;
+    padding-bottom: 10px;
+    padding-top: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -263,16 +268,22 @@ em {
 }
 
 .left-footer {
+    width: 65%;
     display: flex;
     flex-direction: row;
     padding-left: 20px;
+    gap: 1%;
 }
 
 .social_icons {
     margin: 2.5px;
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     padding-right: 10px;
+    width: 35%;
+    height: 100%;
+    padding-right: 5%;
 }
 
 .fa-copyright {
@@ -295,10 +306,10 @@ em {
 .social-container {
     background-color: white;
     border-radius: 50%;
-    display: block;
-    margin: 1vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border: 0.5px solid white;
-    overflow: hidden;
     z-index: 1;
     transition: 0.25sec ease-in;
 }
@@ -328,17 +339,17 @@ em {
     background-color: #000000;
 }
 
-@media (max-width: 890px) {
-    .social_icons {
-        scale: 0.7;
-        translate: -12%;
-    }
-}
 
 @media (max-width: 620px) {
+    .left-footer {
+        flex-direction: column;
+        width: 50%;
+    }
+    .left-footer p, #footer-fa-c {
+        font-size: 10px;
+    }
     .social_icons {
-        scale: 0.5;
-        translate: -15%;
+        width: 50%;
     }
 }
 
@@ -357,10 +368,18 @@ em {
 .wrapper7,
 .wrapper8,
 .wrapper9,
+.wrapper10,
+.wrapper11,
+.wrapper12,
 .wrapper13,
+.wrapper14,
 .wrapper15,
 .wrapper16,
 .wrapper17,
+.wrapper18,
+.wrapper19,
+.wrapper20,
+.wrapper21,
 .wrapper22 {
     /* add your wrapper class here*/
     margin: 12px;
@@ -1583,8 +1602,7 @@ em {
 
 @media screen and (max-width: 500px) {
     header {
-        padding: 8px;
-        width: 100%;
+        width: 100vw;
     }
     header>h3,
     footer>h2 {
