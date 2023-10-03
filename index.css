@@ -3544,3 +3544,115 @@ em {
 }
 
 /* ---------------------------END UI-23------------------------*/
+
+/* ---------------------------Start UI-24------------------------*/
+.container24{
+    align-items: center;
+    display: flex;
+    justify-content : center;
+    position: relative; 
+     
+}
+
+.card24 {
+    /* justify-content: center; */
+    display: flex;
+    flex-direction: column;
+    /* position: relative; */
+    height: 350px;
+    width: 300px;
+    margin-top: 150px;
+    /* margin-left: 41%; */
+    background: url(https://png.pngtree.com/background/20210717/original/pngtree-professional-blue-hexagon-tehcnology-background-for-business-picture-image_1416228.jpg);
+    border-radius: 20px;
+    border: 2px solid silver;
+    box-shadow: 10px 10px 10px 10px rgb(3, 3, 63);
+}
+
+.card24 div {
+    display: flex;
+    width: 200px;
+    margin-right: 41%;
+    font-size: small;
+}
+
+/* .card div a i{
+    background-color: antiquewhite;
+} */
+
+img {
+    height: 150px;
+    width: 150px;
+    margin: 40px 80px auto;
+    border-radius: 100px;
+    border: 2px solid silver;
+}
+
+.card24 p {
+    color: white;
+    font-family: cursive;
+    text-align: center;
+    font-size: 15px;
+}
+
+.links24 {
+    text-decoration: none;
+    /* margin: 50px; */
+    padding: 39px;
+    padding-left: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    position: relative;
+    transition: 0.5s;
+}
+
+.links24 a{
+    margin: 10px;
+    align-items: center;
+}
+
+.links24 a:hover {
+    transform: rotate(45deg);
+
+
+}
+
+.links24 a::before {
+    content: "";
+    position: relative;
+    height: 50px;
+    width: 50px;
+    opacity: 0;
+    background: #030303;
+    border-radius: 10px;
+    transition: opacity (0.2s);
+}
+
+.links24 a:hover::before {
+    opacity: 0.4s;
+    transform: translate(-4px, -4px);
+    filter: blur(10px);
+}
+
+.links24:nth-child(1)::before {
+    background: #141414;
+    color: beige;
+}
+
+.links24:nth-child(2)::before {
+    background: rgb(7, 7, 7)
+}
+
+.links24:nth-child(3)::before {
+    background: #0f0f0f;
+}
+
+.links24 i {
+    font-size: 1.7em;
+    transition: all 0.4s;
+}
+
