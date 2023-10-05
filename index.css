@@ -3544,3 +3544,95 @@ em {
 }
 
 /* ---------------------------END UI-23------------------------*/
+/* ---------------------------Start UI-24------------------------*/
+
+
+
+
+.container24 {
+    display: flex;
+    justify-content: center;
+}
+
+.card24 {
+    background: url(https://png.pngtree.com/background/20210717/original/pngtree-professional-blue-hexagon-tehcnology-background-for-business-picture-image_1416228.jpg);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    text-align: center;
+    max-width: 300px;
+}
+
+.image24 img {
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    border: 2px solid silver;
+}
+
+p {
+    color: #080404;
+    background-color: #087c8b;
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+}
+
+.links24 {
+    margin-top: 20px;
+}
+
+.links24 a {
+    text-decoration: none;
+    margin: 10px;
+    padding: 10px;
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    border-radius: 50%;
+    transition: 0.5s;
+}
+
+.links24 a:hover {
+    transform: rotate(45deg);
+}
+
+.links24 a::before {
+    content: "";
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    opacity: 0;
+    background: #030303;
+    border-radius: 10px;
+    transition: opacity 0.2s;
+}
+
+.links24 a:hover::before {
+    opacity: 0.4;
+    transform: translate(-4px, -4px);
+    filter: blur(10px);
+}
+
+.links24 a:nth-child(1)::before {
+    background: #141414;
+    color: beige;
+}
+
+.links24 a:nth-child(2)::before {
+    background: rgb(7, 7, 7);
+}
+
+.links24 a:nth-child(3)::before {
+    background: #0f0f0f;
+}
+
+.links24 i {
+    font-size: 1.7em;
+    transition: all 0.4s;
+}
+
+.effect-code a {
+    text-decoration: none;
+    font-size: 18px;
+    color: #007BFF;
+}
