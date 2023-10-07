@@ -3544,3 +3544,61 @@ em {
 }
 
 /* ---------------------------END UI-23------------------------*/
+/* ---------------------------Begin UI-24------------------------*/
+.container24{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  .card24 {
+    width: 300px;
+    height: 200px;
+    background: linear-gradient(135deg, #ff6b6b, #6b47ff);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: background 0.5s, box-shadow 0.2s;
+    align-self: center;
+  }
+  
+  .card24:hover {
+    background: linear-gradient(135deg, #fc6f8e, #8193e3);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  }
+  
+  .card-content24 {
+    padding: 20px;
+    color: #fff;
+    text-align: center;
+  }
+  
+  .card-content24 h2 {
+    font-size: 24px;
+    margin: 0;
+  }
+  
+  .card-content24 p {
+    font-size: 16px;
+    margin: 10px 0;
+  }
+  
+  .card-content24 .links24 {
+    margin-top: 20px;
+  }
+  
+  .links24 a {
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    margin: 5px 0;
+    transition: color 0.2s;
+  }
+  
+  .links24 a:hover {
+    color: #fc6f8e;
+  } 
+  
+  
+/* ---------------------------END UI-24 -----------------------*/
+  
