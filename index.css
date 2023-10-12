@@ -99,8 +99,8 @@ ul li {
 }
 
 ul a:hover {
-    color: rgb(91, 144, 194);
-    background-color: aliceblue;
+    color: rgb(255, 255, 255);
+    background-color: rgb(28, 34, 43);
     transform: scale(1.2);
     border-radius: 22px;
     padding: 8px;
@@ -113,7 +113,7 @@ ul li a {
     font-family: "Quicksand", serif;
     margin: auto 12px;
     font-weight: 500;
-    color: #64ffda;
+    color: #ffffff;
     font-family: "Quicksand", serif;
 }
 
@@ -3544,3 +3544,61 @@ em {
 }
 
 /* ---------------------------END UI-23------------------------*/
+
+/* ----------------------------------  UI-24 css code ------------------------------------ */
+.container24 {
+    z-index: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.wrapper24 .card24 {
+    margin: 30px auto;
+    width: 400px;
+    height: 530px;
+    border-radius: 30px;
+    box-shadow: 5px 5px 30px 7px rgba(0, 0, 0, 0.25), -5px -5px 30px 7px rgba(0, 0, 0, 0.22);
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.card24 .card-image24 {
+    width: inherit;
+    height: inherit;
+    border-radius: 30px;
+}
+
+.card24 .card-image24 img {
+    width: inherit;
+    height: inherit;
+    border-radius: 30px;
+}
+
+.card24 .card-title24 {
+    text-align: center;
+    border-radius: 0px 0px 40px 40px;
+    font-weight: bold;
+    color: white;
+    font-size: 35px;
+    margin-top: -480px;
+    height: 10px;
+    font-family: "Merriweather", serif;
+
+}
+
+.wrapper24 .card24:hover {
+    transform: scale(0.9, 0.9);
+    box-shadow: 5px 5px 10px 10px rgba(36, 36, 36, 0.25), -5px -5px 30px 15px rgba(0, 0, 0, 0.22);
+}
+
+.card-body24 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 355px;
+    color: white;
+    
+}
+
