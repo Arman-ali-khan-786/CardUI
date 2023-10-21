@@ -3544,3 +3544,187 @@ em {
 }
 
 /* ---------------------------END UI-23------------------------*/
+
+/* ---------------------------Begin UI-24------------------------*/
+.wrapper24 {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+      .card24 {
+        width: 420px;
+        height: 340px;
+        margin: 1em;
+        perspective: 1500px;
+      }
+      .card24 .content {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        transform-style: preserve-3d;
+        transition: transform 0.8s cubic-bezier(0.75, 0, 0.85, 1);
+      }
+      .more24 {
+        display: none;
+      }
+      .more24:checked ~ .content {
+        transform: rotateY(180deg);
+      }
+      .front24,
+      .back24 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        transform-style: preserve-3d;
+        border-radius: 6px;
+      }
+      .front24 .inner,
+      .back24 .inner {
+        height: 100%;
+        display: grid;
+        padding: 1.5em;
+        transform: translateZ(80px) scale(0.94);
+      }
+      .front24 {
+        background-color: #fff;
+        background-size: cover;
+        background-position: center center;
+      }
+      .front24:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: block;
+        border-radius: 6px;
+        backface-visibility: hidden;
+        background: linear-gradient(
+          40deg,
+          rgba(0, 128, 64, 0.7),
+          rgba(13, 11, 0, 0.7)
+        );
+      }
+      .front24 .inner {
+        grid-template-rows: 5fr 1fr 1fr 2fr 1fr;
+        justify-items: center;
+      }
+      .front24 h2 {
+        grid-row: 2;
+        margin-bottom: 0.3em;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        color: #fff;
+        font-weight: 500;
+        text-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+      }
+      .back24 {
+        transform: rotateY(180deg);
+        background-color: #fff;
+        border: 2px solid #f0f0f0;
+      }
+      .back24 .inner {
+        grid-template-rows: 1fr 2fr 1fr 2fr 14fr 1fr 1fr;
+        grid-template-columns: repeat(4, auto);
+        grid-column-gap: 0.8em;
+        justify-items: center;
+      }
+      .back24 .description {
+        grid-row: 5;
+        grid-column: -1;
+        font-size: 0.86em;
+        border-radius: 5px;
+        font-weight: 600;
+        line-height: 1.4em;
+        overflow: auto;
+        color: #008040;
+        padding-right: 10px;
+      }
+      .back24 .location {
+        font-weight: 600;
+        color: #008040;
+        grid-row: 1;
+        font-size: 0.86em;
+      }
+      .back24 .location {
+        grid-column: 0.3333333333;
+        justify-self: left;
+      }
+      .back24 .button24 {
+        grid-column: -1;
+        justify-self: center;
+      }
+      .button24 {
+        grid-row: -1;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: 600;
+        cursor: pointer;
+        display: block;
+        padding: 0 1.5em;
+        height: 3em;
+        line-height: 2.9em;
+        min-width: 3em;
+        background-color: transparent;
+        border: solid 2px #fff;
+        color: #fff;
+        border-radius: 4px;
+        text-align: center;
+        left: 50%;
+        backface-visibility: hidden;
+        transition: 0.3s ease-in-out;
+        text-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+      }
+      .button24:hover {
+        background-color: #fff;
+        box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+        text-shadow: none;
+        color: #008040;
+      }
+      .button24.return {
+        line-height: 3em;
+        color: #008040;
+        border-color: #008040;
+        text-shadow: none;
+      }
+      .button24.return:hover {
+        background-color: #008040;
+        color: #fff;
+        box-shadow: none;
+      }
+
+.container24 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.social-icons {
+    display: flex;
+    grid-row: 6;
+    justify-content: center;
+    gap: 10px;
+}
+.social-icons a {
+    color: #008040;
+    background: none;
+    transform: scale(1);
+    transition: color 0.2s ease-in-out;
+    padding: 8px;
+    font-size: x-large;
+}
+
+.social-icons a:hover {
+    color: #9c8288;
+    transform: scale(1);
+    background: none;
+    transition: color 0.2s ease-in-out;
+    border-radius: 0;
+}
+
+/* ---------------------------END UI-24------------------------*/
