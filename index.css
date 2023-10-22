@@ -3544,3 +3544,86 @@ em {
 }
 
 /* ---------------------------END UI-23------------------------*/
+
+/* ---------------------------Start UI-24------------------------*/
+
+.container24 {
+    position: relative;
+    width: 1100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 30px;
+  }
+
+  .container24 .card {
+    position: relative;
+    max-width: 300px;
+    height: 215px;
+    background-color: #4755d2;
+    margin: 30px 10px;
+    padding: 20px 15px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 5px 20px rgba(46, 23, 23, 0.5);
+    transition: 0.3s ease-in-out;
+    border-radius: 15px;
+  }
+
+  .container24 .card:hover {
+    height: 320px;
+  }
+
+  .container24 .card .image {
+    position: relative;
+    width: 260px;
+    height: 260px;
+    top: -40%;
+    left: 8px;
+    box-shadow: 0 5px 20px rgba(2, 1, 1, 0.2);
+    z-index: 1;
+  }
+
+  .container24 .card .image img {
+    max-width: 100%;
+    border-radius: 15px;
+   
+  }
+
+  .container24 .card .content {
+    position:relative;
+    top: -140px;
+    padding: 10px 10px;
+    color: #111;
+    text-align: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+   
+  }
+  .container24 .card .content h2,h3{
+    padding: 10px;
+  }
+  
+  .container24 .card .content .fa-brands{
+    color: #000;
+    padding-left: 20px;
+    padding-right: 20px;
+    size: 50px;
+  }
+
+  .container24 .card:hover .content {
+    margin-top: 30px;
+    visibility: visible;
+    opacity: 1;
+    transition-delay: 0.2s;
+  }
+
+  .wrapper24 {
+    
+    margin-top: 100px;
+  }
+
+  
+/* ---------------------------END UI-24------------------------*/
