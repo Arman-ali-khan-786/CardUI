@@ -3480,6 +3480,14 @@ em {
     margin-top: 40px; 
 }
 
+.container24{
+    align-items: center;
+    display: flex;
+    justify-content : center;
+    position: relative; 
+    margin-top: 40px; 
+}
+
 .card23 {
     position: relative;
     max-width: 300px;
