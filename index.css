@@ -21,6 +21,37 @@ body {
     flex-direction: column;
     background: #c9d2ef no-repeat;
 }
+.code-display {
+    display: none;
+    border: 1px solid #e7ff5f;
+    border-radius: 10px;
+    padding: 0;
+    font-weight: lighter;
+    background-color: #807d78;
+    color: white;
+    white-space: initial;
+    font-family: monospace;
+    overflow: auto; 
+    font-size: small;
+}
+/* Add styles for the "Source Code" button */
+.show-code {
+    background-color: #007bff; /* Button background color */
+    color: #fff; /* Button text color */
+    border: none;
+    /* padding: 5px 10px; */
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Change button styles when hovered and clicked */
+.show-code:hover {
+    background-color: #0056b3; /* Background color on hover */
+}
+
+.show-code:active {
+    background-color: #003b80; /* Background color when clicked */
+}
 
 
 /* Gradient Scroll Bar */
@@ -213,10 +244,6 @@ em {
     padding: 30px;
 }
 
-.effect-code>a {
-    color: crimson;
-}
-
 .icons {
     width: fit-content;
     display: flex;
@@ -360,7 +387,6 @@ em {
 .wrapper13,
 .wrapper15,
 .wrapper16,
-.wrapper17,
 .wrapper22 {
     /* add your wrapper class here*/
     margin: 12px;
@@ -789,7 +815,7 @@ em {
     flex-wrap: wrap;
 }
 
-.wrapper6 .card {
+.wrapper6 .card6 {
     margin: 30px auto;
     width: 300px;
     height: 300px;
@@ -799,20 +825,20 @@ em {
     transition: 0.4s;
 }
 
-.card .card_image {
+.card6 .card_image {
     width: inherit;
     height: inherit;
     border-radius: 40px;
 }
 
-.card .card_image img {
+.card6 .card_image img {
     width: inherit;
     height: inherit;
     border-radius: 40px;
     object-fit: cover;
 }
 
-.card .card_title {
+.card6 .card_title {
     text-align: center;
     border-radius: 0px 0px 40px 40px;
     font-family: sans-serif;
@@ -822,7 +848,7 @@ em {
     height: 40px;
 }
 
-.wrapper6 .card:hover {
+.wrapper6 .card6:hover {
     transform: scale(0.9, 0.9);
     box-shadow: 5px 5px 30px 15px rgba(0, 0, 0, 0.25), -5px -5px 30px 15px rgba(0, 0, 0, 0.22);
 }
@@ -1619,6 +1645,7 @@ em {
     .wrapper1,
     .wrapper2,
     .wrapper3,
+    .wrapper5,
     .wrapper8 {
         /* add your wrapper class here*/
         margin: 12px;
@@ -2045,179 +2072,13 @@ em {
 /* ----------------------------------  End for UI-15 css code ------------------------------------ */
 
 
-/* ----------------------------------  Start for UI-16 css code ------------------------------------ */
-
-:root {
-    --d: 700ms;
-    --e: cubic-bezier(0.19, 1, 0.22, 1);
-}
-
-.page-content {
-    display: flex;
-    flex-wrap: wrap;
-    grid-gap: 1.3vw;
-    padding: 1vw;
-    justify-content: left;
-    /* width: 100vw; */
-    max-width: 1024px;
-    margin: 0 auto;
-}
-
-@media (min-width: 600px) {
-    .page-content {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (min-width: 800px) {
-    .page-content {
-        grid-template-columns: repeat(4, 1fr);
-    }
-}
-
-.card16 {
-    position: relative;
-    display: flex;
-    align-items: flex-end;
-    overflow: hidden;
-    padding: 1vw;
-    margin: 2vw auto;
-    width: 18vw;
-    height: 25vw !important;
-    border-radius: 1vw;
-    text-align: center;
-    color: rgb(255, 255, 255);
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 2px 2px rgba(0, 0, 0, 0.1), 0 4px 4px rgba(0, 0, 0, 0.1), 0 8px 8px rgba(0, 0, 0, 0.1), 0 16px 16px rgba(0, 0, 0, 0.1);
-}
-
-@media (min-width: 600px) {
-    .card16 {
-        height: 350px;
-    }
-}
-
-.card16:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 110%;
-    background-size: cover;
-    background-position: 0 0;
-    transition: transform calc(var(--d) * 1.5) var(--e);
-    pointer-events: none;
-}
-
-.card16:after {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 200%;
-    pointer-events: none;
-    background-image: linear-gradient( to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.009) 11.7%, rgba(0, 0, 0, 0.034) 22.1%, rgba(0, 0, 0, 0.072) 31.2%, rgba(0, 0, 0, 0.123) 39.4%, rgba(0, 0, 0, 0.182) 46.6%, rgba(0, 0, 0, 0.249) 53.1%, rgba(0, 0, 0, 0.32) 58.9%, rgba(0, 0, 0, 0.394) 64.3%, rgba(0, 0, 0, 0.468) 69.3%, rgba(0, 0, 0, 0.54) 74.1%, rgba(0, 0, 0, 0.607) 78.8%, rgba(0, 0, 0, 0.668) 83.6%, rgba(0, 0, 0, 0.721) 88.7%, rgba(0, 0, 0, 0.762) 94.1%, rgba(0, 0, 0, 0.79) 100%);
-    transform: translateY(-50%);
-    transition: transform calc(var(--d) * 2) var(--e);
-}
-
-.card16:before {
-    background-image: url(https://image.winudf.com/v2/image1/Y29tLmZyZXNoZW52aXJvbm1lbnQuY29vbHdhbGxwYXBlcnNoZF9zY3JlZW5fMF8xNTk4OTcwMDU3XzA3MQ/screen-0.jpg?fakeurl=1&type=.webp);
-}
-
-.contet {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    padding: 1vw;
-    transition: transform var(--d) var(--e);
-    z-index: 1;
-}
-
-.MyName16 {
-    font-size: 1.3vw;
-    font-weight: bold;
-    line-height: 1.2;
-}
-
-.Info16 {
-    margin: 2vw;
-    font-size: 1.125vw;
-    font-style: italic;
-    line-height: 1.35;
-    color: #fcfffa;
-}
-
-.connent {
-    display: flex;
-}
-
-.bttn {
-    cursor: pointer;
-    margin: 1.3vw 0.3vw;
-    filter: grayscale(1);
-    border: none;
-}
-
-.bttn:hover {
-    filter: grayscale(0);
-    transition: all 0.5s;
-}
-
-@media (hover: hover) and (min-width: 600px) {
-    .card16:after {
-        transform: translateY(0);
-    }
-    .contet {
-        transform: translateY(calc(100% - 4.5rem));
-    }
-    .contet>*:not(.MyName16) {
-        opacity: 0;
-        transform: translateY(1rem);
-        transition: transform var(--d) var(--e), opacity var(--d) var(--e);
-    }
-    .card16:hover,
-    .card16:focus-within {
-        align-items: center;
-    }
-    .card16:hover:before,
-    .card16:focus-within:before {
-        transform: translateY(-4%);
-        filter: blur(8px);
-        transition: all 0.7s;
-    }
-    .card16:hover:after,
-    .card16:focus-within:after {
-        transform: translateY(-50%);
-    }
-    .card16:hover .contet,
-    .card16:focus-within .contet {
-        transform: translateY(0);
-    }
-    .card16:hover .contet>*:not(.MyName16),
-    .card16:focus-within .contet>*:not(.MyName16) {
-        opacity: 1;
-        transform: translateY(0);
-        transition-delay: calc(var(--d) / 8);
-    }
-    .card16:focus-within:before,
-    .card16:focus-within:after,
-    .card16:focus-within .contet,
-    .card16:focus-within .contet>*:not(.MyName16) {
-        transition-duration: 0s;
-    }
-}
-
-
-/* ----------------------------------  End for UI-16 css code ------------------------------------ */
-
-
 /* ----------------------------------  Start for Subrat's UI-16 css code ------------------------------------ */
-
+.wrapper16 {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
 .container16 {
     position: relative;
     height: 500px;
@@ -2362,7 +2223,7 @@ em {
     color: black;
 }
 
-.card17 {
+.card16 {
     display: flex;
     justify-content: center;
 }
@@ -2373,67 +2234,55 @@ em {
 
 /* ..........Source Code button style start........ */
 
-.cta {
-    position: relative;
-    margin: auto;
-    padding: 12px 18px;
-    transition: all 0.2s ease;
-    border: none;
-    background: none;
-    cursor: pointer;
+.show-code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 17px;
+  padding: 1em 2.7em;
+  font-weight: 500;
+  background: #1F2937;
+  color: white;
+  border: none;
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.6em;
 }
 
-.cta:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: block;
-    border-radius: 50px;
-    background: #b88f49;
-    width: 45px;
-    height: 45px;
-    transition: all 0.3s ease;
+.gradient {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  border-radius: 0.6em;
+  margin-top: -0.25em;
+  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3));
 }
 
-.cta span {
-    position: relative;
-    font-family: "Ubuntu", sans-serif;
-    font-size: 18px;
-    font-weight: 700;
-    letter-spacing: 0.05em;
-    /* color: #234567; */
-    color: rgb(48, 45, 45);
+.label {
+  position: relative;
+  top: -1px;
 }
 
-.cta svg {
-    position: relative;
-    top: 0;
-    margin-left: 10px;
-    fill: none;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    stroke: #234567;
-    stroke-width: 2;
-    transform: translateX(-5px);
-    transition: all 0.3s ease;
+.transition {
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  transition-duration: 500ms;
+  background-color: rgba(16, 185, 129, 0.6);
+  border-radius: 9999px;
+  width: 0;
+  height: 0;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
-.cta:hover:before {
-    width: 100%;
-    background: #bf8d36;
+.show-code:hover .transition {
+  width: 14em;
+  height: 14em;
 }
 
-.cta:hover svg {
-    transform: translateX(0);
-}
-
-.cta:active {
-    transform: scale(0.95);
-}
-
-.cta > span {
-    color: #fff;
+.show-code:active {
+  transform: scale(0.97);
 }
 
 
@@ -2449,15 +2298,7 @@ em {
     font-family: "Poppins", sans-serif;
 }
 
-.abc {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: fit-content;
-    padding: 50px;
-}
-
-.cardabc {
+.card17 {
     position: relative;
     width: 350px;
     height: 210px;
@@ -2465,18 +2306,18 @@ em {
     transition: 0.5s;
 }
 
-.cardabc:hover {
+.card17:hover {
     height: 500px;
 }
 
-.cardabc .lines {
+.card17 .lines {
     position: absolute;
     inset: 0;
     background: #000;
     overflow: hidden;
 }
 
-.cardabc .lines::before {
+.card17 .lines::before {
     content: "";
     position: absolute;
     top: 50%;
@@ -2497,14 +2338,14 @@ em {
     }
 }
 
-.cardabc .lines::after {
+.card17 .lines::after {
     content: "";
     position: absolute;
     inset: 3px;
     background: #292929;
 }
 
-.cardabc .imgBx {
+.card17 .imgBx {
     position: absolute;
     top: -50px;
     left: 50%;
@@ -2517,12 +2358,12 @@ em {
     overflow: hidden;
 }
 
-.cardabc:hover .imgBx {
+.card17:hover .imgBx {
     width: 250px;
     height: 250px;
 }
 
-.cardabc .imgBx::before {
+.card17 .imgBx::before {
     content: "";
     position: absolute;
     top: 50%;
@@ -2543,14 +2384,14 @@ em {
     }
 }
 
-.cardabc .imgBx::after {
+.card17 .imgBx::after {
     content: "";
     position: absolute;
     inset: 3px;
     background: #292929;
 }
 
-.cardabc .imgBx img {
+.card17 .imgBx img {
     position: absolute;
     top: 5px;
     left: 5px;
@@ -2559,12 +2400,12 @@ em {
     height: 140px;
 }
 
-.cardabc:hover .imgBx img {
+.card17:hover .imgBx img {
     width: 240px;
     height: 240px;
 }
 
-.cardabc .contentx {
+.card17 .contentx {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -2574,7 +2415,7 @@ em {
     overflow: hidden;
 }
 
-.cardabc .contentx .details {
+.card17 .contentx .details {
     padding: 40px;
     text-align: center;
     width: 100%;
@@ -2582,11 +2423,11 @@ em {
     transform: translateY(132px);
 }
 
-.cardabc:hover .contentx .details {
+.card17:hover .contentx .details {
     transform: translateY(100px);
 }
 
-.cardabc .contentx .details h2 {
+.card17 .contentx .details h2 {
     font-size: 1.23em;
     font-weight: 600;
     color: #45f3ff;
@@ -2594,26 +2435,26 @@ em {
     padding-top: 20px;
 }
 
-.cardabc .contentx .details h2 span {
+.card17 .contentx .details h2 span {
     font-size: 0.75em;
     font-weight: 500;
     color: #fff;
 }
 
-.cardabc .contentx .details .links {
+.card17 .contentx .details .links {
     width: 20px;
     height: 20px;
     justify-content: space-between;
 }
 
-.cardabc .contentx .details .actionBtn {
+.card17 .contentx .details .actionBtn {
     display: flex;
     justify-content: space-between;
     gap: 20px;
     padding-top: 50px;
 }
 
-.cardabc .contentx .details .actionBtn button {
+.card17 .contentx .details .actionBtn button {
     padding: 10px 30px;
     border: none;
     outline: none;
@@ -2626,11 +2467,11 @@ em {
     opacity: 0.9;
 }
 
-.cardabc .contentx .details .actionBtn button:nth-child(2) {
+.card17 .contentx .details .actionBtn button:nth-child(2) {
     background: #fff;
 }
 
-.cardabc .contentx .details .actionBtn button:hover {
+.card17 .contentx .details .actionBtn button:hover {
     opacity: 1;
     background-image: linear-gradient(135deg, orange, cyan);
 }
@@ -2662,7 +2503,7 @@ em {
 
 /* ----------------------------------  start of Vijay's UI-19 css code ------------------------------------ */
 
-.wrapper19 {
+.card18 {
     box-sizing: border-box;
     font-family: Consolas;
     align-items: center;
@@ -2672,7 +2513,7 @@ em {
     padding: 40px 0;
 }
 
-.wrapper19 .box {
+.card18 .box {
     position: relative;
     width: 420px;
     height: 570px;
@@ -2683,7 +2524,7 @@ em {
     transition: 0.5s;
 }
 
-.wrapper19 .box::before {
+.card18 .box::before {
     content: "";
     position: absolute;
     top: 0;
@@ -2696,7 +2537,7 @@ em {
     transition: 0.5s;
 }
 
-.wrapper19 .box::after {
+.card18 .box::after {
     content: "";
     position: absolute;
     top: 0;
@@ -2711,19 +2552,19 @@ em {
     transition: 0.5s;
 }
 
-.wrapper19 .box:hover:before,
-.wrapper19 .box:hover:after {
+.card18 .box:hover:before,
+.card18 .box:hover:after {
     transform: skewX(0deg);
     left: 40px;
     width: calc(100%-90px);
 }
 
-.wrapper19 .box:nth-child(1):before,
-.wrapper19 .box:nth-child(1):after {
+.card18 .box:nth-child(1):before,
+.card18 .box:nth-child(1):after {
     background: linear-gradient(315deg, #ffbc00, #ff0578);
 }
 
-.wrapper19 .box span {
+.card18 .box span {
     display: block;
     position: absolute;
     top: 0;
@@ -2734,7 +2575,7 @@ em {
     pointer-events: none;
 }
 
-.wrapper19 .box span::before {
+.card18 .box span::before {
     content: "";
     position: absolute;
     top: 0;
@@ -2751,7 +2592,7 @@ em {
     animation-delay: -1s;
 }
 
-.wrapper19 .box span::after {
+.card18 .box span::after {
     content: "";
     position: absolute;
     bottom: 0;
@@ -2767,7 +2608,7 @@ em {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
 
-.wrapper19 .box:hover span::before {
+.card18 .box:hover span::before {
     top: -30px;
     left: 55px;
     width: 100px;
@@ -2775,7 +2616,7 @@ em {
     opacity: 1;
 }
 
-.wrapper19 .box:hover span::after {
+.card18 .box:hover span::after {
     bottom: -30px;
     right: 45px;
     width: 100px;
@@ -2807,25 +2648,25 @@ em {
     width: fit-content;
 }
 
-.wrapper19 .box:hover .content19 {
+.card18 .box:hover .content19 {
     left: -25px;
     padding: 60px 9px 60px 40px;
 }
 
-.wrapper19 .box .content19 h2 {
+.card18 .box .content19 h2 {
     font-size: 2em;
     color: #fff;
     margin-bottom: 10px;
 }
 
-.wrapper19 .box .content19 p {
+.card18 .box .content19 p {
     font-size: 1.1em;
     margin-bottom: 10px;
     line-height: 1.4em;
     color: #000;
 }
 
-.wrapper19 .box .content19 .btnF {
+.card18 .box .content19 .btnF {
     display: inline-block;
     font-size: 1.1em;
     color: #111;
@@ -2837,16 +2678,16 @@ em {
     margin-top: 5px;
 }
 
-.wrapper19 .box .content19 .btnF:hover {
+.card18 .box .content19 .btnF:hover {
     background: linear-gradient(210deg, rgb(255, 0, 221), rgb(0, 255, 153));
     color: white;
 }
 
-.wrapper19 .box .container19 .brand a {
+.card18 .box .container19 .brand a {
     background: none;
 }
 
-.wrapper19 .content19 .brand {
+.card18 .content19 .brand {
     margin-top: 30px;
     display: flex;
     gap: 1rem;
@@ -2854,7 +2695,7 @@ em {
     opacity: 0.55;
 }
 
-.wrapper19 .content19:hover .brand {
+.card18 .content19:hover .brand {
     margin-top: 30px;
     display: flex;
     font-size: 2rem;
@@ -2865,20 +2706,20 @@ em {
 }
 
 @media screen and (max-width: 768px) {
-    .wrapper19 .box .content19 .creator {
+    .card18 .box .content19 .creator {
         clear: both;
         margin-bottom: 20px;
         margin-left: 15%;
         margin-right: 0%;
     }
-    .wrapper19 .box .content19 p {
+    .card18 .box .content19 p {
         display: flex;
         flex-direction: column;
     }
-    .wrapper19 .box .content19 img {
+    .card18 .box .content19 img {
         width: 100%;
     }
-    .wrapper19 {
+    .card18 {
         max-width: 100%;
         width: 100%;
     }
@@ -3027,7 +2868,7 @@ em {
 
 /* start for charvi's card UI css */
 
-.row {
+.card20 {
     padding: 100px;
 }
 
@@ -3172,7 +3013,7 @@ em {
 
 /* ---------------------- start of  UI - 21 -------------------------------  */
 
-.container21 {
+.card21 {
     position: relative;
     font-family: "Poppins", sans-serif;
     display: flex;
@@ -3182,7 +3023,7 @@ em {
     padding-top: 80px;
 }
 
-.container21 .card {
+.card21 .card {
     position: relative;
     width: 320px;
     height: 450px;
@@ -3191,7 +3032,7 @@ em {
     overflow: hidden;
 }
 
-.container21 .card::before {
+.card21 .card::before {
     content: "";
     position: absolute;
     top: 0;
@@ -3203,11 +3044,11 @@ em {
     transition: 0.5s ease-in-out;
 }
 
-.container21 .card:hover:before {
+.card21 .card:hover:before {
     clip-path: circle(300px at 80% -20%);
 }
 
-.container21 .card:after {
+.card21 .card:after {
     content: "Nitin";
     position: absolute;
     top: 30%;
@@ -3218,21 +3059,21 @@ em {
     color: rgba(255, 255, 255, 0.04);
 }
 
-.container21 .card .imgBx {
+.card21 .card .imgBx {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translateY(-50%);
 }
 
-.container21 .card .imgBx img {
+.card21 .card .imgBx img {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
-.container21 .card .contentBx {
+.card21 .card .contentBx {
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -3242,19 +3083,19 @@ em {
     z-index: 90;
 }
 
-.container21 .card:hover .contentBx {
+.card21 .card:hover .contentBx {
     height: 260px;
 }
 
-.container21 .card .contentBx h2 {
+.card21 .card .contentBx h2 {
     position: relative;
     font-size: 600;
     letter-spacing: 1px;
     color: #fff;
 }
 
-.container21 .card .contentBx .size,
-.container21 .card .contentBx .color {
+.card21 .card .contentBx .size,
+.card21 .card .contentBx .color {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -3264,18 +3105,18 @@ em {
     visibility: hidden;
 }
 
-.container21 .card .contentBx .size a {
+.card21 .card .contentBx .size a {
     display: flex;
     flex-direction: row;
 }
 
-.container21 .card:hover .contentBx .size {
+.card21 .card:hover .contentBx .size {
     opacity: 1;
     visibility: visible;
     transition-delay: 0.6s;
 }
 
-.container21 .card .contentBx .size span {
+.card21 .card .contentBx .size span {
     width: 26px;
     height: 26px;
     text-align: center;
@@ -3291,19 +3132,19 @@ em {
     cursor: pointer;
 }
 
-.container21 .card .contentBx .color span:nth-child(2) {
+.card21 .card .contentBx .color span:nth-child(2) {
     background: #1bbfe9;
 }
 
-.container21 .card .contentBx .color span:nth-child(3) {
+.card21 .card .contentBx .color span:nth-child(3) {
     background: #1b2fe9;
 }
 
-.container21 .card .contentBx .color span:nth-child(4) {
+.card21 .card .contentBx .color span:nth-child(4) {
     background: #080481;
 }
 
-.container21 .card .contentBx .button {
+.card21 .card .contentBx .button {
     display: inline-block;
     padding: 10px 20px;
     background: #fff;
@@ -3317,7 +3158,7 @@ em {
     transition: 0.5s;
 }
 
-.container21 .card:hover .contentBx .button {
+.card21 .card:hover .contentBx .button {
     opacity: 1;
     transform: translateY(0px);
     transition-delay: 0.7s;
@@ -3570,7 +3411,7 @@ em {
       grid-template-columns: repeat(4, 1fr);
    }
   }
-  .card25 {
+  .card24 {
     position: relative;
     display: flex;
     align-items: flex-end;
@@ -3585,11 +3426,11 @@ em {
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 2px 2px rgba(0, 0, 0, 0.1), 0 4px 4px rgba(0, 0, 0, 0.1), 0 8px 8px rgba(0, 0, 0, 0.1), 0 16px 16px rgba(0, 0, 0, 0.1);
   }
   @media (min-width: 600px) {
-    .card25 {
+    .card24 {
       height: 350px;
    }
   }
-  .card25:before {
+  .card24:before {
     content: '';
     position: absolute;
     top: 0;
@@ -3601,7 +3442,7 @@ em {
     transition: transform calc(var(--d) * 1.5) var(--e);
     pointer-events: none;
   }
-  .card25:after {
+  .card24:after {
     content: '';
     display: block;
     position: absolute;
@@ -3614,7 +3455,7 @@ em {
     transform: translateY(-50%);
     transition: transform calc(var(--d) * 2) var(--e);
   }
-  .card25:before {
+  .card24:before {
     background-image: url(https://image.winudf.com/v2/image1/Y29tLmZyZXNoZW52aXJvbm1lbnQuY29vbHdhbGxwYXBlcnNoZF9zY3JlZW5fMF8xNTk4OTcwMDU3XzA3MQ/screen-0.jpg?fakeurl=1&type=.webp);
   
   }
@@ -3656,7 +3497,7 @@ em {
   }
   
   @media (hover: hover) and (min-width: 600px) {
-    .card25:after {
+    .card24:after {
       transform: translateY(0);
    }
     .contet {
@@ -3667,26 +3508,26 @@ em {
       transform: translateY(1rem);
       transition: transform var(--d) var(--e), opacity var(--d) var(--e);
    }
-    .card25:hover, .card25:focus-within {
+    .card24:hover, .card24:focus-within {
       align-items: center;
    }
-    .card25:hover:before, .card25:focus-within:before {
+    .card24:hover:before, .card24:focus-within:before {
       transform: translateY(-4%);
       filter: blur(8px);
       transition: all 0.7s;
    }
-    .card25:hover:after, .card25:focus-within:after {
+    .card24:hover:after, .card24:focus-within:after {
       transform: translateY(-50%);
    }
-    .card25:hover .contet, .card25:focus-within .contet {
+    .card24:hover .contet, .card24:focus-within .contet {
       transform: translateY(0);
    }
-    .card25:hover .contet > *:not(.MyName25), .card25:focus-within .contet > *:not(.MyName25) {
+    .card24:hover .contet > *:not(.MyName25), .card24:focus-within .contet > *:not(.MyName25) {
       opacity: 1;
       transform: translateY(0);
       transition-delay: calc(var(--d) / 8);
    }
-    .card25:focus-within:before, .card25:focus-within:after, .card25:focus-within .contet, .card25:focus-within .contet > *:not(.MyName25) {
+    .card24:focus-within:before, .card24:focus-within:after, .card24:focus-within .contet, .card24:focus-within .contet > *:not(.MyName25) {
       transition-duration: 0s;
    }
   }
