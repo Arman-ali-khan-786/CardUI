@@ -3875,5 +3875,31 @@ em {
       transition-duration: 0s;
    }
   }
+
+/* CSS for the "to-top" button */
+.to-top-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.to-top-button:hover {
+    background-color: #0056b3;
+}
+
+/* Ensure the button is on top of other elements */
+.to-top-button::before {
+    content: "\2191"; /* Unicode up arrow character */
+}
   
 
