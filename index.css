@@ -3881,7 +3881,7 @@ em {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: #007bff;
+    background-color: #0a192f;
     color: #fff;
     border: none;
     border-radius: 50%;
@@ -3894,5 +3894,5 @@ em {
 }
 
 .to-top-button:hover {
-    background-color: #0056b3;
+    background-color: #12284a;
 }
