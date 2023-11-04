@@ -3896,10 +3896,5 @@ em {
 .to-top-button:hover {
     background-color: #0056b3;
 }
-
-/* Ensure the button is on top of other elements */
-.to-top-button::before {
-    content: "\2191"; /* Unicode up arrow character */
-}
   
 
