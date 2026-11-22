@@ -5,1064 +5,1108 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CardUi</title>
-    <link rel="stylesheet" href="index.css" />
-    <link rel="stylesheet" href="darkModeBtn.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://kit.fontawesome.com/4b7d3e4626.js" crossorigin="anonymous"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Sansita&display=swap" rel="stylesheet">
+    <title>CARDUi — Card UI Effects Library</title>
+    <meta name="description" content="CardUI is a free, open-source, community-built library of hover, flip, glow, and glass card UI effects." />
+    <meta property="og:title" content="CARDUi — Card UI Effects Library" />
+    <meta property="og:description" content="CardUI is a free, open-source, community-built library of hover, flip, glow, and glass card UI effects." />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Merriweather:ital,wght@0,400;0,700;1,400&family=Quicksand:wght@400;500;600;700&family=PT+Sans&family=Noto+Serif:wght@700&family=Roboto&family=Sansita&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+    <link rel="stylesheet" href="./index.css" />
+    <link rel="stylesheet" href="./css/app-upgrade.css" />
 </head>
 
 <body>
-    <header>
-        <h3><a href="#" id="Abyssinica">Card<span style="color:unset;">UI</span></a></h3>
-        <ul>
-            <li class="effects"><a href="#effects" class="header-tag">Effects</a></li>
-            <li><a href="#contribute" class="header-tag">Contribute</a></li>
-        </ul>
-        <!-- dark mode button feature -->
-        <div class="dark-mode-btn">
-            <!-- added in css -->
+    <header class="cu-header cu-shell">
+        <a class="cu-logo" href="#home">CARD<b>Ui</b></a>
+        <nav class="cu-links" aria-label="Primary">
+            <a href="#home" data-nav="home">Home</a>
+            <a href="#explore" data-nav="explore">Explore</a>
+            <a href="#contributors" data-nav="contributors" id="nav-contrib">Contributors</a>
+        </nav>
+        <div class="cu-actions">
+            <button type="button" class="cu-btn cu-icon" id="cu-theme" aria-label="Toggle dark mode" title="Toggle theme">◐</button>
+            <div id="cu-auth-guest" class="cu-user-group">
+                <a href="./login.html" class="cu-btn cu-ghost" id="cu-signin">Sign in</a>
+                <a href="./signup.html" class="cu-btn cu-primary" id="cu-signup">Sign up</a>
+            </div>
+            <div id="cu-auth-user" class="cu-user-group" hidden>
+                <a href="./profile.html" class="cu-prof-chip" id="cu-prof" title="Your profile">
+                    <span class="cu-prof-avatar" id="cu-avatar">C</span>
+                    <span class="cu-prof-name cu-hide-sm" id="cu-prof-name">Profile</span>
+                </a>
+                <button type="button" class="cu-btn cu-ghost" id="cu-signout">Sign out</button>
+            </div>
         </div>
     </header>
 
-    <main>
-        <div id="about">
-            <h2 id="Merriweather">What is Card<span style="color:unset;">UI</span>?</h2>
-            <img src="./assets/CARDUi.webp" alt="logoImage" id="banner_image" class="lazyload" style="width: 30%;">
-            <p id="Quicksand">
-                If you are Looking for Amazing Card User Interface(UI) Designs and Effects for your Projects/websites,
-                then <em>CardUI</em> website is a one stop solution for you. <em>CardUI</em> contains awesome card
-                effects for you to use.
-            </p>
-        </div>
-        <div id="effects" class="effects">
-            <!---------------------------- Ui-1 markup Code ---------------------------------->
-            <div class="wrapper1">
-                <h1 class="effect-title" id="Merriweather">1. UI-1 by <em>Arman Ali Khan</em></h1>
-                <div class="container">
-                    <div class="card1">
-                        <div class="layer">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <div class="text">
-                                <h4>Arman Ali Khan</h4>
-                                <p>Web Developer & Designer</p>
+    <!-- ==================== HOME VIEW ==================== -->
+    <div class="cu-view cu-shell" id="v-home">
+        <section class="cu-hero">
+            <span class="cu-badge">Open source · Beginner friendly · MIT licensed</span>
+            <h1>Card UI effects you can <span>copy, ship and contribute</span></h1>
+            <p>CardUi is a free, community-built library of hover, flip, glow and glass cards. Built with plain HTML, CSS and a pinch of JavaScript, so anyone can use it, and anyone can add to it.</p>
+            <div class="cu-cta">
+                <a class="cu-btn cu-primary" href="#explore">Explore designs →</a>
+                <a class="cu-btn cu-ghost" href="https://github.com/Arman-ali-khan-786/CardUI" target="_blank" rel="noopener noreferrer">Star on GitHub</a>
+            </div>
+            <img id="banner_image" class="cu-banner" src="./assets/CARDUi.webp" alt="CardUI logo" />
+        </section>
+
+        <section class="cu-page">
+            <div class="cu-feats">
+                <div class="cu-feat">
+                    <div class="cu-feat-icon" aria-hidden="true"><i class="fa-solid fa-earth-americas"></i></div>
+                    <h3>Open source</h3>
+                    <p>MIT licensed and built in the open. Fork it, use it in any project, and send your own effects back.</p>
+                </div>
+                <div class="cu-feat">
+                    <div class="cu-feat-icon" aria-hidden="true"><i class="fa-solid fa-seedling"></i></div>
+                    <h3>Beginner friendly</h3>
+                    <p>No frameworks and no build step. If you know a little HTML and CSS, you can add your first card in an afternoon.</p>
+                </div>
+                <div class="cu-feat">
+                    <div class="cu-feat-icon" aria-hidden="true"><i class="fa-solid fa-bolt"></i></div>
+                    <h3>Easy to ship</h3>
+                    <p>Every effect has its HTML, CSS and JS one click away. Copy the snippet and drop it into your site.</p>
+                </div>
+            </div>
+
+            <h2 class="cu-h2">How it works</h2>
+            <div class="cu-steps">
+                <div class="cu-step">
+                    <b>1</b>
+                    <h4>Explore</h4>
+                    <p>Browse, filter by category, and search the collection of 25 community card effects.</p>
+                </div>
+                <div class="cu-step">
+                    <b>2</b>
+                    <h4>Copy the code</h4>
+                    <p>Open the Code modal on any card to copy its HTML, CSS and JS in one click.</p>
+                </div>
+                <div class="cu-step">
+                    <b>3</b>
+                    <h4>Ship it</h4>
+                    <p>Paste it into your project, tweak the colours and fonts, and go live.</p>
+                </div>
+            </div>
+
+            <h2 class="cu-h2">Contribute your own card</h2>
+            <div class="cu-steps">
+                <div class="cu-step">
+                    <b>1</b>
+                    <h4>Fork the repo</h4>
+                    <p>Fork CardUI on GitHub and clone it to your computer.</p>
+                </div>
+                <div class="cu-step">
+                    <b>2</b>
+                    <h4>Add your card</h4>
+                    <p>Add your markup, CSS and JS in your own marked sections. Don’t change existing cards.</p>
+                </div>
+                <div class="cu-step">
+                    <b>3</b>
+                    <h4>Open a pull request</h4>
+                    <p>Send it in and see your name on the live Contributors leaderboard.</p>
+                </div>
+            </div>
+
+            <div class="cu-cta" style="margin-bottom:40px">
+                <a class="cu-btn cu-ghost" href="https://github.com/Arman-ali-khan-786/CardUI" target="_blank" rel="noopener noreferrer">GitHub repo</a>
+                <a class="cu-btn cu-ghost" href="https://t.me/cardui_hackodex" target="_blank" rel="noopener noreferrer">Join on Telegram</a>
+            </div>
+
+            <div class="cu-join" id="cu-home-join-card">
+                <h3>Want to see your card here?</h3>
+                <p>Sign up to like effects, save your favourites, and track contributions on the live leaderboard.</p>
+                <button type="button" class="cu-btn cu-primary" id="home-join">Sign up for free</button>
+            </div>
+        </section>
+    </div>
+
+    <!-- ==================== EXPLORE VIEW ==================== -->
+    <div class="cu-view" id="v-explore">
+        <section class="cu-hero cu-shell">
+            <span class="cu-badge" id="cu-count">25 effects · 23 contributors</span>
+            <h1>Explore <span>designs &amp; effects</span></h1>
+            <p>Search by effect number, name, or contributor, filter by style, grab the code and ship it.</p>
+            <div class="cu-searchwrap">
+                <input class="cu-search" id="cu-search" type="search" placeholder="Try &ldquo;UI-9&rdquo;, &ldquo;Flip&rdquo;, or a contributor name…" autocomplete="off" aria-label="Search card effects" />
+                <div class="cu-results" id="cu-results" role="region" aria-label="Search results"></div>
+            </div>
+            <div class="cu-filter-bar" id="cu-filter-bar" role="group" aria-label="Filter effects by category"></div>
+        </section>
+
+        <div class="cu-stage">
+            <main>
+                <div id="effects" class="effects">
+                    <!-- UI-1 -->
+                    <section class="wrapper1 cu-effect-card" data-effect-id="ui-1">
+                        <h1 class="effect-title" id="Merriweather">1. UI-1 by <em>Arman Ali Khan</em></h1>
+                        <div class="container">
+                            <div class="card1">
+                                <div class="layer">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <div class="text">
+                                        <h4>Arman Ali Khan</h4>
+                                        <p>Web Developer &amp; Designer</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="effect-code">
-                    <a href="https://github.com/Arman-ali-khan-786/CardUI"><button class="cta">
-                            <span>Source Code</span>
-                            <svg viewBox="0 0 13 10" height="10px" width="15px">
-                                <path d="M1,5 L11,5"></path>
-                                <polyline points="8 1 12 5 8 9"></polyline>
-                            </svg>
-                        </button></a>
-                </div>
-            </div>
-            <!---------------------------- Ui-2 markup Code ---------------------------------->
-            <div class="wrapper2">
-                <h1 class="effect-title" id="Merriweather">2. UI-2 by <em>Arman Ali Khan</em></h1>
-                <div class="container">
-                    <div class="card2">
-                        <img src="./assets/java.webp" class="lazyload" alt="Java" />
-                        <h3>Java</h3>
-                    </div>
-                </div>
-                <div class="effect-code">
-                    <a href="https://github.com/Arman-ali-khan-786/CardUI"><button class="cta">
-                            <span>Source Code</span>
-                            <svg viewBox="0 0 13 10" height="10px" width="15px">
-                                <path d="M1,5 L11,5"></path>
-                                <polyline points="8 1 12 5 8 9"></polyline>
-                            </svg>
-                        </button></a>
-                </div>
-            </div>
-            <!---------------------------- Ui-3 markup Code ---------------------------------->
-            <div class="wrapper3">
-                <h1 class="effect-title" id="Merriweather">3. UI-3 by <em>Pritam Panda</em></h1>
-                <div class="container">
-                    <div class="card3">
-                        <a href="https://github.com/Pritam0077" target="_blank"><img src="./assets/GitHub-Mark.webp"
-                                alt="github" class="card__image lazyload"></a>
-                        <p class="card__name">Pritam Panda</p>
-                        <a href="https://github.com/Pritam0077" target="_blank"><button
-                                class="btn draw-border">Follow</button></a>
-                        <button class="btn draw-border">Message</button>
-                    </div>
-                </div>
-                <div class="effect-code">
-                    <a href="https://github.com/Pritam0077/CardUI"><button class="cta">
-                            <span>Source Code</span>
-                            <svg viewBox="0 0 13 10" height="10px" width="15px">
-                                <path d="M1,5 L11,5"></path>
-                                <polyline points="8 1 12 5 8 9"></polyline>
-                            </svg>
-                        </button></a>
-                </div>
-            </div>
-            <!---------------------------- Ui-4 markup Code ---------------------------------->
-            <div class="wrapper4">
-                <h1 class="effect-title" id="Merriweather">4. UI-4 by <em>Mohammad Zeeshan</em></h1>
-                <div class="container">
-                    <div class="card4">
-
-                        <img src="assets/CARDUI4pp.webp" class="lazyload" alt="">
-                        <div>
-                            <p class="user_name">Zeeshan Khan</p>
-                            <p class="skill">Front-end Developer</p>
+                        <div class="effect-code">
+                            <a href="https://github.com/Arman-ali-khan-786/CardUI" target="_blank" rel="noopener noreferrer"><button class="cta">
+                                    <span>Source Code</span>
+                                    <svg viewBox="0 0 13 10" height="10px" width="15px">
+                                        <path d="M1,5 L11,5"></path>
+                                        <polyline points="8 1 12 5 8 9"></polyline>
+                                    </svg>
+                                </button></a>
                         </div>
+                    </section>
 
-
-
-                        <div class="icons">
-                            <a href="https://github.com/zeeshankhan00" target="_blank"
-                                class="fa fa-github hi"></a>&nbsp;&nbsp;
-                            <a href="https://twitter.com/Zeeshan91403670" target="_blank"
-                                class="fa fa-twitter hi"></a>&nbsp;&nbsp;
-                            <a href="https://www.instagram.com/im_zkhan_/" target="_blank"
-                                class="fa fa-instagram hi"></a>&nbsp;&nbsp;
-                            <a href="https://www.linkedin.com/in/mohammad-zeeshan-139779218/" target="_blank"
-                                class="fa fa-linkedin hi"></a>&nbsp;&nbsp;
-                        </div>
-
-
-                    </div>
-                </div>
-
-            </div>
-            <div class="effect-code">
-                <a href="https://github.com/zeeshankhan00/CardUI/tree/master"><button class="cta">
-                        <span>Source Code</span>
-                        <svg viewBox="0 0 13 10" height="10px" width="15px">
-                            <path d="M1,5 L11,5"></path>
-                            <polyline points="8 1 12 5 8 9"></polyline>
-                        </svg>
-                    </button></a>
-            </div>
-        </div>
-
-
-
-        </div>
-
-
-        <!-- Harshit's Card -->
-
-        <div class="wrapper3">
-            <h1 class="effect-title">5. UI-5 by <em>HS07</em></h1>
-
-            <div class="container">
-                <div class="card5">
-
-                    <div class="image">
-                        <img src="./assets/profile2.webp" class="lazyload" />
-                    </div>
-                    <div class="details">
-                        <div class="center">
-                            <h1>Harshit Shukla<br><label>Full Stack Web developer</label></h1>
-                            <p>Enthusiastic Web Developer | former Web developer Intern STARZ Ventures | Open Source</p>
-                            <ul>
-                                <li><a href="https://github.com/hs-07"><i class="fa fa-github"
-                                            aria-hidden="true"></i></a></li>
-                                <li><a href="www.linkedin.com/in/harshit-shukla-67b28a212"><i class="fa fa-linkedin"
-                                            aria-hidden="true"></i></a></li>
-                                <li><a href="https://www.instagram.com/_hs.07_/"><i class="fa fa-instagram"
-                                            aria-hidden="true"></i></a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="effect-code">
-                <a href="https://github.com/hs-07/CardUI"><button class="cta">
-                        <span>Source Code</span>
-                        <svg viewBox="0 0 13 10" height="10px" width="15px">
-                            <path d="M1,5 L11,5"></path>
-                            <polyline points="8 1 12 5 8 9"></polyline>
-                        </svg>
-                    </button></a>
-            </div>
-        </div>
-
-
-        <div class="wrapper6">
-            <h1 class="effect-title">6. UI-6 by <em>DIVYANSHU PRIYAVRAT </em></h1>
-            <div class="cards-list">
-                <div class="card 6">
-                    <div class="card_image">
-                        <img src="https://media.giphy.com/media/10SvWCbt1ytWCc/giphy.gif" class="lazyload" />
-                    </div>
-                    <div class="card_title">
-                        <p>Divyanshu Priyavrat</p>
-                        <ul class="handles">
-
-                            <li><a href="https://github.com/DIVYANSHU8055"><i class="fa fa-github"
-                                        aria-hidden="true"></i></a></li>
-                            <li><a href="https://www.linkedin.com/in/divyanshu-priyavrat-1811011b4/"><i
-                                        class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                            <li><a href="https://www.instagram.com/divyanshu__0712/"><i class="fa fa-instagram"
-                                        aria-hidden="true"></i></a></li>
-                        </ul>
-
-                    </div>
-                </div>
-
-
-            </div>
-
-            <div class="effect-code">
-                <a href="https://github.com/DIVYANSHU8055/CardUI"><button class="cta">
-                        <span>Source Code</span>
-                        <svg viewBox="0 0 13 10" height="10px" width="15px">
-                            <path d="M1,5 L11,5"></path>
-                            <polyline points="8 1 12 5 8 9"></polyline>
-                        </svg>
-                    </button></a>
-            </div>
-        </div>
-
-        <!-- Saikiran's card -->
-
-        <div class="wrapper7">
-            <h1 class="effect-title">7. UI-7 by <em>Saikiran Voladri</em></h1>
-            <br><br>
-            <div class="card7">
-                <div class="container1">
-
-                    <div class="wrappers">
-
-                        <a href="#">
-                            <img src="./assets/profile.webp" class="lazyload" alt="profile photo">
-                        </a>
-                        <div class="title">
-                            Saikiran Voladri
-                        </div>
-                        <div class="place">
-                            Web developer
-                        </div>
-                    </div>
-                    <div class="content">
-                        <div class="buttons">
-                            <div class="btn">
-                                <a href="https://www.instagram.com/voladrisaikiran/"><button>Message</button>
-                            </div>
-                            <div class="btn">
-                                <a href="https://github.com/SaikiranVoladri"> <button>Follow</button></a>
+                    <!-- UI-2 -->
+                    <section class="wrapper2 cu-effect-card" data-effect-id="ui-2">
+                        <h1 class="effect-title" id="Merriweather">2. UI-2 by <em>Arman Ali Khan</em></h1>
+                        <div class="container">
+                            <div class="card2">
+                                <img src="./assets/java.webp" class="lazyload" alt="Java" />
+                                <h3>Java</h3>
                             </div>
                         </div>
-                        <div class="icons">
-                            <li><a href="https://www.linkedin.com/in/saikiran-voladri"><span
-                                        class="fa fa-linkedin-square"></span></a>
-                            </li>
-                            <li><a href="https://github.com/SaikiranVoladri"><span class="fa fa-github"></span></a></li>
-                            <li><a href="https://www.facebook.com/saikiran.voladri.7"><span
-                                        class="fa fa-facebook-f"></span></a></li>
-                            <li><a href="https://twitter.com/VoladriSaikiran"><span class="fa fa-twitter"></span></a>
-                            </li>
-                            <li><a href="https://www.instagram.com/voladrisaikiran/"><span
-                                        class="fa fa-instagram"></span></a></li>
+                        <div class="effect-code">
+                            <a href="https://github.com/Arman-ali-khan-786/CardUI" target="_blank" rel="noopener noreferrer"><button class="cta">
+                                    <span>Source Code</span>
+                                    <svg viewBox="0 0 13 10" height="10px" width="15px">
+                                        <path d="M1,5 L11,5"></path>
+                                        <polyline points="8 1 12 5 8 9"></polyline>
+                                    </svg>
+                                </button></a>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <div class="effect-code">
-                <a href="https://github.com/SaikiranVoladri/hactoberfest-CardUi">
-                    <button class="cta">
-                        <span>Source Code</span>
-                        <svg viewBox="0 0 13 10" height="10px" width="15px">
-                            <path d="M1,5 L11,5"></path>
-                            <polyline points="8 1 12 5 8 9"></polyline>
-                        </svg>
-                    </button>
-                </a>
-            </div>
-        </div>
+                    </section>
 
-        <!-- ArieAr card -->
-        <div class="wrapper8">
-            <h1 class="effect-title">8. UI-8 by <em>ArieAR</em></h1>
-            <div class="container">
-                <div class="card8">
-                    <div class="image-black"></div>
-                    <div class="side-media">
-                        <li><a href="https://github.com/ariear"><span class="fa fa-github fa-2x"></span></a></li>
-                        <li><a href="https://www.facebook.com/ariear"><span class="fa fa-facebook-f fa-2x"></span></a>
-                        </li>
-                        <li><a href="https://twitter.com/ariear"><span class="fa fa-twitter fa-2x"></span></a></li>
-                        <li><a href="https://www.instagram.com/ariear.js/"><span
-                                    class="fa fa-instagram fa-2x"></span></a></li>
-                    </div>
-                    <div class="card-content8">
-                        <h2>ArieAr</h2>
-                        <p>Web developer</p>
-                        <div class="wrap-btn8">
-                            <button class="btn-follow8"><a href="https://github.com/ariear">FOLLOW</a></button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="effect-code">
-                <a href="https://github.com/ariear/CardUI"><button class="cta">
-                        <span>Source Code</span>
-                        <svg viewBox="0 0 13 10" height="10px" width="15px">
-                            <path d="M1,5 L11,5"></path>
-                            <polyline points="8 1 12 5 8 9"></polyline>
-                        </svg>
-                    </button></a>
-            </div>
-        </div>
-        <!-- raghav-rama's Card -->
-        <div class="wrapper9">
-            <h1 class="effect-title">9. UI-9 by <em>raghav-rama</em></h1>
-            <div class="card9">
-                <div class="contents">
-                    <div class="gh-avatar"><img src="https://avatars.githubusercontent.com/u/91389059?s=400&v=4"
-                            alt="raghav-rama"></div>
-                    <div class="details">
-                        <p class="u-name">raghav-rama</p>
-                        <p class="skill">Web Developer</p>
-                    </div>
-                    <div class="strip">
-                        <div class="reach-out">
-                            <a href="https://github.com/raghav-rama"><span class="fa fa-github fa-2x"></span></a>
-                            <a href="https://www.linkedin.com/in/ritviksingh258/"><span
-                                    class="fa fa-linkedin fa-2x"></span></a>
-                            <a href="https://twitter.com/Raghav__Rama"><span class="fa fa-twitter fa-2x"></span></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="effect-code">
-                <a href="https://github.com/raghav-rama/CardUI"><button class="cta">
-                        <span>Source Code</span>
-                        <svg viewBox="0 0 13 10" height="10px" width="15px">
-                            <path d="M1,5 L11,5"></path>
-                            <polyline points="8 1 12 5 8 9"></polyline>
-                        </svg>
-                    </button></a>
-            </div>
-        </div>
-
-
-        <!-- Zaid's Card -->
-        <div class="wrapper10">
-            <h1 class="effect-title">10. UI-10 by <em>Md Zaid Siddiqui</em></h1>
-            <div class="container10">
-                <div class="card10">
-                    <div class="detailz">
-                        <li>
-                            <h1>Md Zaid Siddiqui</h1>
-                        </li>
-                        <li>
-                            <h5>React Developer | Open-source enthusiast</h5>
-                        </li>
-                        <div class="links">
-                            <li><a href="https://github.com/zaidsidd360"><span class="fa fa-github fa-2x"></span></a>
-                            </li>
-                            <li><a href="https://twitter.com/zaidsidd360"><span class="fa fa-twitter fa-2x"></span></a>
-                            </li>
-                            <li><a href="https://www.linkedin.com/in/zaidsidd69420/"><span
-                                        class="fa fa-linkedin fa-2x"></span></a>
-                            </li>
-                        </div>
-                    </div>
-                    <img src="./assets/cardui10.png" alt="Card Image" width="400pxx">
-                    <div class="circle"></div>
-                </div>
-            </div>
-            <div class="effect-code">
-                <a href="https://github.com/zaidsidd360/CardUI"><button class="cta">
-                        <span>Source Code</span>
-                        <svg viewBox="0 0 13 10" height="10px" width="15px">
-                            <path d="M1,5 L11,5"></path>
-                            <polyline points="8 1 12 5 8 9"></polyline>
-                        </svg>
-                    </button></a>
-            </div>
-        </div>
-
-        <!-- Anubhav Gupta's Card -->
-        <div class="wrapper11">
-            <h1 class="effect-title">11. UI-11 by <em>Anubhav Gupta</em></h1>
-            <div class="container">
-                <div class="card11">
-                    <div class="imagebox">
-                        <img src="assets/pexels-realtoughcandycom-11035380.jpg" alt="error">
-                    </div>
-                    <div class="content">
-                        <h2>Anubhav Gupta</h2>
-                        <div id="desc">
-                            <h3>Enthusiastic Front-end Developer</h3>
-                        </div>
-                        <div class="social-handle11">
-                            <a href="https://www.linkedin.com/in/anubhav-gupta-2a01b1229/"><i
-                                    class="fa-brands fa-linkedin-in fa-2x handles-icon"></i></a>
-                            <a href="https://www.instagram.com/anubhav_gupta_17/"><i
-                                    class="fa-brands fa-square-instagram fa-2x handles-icon"></i></a>
-                            <a href="https://github.com/Anubhavgupta18"><i
-                                    class="fa-brands fa-github fa-2x handles-icon"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="effect-code">
-                <a href="https://github.com/Anubhavgupta18/CardUI"><button class="cta">
-                        <span>Source Code</span>
-                        <svg viewBox="0 0 13 10" height="10px" width="15px">
-                            <path d="M1,5 L11,5"></path>
-                            <polyline points="8 1 12 5 8 9"></polyline>
-                        </svg>
-                    </button></a>
-            </div>
-
-
-            <!-- Shivang's Card -->
-            <div class="wrapper12">
-                <h1 class="effect-title">10. UI-12 by <em>Shivang Sharma</em></h1>
-                <div class="container">
-                    <div class="card12">
-                        <div class="card-content">
-                            <h2 class="card-title">Shivang Sharma</h2>
-                            <br>
-                            <br>
-                            <p class="card-body">Open Source Enthusiast & Front-End Developer </p>
-
-                            <div class="social-handle-12">
-                                <a href="https://www.linkedin.com/in/shivang-sharma-443518224" class="button"><span
-                                        class="fa fa-linkedin fa-2x"></span></a>
-
-                                <a href="https://github.com/shivang1919" class="button"><span
-                                        class="fa fa-github fa-2x"></span></a>
-
-
-                                <a href="https://www.instagram.com/shivang1919/" class="button"><span
-                                        class="fa fa-instagram fa-2x"></span></a>
+                    <!-- UI-3 -->
+                    <section class="wrapper3 cu-effect-card" data-effect-id="ui-3">
+                        <h1 class="effect-title" id="Merriweather">3. UI-3 by <em>Pritam Panda</em></h1>
+                        <div class="container">
+                            <div class="card3">
+                                <a href="https://github.com/Pritam0077" target="_blank" rel="noopener noreferrer"><img src="./assets/GitHub-Mark.webp"
+                                        alt="github" class="card__image lazyload" /></a>
+                                <p class="card__name">Pritam Panda</p>
+                                <a href="https://github.com/Pritam0077" target="_blank" rel="noopener noreferrer"><button
+                                        class="btn draw-border">Follow</button></a>
+                                <button class="btn draw-border">Message</button>
                             </div>
-
-
-
                         </div>
-                    </div>
-                    <div class="effect-code">
-                        <a href="https://github.com/shivang1919/CardUI"><button class="cta">
-                                <span>Source Code</span>
-                                <svg viewBox="0 0 13 10" height="10px" width="15px">
-                                    <path d="M1,5 L11,5"></path>
-                                    <polyline points="8 1 12 5 8 9"></polyline>
-                                </svg>
-                            </button></a>
-                    </div>
-                </div>
+                        <div class="effect-code">
+                            <a href="https://github.com/Pritam0077/CardUI" target="_blank" rel="noopener noreferrer"><button class="cta">
+                                    <span>Source Code</span>
+                                    <svg viewBox="0 0 13 10" height="10px" width="15px">
+                                        <path d="M1,5 L11,5"></path>
+                                        <polyline points="8 1 12 5 8 9"></polyline>
+                                    </svg>
+                                </button></a>
+                        </div>
+                    </section>
 
-                <!-- Manu's Card -->
-                <div class="wrapper13">
-                    <h1 class="effect-title">13. UI-13 by <em>Manu Coutinho</em></h1>
-                    <div class="container">
-                        <div class="card13">
-                            <div class="card13-box">
-                                <div class="card13-badger">
-                                    <i class="fa fa-hand-spock-o" aria-hidden="true"></i>
+                    <!-- UI-4 -->
+                    <section class="wrapper4 cu-effect-card" data-effect-id="ui-4">
+                        <h1 class="effect-title" id="Merriweather">4. UI-4 by <em>Mohammad Zeeshan</em></h1>
+                        <div class="container">
+                            <div class="card4">
+                                <img src="./assets/CARDUI4pp.webp" class="lazyload" alt="Mohammad Zeeshan" />
+                                <div>
+                                    <p class="user_name">Zeeshan Khan</p>
+                                    <p class="skill">Front-end Developer</p>
+                                </div>
+                                <div class="icons">
+                                    <a href="https://github.com/zeeshankhan00" target="_blank" rel="noopener noreferrer"
+                                        class="fa fa-github hi"></a>&nbsp;&nbsp;
+                                    <a href="https://twitter.com/Zeeshan91403670" target="_blank" rel="noopener noreferrer"
+                                        class="fa fa-twitter hi"></a>&nbsp;&nbsp;
+                                    <a href="https://www.instagram.com/im_zkhan_/" target="_blank" rel="noopener noreferrer"
+                                        class="fa fa-instagram hi"></a>&nbsp;&nbsp;
+                                    <a href="https://www.linkedin.com/in/mohammad-zeeshan-139779218/" target="_blank" rel="noopener noreferrer"
+                                        class="fa fa-linkedin hi"></a>&nbsp;&nbsp;
+                                </div>
+                            </div>
+                        </div>
+                        <div class="effect-code">
+                            <a href="https://github.com/zeeshankhan00/CardUI/tree/master" target="_blank" rel="noopener noreferrer"><button class="cta">
+                                    <span>Source Code</span>
+                                    <svg viewBox="0 0 13 10" height="10px" width="15px">
+                                        <path d="M1,5 L11,5"></path>
+                                        <polyline points="8 1 12 5 8 9"></polyline>
+                                    </svg>
+                                </button></a>
+                        </div>
+                    </section>
+
+                    <!-- UI-5 -->
+                    <section class="wrapper3 cu-effect-card" data-effect-id="ui-5">
+                        <h1 class="effect-title">5. UI-5 by <em>HS07</em></h1>
+                        <div class="container">
+                            <div class="card5">
+                                <div class="image">
+                                    <img src="./assets/profile2.webp" class="lazyload" alt="Harshit Shukla" />
+                                </div>
+                                <div class="details">
+                                    <div class="center">
+                                        <h1>Harshit Shukla<br /><label>Full Stack Web developer</label></h1>
+                                        <p>Enthusiastic Web Developer | former Web developer Intern STARZ Ventures | Open Source</p>
+                                        <ul>
+                                            <li><a href="https://github.com/hs-07" target="_blank" rel="noopener noreferrer"><i class="fa fa-github"
+                                                        aria-hidden="true"></i></a></li>
+                                            <li><a href="https://www.linkedin.com/in/harshit-shukla-67b28a212" target="_blank" rel="noopener noreferrer"><i class="fa fa-linkedin"
+                                                        aria-hidden="true"></i></a></li>
+                                            <li><a href="https://www.instagram.com/_hs.07_/" target="_blank" rel="noopener noreferrer"><i class="fa fa-instagram"
+                                                        aria-hidden="true"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="effect-code">
+                            <a href="https://github.com/hs-07/CardUI" target="_blank" rel="noopener noreferrer"><button class="cta">
+                                    <span>Source Code</span>
+                                    <svg viewBox="0 0 13 10" height="10px" width="15px">
+                                        <path d="M1,5 L11,5"></path>
+                                        <polyline points="8 1 12 5 8 9"></polyline>
+                                    </svg>
+                                </button></a>
+                        </div>
+                    </section>
+
+                    <!-- UI-6 -->
+                    <section class="wrapper6 cu-effect-card" data-effect-id="ui-6">
+                        <h1 class="effect-title">6. UI-6 by <em>DIVYANSHU PRIYAVRAT</em></h1>
+                        <div class="cards-list">
+                            <div class="card 6">
+                                <div class="card_image">
+                                    <img src="https://media.giphy.com/media/10SvWCbt1ytWCc/giphy.gif" class="lazyload" alt="Divyanshu Priyavrat" />
+                                </div>
+                                <div class="card_title">
+                                    <p>Divyanshu Priyavrat</p>
+                                    <ul class="handles">
+                                        <li><a href="https://github.com/DIVYANSHU8055" target="_blank" rel="noopener noreferrer"><i class="fa fa-github"
+                                                    aria-hidden="true"></i></a></li>
+                                        <li><a href="https://www.linkedin.com/in/divyanshu-priyavrat-1811011b4/" target="_blank" rel="noopener noreferrer"><i
+                                                    class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                                        <li><a href="https://www.instagram.com/divyanshu__0712/" target="_blank" rel="noopener noreferrer"><i class="fa fa-instagram"
+                                                    aria-hidden="true"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="effect-code">
+                            <a href="https://github.com/DIVYANSHU8055/CardUI" target="_blank" rel="noopener noreferrer"><button class="cta">
+                                    <span>Source Code</span>
+                                    <svg viewBox="0 0 13 10" height="10px" width="15px">
+                                        <path d="M1,5 L11,5"></path>
+                                        <polyline points="8 1 12 5 8 9"></polyline>
+                                    </svg>
+                                </button></a>
+                        </div>
+                    </section>
+
+                    <!-- UI-7 -->
+                    <section class="wrapper7 cu-effect-card" data-effect-id="ui-7">
+                        <h1 class="effect-title">7. UI-7 by <em>Saikiran Voladri</em></h1>
+                        <br /><br />
+                        <div class="card7">
+                            <div class="container1">
+                                <div class="wrappers">
+                                    <a href="#ui-7" onclick="return false;">
+                                        <img src="./assets/profile.webp" class="lazyload" alt="profile photo" />
+                                    </a>
+                                    <div class="title">
+                                        Saikiran Voladri
+                                    </div>
+                                    <div class="place">
+                                        Web developer
+                                    </div>
                                 </div>
                                 <div class="content">
-                                    <h2>Manu Coutinho</h2>
-                                    <ul class="card13-icons">
-                                        <li class="card13-ico">
-                                            <a href="https://github.com/ManuCoutinho" rel="noopener noreferrer"
-                                                role="link">
-                                                <i class="fa fa-github" aria-hidden="true"></i>
+                                    <div class="buttons">
+                                        <div class="btn">
+                                            <a href="https://www.instagram.com/voladrisaikiran/" target="_blank" rel="noopener noreferrer"><button>Message</button></a>
+                                        </div>
+                                        <div class="btn">
+                                            <a href="https://github.com/SaikiranVoladri" target="_blank" rel="noopener noreferrer"><button>Follow</button></a>
+                                        </div>
+                                    </div>
+                                    <div class="icons">
+                                        <li><a href="https://www.linkedin.com/in/saikiran-voladri" target="_blank" rel="noopener noreferrer"><span
+                                                    class="fa fa-linkedin-square"></span></a></li>
+                                        <li><a href="https://github.com/SaikiranVoladri" target="_blank" rel="noopener noreferrer"><span class="fa fa-github"></span></a></li>
+                                        <li><a href="https://www.facebook.com/saikiran.voladri.7" target="_blank" rel="noopener noreferrer"><span
+                                                    class="fa fa-facebook-f"></span></a></li>
+                                        <li><a href="https://twitter.com/VoladriSaikiran" target="_blank" rel="noopener noreferrer"><span class="fa fa-twitter"></span></a></li>
+                                        <li><a href="https://www.instagram.com/voladrisaikiran/" target="_blank" rel="noopener noreferrer"><span
+                                                    class="fa fa-instagram"></span></a></li>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="effect-code">
+                            <a href="https://github.com/SaikiranVoladri/hactoberfest-CardUi" target="_blank" rel="noopener noreferrer">
+                                <button class="cta">
+                                    <span>Source Code</span>
+                                    <svg viewBox="0 0 13 10" height="10px" width="15px">
+                                        <path d="M1,5 L11,5"></path>
+                                        <polyline points="8 1 12 5 8 9"></polyline>
+                                    </svg>
+                                </button>
+                            </a>
+                        </div>
+                    </section>
+
+                    <!-- UI-8 -->
+                    <section class="wrapper8 cu-effect-card" data-effect-id="ui-8">
+                        <h1 class="effect-title">8. UI-8 by <em>ArieAR</em></h1>
+                        <div class="container">
+                            <div class="card8">
+                                <div class="image-black"></div>
+                                <div class="side-media">
+                                    <li><a href="https://github.com/ariear" target="_blank" rel="noopener noreferrer"><span class="fa fa-github fa-2x"></span></a></li>
+                                    <li><a href="https://www.facebook.com/ariear" target="_blank" rel="noopener noreferrer"><span class="fa fa-facebook-f fa-2x"></span></a></li>
+                                    <li><a href="https://twitter.com/ariear" target="_blank" rel="noopener noreferrer"><span class="fa fa-twitter fa-2x"></span></a></li>
+                                    <li><a href="https://www.instagram.com/ariear.js/" target="_blank" rel="noopener noreferrer"><span
+                                                class="fa fa-instagram fa-2x"></span></a></li>
+                                </div>
+                                <div class="card-content8">
+                                    <h2>ArieAr</h2>
+                                    <p>Web developer</p>
+                                    <div class="wrap-btn8">
+                                        <button class="btn-follow8"><a href="https://github.com/ariear" target="_blank" rel="noopener noreferrer">FOLLOW</a></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="effect-code">
+                            <a href="https://github.com/ariear/CardUI" target="_blank" rel="noopener noreferrer"><button class="cta">
+                                    <span>Source Code</span>
+                                    <svg viewBox="0 0 13 10" height="10px" width="15px">
+                                        <path d="M1,5 L11,5"></path>
+                                        <polyline points="8 1 12 5 8 9"></polyline>
+                                    </svg>
+                                </button></a>
+                        </div>
+                    </section>
+
+                    <!-- UI-9 -->
+                    <section class="wrapper9 cu-effect-card" data-effect-id="ui-9">
+                        <h1 class="effect-title">9. UI-9 by <em>raghav-rama</em></h1>
+                        <div class="card9">
+                            <div class="contents">
+                                <div class="gh-avatar"><img src="https://avatars.githubusercontent.com/u/91389059?s=400&v=4"
+                                        alt="raghav-rama" /></div>
+                                <div class="details">
+                                    <p class="u-name">raghav-rama</p>
+                                    <p class="skill">Web Developer</p>
+                                </div>
+                                <div class="strip">
+                                    <div class="reach-out">
+                                        <a href="https://github.com/raghav-rama" target="_blank" rel="noopener noreferrer"><span class="fa fa-github fa-2x"></span></a>
+                                        <a href="https://www.linkedin.com/in/ritviksingh258/" target="_blank" rel="noopener noreferrer"><span
+                                                class="fa fa-linkedin fa-2x"></span></a>
+                                        <a href="https://twitter.com/Raghav__Rama" target="_blank" rel="noopener noreferrer"><span class="fa fa-twitter fa-2x"></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="effect-code">
+                            <a href="https://github.com/raghav-rama/CardUI" target="_blank" rel="noopener noreferrer"><button class="cta">
+                                    <span>Source Code</span>
+                                    <svg viewBox="0 0 13 10" height="10px" width="15px">
+                                        <path d="M1,5 L11,5"></path>
+                                        <polyline points="8 1 12 5 8 9"></polyline>
+                                    </svg>
+                                </button></a>
+                        </div>
+                    </section>
+
+                    <!-- UI-10 -->
+                    <section class="wrapper10 cu-effect-card" data-effect-id="ui-10">
+                        <h1 class="effect-title">10. UI-10 by <em>Md Zaid Siddiqui</em></h1>
+                        <div class="container10">
+                            <div class="card10">
+                                <div class="detailz">
+                                    <li>
+                                        <h1>Md Zaid Siddiqui</h1>
+                                    </li>
+                                    <li>
+                                        <h5>React Developer | Open-source enthusiast</h5>
+                                    </li>
+                                    <div class="links">
+                                        <li><a href="https://github.com/zaidsidd360" target="_blank" rel="noopener noreferrer"><span class="fa fa-github fa-2x"></span></a></li>
+                                        <li><a href="https://twitter.com/zaidsidd360" target="_blank" rel="noopener noreferrer"><span class="fa fa-twitter fa-2x"></span></a></li>
+                                        <li><a href="https://www.linkedin.com/in/zaidsidd69420/" target="_blank" rel="noopener noreferrer"><span
+                                                    class="fa fa-linkedin fa-2x"></span></a></li>
+                                    </div>
+                                </div>
+                                <img src="./assets/cardui10.png" alt="Card Image" width="400pxx" />
+                                <div class="circle"></div>
+                            </div>
+                        </div>
+                        <div class="effect-code">
+                            <a href="https://github.com/zaidsidd360/CardUI" target="_blank" rel="noopener noreferrer"><button class="cta">
+                                    <span>Source Code</span>
+                                    <svg viewBox="0 0 13 10" height="10px" width="15px">
+                                        <path d="M1,5 L11,5"></path>
+                                        <polyline points="8 1 12 5 8 9"></polyline>
+                                    </svg>
+                                </button></a>
+                        </div>
+                    </section>
+
+                    <!-- UI-11 -->
+                    <section class="wrapper11 cu-effect-card" data-effect-id="ui-11">
+                        <h1 class="effect-title">11. UI-11 by <em>Anubhav Gupta</em></h1>
+                        <div class="container">
+                            <div class="card11">
+                                <div class="imagebox">
+                                    <img src="./assets/pexels-realtoughcandycom-11035380.jpg" alt="Anubhav Gupta" />
+                                </div>
+                                <div class="content">
+                                    <h2>Anubhav Gupta</h2>
+                                    <div id="desc">
+                                        <h3>Enthusiastic Front-end Developer</h3>
+                                    </div>
+                                    <div class="social-handle11">
+                                        <a href="https://www.linkedin.com/in/anubhav-gupta-2a01b1229/" target="_blank" rel="noopener noreferrer"><i
+                                                class="fa-brands fa-linkedin-in fa-2x handles-icon"></i></a>
+                                        <a href="https://www.instagram.com/anubhav_gupta_17/" target="_blank" rel="noopener noreferrer"><i
+                                                class="fa-brands fa-square-instagram fa-2x handles-icon"></i></a>
+                                        <a href="https://github.com/Anubhavgupta18" target="_blank" rel="noopener noreferrer"><i
+                                                class="fa-brands fa-github fa-2x handles-icon"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="effect-code">
+                            <a href="https://github.com/Anubhavgupta18/CardUI" target="_blank" rel="noopener noreferrer"><button class="cta">
+                                    <span>Source Code</span>
+                                    <svg viewBox="0 0 13 10" height="10px" width="15px">
+                                        <path d="M1,5 L11,5"></path>
+                                        <polyline points="8 1 12 5 8 9"></polyline>
+                                    </svg>
+                                </button></a>
+                        </div>
+                    </section>
+
+                    <!-- UI-12 -->
+                    <section class="wrapper12 cu-effect-card" data-effect-id="ui-12">
+                        <h1 class="effect-title">12. UI-12 by <em>Shivang Sharma</em></h1>
+                        <div class="container">
+                            <div class="card12">
+                                <div class="card-content">
+                                    <h2 class="card-title">Shivang Sharma</h2>
+                                    <br />
+                                    <br />
+                                    <p class="card-body">Open Source Enthusiast &amp; Front-End Developer</p>
+                                    <div class="social-handle-12">
+                                        <a href="https://www.linkedin.com/in/shivang-sharma-443518224" target="_blank" rel="noopener noreferrer" class="button"><span
+                                                class="fa fa-linkedin fa-2x"></span></a>
+                                        <a href="https://github.com/shivang1919" target="_blank" rel="noopener noreferrer" class="button"><span
+                                                class="fa fa-github fa-2x"></span></a>
+                                        <a href="https://www.instagram.com/shivang1919/" target="_blank" rel="noopener noreferrer" class="button"><span
+                                                class="fa fa-instagram fa-2x"></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="effect-code">
+                            <a href="https://github.com/shivang1919/CardUI" target="_blank" rel="noopener noreferrer"><button class="cta">
+                                    <span>Source Code</span>
+                                    <svg viewBox="0 0 13 10" height="10px" width="15px">
+                                        <path d="M1,5 L11,5"></path>
+                                        <polyline points="8 1 12 5 8 9"></polyline>
+                                    </svg>
+                                </button></a>
+                        </div>
+                    </section>
+
+                    <!-- UI-13 -->
+                    <section class="wrapper13 cu-effect-card" data-effect-id="ui-13">
+                        <h1 class="effect-title">13. UI-13 by <em>Manu Coutinho</em></h1>
+                        <div class="container">
+                            <div class="card13">
+                                <div class="card13-box">
+                                    <div class="card13-badger">
+                                        <i class="fa fa-hand-spock-o" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="content">
+                                        <h2>Manu Coutinho</h2>
+                                        <ul class="card13-icons">
+                                            <li class="card13-ico">
+                                                <a href="https://github.com/ManuCoutinho" target="_blank" rel="noopener noreferrer"
+                                                    role="link">
+                                                    <i class="fa fa-github" aria-hidden="true"></i>
+                                                </a>
+                                            </li>
+                                            <li class="card13-ico">
+                                                <a href="https://linkedin.com/in/emanuela-coutinho" target="_blank"
+                                                    rel="noopener noreferrer" role="link">
+                                                    <i class="fa fa-linkedin" aria-hidden="true"></i>
+                                                </a>
+                                            </li>
+                                            <li class="card13-ico">
+                                                <a href="https://twitter.com/manucout" target="_blank" rel="noopener noreferrer"
+                                                    role="link">
+                                                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="effect-code">
+                            <a href="https://github.com/ManuCoutinho/CardUI" target="_blank" rel="noopener noreferrer"><button class="cta">
+                                    <span>Source Code</span>
+                                    <svg viewBox="0 0 13 10" height="10px" width="15px">
+                                        <path d="M1,5 L11,5"></path>
+                                        <polyline points="8 1 12 5 8 9"></polyline>
+                                    </svg>
+                                </button></a>
+                        </div>
+                    </section>
+
+                    <!-- UI-14 -->
+                    <section class="wrapper14 cu-effect-card" data-effect-id="ui-14">
+                        <h1 class="effect-title">14. UI-14 by <em>Subrat Kumar</em></h1>
+                        <div class="container">
+                            <div class="card14">
+                                <div class="container">
+                                    <div class="card">
+                                        <div class="face face1">
+                                            <div class="content">
+                                                <div class="icon">
+                                                    <img src="./assets/coder-img.webp" height="200px" width="300px" alt="Subrat Kumar" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="face face2">
+                                            <div class="content">
+                                                <h3>
+                                                    <a href="https://github.com/subratkumar46/" id="nme"
+                                                        target="_blank" rel="noopener noreferrer">Subrat Kumar</a>
+                                                </h3>
+                                                <p>5 ⭐ coder hackerank</p>
+                                                <p>Full stack web devloper</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="effect-code">
+                            <a href="https://github.com/subratkumar46/CardUI" target="_blank" rel="noopener noreferrer"><button class="cta">
+                                    <span>Source Code</span>
+                                    <svg viewBox="0 0 13 10" height="10px" width="15px">
+                                        <path d="M1,5 L11,5"></path>
+                                        <polyline points="8 1 12 5 8 9"></polyline>
+                                    </svg>
+                                </button></a>
+                        </div>
+                    </section>
+
+                    <!-- UI-15 -->
+                    <section class="wrapper15 cu-effect-card" data-effect-id="ui-15">
+                        <h1 class="effect-title">15. UI-15 by <em>Ipsita Senapati</em></h1>
+                        <div class="container">
+                            <div class="card15">
+                                <div class="card-header">
+                                    <h1>
+                                        <center>Ipsita Senapati</center>
+                                    </h1>
+                                </div>
+                                <div class="card-body">
+                                    <center>
+                                        <h2><b>Aspiring Web Developer</b><br />~It all starts with an idea.</h2>
+                                    </center>
+                                </div>
+                                <span class="social">
+                                    <a href="https://www.linkedin.com/in/ipsita-senapati-93b06a227" target="_blank" rel="noopener noreferrer"><i
+                                            class="fa-brands fa-linkedin" id="ips_icon"></i></a>
+                                    <a href="https://github.com/IpsitaSenapati" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"
+                                            id="ips_icon"></i></a>
+                                    <a href="https://twitter.com/0709Ipsitasays" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-twitter"
+                                            id="ips_icon"></i></a>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="effect-code">
+                            <a href="https://github.com/IpsitaSenapati/CardUI" target="_blank" rel="noopener noreferrer"><button class="cta">
+                                    <span>Source Code</span>
+                                    <svg viewBox="0 0 13 10" height="10px" width="15px">
+                                        <path d="M1,5 L11,5"></path>
+                                        <polyline points="8 1 12 5 8 9"></polyline>
+                                    </svg>
+                                </button></a>
+                        </div>
+                    </section>
+
+                    <!-- UI-16 -->
+                    <section class="wrapper17 cu-effect-card" data-effect-id="ui-16">
+                        <h1 class="effect-title">16. UI-16 by <em>Subrat Kumar</em></h1>
+                        <div class="container">
+                            <div class="card17">
+                                <div class="container16">
+                                    <div class="image">
+                                        <img src="./assets/ui17-img.webp" alt="Subrat Kumar" />
+                                    </div>
+                                    <div class="content">
+                                        <div class="info">
+                                            <h2>Subrat Kumar</h2>
+                                            <span>Frontend Devloper</span>
+                                        </div>
+                                    </div>
+                                    <ul>
+                                        <li><a href="https://www.linkedin.com/in/subrat-kumar-sahu-175b81239/"
+                                                target="_blank" rel="noopener noreferrer"><span class="fa-brands fa-linkedin-in"></span></a></li>
+                                        <li><a href="https://twitter.com/subratkumar_4" target="_blank" rel="noopener noreferrer"><span
+                                                    class="fab fa-twitter"></span></a></li>
+                                        <li><a href="https://www.instagram.com/subratkumar_46/" target="_blank" rel="noopener noreferrer"><span
+                                                    class="fab fa-instagram"></span></a></li>
+                                        <li><a href="https://github.com/subratkumar46" target="_blank" rel="noopener noreferrer"><span
+                                                    class="fab fa-github"></span></a></li>
+                                        <li><a href="#ui-16" onclick="return false;"><span class="fab fa-youtube"></span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="effect-code">
+                            <a href="https://github.com/subratkumar46/CardUI" target="_blank" rel="noopener noreferrer"><button class="cta">
+                                    <span>Source Code</span>
+                                    <svg viewBox="0 0 13 10" height="10px" width="15px">
+                                        <path d="M1,5 L11,5"></path>
+                                        <polyline points="8 1 12 5 8 9"></polyline>
+                                    </svg>
+                                </button></a>
+                        </div>
+                    </section>
+
+                    <!-- UI-17 -->
+                    <section class="wrapper18 cu-effect-card" data-effect-id="ui-17">
+                        <h1 class="effect-title">17. UI-17 by <em>Ritvik Raj</em></h1>
+                        <div class="abc">
+                            <div class="cardabc">
+                                <div class="lines"></div>
+                                <div class="imgBx">
+                                    <img src="./assets/Profileimg.png" alt="Ritvik Raj" />
+                                </div>
+                                <div class="contentx">
+                                    <div class="details">
+                                        <h2>Ritvik Raj<br /><span>Front End Web Developer</span></h2>
+                                        <h2>Connect with Me!</h2>
+                                        <div class="links">
+                                            <a href="https://www.linkedin.com/in/ritvik-raj-5010a5228/" target="_blank" rel="noopener noreferrer"><img
+                                                    src="./assets/linkedin.png" alt="LinkedIn" /></a>
+                                            <a href="https://github.com/RitvikRaj0810" target="_blank" rel="noopener noreferrer"><img src="./assets/github.png"
+                                                    alt="GitHub" /></a>
+                                            <a href="https://www.instagram.com/ritvik_0810/" target="_blank" rel="noopener noreferrer"><img src="./assets/instagram.png"
+                                                    alt="Instagram" /></a>
+                                            <a href="https://discord.gg/83W7Fp3yfY" target="_blank" rel="noopener noreferrer"><img src="./assets/discord.png"
+                                                    alt="Discord" /></a>
+                                            <br />
+                                        </div>
+                                        <div class="actionBtn">
+                                            <a href="https://github.com/RitvikRaj0810" target="_blank" rel="noopener noreferrer"><button>Follow</button></a>
+                                            <a href="https://www.instagram.com/ritvik_0810/" target="_blank" rel="noopener noreferrer"><button>Message</button></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="effect-code">
+                            <a href="https://github.com/RitvikRaj0810/CardUI" target="_blank" rel="noopener noreferrer"><button class="cta">
+                                    <span>Source Code</span>
+                                    <svg viewBox="0 0 13 10" height="10px" width="15px">
+                                        <path d="M1,5 L11,5"></path>
+                                        <polyline points="8 1 12 5 8 9"></polyline>
+                                    </svg>
+                                </button></a>
+                        </div>
+                    </section>
+
+                    <!-- UI-18 -->
+                    <section class="cu-effect-card" data-effect-id="ui-18">
+                        <h1 class="effect-title">18. UI-18 by <em>T. Vijay Santosh Rao</em></h1>
+                        <div class="wrapper19">
+                            <div class="box">
+                                <span></span>
+                                <div class="content19">
+                                    <h2 class="creator" style="float: left;">vijay</h2>
+                                    <img src="./assets/picofme (1).png" alt="T. Vijay Santosh Rao"
+                                        style="height: 120px; width: 120px; margin-left: 4.5em;" /><br />
+                                    <p>5⭐ java hackerrank| Web Developer| My interests lie in Cloud and ML|Trap Music
+                                        enthusiast|Music taste flexer on Spotify.</p><br /><br />
+                                    <a class="btnF" href="https://github.com/vijayNerdballer" target="_blank" rel="noopener noreferrer">follow</a>
+                                    <ul class="brand">
+                                        <li>
+                                            <a href="https://github.com/vijayNerdballer" target="_blank" rel="noopener noreferrer" role="link">
+                                                <i class="fa-brands fa-github fa-bounce fa-lg" style="color: #000000;"></i>
                                             </a>
                                         </li>
-                                        <li class="card13-ico">
-                                            <a href="https://linkedin.com/in/emanuela-coutinho"
+                                        <li>
+                                            <a href="https://www.linkedin.com/in/t-vijay-santosh-rao-165975247/" target="_blank"
                                                 rel="noopener noreferrer" role="link">
-                                                <i class="fa fa-linkedin" aria-hidden="true"></i>
+                                                <i class="fa-brands fa-linkedin-in fa-lg" style="color: #00feff;"></i>
                                             </a>
                                         </li>
-                                        <li class="card13-ico">
-                                            <a href="https://twitter.com/manucout" rel="noopener noreferrer"
-                                                role="link">
-                                                <i class="fa fa-twitter" aria-hidden="true"></i>
+                                        <li>
+                                            <a href="https://open.spotify.com/user/314tf6wq7fyknkoowif6qvufu5yi?si=b695bb1090484dbd"
+                                                target="_blank" rel="noopener noreferrer" role="link">
+                                                <i class="fa-brands fa-spotify fa-lg" style="color: #52ff27;"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="http://discordapp.com/users/658632715888885790" target="_blank" rel="noopener noreferrer" role="link">
+                                                <i class="fa-brands fa-discord fa-bounce fa-lg" style="color: #5662f6;"></i>
                                             </a>
                                         </li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="effect-code">
-                    <a href="https://github.com/ManuCoutinho/CardUI"><button class="cta">
-                            <span>Source Code</span>
-                            <svg viewBox="0 0 13 10" height="10px" width="15px">
-                                <path d="M1,5 L11,5"></path>
-                                <polyline points="8 1 12 5 8 9"></polyline>
-                            </svg>
-                        </button></a>
-                </div>
+                        <div class="effect-code">
+                            <a href="https://github.com/vijayNerdballer/CardUI" target="_blank" rel="noopener noreferrer"><button class="cta">
+                                    <span>Source Code</span>
+                                    <svg viewBox="0 0 13 10" height="10px" width="15px">
+                                        <path d="M1,5 L11,5"></path>
+                                        <polyline points="8 1 12 5 8 9"></polyline>
+                                    </svg>
+                                </button></a>
+                        </div>
+                    </section>
 
-
-                <!-- Subrat's Card  UI-14 -->
-                <div class="wrapper14">
-                    <h1 class="effect-title">14. UI-14 by <em>Subrat Kumar</em></h1>
-                    <div class="container">
-                        <div class="card14">
-                            <div class="container">
-                                <div class="card">
-                                    <div class="face face1">
-                                        <div class="content">
-                                            <div class="icon">
-                                                <img src="./assets/coder-img.webp" height="200px" width="300px" alt="">
-                                            </div>
-                                        </div>
+                    <!-- UI-19 -->
+                    <section class="wrapper20 cu-effect-card" data-effect-id="ui-19">
+                        <h1 class="effect-title">19. UI-19 by <em>Sidhartha Mohanty</em></h1>
+                        <div class="container-19">
+                            <div class="card19">
+                                <img class="hero-profile-img" src="./assets/iron-man.png" alt="Sidhartha Mohanty" />
+                                <div class="hero-description-bk"></div>
+                                <div class="profile-icons">
+                                    <ul>
+                                        <li><i class="fab fa-facebook"></i></li>
+                                        <li><i class="fab fa-instagram"></i></li>
+                                        <li><i class="fab fa-twitter"></i></li>
+                                        <li><i class="fab fa-linkedin"></i></li>
+                                    </ul>
+                                </div>
+                                <div class="about">
+                                    <div class="cube">
+                                        <div class="front">Sidhartha Mohanty</div>
+                                        <div class="back">Front End Developer</div>
                                     </div>
-                                    <div class="face face2">
-                                        <div class="content">
-                                            <h3>
-                                                <a href="https://github.com/subratkumar46/" id="nme"
-                                                    target="_blank">Subrat Kumar</a>
-                                            </h3>
-                                            <p>5 ⭐ coder hackerank </p>
-                                            <p>Full stack web devloper </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="effect-code">
+                            <a href="https://github.com/sidhartha2002" target="_blank" rel="noopener noreferrer"><button class="cta">
+                                    <span>Source Code</span>
+                                    <svg viewBox="0 0 13 10" height="10px" width="15px">
+                                        <path d="M1,5 L11,5"></path>
+                                        <polyline points="8 1 12 5 8 9"></polyline>
+                                    </svg>
+                                </button></a>
+                        </div>
+                    </section>
+
+                    <!-- UI-20 -->
+                    <section class="wrapper20 cu-effect-card" data-effect-id="ui-20">
+                        <h1 class="effect-title">20. UI-20 by <em>Charvi Bhargava</em></h1>
+                        <div class="row">
+                            <div class="col-md-4 col-sm-6 col-xs-12">
+                                <div class="card_20">
+                                    <div class="cover_20 item-20">
+                                        <h1>CHARVI<br />BHARGAVA</h1>
+                                        <span class="tech">Web developer</span>
+                                        <div class="card_20-back">
+                                            <a href="https://instagram.com/_.charviii_?igshid=ZDdkNTZiNTM=" target="_blank" rel="noopener noreferrer"><i
+                                                    class="fa-brands fa-instagram"></i></a>
+                                            <a href="https://github.com/charvibhargava" target="_blank" rel="noopener noreferrer"><i
+                                                    class="fa-brands fa-github"></i></a>
+                                            <a href="https://www.linkedin.com/in/charvi-bhargava-7aaa6b223" target="_blank" rel="noopener noreferrer"><i
+                                                    class="fa-brands fa-linkedin"></i></a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="effect-code">
-                        <a href="https://github.com/subratkumar46/CardUI"><button class="cta">
-                                <span>Source Code</span>
-                                <svg viewBox="0 0 13 10" height="10px" width="15px">
-                                    <path d="M1,5 L11,5"></path>
-                                    <polyline points="8 1 12 5 8 9"></polyline>
-                                </svg>
-                            </button></a>
-                    </div>
-                </div>
-
-                <!--Ipsita's card-->
-                <div class="wrapper15">
-                    <h1 class="effect-title">15. UI-15 by <em>Ipsita Senapati</em></h1>
-                    <div class="container">
-                        <div class="card15">
-                            <div class="card-header">
-                                <h1>
-                                    <center>Ipsita Senapati</center>
-                                </h1>
-                            </div>
-                            <div class="card-body">
-                                <center>
-                                    <h2><b> Aspiring Web Developer </b><br>~It all starts with an idea.</h2>
-                                </center>
-                            </div>
-                            <span class="social">
-                                <a href="https://www.linkedin.com/in/ipsita-senapati-93b06a227"><i
-                                        class="fa-brands fa-linkedin" id="ips_icon"></i> </a>
-                                <a href="https://github.com/IpsitaSenapati"><i class="fa-brands fa-github"
-                                        id="ips_icon"></i> </a>
-                                <a href="https://twitter.com/0709Ipsitasays"><i class="fa-brands fa-twitter"
-                                        id="ips_icon"></i> </a>
-                            </span>
+                        <div class="effect-code">
+                            <a href="https://github.com/charvibhargava/CardUI" target="_blank" rel="noopener noreferrer"><button class="cta">
+                                    <span>Source Code</span>
+                                    <svg viewBox="0 0 13 10" height="10px" width="15px">
+                                        <path d="M1,5 L11,5"></path>
+                                        <polyline points="8 1 12 5 8 9"></polyline>
+                                    </svg>
+                                </button></a>
                         </div>
-                    </div>
-                    <div class="effect-code">
-                        <a href="https://github.com/IpsitaSenapati/CardUI"><button class="cta">
-                                <span>Source Code</span>
-                                <svg viewBox="0 0 13 10" height="10px" width="15px">
-                                    <path d="M1,5 L11,5"></path>
-                                    <polyline points="8 1 12 5 8 9"></polyline>
-                                </svg>
-                            </button></a>
-                    </div>
-                </div>
+                    </section>
 
-                <!------------------ Subrat's Card UI-16  --------------------->
-                <div class="wrapper17">
-                    <h1 class="effect-title">16. UI-16 by <em>Subrat Kumar</em></h1>
-                    <div class="container">
-                        <div class="card17">
-                            <div class="container16">
-                                <div class="image">
-                                    <img src="./assets/ui17-img.webp">
+                    <!-- UI-21 -->
+                    <section class="cu-effect-card" data-effect-id="ui-21">
+                        <h1 class="effect-title">21. UI-21 by <em>Nitin Pandita</em></h1>
+                        <div class="container21">
+                            <div class="card">
+                                <div class="imgBx">
+                                    <img src="./assets/nitin.png" alt="Nitin Pandita" />
                                 </div>
+                                <div class="contentBx">
+                                    <h1 style="color:#fff">Nitin Pandita</h1>
+                                    <div class="size">
+                                        <h3 style="color:white">Socials</h3>
+                                        <a href="https://github.com/nitin-pandita" target="_blank" rel="noopener noreferrer"><i class="fa fa-github"
+                                                style="font-size: 40px; padding:10px; color:#000"></i></a>
+                                        <a href="https://www.linkedin.com/in/nitin-pandita-148070213/" target="_blank" rel="noopener noreferrer"><i class="fa fa-linkedin"
+                                                style="font-size: 40px; padding:10px; color:white"></i></a>
+                                        <a href="https://twitter.com/nitintwts" target="_blank" rel="noopener noreferrer"><i class="fa fa-twitter"
+                                                style="font-size: 40px;padding:10px; color:rgb(45, 179, 232)"></i></a>
+                                    </div>
+                                    <a href="https://github.com/nitin-pandita" target="_blank" rel="noopener noreferrer" class="button">Let's connect</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="effect-code">
+                            <a href="https://github.com/nitin-pandita/CardUI" target="_blank" rel="noopener noreferrer"><button class="cta">
+                                    <span>Source Code</span>
+                                    <svg viewBox="0 0 13 10" height="10px" width="15px">
+                                        <path d="M1,5 L11,5"></path>
+                                        <polyline points="8 1 12 5 8 9"></polyline>
+                                    </svg>
+                                </button></a>
+                        </div>
+                    </section>
+
+                    <!-- UI-22 -->
+                    <section class="wrapper22 cu-effect-card" data-effect-id="ui-22">
+                        <h1 class="effect-title">22. UI-22 by <em>Akash Dev</em></h1>
+                        <div class="container22">
+                            <div class="card22">
+                                <div class="card-header22">
+                                    <img src="./assets/akash.jpg" alt="Akash Dev" />
+                                    <h1>Akash Dev</h1>
+                                    <p>Android Developer and Blogger</p>
+                                </div>
+                                <div class="card-body22">
+                                    <p>Hello there, thank you for visiting my profile! I'm passionate about developing Android applications and sharing my knowledge through blogging. Connect with me on social media to stay up-to-date with my latest projects and articles.</p>
+                                    <ul>
+                                        <li><a href="https://github.com/akashdev23" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a></li>
+                                        <li><a href="https://www.linkedin.com/in/akash-dev-274b05229/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i></a></li>
+                                        <li><a href="https://twitter.com/AkashDev2310" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-twitter"></i></a></li>
+                                        <li><a href="https://coolcoderr.hashnode.dev/" target="_blank" rel="noopener noreferrer"><img src="./assets/hashnode.png" alt="Hashnode" /></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="effect-code">
+                            <a href="https://github.com/AkashDev23/MyCard" target="_blank" rel="noopener noreferrer"><button class="cta">
+                                    <span>Source Code</span>
+                                    <svg viewBox="0 0 13 10" height="10px" width="15px">
+                                        <path d="M1,5 L11,5"></path>
+                                        <polyline points="8 1 12 5 8 9"></polyline>
+                                    </svg>
+                                </button></a>
+                        </div>
+                    </section>
+
+                    <!-- UI-23 -->
+                    <section class="wrapper23 cu-effect-card" data-effect-id="ui-23">
+                        <h1 class="effect-title">23. UI-23 by <em>AseanK</em></h1>
+                        <div class="container23">
+                            <div class="card23">
+                                <div class="image23">
+                                    <img src="./assets/aseank.png" alt="AseanK" />
+                                </div>
+                                <div class="content23">
+                                    <h2>AseanK</h2><br />
+                                    <p>Programming enthusiast</p>
+                                    <p>Specialize in MERN-Stack</p><br />
+                                    <a href="https://github.com/AseanK" target="_blank" rel="noopener noreferrer"><i class="fa fa-github"
+                                            style="font-size: 30px; color:blanchedalmond"></i></a>
+                                    <a href="https://www.instagram.com/534n79l2/" target="_blank" rel="noopener noreferrer"><i class="fa fa-instagram"
+                                            style="font-size: 30px; color:blanchedalmond"></i></a><br />
+                                    <a href="mailto:seank8809@gmail.com" style="font-size: 15px; color: bisque">Contact via Email</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="effect-code">
+                            <a href="https://github.com/AseanK/CardUI" target="_blank" rel="noopener noreferrer"><button class="cta">
+                                    <span>Source Code</span>
+                                    <svg viewBox="0 0 13 10" height="10px" width="15px">
+                                        <path d="M1,5 L11,5"></path>
+                                        <polyline points="8 1 12 5 8 9"></polyline>
+                                    </svg>
+                                </button></a>
+                        </div>
+                    </section>
+
+                    <!-- UI-24 -->
+                    <section class="wrapper cu-effect-card" data-effect-id="ui-24">
+                        <h1 class="effect-title">24. UI-24 by <em>Shivesh Nandan</em></h1>
+                        <div class="containerr">
+                            <div class="card25">
+                                <div class="contet">
+                                    <h1 class="MyName16">Shivesh Nandan</h1>
+                                    <p class="Info25">
+                                        Hello everyone, I am a full stack Web Developer
+                                    </p>
+                                    <div class="connent">
+                                        <a href="https://www.instagram.com/shivesh_nandan/" target="_blank" rel="noopener noreferrer" class="bttn"><img src="https://img.icons8.com/color/48/000000/instagram-new.png" alt="Instagram" /></a>
+                                        <a href="https://www.linkedin.com/in/shivesh-nandan-39a1b219a/" target="_blank" rel="noopener noreferrer" class="bttn"><img src="https://img.icons8.com/color/48/000000/linkedin.png" alt="LinkedIn" /></a>
+                                        <a href="https://github.com/ShiveshNandan" target="_blank" rel="noopener noreferrer" class="bttn"><img src="https://img.icons8.com/color/48/000000/github--v1.png" alt="GitHub" /></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="effect-code">
+                            <a href="https://github.com/ShiveshNandan/CardUI-Hacktober22" target="_blank" rel="noopener noreferrer"><button class="cta">
+                                    <span>Source Code</span>
+                                    <svg viewBox="0 0 13 10" height="10px" width="15px">
+                                        <path d="M1,5 L11,5"></path>
+                                        <polyline points="8 1 12 5 8 9"></polyline>
+                                    </svg>
+                                </button></a>
+                        </div>
+                    </section>
+
+                    <!-- UI-25 -->
+                    <section class="wrapper25 cu-effect-card" data-effect-id="ui-25">
+                        <h1 class="effect-title">25. UI-25 by <em>Aman Nadeem</em></h1>
+                        <div class="container25">
+                            <div class="card25">
+                                <input type="checkbox" id="card25" class="more25" aria-hidden="true" />
                                 <div class="content">
-                                    <div class="info">
-                                        <h2>
-                                            Subrat Kumar
-                                        </h2>
-                                        <span>Frontend Devloper</span>
+                                    <div class="front25" style="background-image: url('./assets/recdata.jpg');">
+                                        <div class="inner">
+                                            <h2>Aman Nadeem</h2>
+                                            <label for="card25" class="button25" aria-hidden="true">Wanna friends</label>
+                                        </div>
                                     </div>
-                                </div>
-                                <ul>
-
-                                    <li><a href="https://www.linkedin.com/in/subrat-kumar-sahu-175b81239/"
-                                            target="_blank"><span class="fa-brands fa-linkedin-in"></span></a></li>
-                                    <li><a href="https://twitter.com/subratkumar_4" target="_blank"><span
-                                                class="fab fa-twitter"></span></a></li>
-                                    <li><a href="https://www.instagram.com/subratkumar_46/" target="_blank"><span
-                                                class="fab fa-instagram"></span></a></li>
-                                    <li><a href="https://github.com/subratkumar46" target="_blank"><span
-                                                class="fab fa-github"></span></a>
-                                    </li>
-                                    <li><a href="#"><span class="fab fa-youtube"></span></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="effect-code">
-                        <a href="https://github.com/subratkumar46/CardUI" target="_blank"><button class="cta">
-                                <span>Source Code</span>
-                                <svg viewBox="0 0 13 10" height="10px" width="15px">
-                                    <path d="M1,5 L11,5"></path>
-                                    <polyline points="8 1 12 5 8 9"></polyline>
-                                </svg>
-                            </button></a>
-                    </div>
-                </div>
-
-                <!------------------ Ritvik's Card UI-17  --------------------->
-                <div class="wrapper18">
-                    <h1 class="effect-title">17. UI-17 by <em>Ritvik Raj</em></h1>
-                    <div class="abc">
-                        <div class="cardabc">
-                            <div class="lines"></div>
-                            <div class="imgBx">
-                                <img src="assets/Profileimg.png" alt="pfg.png">
-                            </div>
-                            <div class="contentx">
-                                <div class="details">
-                                    <h2>Ritvik Raj<br><span>Front End Web Developer
-                                        </span></h2>
-                                    <h2>Connect with Me!</h2>
-                                    <div class="links">
-                                        <a href="https://www.linkedin.com/in/ritvik-raj-5010a5228/"><img
-                                                src="assets/linkedin.png" alt=""></a>
-                                        <a href="https://github.com/RitvikRaj0810"><img src="assets/github.png"
-                                                alt=""></a>
-                                        <a href="https://www.instagram.com/ritvik_0810/"><img src="assets/instagram.png"
-                                                alt=""></a>
-                                        <a href="https://discord.gg/83W7Fp3yfY"><img src="assets/discord.png"
-                                                alt=""></a>
-                                        <br>
-                                    </div>
-                                    <div class="actionBtn">
-                                        <a href="https://github.com/RitvikRaj0810"><button>Follow</button></a>
-                                        <a href="https://www.instagram.com/ritvik_0810/"><button>Message</button></a>
+                                    <div class="back25">
+                                        <div class="inner">
+                                            <div class="location">Lahore, Pakistan</div>
+                                            <div class="description">
+                                                "An interesting quote that defines me :)"
+                                            </div>
+                                            <div class="social-icons">
+                                                <a href="https://github.com/recdata" target="_blank" rel="noopener noreferrer" role="link">
+                                                    <i class="fa fa-github" aria-hidden="true"></i>
+                                                </a>
+                                                <a href="https://linkedin.com/in/amannadeem" target="_blank" rel="noopener noreferrer" role="link">
+                                                    <i class="fa fa-linkedin" aria-hidden="true"></i>
+                                                </a>
+                                                <a href="https://twitter.com/amannadeem78" target="_blank" rel="noopener noreferrer" role="link">
+                                                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                                                </a>
+                                            </div>
+                                            <label for="card25" class="button25 return" aria-hidden="true"><i class="fa fa-arrow-left" aria-hidden="true"></i></label>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="effect-code">
-                    <a href="https://github.com/RitvikRaj0810/CardUI" target="_blank"><button class="cta">
-                            <span>Source Code</span>
-                            <svg viewBox="0 0 13 10" height="10px" width="15px">
-                                <path d="M1,5 L11,5"></path>
-                                <polyline points="8 1 12 5 8 9"></polyline>
-                            </svg>
-                        </button></a>
-                </div>
-            </div>
-            <!--vijay's card ui-->
-            <h1 style="margin-top: 70px;">18. UI-18 by <em>T. Vijay Santosh Rao</em></h1>
-            <div class="wrapper19">
+                        <div class="effect-code">
+                            <a href="https://github.com/recdata/CardUI" target="_blank" rel="noopener noreferrer"><button class="cta">
+                                    <span>Source Code</span>
+                                    <svg viewBox="0 0 13 10" height="10px" width="15px">
+                                        <path d="M1,5 L11,5"></path>
+                                        <polyline points="8 1 12 5 8 9"></polyline>
+                                    </svg>
+                                </button></a>
+                        </div>
+                    </section>
 
-                <div class="box">
-                    <span></span>
-                    <div class="content19">
-                        <h2 class="creator" style="float: left;">vijay</h2>
-                        <img src="assets\picofme (1).png" alt="vijay.jpeg"
-                            style="height: 120px; width: 120px; margin-left: 4.5em; "><br>
-                        <p>5⭐ java hackerrank| Web Developer| My interests lie in Cloud and ML|Trap Music
-                            enthusiast|Music taste flexer on Spotify.</p><br><br>
-                        <a class="btnF" href="https://github.com/vijayNerdballer">follow</a>
-                        <ul class="brand">
-                            <li>
-                                <a href="https://github.com/vijayNerdballer" target="_blank" role="link">
-                                    <i class="fa-brands fa-github fa-bounce fa-lg" style="color: #000000;"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://www.linkedin.com/in/t-vijay-santosh-rao-165975247/" target="_blank"
-                                    role="link">
-                                    <i class="fa-brands fa-linkedin-in fa-lg" style="color: #00feff;"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://open.spotify.com/user/314tf6wq7fyknkoowif6qvufu5yi?si=b695bb1090484dbd"
-                                    target="_blank" role="link">
-                                    <i class="fa-brands fa-spotify fa-lg" style="color: #52ff27;"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="http://discordapp.com/users/658632715888885790" target="_blank" role="link">
-                                    <i class="fa-brands fa-discord fa-bounce fa-lg" style="color: #5662f6;"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
+                    <p id="cu-filter-empty" class="cu-sub" style="text-align:center;padding:36px 16px" hidden>No effects match this category.</p>
                 </div>
-            </div>
-            <div class="effect-code">
-                <a href="https://github.com/vijayNerdballer/CardUI" target="_blank"><button class="cta">
-                        <span>Source Code</span>
-                        <svg viewBox="0 0 13 10" height="10px" width="15px">
-                            <path d="M1,5 L11,5"></path>
-                            <polyline points="8 1 12 5 8 9"></polyline>
-                        </svg>
-                    </button></a>
-            </div>
+            </main>
         </div>
-        <!--vijay's card ui ends-->
+    </div>
 
-        <!------------------ Sidhartha's Card UI-19  --------------------->
-        <div class="wrapper20">
-            <h1 class="effect-title">19. UI-19 by <em>Sidhartha Mohanty</em></h1>
-            <div class="container-19">
-                <div class="card19">
-                    <img class="hero-profile-img" src="assets/iron-man.png" alt="">
-                    <div class="hero-description-bk"></div>
+    <!-- ==================== CONTRIBUTORS VIEW ==================== -->
+    <div class="cu-view cu-shell" id="v-contributors">
+        <section class="cu-page">
+            <h2>Contributors</h2>
+            <p class="cu-sub">Community creators behind CardUI effects, ranked by contributions and real-time likes.</p>
+            <div class="cu-stats" id="lb-stats"></div>
+            <div class="cu-lb" id="lb"></div>
+        </section>
+    </div>
 
-                    <div class="profile-icons">
-                        <ul>
-                            <li><i class="fab fa-facebook"></i></li>
-                            <li><i class="fab fa-instagram"></i></li>
-                            <li><i class="fab fa-twitter"></i></li>
-                            <li><i class="fab fa-linkedin"></i></li>
-                        </ul>
-                    </div>
+    <!-- ==================== PROFILE GATE VIEW ==================== -->
+    <div class="cu-view cu-shell" id="v-profile">
+        <section class="cu-page" id="pf"></section>
+    </div>
 
-                    <div class="about">
-                        <div class="cube">
-                            <div class="front">Sidhartha Mohanty</div>
-                            <div class="back">Front End Developer</div>
-                        </div>
-                    </div>
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="cu-footer cu-shell">
+        Made with ♥ by the CardUi community ·
+        <a href="https://github.com/Arman-ali-khan-786/CardUI" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://github.com/Arman-ali-khan-786/CardUI/blob/master/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer">Contribute</a>
+        <a href="https://github.com/Arman-ali-khan-786/CardUI/blob/master/LICENSE" target="_blank" rel="noopener noreferrer">MIT License</a>
+    </footer>
 
-
-                </div>
-            </div>
-            <div class="effect-code">
-                <a href="https://github.com/sidhartha2002" target="_blank"><button class="cta">
-                        <span>Source Code</span>
-                        <svg viewBox="0 0 13 10" height="10px" width="15px">
-                            <path d="M1,5 L11,5"></path>
-                            <polyline points="8 1 12 5 8 9"></polyline>
-                        </svg>
-                    </button></a>
-            </div>
+    <!-- ==================== AUTH MODAL ==================== -->
+    <div class="cu-modal cu-shell" id="cu-modal" role="dialog" aria-modal="true" aria-labelledby="cu-title">
+        <div class="cu-dialog">
+            <button type="button" class="cu-close" id="cu-close" aria-label="Close">×</button>
+            <h2 id="cu-title">Welcome to CardUi</h2>
+            <p id="cu-sub">Sign in to like effects, save favourites, and explore contributors.</p>
+            <div id="cu-modal-feedback" class="auth-feedback" role="alert" hidden></div>
+            <button type="button" class="cu-google" id="cu-google">
+                <svg width="18" height="18" viewBox="0 0 48 48" aria-hidden="true">
+                    <path fill="#EA4335" d="M24 9.5c3.5 0 6.6 1.2 9.1 3.6l6.8-6.8C35.8 2.4 30.3 0 24 0 14.6 0 6.5 5.4 2.6 13.2l7.9 6.1C12.4 13.6 17.7 9.5 24 9.5z" />
+                    <path fill="#4285F4" d="M46.5 24.5c0-1.6-.1-3.1-.4-4.5H24v9h12.7c-.6 3-2.3 5.5-4.8 7.2l7.6 5.9c4.4-4.1 7-10.1 7-17.6z" />
+                    <path fill="#FBBC05" d="M10.5 28.7A14.5 14.5 0 0 1 9.5 24c0-1.6.3-3.2.8-4.7l-7.9-6.1A24 24 0 0 0 0 24c0 3.9.9 7.5 2.6 10.8l7.9-6.1z" />
+                    <path fill="#34A853" d="M24 48c6.5 0 11.9-2.1 15.9-5.8l-7.6-5.9c-2.1 1.4-4.9 2.3-8.3 2.3-6.3 0-11.6-4.1-13.5-9.8l-7.9 6.1C6.5 42.6 14.6 48 24 48z" />
+                </svg>
+                <span id="cu-google-label">Continue with Google</span>
+            </button>
+            <div class="auth-divider"><span>or</span></div>
+            <a href="./login.html" id="cu-modal-email-link" class="cu-btn cu-ghost cu-submit-full">Or sign in with Email &amp; Password</a>
         </div>
-        <!-- --------------------- Card UI-19 ends ---------------- -->
+    </div>
 
-
-        <!-- --------------------- Card UI-20 begins  ---------------- -->
-        <div class="wrapper20">
-            <h1 class="effect-title">20. UI-20 by <em>Charvi Bhargava</em></h1>
-            <div class="row">
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                    <div class="card_20">
-                        <div class="cover_20 item-20">
-                            <h1>CHARVI<br>BHARGAVA</h1>
-                            <span class="tech">Web developer</span>
-                            <div class="card_20-back">
-                                <a href="https://instagram.com/_.charviii_?igshid=ZDdkNTZiNTM=" target="_blank"><i
-                                        class="fa-brands fa-instagram"></i></a>
-                                <a href="https://github.com/charvibhargava" target="_blank"><i
-                                        class="fa-brands fa-github"></i></a>
-                                <a href="https://www.linkedin.com/in/charvi-bhargava-7aaa6b223" target="_blank"><i
-                                        class="fa-brands fa-linkedin"></i></a>
-                            </div>
-                        </div>
-                    </div>
+    <!-- ==================== CODE VIEWER MODAL ==================== -->
+    <div class="cu-modal cu-shell" id="cu-code-modal" role="dialog" aria-modal="true" aria-labelledby="cu-code-title">
+        <div class="cu-dialog cu-code-dialog">
+            <button type="button" class="cu-close" id="cu-code-close" aria-label="Close code viewer">×</button>
+            <div class="cu-code-head">
+                <div>
+                    <h2 id="cu-code-title">UI-1</h2>
+                    <p id="cu-code-author">by Contributor</p>
                 </div>
+                <a href="https://github.com/Arman-ali-khan-786/CardUI" id="cu-code-repo" target="_blank" rel="noopener noreferrer" class="cu-btn cu-ghost">GitHub Source ↗</a>
             </div>
-            <div class="effect-code">
-                <a href="https://github.com/charvibhargava/CardUI" target="_blank"><button class="cta">
-                        <span>Source Code</span>
-                        <svg viewBox="0 0 13 10" height="10px" width="15px">
-                            <path d="M1,5 L11,5"></path>
-                            <polyline points="8 1 12 5 8 9"></polyline>
-                        </svg>
-                    </button></a>
+            <div class="cu-code-tabs">
+                <div class="cu-code-tab-group" id="cu-code-tabs-group">
+                    <button type="button" class="on" data-code-tab="html">HTML</button>
+                    <button type="button" data-code-tab="css">CSS</button>
+                    <button type="button" data-code-tab="js" hidden>JS</button>
+                </div>
+                <button type="button" class="cu-btn cu-primary" id="cu-copy-snippet">Copy Snippet</button>
             </div>
+            <pre class="cu-code-pre"><code id="cu-code-pre"></code></pre>
         </div>
-        <!-- --------------------- Card UI-20 ends ---------------- -->
+    </div>
 
+    <div class="cu-toast cu-shell" id="cu-toast" role="status" aria-live="polite"></div>
+    <button type="button" class="cu-backtop cu-shell" id="cu-backtop" aria-label="Back to top" title="Back to top">↑</button>
 
-        <!----------------------Card UI-21 begins---------------------------- -->
-
-        <div>
-            <h1 class="effect-title">21. UI-21 by <em>Nitin Pandita</em></h1>
-            <div class="container21">
-
-                <div class="card">
-                    <div class="imgBx">
-                        <img src="assets/nitin.png" alt="">
-                    </div>
-                    <div class="contentBx">
-                        <h1 style="color:#fff">Nitin Pandita</h1>
-
-                        <div class="size">
-
-                            <h3 style="color:white">Socials </h3>
-                            <a href="https://github.com/nitin-pandita"><i class="fa fa-github"
-                                    style="font-size: 40px; padding:10px; color:#000"></i></a>
-                            <a href="https://www.linkedin.com/in/nitin-pandita-148070213/"><i class="fa fa-linkedin"
-                                    style="font-size: 40px; padding:10px; color:white"></i></a>
-                            <a href="https://twitter.com/nitintwts"><i class="fa fa-twitter"
-                                    style="font-size: 40px;padding:10px; color:rgb(45, 179, 232)"></i></a>
-                        </div>
-                        <a href="https://github.com/nitin-pandita" class="button">Let's connect</a>
-                    </div>
-                </div>
-                <div class="effect-code">
-                    <a href="https://github.com/nitin-pandita/CardUI" target="_blank"><button class="cta">
-                            <span>Source Code</span>
-                            <svg viewBox="0 0 13 10" height="10px" width="15px">
-                                <path d="M1,5 L11,5"></path>
-                                <polyline points="8 1 12 5 8 9"></polyline>
-                            </svg>
-                        </button></a>
-                </div>
-            </div>
-             <!----------------------Card UI-22 begins---------------------------- -->
-             <div class="wrapper22">
-                <h1 class="effect-title">22. UI-22 by <em>Akash Dev</em></h1>
-                  <div class="container22">
-                    <div class="card22">
-                        <div class="card-header22">
-                          <img src="assets/akash.jpg" alt="Akash Dev">
-                          <h1>Akash Dev</h1>
-                          <p>Android Developer and Blogger</p>
-                        </div>
-                        <div class="card-body22">
-                          <p>Hello there, thank you for visiting my profile! I'm passionate about developing Android applications and sharing my knowledge through blogging. Connect with me on social media to stay up-to-date with my latest projects and articles.</p>
-                          <ul>
-                            <li><a href="https://github.com/akashdev23" target="_blank"><i class="fa-brands fa-github"></i></a></li>
-                            <li><a href="https://www.linkedin.com/in/akash-dev-274b05229/" target="_blank"><i class="fa-brands fa-linkedin"></i></a></li>
-                            <li><a href="https://twitter.com/AkashDev2310" target="_blank"><i class="fa-brands fa-twitter"></i></a></li>
-                            <li><a href="https://coolcoderr.hashnode.dev/" target="_blank"><img src="assets/hashnode.png"/></a></li>
-                          </ul>
-                        </div>
-                      </div>
-                </div>
-                <div class="effect-code">
-                    <a href="https://github.com/AkashDev23/MyCard"><button class="cta">
-                            <span>Source Code</span>
-                            <svg viewBox="0 0 13 10" height="10px" width="15px">
-                                <path d="M1,5 L11,5"></path>
-                                <polyline points="8 1 12 5 8 9"></polyline>
-                            </svg>
-                        </button></a>
-                </div>
-                </div>
-              <!----------------------End  UI-22---------------------------- -->
-
-            <!---------------------------UI-23 begins---------------------------->
-            <div class="wrapper23">
-                <h1 class="effect-title">23. UI-23 by <em>AseanK</em></h1>
-                <div class="container23">
-                    <div class="card23">
-                        <div class="image23">
-                        <img src="assets/aseank.png">
-                        </div>
-                        <div class = "content23">
-                            <h2>AseanK</h2><br>
-                            <p>Programming enthusiast</p>
-                            <p>Specialize in MERN-Stack</p><br>
-                            <a href="https://github.com/AseanK"><i class="fa fa-github"
-                            style="font-size: 30px; color:blanchedalmond"></i></a>
-                            <a href="https://www.instagram.com/534n79l2/"><i class="fa fa-instagram"
-                            style="font-size: 30px; color:blanchedalmond"></i></a><br>
-                            <a href = "mailto: seank8809@gmail.com" style="font-size: 15px; color: bisque">Contact via Email</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="effect-code">
-                    <a href="https://github.com/AseanK/CardUI"><button class="cta">
-                            <span>Source Code</span>
-                            <svg viewBox="0 0 13 10" height="10px" width="15px">
-                                <path d="M1,5 L11,5"></path>
-                                <polyline points="8 1 12 5 8 9"></polyline>
-                            </svg>
-                        </button></a>
-                </div>
-              </div>
-              <!-----------------------------End  UI-23-------------------------->
-              <!-----------------------------Start  UI-25-------------------------->
-              <div class="wrapper">
-                <h1 class="effect-title">24. UI-24 by <em>Shivesh Nandan</em></h1>
-                <div class="containerr">
-                  <div class="card25">
-                    <div class="contet">
-                      <h1 class="MyName16">Shivesh Nandan</h1>
-                      <p class="Info25">
-                        Hello everyone, I am a full stack Web Developer
-                      </p>
-                      <div class="connent">
-                        <a href="https://www.instagram.com/shivesh_nandan/" target="_blank" class="bttn"><img src="https://img.icons8.com/color/48/000000/instagram-new.png" /></a>
-                        <a href="https://www.linkedin.com/in/shivesh-nandan-39a1b219a/" target="_blank" class="bttn"><img src="https://img.icons8.com/color/48/000000/linkedin.png" /></a>
-                        <a href="https://github.com/ShiveshNandan" target="_blank" class="bttn"><img src="https://img.icons8.com/color/48/000000/github--v1.png" /></a>
-                        
-                        
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="effect-code">
-                    <a href="https://github.com/ShiveshNandan/CardUI-Hacktober22"><button class="cta">
-                            <span>Source Code</span>
-                            <svg viewBox="0 0 13 10" height="10px" width="15px">
-                                <path d="M1,5 L11,5"></path>
-                                <polyline points="8 1 12 5 8 9"></polyline>
-                            </svg>
-                        </button></a>
-                </div>
-              </div>
-              <!-- ends ui 25 -->
-
-
-            <!---------------------------UI-25 begins---------------------------->
-            <div class="wrapper25">
-                <h1 class="effect-title">25. UI-25 by <em>Aman Nadeem</em></h1>
-                <div class="container25">
-                    <div class="card25">
-                        <!-- Card25 structure starts here -->
-                        <input type="checkbox" id="card25" class="more25" aria-hidden="true" />
-                        <div class="content">
-                            <div class="front25" style="background-image: url('assets/recdata.jpg');">
-                                <div class="inner">
-                                    <h2>Aman Nadeem</h2>
-                                    <label for="card25" class="button25" aria-hidden="true">Wanna friends</label>
-                                </div>
-                            </div>
-                            <div class="back25">
-                                <div class="inner">
-                                    <div class="location">Lahore, Pakistan</div>
-                                    <div class="description">
-                                        "An interesting quote that defines me :)"
-                                    </div>
-                                    <div class="social-icons">
-                                        <a href="https://github.com/recdata" rel="noopener noreferrer" role="link">
-                                            <i class="fa fa-github" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="https://linkedin.com/in/amannadeem" rel="noopener noreferrer" role="link">
-                                            <i class="fa fa-linkedin" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="https://twitter.com/amannadeem78" rel="noopener noreferrer" role="link">
-                                            <i class="fa fa-twitter" aria-hidden="true"></i>
-                                        </a>
-                                    </div>
-                                    <label for="card25" class="button25 return" aria-hidden="true"> <i class="fa fa-arrow-left" aria-hidden="true"></i></label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="effect-code">
-                    <a href="https://github.com/recdata/CardUI"><button class="cta">
-                            <span>Source Code</span>
-                            <svg viewBox="0 0 13 10" height="10px" width="15px">
-                                <path d="M1,5 L11,5"></path>
-                                <polyline points="8 1 12 5 8 9"></polyline>
-                            </svg>
-                        </button></a>
-                </div>
-            </div>
-              <!-----------------------------End  UI-25-------------------------->
-
-            <div id="contribute">
-                <h2 id="Merriweather" style="color: unset;">Want to Contribute?</h2>
-                <p id="Quicksand">If you looking forward to contribute in this wonderful project visit below links :-
-                </p>
-
-                <div class="icons">
-                    <a href="https://github.com/Arman-ali-khan-786/CardUI" target="_blank"><img
-                            src="https://img.icons8.com/3d-fluency/100/000000/github.png" /></a>
-                    <a href="https://t.me/cardui_hackodex" target="_blank"><img
-                            src="https://img.icons8.com/3d-fluency/100/000000/telegram.png" /></a>
-                </div>
-            </div>
-        </div>
-
-        <!-- --------------------- Ui-(ith number) markup Code sample, ---------------- -->
-        <!-- --------   these are mandatory to include for valid  contribution ------- 
-      
-          <div class="wrapper3">
-          <h1 class="effect-title">2. UI-2 by <em>Your name</em></h1>
-          <div class="container">
-            <div class="card3">
-              //your card effect goes here
-            </div>
-          </div>
-          <div class="effect-code">
-            <a href="github repo name">click here for the code</a>
-          </div>
-        </div>
-      -->
-        <!-------- Footer starts here --------------------------->
-        <footer id="footer">
-            <div id="footer-container">
-                <div class="left-footer">
-                    <p>Copyright <i class="fa fa-copyright" aria-hidden="true"></i>
-                    <p> @ArmanAliKhan, 2022</p>
-                    </p>
-                </div>
-                <div class="social_icons">
-                    <a class="social-container" href="https://www.instagram.com/arman__khan__786_/" target="_blank">
-                        <i class="fa fa-instagram fa-2x main_social" aria-hidden="true"></i>
-                    </a>
-                    <a class="social-container" href="https://t.me/Arman_AaK07" target="_blank">
-                        <i class="fa fa-telegram fa-2x main_social" aria-hidden="true"></i>
-                    </a>
-                    <a class="social-container" href="https://www.linkedin.com/in/arman-ali-khan-b44751169/"
-                        target="_blank">
-                        <i class="fa fa-linkedin-square fa-2x main_social" aria-hidden="true"></i>
-                    </a>
-                    <a class="social-container" href="https://github.com/Arman-ali-khan-786" target="_blank">
-                        <i class="fa fa-github fa-2x main_social" aria-hidden="true"></i>
-                    </a>
-                </div>
-            </div>
-        </footer>
-
-        <!-- "to-top" button -->
-        <button class="to-top-button" onclick="scrollToTop()"><i class="fas fa-arrow-up"></i></button>
-    
-        <script>
-            // JavaScript function to scroll to the top of the page
-            function scrollToTop() {
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
-            }
-        </script>
-
-    </main>
-    <script src="index.js"></script>
-    <script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.2.2/lazysizes.min.js"></script>
+    <script src="./index.js"></script>
+    <script type="module" src="./js/index-page.js"></script>
 </body>
 
 </html>

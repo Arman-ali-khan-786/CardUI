@@ -1,0 +1,168 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Global safety net: deny everything by default
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    function isValidId(id) {
+      return id is string && id.size() >= 1 && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    function isValidEffectId(effectId) {
+      return effectId is string
+        && effectId.size() >= 4
+        && effectId.size() <= 16
+        && effectId.matches('^ui-([1-9]|1[0-9]|2[0-5])$');
+    }
+
+    function incoming() {
+      return request.resource.data;
+    }
+
+    function existing() {
+      return resource.data;
+    }
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return isSignedIn() && request.auth.uid == userId;
+    }
+
+    function isValidUserProfile(data, userId) {
+      return data.keys().hasAll(['uid', 'displayName', 'email', 'provider', 'emailVerified', 'createdAt', 'updatedAt'])
+        && data.keys().hasOnly(['uid', 'displayName', 'email', 'photoURL', 'bio', 'provider', 'emailVerified', 'createdAt', 'updatedAt'])
+        && data.uid is string
+        && data.uid == userId
+        && isValidId(data.uid)
+        && data.displayName is string
+        && data.displayName.size() >= 1
+        && data.displayName.size() <= 100
+        && data.email is string
+        && data.email.size() >= 3
+        && data.email.size() <= 254
+        && (!('photoURL' in data) || (data.photoURL is string && data.photoURL.size() <= 2048))
+        && (!('bio' in data) || (data.bio is string && data.bio.size() <= 300))
+        && data.provider is string
+        && (data.provider == 'google' || data.provider == 'password')
+        && data.emailVerified is bool
+        && data.createdAt is timestamp
+        && data.updatedAt is timestamp;
+    }
+
+    function isValidUserLike(data, userId, effectId) {
+      return data.keys().hasAll(['userId', 'effectId', 'createdAt'])
+        && data.keys().hasOnly(['userId', 'effectId', 'createdAt'])
+        && data.userId is string
+        && data.userId == userId
+        && isValidId(data.userId)
+        && data.effectId is string
+        && data.effectId == effectId
+        && isValidEffectId(data.effectId)
+        && data.createdAt is timestamp;
+    }
+
+    function isValidEffectCounter(data, effectId) {
+      return data.keys().hasAll(['effectId', 'likesCount', 'updatedAt'])
+        && data.keys().hasOnly(['effectId', 'likesCount', 'updatedAt'])
+        && data.effectId is string
+        && data.effectId == effectId
+        && isValidEffectId(data.effectId)
+        && data.likesCount is int
+        && data.likesCount >= 0
+        && data.updatedAt is timestamp;
+    }
+
+    match /users/{userId} {
+      allow get: if isValidId(userId) && isOwner(userId);
+      allow list: if false;
+
+      allow create: if isValidId(userId)
+        && isOwner(userId)
+        && isValidUserProfile(incoming(), userId)
+        && incoming().createdAt == request.time
+        && incoming().updatedAt == request.time;
+
+      allow update: if isValidId(userId)
+        && isOwner(userId)
+        && isValidUserProfile(incoming(), userId)
+        && incoming().uid == existing().uid
+        && incoming().provider == existing().provider
+        && incoming().createdAt == existing().createdAt
+        && incoming().updatedAt == request.time
+        && incoming().diff(existing()).affectedKeys().hasOnly([
+          'displayName',
+          'email',
+          'photoURL',
+          'bio',
+          'emailVerified',
+          'updatedAt'
+        ]);
+
+      allow delete: if false;
+
+      match /likes/{effectId} {
+        allow get: if isValidId(userId) && isValidEffectId(effectId) && isOwner(userId);
+        allow list: if isValidId(userId) && isOwner(userId);
+
+        allow create: if isValidId(userId)
+          && isValidEffectId(effectId)
+          && isOwner(userId)
+          && isValidUserLike(incoming(), userId, effectId)
+          && incoming().createdAt == request.time
+          && (
+            (!exists(/databases/$(database)/documents/effects/$(effectId))
+              && getAfter(/databases/$(database)/documents/effects/$(effectId)).data.likesCount == 1)
+            || (exists(/databases/$(database)/documents/effects/$(effectId))
+              && getAfter(/databases/$(database)/documents/effects/$(effectId)).data.likesCount
+                 == get(/databases/$(database)/documents/effects/$(effectId)).data.likesCount + 1)
+          );
+
+        allow update: if false;
+
+        allow delete: if isValidId(userId)
+          && isValidEffectId(effectId)
+          && isOwner(userId)
+          && exists(/databases/$(database)/documents/effects/$(effectId))
+          && getAfter(/databases/$(database)/documents/effects/$(effectId)).data.likesCount
+             == get(/databases/$(database)/documents/effects/$(effectId)).data.likesCount - 1;
+      }
+    }
+
+    match /effects/{effectId} {
+      allow get: if isValidEffectId(effectId);
+      allow list: if resource.data.likesCount >= 0;
+
+      allow create: if isSignedIn()
+        && isValidEffectId(effectId)
+        && isValidEffectCounter(incoming(), effectId)
+        && incoming().likesCount == 1
+        && incoming().updatedAt == request.time
+        && !exists(/databases/$(database)/documents/users/$(request.auth.uid)/likes/$(effectId))
+        && existsAfter(/databases/$(database)/documents/users/$(request.auth.uid)/likes/$(effectId));
+
+      allow update: if isSignedIn()
+        && isValidEffectId(effectId)
+        && isValidEffectCounter(incoming(), effectId)
+        && incoming().effectId == existing().effectId
+        && incoming().updatedAt == request.time
+        && incoming().diff(existing()).affectedKeys().hasOnly(['likesCount', 'updatedAt'])
+        && (
+          (incoming().likesCount == existing().likesCount + 1
+            && !exists(/databases/$(database)/documents/users/$(request.auth.uid)/likes/$(effectId))
+            && existsAfter(/databases/$(database)/documents/users/$(request.auth.uid)/likes/$(effectId)))
+          || (incoming().likesCount == existing().likesCount - 1
+            && incoming().likesCount >= 0
+            && exists(/databases/$(database)/documents/users/$(request.auth.uid)/likes/$(effectId))
+            && !existsAfter(/databases/$(database)/documents/users/$(request.auth.uid)/likes/$(effectId)))
+        );
+
+      allow delete: if false;
+    }
+  }
+}

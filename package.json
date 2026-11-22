@@ -1,0 +1,19 @@
+{
+  "name": "cardui",
+  "version": "1.0.0",
+  "description": "CardUI - A collection of Card User Interface designs and effects",
+  "main": "server.js",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js",
+    "build": "node --check server.js && node --check index.js && node --check js/firebase-config.js && node --check js/firebase-client.js && node --check js/effects-data.js && node --check js/likes-service.js && node --check js/auth-nav.js && node --check js/index-page.js && node --check js/login.js && node --check js/signup.js && node --check js/profile.js",
+    "lint": "npx eslint firestore.rules && npm run build"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "@firebase/eslint-plugin-security-rules": "^0.0.2",
+    "eslint": "^10.15.0"
+  }
+}

@@ -1,0 +1,148 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "Authenticated CardUI user profile stored in Cloud Firestore under the user's Firebase Auth UID.",
+      "type": "object",
+      "properties": {
+        "uid": {
+          "type": "string",
+          "description": "Firebase Auth UID matching the document ID.",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "displayName": {
+          "type": "string",
+          "description": "Public display name shown in navigation and user profile.",
+          "minLength": 1,
+          "maxLength": 100
+        },
+        "email": {
+          "type": "string",
+          "format": "email",
+          "description": "User email address from Firebase Authentication.",
+          "minLength": 3,
+          "maxLength": 254
+        },
+        "photoURL": {
+          "type": "string",
+          "description": "Profile avatar URL (HTTPS URL or empty string).",
+          "maxLength": 2048
+        },
+        "bio": {
+          "type": "string",
+          "description": "Short user bio or developer headline.",
+          "maxLength": 300
+        },
+        "provider": {
+          "type": "string",
+          "enum": ["google", "password"],
+          "description": "Authentication provider used at account creation."
+        },
+        "emailVerified": {
+          "type": "boolean",
+          "description": "Whether the user's email has been verified in Firebase Auth."
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server timestamp when the user profile was first created."
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server timestamp of the latest profile update."
+        }
+      },
+      "required": [
+        "uid",
+        "displayName",
+        "email",
+        "provider",
+        "emailVerified",
+        "createdAt",
+        "updatedAt"
+      ]
+    },
+    "EffectStats": {
+      "title": "EffectStats",
+      "description": "Public aggregated like count for a CardUI effect (ui-1 through ui-25).",
+      "type": "object",
+      "properties": {
+        "effectId": {
+          "type": "string",
+          "description": "Canonical effect identifier matching the document ID (ui-1 to ui-25).",
+          "minLength": 4,
+          "maxLength": 16,
+          "pattern": "^ui-([1-9]|1[0-9]|2[0-5])$"
+        },
+        "likesCount": {
+          "type": "integer",
+          "description": "Non-negative total count of likes for this effect."
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server timestamp of the most recent like or unlike."
+        }
+      },
+      "required": [
+        "effectId",
+        "likesCount",
+        "updatedAt"
+      ]
+    },
+    "UserLike": {
+      "title": "UserLike",
+      "description": "Per-user favourite/like record stored in the user's likes subcollection and atomically paired with EffectStats.",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string",
+          "description": "Firebase Auth UID of the user who liked the effect.",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "effectId": {
+          "type": "string",
+          "description": "Canonical effect identifier matching the document ID (ui-1 to ui-25).",
+          "minLength": 4,
+          "maxLength": 16,
+          "pattern": "^ui-([1-9]|1[0-9]|2[0-5])$"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server timestamp when the user liked the effect."
+        }
+      },
+      "required": [
+        "userId",
+        "effectId",
+        "createdAt"
+      ]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": {
+        "$ref": "#/entities/UserProfile"
+      },
+      "description": "Private user profile documents keyed by Firebase Auth UID. Only the authenticated owner may read or update their own document."
+    },
+    "/users/{userId}/likes/{effectId}": {
+      "schema": {
+        "$ref": "#/entities/UserLike"
+      },
+      "description": "Private subcollection of effects liked/favourited by the user. Only the owner may read, create, or delete, and writes must atomically update /effects/{effectId}."
+    },
+    "/effects/{effectId}": {
+      "schema": {
+        "$ref": "#/entities/EffectStats"
+      },
+      "description": "Public aggregate like counters for CardUI effects. Readable by everyone; mutations must atomically pair with the signed-in user's /users/{uid}/likes/{effectId} document."
+    }
+  }
+}

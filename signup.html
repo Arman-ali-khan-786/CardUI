@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up — CARDUi</title>
+    <meta name="description" content="Create your CardUI account to save favourite card effects and track your contributions." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./index.css" />
+    <link rel="stylesheet" href="./css/app-upgrade.css" />
+</head>
+
+<body>
+    <header class="cu-header cu-shell">
+        <a class="cu-logo" href="./index.html#home">CARD<b>Ui</b></a>
+        <nav class="cu-links" aria-label="Primary">
+            <a href="./index.html#home">Home</a>
+            <a href="./index.html#explore">Explore</a>
+            <a href="./index.html#contributors" id="nav-contrib">Contributors</a>
+        </nav>
+        <div class="cu-actions">
+            <button type="button" class="cu-btn cu-icon" id="cu-theme" aria-label="Toggle dark mode" title="Toggle theme">◐</button>
+            <div id="cu-auth-guest" class="cu-user-group">
+                <a href="./login.html" class="cu-btn cu-ghost" id="cu-signin">Sign in</a>
+                <a href="./signup.html" class="cu-btn cu-primary" id="cu-signup">Sign up</a>
+            </div>
+            <div id="cu-auth-user" class="cu-user-group" hidden>
+                <a href="./profile.html" class="cu-prof-chip" id="cu-prof" title="Your profile">
+                    <span class="cu-prof-avatar" id="cu-avatar">C</span>
+                    <span class="cu-prof-name cu-hide-sm" id="cu-prof-name">Profile</span>
+                </a>
+                <button type="button" class="cu-btn cu-ghost" id="cu-signout">Sign out</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="cu-auth-shell cu-shell">
+        <section class="cu-auth-card" aria-labelledby="signup-heading">
+            <h1 id="signup-heading">Create Account</h1>
+            <p class="cu-auth-sub">Join CardUI to like effects and manage your contributor profile</p>
+
+            <div id="auth-feedback" class="auth-feedback" role="alert" hidden></div>
+
+            <button type="button" id="google-signup-btn" class="cu-google">
+                <svg width="18" height="18" viewBox="0 0 48 48" aria-hidden="true">
+                    <path fill="#EA4335" d="M24 9.5c3.5 0 6.6 1.2 9.1 3.6l6.8-6.8C35.8 2.4 30.3 0 24 0 14.6 0 6.5 5.4 2.6 13.2l7.9 6.1C12.4 13.6 17.7 9.5 24 9.5z" />
+                    <path fill="#4285F4" d="M46.5 24.5c0-1.6-.1-3.1-.4-4.5H24v9h12.7c-.6 3-2.3 5.5-4.8 7.2l7.6 5.9c4.4-4.1 7-10.1 7-17.6z" />
+                    <path fill="#FBBC05" d="M10.5 28.7A14.5 14.5 0 0 1 9.5 24c0-1.6.3-3.2.8-4.7l-7.9-6.1A24 24 0 0 0 0 24c0 3.9.9 7.5 2.6 10.8l7.9-6.1z" />
+                    <path fill="#34A853" d="M24 48c6.5 0 11.9-2.1 15.9-5.8l-7.6-5.9c-2.1 1.4-4.9 2.3-8.3 2.3-6.3 0-11.6-4.1-13.5-9.8l-7.9 6.1C6.5 42.6 14.6 48 24 48z" />
+                </svg>
+                Sign up with Google
+            </button>
+
+            <div class="auth-divider"><span>or sign up with email</span></div>
+
+            <form id="signup-form" novalidate>
+                <div class="form-field">
+                    <label for="signup-name">Display Name</label>
+                    <input type="text" id="signup-name" name="displayName" autocomplete="name" maxlength="100" placeholder="Arman Ali Khan" required />
+                </div>
+
+                <div class="form-field">
+                    <label for="signup-email">Email Address</label>
+                    <input type="email" id="signup-email" name="email" autocomplete="email" maxlength="254" placeholder="you@example.com" required />
+                </div>
+
+                <div class="form-field">
+                    <label for="signup-password">Password (min 6 characters)</label>
+                    <div class="form-input-wrap">
+                        <input type="password" id="signup-password" name="password" autocomplete="new-password" minlength="6" placeholder="Create a strong password" required />
+                        <button type="button" id="toggle-signup-password" class="password-toggle-btn">Show</button>
+                    </div>
+                </div>
+
+                <div class="form-field">
+                    <label for="signup-confirm-password">Confirm Password</label>
+                    <input type="password" id="signup-confirm-password" name="confirmPassword" autocomplete="new-password" minlength="6" placeholder="Repeat your password" required />
+                </div>
+
+                <button type="submit" id="signup-submit-btn" class="cu-btn cu-primary cu-submit-full">Create Account</button>
+            </form>
+
+            <p class="auth-switch-text">
+                Already have an account? <a href="./login.html">Sign in</a>
+            </p>
+        </section>
+    </div>
+
+    <footer class="cu-footer cu-shell">
+        Made with ♥ by the CardUi community ·
+        <a href="https://github.com/Arman-ali-khan-786/CardUI" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://github.com/Arman-ali-khan-786/CardUI/blob/master/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer">Contribute</a>
+        <a href="https://github.com/Arman-ali-khan-786/CardUI/blob/master/LICENSE" target="_blank" rel="noopener noreferrer">MIT License</a>
+    </footer>
+
+    <script type="module" src="./js/signup.js"></script>
+</body>
+
+</html>
