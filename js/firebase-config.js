@@ -1,13 +1,13 @@
-// Public Firebase Web App configuration for existing project: cardui-slice
+// Public Firebase Web App configuration for provisioned project: project-b4f18e87-e396-428d-9ef
 // Safe for client-side hosting on GitHub Pages (contains only public client identifiers).
 export const firebaseConfig = {
-  apiKey: "AIzaSyBgN_6AkLkLC2_O-D9wpYViYgKrdtfX7ak",
-  authDomain: "cardui-slice.firebaseapp.com",
-  projectId: "cardui-slice",
-  storageBucket: "cardui-slice.firebasestorage.app",
-  messagingSenderId: "821485345383",
-  appId: "1:821485345383:web:93e6a9ee1ae3e2d89dd2c2",
-  measurementId: "G-N9Y5Y1DMKB"
+  apiKey: "AIzaSyB09vo5i8J6atzyfdZCwLhk0Gzcc1U-rro",
+  authDomain: "project-b4f18e87-e396-428d-9ef.firebaseapp.com",
+  projectId: "project-b4f18e87-e396-428d-9ef",
+  firestoreDatabaseId: "ai-studio-cardui-7db929a7-1eed-4d32-a4eb-a474eb41c1d1",
+  storageBucket: "project-b4f18e87-e396-428d-9ef.firebasestorage.app",
+  messagingSenderId: "285153644280",
+  appId: "1:285153644280:web:593adbc3e51d4e5148750d"
 };
 
 // Validation limits synchronized with firebase-blueprint.json & firestore.rules

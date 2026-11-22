@@ -2,7 +2,7 @@ name: Deploy CardUI to GitHub Pages
 
 on:
   push:
-    branches: ["main","master"]
+    branches: ["main"]
   workflow_dispatch:
 
 permissions:
@@ -21,16 +21,25 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - name: Stage static site
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Stage static frontend files
         run: |
           mkdir -p _site
-          cp index.html login.html signup.html profile.html index.css darkModeBtn.css firebase-applet-config.json _site/
+          cp index.html login.html signup.html profile.html index.css index.js _site/
+          if [ -f firebase-applet-config.json ]; then cp firebase-applet-config.json _site/; fi
           cp -r assets css js _site/
           touch _site/.nojekyll
-      - uses: actions/configure-pages@v5
-      - uses: actions/upload-pages-artifact@v3
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
         with:
           path: "_site"
-      - id: deployment
+
+      - name: Deploy to GitHub Pages
+        id: deployment
         uses: actions/deploy-pages@v4
