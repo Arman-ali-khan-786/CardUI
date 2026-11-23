@@ -1,0 +1,3 @@
+# Require approval from the repository owner (@Arman-ali-khan-786) on pull requests.
+# Pair with a GitHub Branch Ruleset requiring 1 Code Owner review + admin bypass.
+* @Arman-ali-khan-786

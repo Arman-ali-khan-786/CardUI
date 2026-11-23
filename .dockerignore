@@ -1,0 +1,12 @@
+node_modules/
+_site/
+.git/
+.github/
+.aistudio/
+.env
+.env.*
+.DS_Store
+*.log
+walkthrough.md
+security_spec.md
+tests/

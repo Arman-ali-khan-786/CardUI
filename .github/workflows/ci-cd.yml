@@ -1,0 +1,318 @@
+name: CI/CD Docker Pipeline
+
+on:
+  push:
+    branches: ["main", "master"]
+  pull_request:
+    branches: ["main", "master"]
+    types: [opened, synchronize, reopened, ready_for_review]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  packages: write
+  pull-requests: write
+
+jobs:
+  lint:
+    name: Lint Rules & JS Syntax
+    runs-on: ubuntu-latest
+    outputs:
+      error_log: ${{ steps.run_lint.outputs.error_log }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+
+      - name: Run ESLint & syntax checks
+        id: run_lint
+        shell: bash
+        run: |
+          set -o pipefail
+          if ! bun run lint 2>&1 | tee /tmp/lint.log; then
+            {
+              echo "### Lint Failure"
+              echo '```text'
+              tail -n 60 /tmp/lint.log
+              echo '```'
+            } >> "$GITHUB_STEP_SUMMARY"
+            EOF_DELIM="ERR_$(date +%s%N)"
+            {
+              echo "error_log<<${EOF_DELIM}"
+              tail -n 35 /tmp/lint.log
+              echo "${EOF_DELIM}"
+            } >> "$GITHUB_OUTPUT"
+            exit 1
+          fi
+
+  test:
+    name: Run Automated Tests
+    needs: lint
+    runs-on: ubuntu-latest
+    outputs:
+      error_log: ${{ steps.run_tests.outputs.error_log }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Install production dependencies
+        run: npm install --omit=dev --no-audit --no-fund
+
+      - name: Run unit & server security tests
+        id: run_tests
+        shell: bash
+        run: |
+          set -o pipefail
+          if ! npm test 2>&1 | tee /tmp/test.log; then
+            {
+              echo "### Test Failure"
+              echo '```text'
+              tail -n 60 /tmp/test.log
+              echo '```'
+            } >> "$GITHUB_STEP_SUMMARY"
+            EOF_DELIM="ERR_$(date +%s%N)"
+            {
+              echo "error_log<<${EOF_DELIM}"
+              tail -n 35 /tmp/test.log
+              echo "${EOF_DELIM}"
+            } >> "$GITHUB_OUTPUT"
+            exit 1
+          fi
+
+  build-and-push:
+    name: Build & Push Docker Image
+    needs: [lint, test]
+    runs-on: ubuntu-latest
+    outputs:
+      image: ${{ steps.repo.outputs.image }}
+      tag: ${{ github.sha }}
+      image_ref: ${{ steps.repo.outputs.image }}:${{ github.sha }}
+      error_log: ${{ steps.docker_verify.outputs.error_log }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Resolve lowercase GHCR image name
+        id: repo
+        run: |
+          IMAGE_LOWER=$(echo "ghcr.io/${{ github.repository }}" | tr '[:upper:]' '[:lower:]')
+          echo "image=${IMAGE_LOWER}" >> "$GITHUB_OUTPUT"
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Log in to GitHub Container Registry (GHCR)
+        if: github.event_name != 'pull_request'
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Generate Docker metadata & commit-hash tags
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ steps.repo.outputs.image }}
+          tags: |
+            type=sha,prefix=,format=long
+            type=sha,prefix=sha-,format=short
+            type=raw,value=latest,enable={{is_default_branch}}
+
+      - name: Build and push multi-stage Docker image
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: ./Dockerfile
+          push: ${{ github.event_name != 'pull_request' }}
+          load: ${{ github.event_name == 'pull_request' }}
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+      - name: Smoke-test Docker container on PR
+        id: docker_verify
+        if: github.event_name == 'pull_request'
+        shell: bash
+        env:
+          PR_IMAGE: ${{ steps.repo.outputs.image }}:${{ github.sha }}
+        run: |
+          set -e
+          docker run -d --name cardui-pr -p 3000:3000 "$PR_IMAGE"
+          trap 'docker rm -f cardui-pr >/dev/null 2>&1 || true' EXIT
+
+          READY=0
+          for i in $(seq 1 20); do
+            if curl -fsS http://127.0.0.1:3000/healthz >/dev/null; then
+              READY=1
+              break
+            fi
+            sleep 1
+          done
+
+          if [ "$READY" -ne 1 ]; then
+            docker logs cardui-pr | tee /tmp/docker.log
+            EOF_DELIM="ERR_$(date +%s%N)"
+            {
+              echo "error_log<<${EOF_DELIM}"
+              tail -n 35 /tmp/docker.log
+              echo "${EOF_DELIM}"
+            } >> "$GITHUB_OUTPUT"
+            exit 1
+          fi
+
+          test "$(curl -s -o /dev/null -w '%{http_code}' http://127.0.0.1:3000/)" = "200"
+          test "$(curl -s -o /dev/null -w '%{http_code}' http://127.0.0.1:3000/assets/favicon.svg)" = "200"
+          test "$(curl -s -o /dev/null -w '%{http_code}' http://127.0.0.1:3000/server.js)" = "404"
+          test "$(curl -s -o /dev/null -w '%{http_code}' http://127.0.0.1:3000/package.json)" = "404"
+
+  pr-report:
+    name: PR Check Feedback
+    if: always() && github.event_name == 'pull_request'
+    needs: [lint, test, build-and-push]
+    runs-on: ubuntu-latest
+    env:
+      LINT_RESULT: ${{ needs.lint.result }}
+      TEST_RESULT: ${{ needs.test.result }}
+      BUILD_RESULT: ${{ needs.build-and-push.result }}
+      LINT_ERR: ${{ needs.lint.outputs.error_log }}
+      TEST_ERR: ${{ needs.test.outputs.error_log }}
+      BUILD_ERR: ${{ needs.build-and-push.outputs.error_log }}
+    steps:
+      - name: Post or update PR status comment
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const marker = "<!-- cardui-pr-check -->";
+            const lintStatus = process.env.LINT_RESULT || "skipped";
+            const testStatus = process.env.TEST_RESULT || "skipped";
+            const buildStatus = process.env.BUILD_RESULT || "skipped";
+
+            const icon = (s) => (s === "success" ? "✅" : s === "skipped" ? "⏭️" : "❌");
+            const allPassed =
+              lintStatus === "success" &&
+              testStatus === "success" &&
+              buildStatus === "success";
+
+            const runUrl = `${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`;
+            const lines = [
+              marker,
+              allPassed
+                ? "### ✅ CardUI PR Checks Passed"
+                : "### ❌ CardUI PR Checks Failed",
+              "",
+              "| Check | Status |",
+              "|---|---|",
+              `| Lint Rules & JS Syntax | ${icon(lintStatus)} \`${lintStatus}\` |`,
+              `| Run Automated Tests | ${icon(testStatus)} \`${testStatus}\` |`,
+              `| Docker Build & Container Smoke Test | ${icon(buildStatus)} \`${buildStatus}\` |`,
+              "",
+            ];
+
+            if (allPassed) {
+              lines.push(
+                "All required checks passed. **1 approval from `@Arman-ali-khan-786`** is required before merging (owner can bypass via branch ruleset)."
+              );
+            } else {
+              lines.push(`Please inspect the failed step output below or open the [workflow run logs](${runUrl}) and push a fix.`);
+              const errors = [
+                ["Lint Error Output", process.env.LINT_ERR],
+                ["Test Error Output", process.env.TEST_ERR],
+                ["Docker Verification Error Output", process.env.BUILD_ERR],
+              ].filter(([, txt]) => txt && txt.trim().length > 0);
+
+              for (const [title, txt] of errors) {
+                lines.push("", `<details><summary>${title}</summary>`, "", "```text", txt.trim(), "```", "</details>");
+              }
+            }
+
+            const body = lines.join("\n");
+            await core.summary.addRaw(body + "\n").write();
+
+            try {
+              const { data: comments } = await github.rest.issues.listComments({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.issue.number,
+                per_page: 100,
+              });
+              const existing = comments.find((c) => c.body && c.body.includes(marker));
+              if (existing) {
+                await github.rest.issues.updateComment({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  comment_id: existing.id,
+                  body,
+                });
+              } else {
+                await github.rest.issues.createComment({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: context.issue.number,
+                  body,
+                });
+              }
+            } catch (err) {
+              core.notice(`PR comment skipped (fork PR read-only token): ${err.message}`);
+            }
+
+  use-image:
+    name: Pull & Verify Commit-Tagged Image
+    needs: build-and-push
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    env:
+      IMAGE_REF: ${{ needs.build-and-push.outputs.image_ref }}
+    steps:
+      - name: Log in to GitHub Container Registry (GHCR)
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Pull image tagged with commit SHA
+        run: docker pull "$IMAGE_REF"
+
+      - name: Run container & verify live endpoints
+        run: |
+          docker run -d --name cardui-app -p 3000:3000 "$IMAGE_REF"
+          trap 'docker rm -f cardui-app >/dev/null 2>&1 || true' EXIT
+
+          for i in $(seq 1 20); do
+            if curl -fsS http://127.0.0.1:3000/healthz >/dev/null; then
+              break
+            fi
+            sleep 1
+          done
+
+          curl -fsS http://127.0.0.1:3000/healthz
+          test "$(curl -s -o /dev/null -w '%{http_code}' http://127.0.0.1:3000/)" = "200"
+          test "$(curl -s -o /dev/null -w '%{http_code}' http://127.0.0.1:3000/assets/favicon.svg)" = "200"
+          test "$(curl -s -o /dev/null -w '%{http_code}' http://127.0.0.1:3000/server.js)" = "404"
+          test "$(curl -s -o /dev/null -w '%{http_code}' http://127.0.0.1:3000/package.json)" = "404"
+
+      - name: Publish image usage summary
+        run: |
+          {
+            echo "## Docker CI/CD Deployment Summary"
+            echo "- **Image**: \`$IMAGE_REF\`"
+            echo "- **Commit Tag**: \`${{ needs.build-and-push.outputs.tag }}\`"
+            echo ""
+            echo "### Run This Exact Commit Build"
+            echo "\`\`\`bash"
+            echo "docker pull $IMAGE_REF"
+            echo "docker run -d -p 3000:3000 --name cardui $IMAGE_REF"
+            echo "\`\`\`"
+          } >> "$GITHUB_STEP_SUMMARY"

@@ -19,6 +19,7 @@ const BLOCKED_PATHS = new Set([
   '/firebase-blueprint.json',
   '/security_spec.md',
   '/walkthrough.md',
+  '/dockerfile',
 ]);
 
 app.use((req, res, next) => {
@@ -30,11 +31,16 @@ app.use((req, res, next) => {
   if (
     BLOCKED_PATHS.has(normalizedPath) ||
     normalizedPath.startsWith('/node_modules') ||
+    normalizedPath.startsWith('/tests') ||
     /(^|\/)\./.test(normalizedPath)
   ) {
     return res.status(404).send('Not found');
   }
   next();
+});
+
+app.get('/healthz', (_req, res) => {
+  res.status(200).json({ status: 'ok' });
 });
 
 app.use(express.static(path.join(__dirname), { dotfiles: 'deny' }));
