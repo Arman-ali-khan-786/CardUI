@@ -39,6 +39,10 @@ app.use((req, res, next) => {
 
 app.use(express.static(path.join(__dirname), { dotfiles: 'deny' }));
 
+app.get('/favicon.ico', (_req, res) => {
+  res.type('image/svg+xml').sendFile(path.join(__dirname, 'assets', 'favicon.svg'));
+});
+
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
 });

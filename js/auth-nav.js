@@ -252,7 +252,28 @@ async function performSignOut(btn) {
   }
 }
 
+function stripSensitiveAuthQueryParams() {
+  try {
+    const url = new URL(window.location.href);
+    const sensitiveKeys = ["apiKey", "oobCode", "mode", "continueUrl", "lang"];
+    let changed = false;
+    for (const key of sensitiveKeys) {
+      if (url.searchParams.has(key)) {
+        url.searchParams.delete(key);
+        changed = true;
+      }
+    }
+    if (changed) {
+      const cleanUrl = `${url.pathname}${url.searchParams.toString() ? `?${url.searchParams.toString()}` : ""}${url.hash}`;
+      window.history.replaceState(null, "", cleanUrl);
+    }
+  } catch {
+    // Ignore history API restrictions
+  }
+}
+
 export function initAuthNav(onUserResolved) {
+  stripSensitiveAuthQueryParams();
   initThemeToggle();
   initMobileDrawer();
 

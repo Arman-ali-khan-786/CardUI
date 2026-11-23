@@ -133,7 +133,7 @@ export function mapAuthError(error) {
     case "auth/unauthorized-domain":
       return `This domain (${window.location.hostname}) is not yet authorized in Firebase Console → Authentication → Settings → Authorized domains.`;
     case "auth/operation-not-allowed":
-      return `This sign-in provider is not enabled yet in Firebase Console (${resolvedFirebaseConfig.projectId} → Authentication → Sign-in method).`;
+      return "This sign-in method is not enabled yet. Please contact the site administrator.";
     case "auth/network-request-failed":
       return "Network error while contacting Firebase. Check your internet connection and retry.";
     case "auth/requires-recent-login":
@@ -160,10 +160,10 @@ export function mapFirestoreUserError(error) {
     lower.includes("has not been used in project") ||
     lower.includes("the client is offline")
   ) {
-    return `Cloud Firestore database is not ready yet for project ${resolvedFirebaseConfig.projectId}.`;
+    return "Database service is temporarily unavailable. Please try again shortly.";
   }
   if (lower.includes("permission")) {
-    return `Permission denied by Firestore security rules for project ${resolvedFirebaseConfig.projectId}. Ensure the latest firestore.rules are deployed.`;
+    return "You do not have permission to perform this action.";
   }
   return rawMessage || "Unable to sync data with Cloud Firestore.";
 }

@@ -357,8 +357,7 @@ function renderStatsAndLists() {
 
 initAuthNav(async (user) => {
   if (!user) {
-    const redirectTarget = `profile.html${window.location.search}`;
-    window.location.replace(`./login.html?redirect=${encodeURIComponent(redirectTarget)}`);
+    window.location.replace("./login.html?redirect=profile.html");
     return;
   }
 
@@ -372,6 +371,13 @@ initAuthNav(async (user) => {
     viewMode = "public-user";
   } else {
     viewMode = "self";
+    if (requestedUid === user.uid) {
+      try {
+        window.history.replaceState(null, "", "./profile.html");
+      } catch {
+        // Ignore history restrictions
+      }
+    }
   }
 
   unsubEffects = subscribeEffectsLikes(
