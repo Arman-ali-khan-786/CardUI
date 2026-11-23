@@ -218,6 +218,32 @@ async function run() {
       })
     );
 
+    // 14. Token parity & URL scheme hardening
+    await assertFails(
+      setDoc(doc(bobCtx.firestore(), 'users', 'bob_uid_456'), {
+        ...validAliceProfile,
+        uid: 'bob_uid_456',
+        email: 'bob@example.com',
+        emailVerified: true,
+      })
+    );
+    await assertFails(
+      setDoc(doc(bobCtx.firestore(), 'users', 'bob_uid_456'), {
+        ...validAliceProfile,
+        uid: 'bob_uid_456',
+        email: 'alice@example.com',
+        emailVerified: false,
+      })
+    );
+    await assertFails(
+      setDoc(doc(bobCtx.firestore(), 'publicProfiles', 'bob_uid_456'), {
+        uid: 'bob_uid_456',
+        displayName: 'Bob',
+        photoURL: 'javascript:alert(1)',
+        updatedAt: serverTimestamp(),
+      })
+    );
+
     console.log('All Dirty Dozen, publicProfiles & atomic like security rule assertions passed!');
   } finally {
     await testEnv.cleanup();

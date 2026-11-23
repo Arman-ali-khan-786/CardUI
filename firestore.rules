@@ -46,11 +46,13 @@ service cloud.firestore {
         && data.email is string
         && data.email.size() >= 3
         && data.email.size() <= 254
-        && (!('photoURL' in data) || (data.photoURL is string && data.photoURL.size() <= 2048))
+        && (!('email' in request.auth.token) || data.email.lower() == request.auth.token.email.lower())
+        && (!('photoURL' in data) || (data.photoURL is string && data.photoURL.size() <= 2048 && (data.photoURL == '' || data.photoURL.matches('^https?://.+'))))
         && (!('bio' in data) || (data.bio is string && data.bio.size() <= 300))
         && data.provider is string
         && (data.provider == 'google' || data.provider == 'password')
         && data.emailVerified is bool
+        && data.emailVerified == (request.auth.token.email_verified == true)
         && data.createdAt is timestamp
         && data.updatedAt is timestamp;
     }
@@ -87,7 +89,7 @@ service cloud.firestore {
         && data.displayName is string
         && data.displayName.size() >= 1
         && data.displayName.size() <= 100
-        && (!('photoURL' in data) || (data.photoURL is string && data.photoURL.size() <= 2048))
+        && (!('photoURL' in data) || (data.photoURL is string && data.photoURL.size() <= 2048 && (data.photoURL == '' || data.photoURL.matches('^https?://.+'))))
         && (!('bio' in data) || (data.bio is string && data.bio.size() <= 300))
         && (!('likedEffectIds' in data) || (
           data.likedEffectIds is list

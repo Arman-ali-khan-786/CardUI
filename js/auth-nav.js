@@ -3,6 +3,7 @@ import {
   persistenceReady,
   onAuthStateChanged,
   signOut,
+  isSafeHttpUrl,
 } from "./firebase-client.js";
 import { getInitials } from "./effects-data.js";
 
@@ -117,9 +118,10 @@ export function initThemeToggle() {
 function setAvatarContents(avatarEl, photoURL, displayName) {
   if (!avatarEl) return;
   avatarEl.innerHTML = "";
-  if (photoURL) {
+  const safePhoto = isSafeHttpUrl(photoURL);
+  if (safePhoto) {
     const img = document.createElement("img");
-    img.src = photoURL;
+    img.src = safePhoto;
     img.alt = `${displayName} avatar`;
     img.referrerPolicy = "no-referrer";
     img.onerror = () => {

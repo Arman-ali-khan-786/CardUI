@@ -7,6 +7,7 @@ import {
   listPublicProfiles,
   mapAuthError,
   mapFirestoreUserError,
+  isSafeHttpUrl,
 } from "./firebase-client.js";
 import { initAuthNav } from "./auth-nav.js";
 import {
@@ -202,8 +203,9 @@ function renderMembersGrid() {
       const profileHref = isSelf
         ? "./profile.html"
         : `./profile.html?uid=${encodeURIComponent(member.uid)}`;
-      const avatarContent = member.photoURL
-        ? `<img src="${escapeHtml(member.photoURL)}" alt="${escapeHtml(member.displayName)} avatar" referrerpolicy="no-referrer" />`
+      const safePhoto = isSafeHttpUrl(member.photoURL);
+      const avatarContent = safePhoto
+        ? `<img src="${escapeHtml(safePhoto)}" alt="${escapeHtml(member.displayName)} avatar" referrerpolicy="no-referrer" />`
         : escapeHtml(getInitials(member.displayName));
 
       return `

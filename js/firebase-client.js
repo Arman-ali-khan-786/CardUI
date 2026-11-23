@@ -172,22 +172,32 @@ function sanitizeString(value, maxLen) {
   return String(value ?? "").trim().slice(0, maxLen);
 }
 
+export function isSafeHttpUrl(rawUrl) {
+  const clean = sanitizeString(rawUrl, FIELD_LIMITS.PHOTO_URL_MAX);
+  if (!clean) return "";
+  try {
+    const parsed = new URL(clean);
+    if (parsed.protocol === "https:" || parsed.protocol === "http:") {
+      return clean;
+    }
+  } catch {
+    // Invalid URL
+  }
+  return "";
+}
+
 export function validateProfileInput({ displayName, photoURL, bio }) {
   const cleanName = sanitizeString(displayName, FIELD_LIMITS.DISPLAY_NAME_MAX);
   if (cleanName.length < FIELD_LIMITS.DISPLAY_NAME_MIN) {
     throw new Error("Display name is required.");
   }
 
-  const cleanPhoto = sanitizeString(photoURL, FIELD_LIMITS.PHOTO_URL_MAX);
-  if (cleanPhoto) {
-    try {
-      const parsed = new URL(cleanPhoto);
-      if (parsed.protocol !== "https:" && parsed.protocol !== "http:") {
-        throw new Error("Profile photo URL must start with https:// or http://.");
-      }
-    } catch (e) {
-      if (e.message.includes("https://")) throw e;
-      throw new Error("Please enter a valid profile photo URL.");
+  const rawPhoto = sanitizeString(photoURL, FIELD_LIMITS.PHOTO_URL_MAX);
+  let cleanPhoto = "";
+  if (rawPhoto) {
+    cleanPhoto = isSafeHttpUrl(rawPhoto);
+    if (!cleanPhoto) {
+      throw new Error("Profile photo URL must start with https:// or http://.");
     }
   }
 
@@ -236,7 +246,7 @@ export async function syncPublicProfileDoc(user, profileData = {}, likedEffectId
   const pubPath = `publicProfiles/${user.uid}`;
   const pubRef = doc(db, "publicProfiles", user.uid);
   const displayName = deriveDisplayName(user, profileData?.displayName || "");
-  const photoURL = sanitizeString(profileData?.photoURL ?? user.photoURL ?? "", FIELD_LIMITS.PHOTO_URL_MAX);
+  const photoURL = isSafeHttpUrl(profileData?.photoURL ?? user.photoURL ?? "");
   const bio = sanitizeString(profileData?.bio ?? "", FIELD_LIMITS.BIO_MAX);
   const cleanLikes = sanitizeLikedEffectIds(likedEffectIds);
 
@@ -353,7 +363,7 @@ export async function syncUserProfile(user, overrideDisplayName = "") {
       uid: user.uid,
       displayName: deriveDisplayName(user, overrideDisplayName),
       email: sanitizeString(user.email, FIELD_LIMITS.EMAIL_MAX),
-      photoURL: sanitizeString(user.photoURL, FIELD_LIMITS.PHOTO_URL_MAX),
+      photoURL: isSafeHttpUrl(user.photoURL),
       bio: "",
       provider: resolveProvider(user),
       emailVerified: Boolean(user.emailVerified),
@@ -389,12 +399,14 @@ export async function syncUserProfile(user, overrideDisplayName = "") {
 
   if (existingData.emailVerified !== Boolean(user.emailVerified)) {
     updates.emailVerified = Boolean(user.emailVerified);
+    await user.getIdToken(true).catch(() => {});
   }
   if (currentEmail && existingData.email !== currentEmail) {
     updates.email = currentEmail;
   }
-  if (!existingData.photoURL && user.photoURL) {
-    updates.photoURL = sanitizeString(user.photoURL, FIELD_LIMITS.PHOTO_URL_MAX);
+  const safeUserPhoto = isSafeHttpUrl(user.photoURL);
+  if (!existingData.photoURL && safeUserPhoto) {
+    updates.photoURL = safeUserPhoto;
   }
 
   let resolvedProfile = existingData;

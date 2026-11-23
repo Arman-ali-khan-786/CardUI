@@ -10,6 +10,7 @@ import {
   updateUserProfileDoc,
   mapAuthError,
   mapFirestoreUserError,
+  isSafeHttpUrl,
 } from "./firebase-client.js";
 import { FIELD_LIMITS } from "./firebase-config.js";
 import { initAuthNav, renderHeaderAvatar } from "./auth-nav.js";
@@ -104,9 +105,10 @@ function updateBioCounter() {
 
 function renderAvatar(photoURL, displayName) {
   avatarWrapEl.innerHTML = "";
-  if (photoURL) {
+  const safePhoto = isSafeHttpUrl(photoURL);
+  if (safePhoto) {
     const img = document.createElement("img");
-    img.src = photoURL;
+    img.src = safePhoto;
     img.alt = `${displayName} profile photo`;
     img.referrerPolicy = "no-referrer";
     img.onerror = () => {
@@ -519,6 +521,9 @@ if (refreshVerificationBtn) {
     try {
       await reload(currentUser);
       currentUser = auth.currentUser;
+      if (currentUser) {
+        await currentUser.getIdToken(true);
+      }
       const synced = await syncUserProfile(currentUser);
       currentProfile = synced;
       renderOwnHeader(currentUser, synced);
