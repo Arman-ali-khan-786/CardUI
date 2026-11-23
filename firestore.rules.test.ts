@@ -183,7 +183,42 @@ async function run() {
     await assertFails(deleteDoc(doc(aliceCtx.firestore(), 'effects', 'ui-1')));
     await assertFails(setDoc(doc(aliceCtx.firestore(), 'admin', 'config'), { hacked: true }));
 
-    console.log('All Dirty Dozen & atomic like security rule assertions passed!');
+    // 13. PublicProfile (non-PII): owner write, signed-in peer read, reject PII or unauth read
+    await assertSucceeds(
+      setDoc(doc(aliceCtx.firestore(), 'publicProfiles', 'alice_uid_123'), {
+        uid: 'alice_uid_123',
+        displayName: 'Alice Developer',
+        photoURL: 'https://example.com/alice.png',
+        bio: 'UI enthusiast',
+        likedEffectIds: ['ui-1'],
+        updatedAt: serverTimestamp(),
+      })
+    );
+    await assertSucceeds(getDoc(doc(bobCtx.firestore(), 'publicProfiles', 'alice_uid_123')));
+    await assertSucceeds(
+      getDocs(query(collection(bobCtx.firestore(), 'publicProfiles'), where('displayName', '>=', '')))
+    );
+    await assertFails(getDoc(doc(anonCtx.firestore(), 'publicProfiles', 'alice_uid_123')));
+    await assertFails(
+      getDocs(query(collection(anonCtx.firestore(), 'publicProfiles'), where('displayName', '>=', '')))
+    );
+    await assertFails(getDocs(collection(bobCtx.firestore(), 'publicProfiles')));
+    await assertFails(
+      setDoc(doc(bobCtx.firestore(), 'publicProfiles', 'bob_uid_456'), {
+        uid: 'bob_uid_456',
+        displayName: 'Bob',
+        email: 'bob@example.com',
+        updatedAt: serverTimestamp(),
+      })
+    );
+    await assertFails(
+      updateDoc(doc(bobCtx.firestore(), 'publicProfiles', 'alice_uid_123'), {
+        bio: 'Hijacked',
+        updatedAt: serverTimestamp(),
+      })
+    );
+
+    console.log('All Dirty Dozen, publicProfiles & atomic like security rule assertions passed!');
   } finally {
     await testEnv.cleanup();
   }

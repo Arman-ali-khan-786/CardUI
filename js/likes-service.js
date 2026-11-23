@@ -11,6 +11,7 @@ import {
   query,
   where,
   handleFirestoreError,
+  syncPublicProfileLikes,
   OperationType,
 } from "./firebase-client.js";
 import { FIELD_LIMITS } from "./firebase-config.js";
@@ -162,6 +163,13 @@ export async function toggleEffectLike(user, effectId, currentlyLiked) {
     await batch.commit();
   } catch (error) {
     handleFirestoreError(error, OperationType.WRITE, batchPath);
+  }
+
+  try {
+    const latestLikes = await fetchUserLikes(user.uid);
+    await syncPublicProfileLikes(user, Array.from(latestLikes));
+  } catch (syncErr) {
+    console.warn("Public profile likes sync deferred:", syncErr);
   }
 
   return !currentlyLiked;

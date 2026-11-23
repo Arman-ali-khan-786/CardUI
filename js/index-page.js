@@ -3,6 +3,8 @@ import {
   googleProvider,
   signInWithPopup,
   syncUserProfile,
+  syncPublicProfileLikes,
+  listPublicProfiles,
   mapAuthError,
   mapFirestoreUserError,
 } from "./firebase-client.js";
@@ -26,10 +28,14 @@ const VIEWS = ["home", "explore", "contributors", "profile"];
 let currentUser = null;
 let effectsLikesMap = {};
 let userLikesSet = new Set();
+let publicMembersList = [];
+let membersLoadedForUid = null;
 let activeCategory = "all";
 let unsubscribeUserLikes = null;
 let cachedIndexCssText = null;
 let toastTimer = null;
+let pendingDeepEffectId = null;
+let initialPublicLikesSyncedUid = null;
 
 const likeButtonsById = new Map();
 const cardElementsById = new Map();
@@ -64,6 +70,17 @@ function getLikesCount(effectId) {
 function getCurrentRoute() {
   const hash = (window.location.hash || "#home").replace(/^#/, "").toLowerCase();
   return VIEWS.includes(hash) ? hash : "home";
+}
+
+function updateExploreGateUI() {
+  const lockedEl = document.getElementById("cu-explore-locked");
+  const filtersEl = document.getElementById("cu-explore-filters");
+  const stageEl = document.getElementById("cu-explore-stage");
+  const unlocked = Boolean(currentUser);
+
+  if (lockedEl) lockedEl.hidden = unlocked;
+  if (filtersEl) filtersEl.hidden = !unlocked;
+  if (stageEl) stageEl.hidden = !unlocked;
 }
 
 function updateLikesUI() {
@@ -128,6 +145,15 @@ function jumpToEffect(effectId) {
   const effect = getEffectById(effectId);
   if (!effect) return;
 
+  if (!currentUser) {
+    pendingDeepEffectId = effectId;
+    if (getCurrentRoute() !== "explore") {
+      window.location.hash = "explore";
+    }
+    showToast("Sign in to explore card designs.");
+    return;
+  }
+
   if (activeCategory !== "all" && effect.category !== activeCategory) {
     activeCategory = "all";
     renderFilterBar();
@@ -152,17 +178,79 @@ function jumpToEffect(effectId) {
   }
 }
 
+function renderMembersGrid() {
+  const membersSection = document.getElementById("cu-members-section");
+  const membersList = document.getElementById("cu-members-list");
+  if (!membersSection || !membersList) return;
+
+  if (!currentUser) {
+    membersSection.hidden = true;
+    membersList.innerHTML = "";
+    return;
+  }
+
+  membersSection.hidden = false;
+  if (!publicMembersList.length) {
+    membersList.innerHTML = `<p class="cu-sub" style="margin:0">Community member profiles appear here as members sign in.</p>`;
+    return;
+  }
+
+  membersList.innerHTML = publicMembersList
+    .map((member) => {
+      const isSelf = currentUser && member.uid === currentUser.uid;
+      const favCount = Array.isArray(member.likedEffectIds) ? member.likedEffectIds.length : 0;
+      const profileHref = isSelf
+        ? "./profile.html"
+        : `./profile.html?uid=${encodeURIComponent(member.uid)}`;
+      const avatarContent = member.photoURL
+        ? `<img src="${escapeHtml(member.photoURL)}" alt="${escapeHtml(member.displayName)} avatar" referrerpolicy="no-referrer" />`
+        : escapeHtml(getInitials(member.displayName));
+
+      return `
+        <article class="cu-member-card">
+          <div class="cu-member-top">
+            <div class="cu-av">${avatarContent}</div>
+            <div class="cu-member-meta">
+              <strong>${escapeHtml(member.displayName)}${isSelf ? " (You)" : ""}</strong>
+              <small>♥ ${favCount} favourite${favCount === 1 ? "" : "s"}</small>
+            </div>
+          </div>
+          ${member.bio ? `<p class="cu-member-bio">${escapeHtml(member.bio)}</p>` : ""}
+          <a href="${profileHref}" class="cu-btn cu-ghost">View profile</a>
+        </article>
+      `;
+    })
+    .join("");
+}
+
+async function ensureMembersLoaded() {
+  if (!currentUser) return;
+  if (membersLoadedForUid === currentUser.uid && publicMembersList.length > 0) {
+    renderMembersGrid();
+    return;
+  }
+  try {
+    publicMembersList = await listPublicProfiles();
+    membersLoadedForUid = currentUser.uid;
+    renderMembersGrid();
+  } catch (err) {
+    console.warn("Community members directory notice:", mapFirestoreUserError(err));
+  }
+}
+
 function renderContributorsView() {
   const statsEl = document.getElementById("lb-stats");
   const listEl = document.getElementById("lb");
+  const membersSection = document.getElementById("cu-members-section");
   if (!statsEl || !listEl) return;
 
   if (!currentUser) {
     statsEl.innerHTML = "";
+    if (membersSection) membersSection.hidden = true;
     listEl.innerHTML = `
       <div class="cu-gate">
-        <h2>Contributors</h2>
-        <p class="cu-sub">Sign in to meet the community and explore the live contributors leaderboard.</p>
+        <h2>Contributors &amp; Community</h2>
+        <p class="cu-sub">Sign in to view the contributors leaderboard and browse community member profiles.</p>
         <div class="cu-cta">
           <button type="button" class="cu-btn cu-primary" id="lb-signin-btn">Continue with Google</button>
           <a href="./login.html" class="cu-btn cu-ghost">Sign in with Email</a>
@@ -186,6 +274,7 @@ function renderContributorsView() {
   listEl.innerHTML = board
     .map((entry, idx) => {
       const firstEffect = EFFECTS_CATALOG.find((e) => e.author === entry.author);
+      const authorHref = `./profile.html?author=${encodeURIComponent(entry.author)}`;
       return `
         <div class="cu-row">
           <div class="cu-rank">#${idx + 1}</div>
@@ -194,11 +283,16 @@ function renderContributorsView() {
             <strong>${escapeHtml(entry.author)}</strong>
             <small>${entry.effectsCount} effect${entry.effectsCount > 1 ? "s" : ""} · ♥ ${entry.likesCount} likes</small>
           </div>
-          <button type="button" class="cu-btn cu-ghost" data-jump-author="${escapeHtml(firstEffect?.id || "ui-1")}">View effects</button>
+          <div class="cu-row-actions">
+            <a href="${authorHref}" class="cu-btn cu-ghost">View profile</a>
+            <button type="button" class="cu-btn cu-ghost" data-jump-author="${escapeHtml(firstEffect?.id || "ui-1")}">View effects</button>
+          </div>
         </div>
       `;
     })
     .join("");
+
+  ensureMembersLoaded();
 }
 
 function renderProfileGateView() {
@@ -236,10 +330,11 @@ function syncRoute() {
     if (viewEl) viewEl.classList.toggle("on", v === route);
   });
 
-  document.querySelectorAll(".cu-links a[data-nav]").forEach((a) => {
+  document.querySelectorAll(".cu-links a[data-nav], .cu-drawer-nav a[data-nav]").forEach((a) => {
     a.classList.toggle("on", a.getAttribute("data-nav") === route);
   });
 
+  if (route === "explore") updateExploreGateUI();
   if (route === "contributors") renderContributorsView();
   if (route === "profile") renderProfileGateView();
 
@@ -265,8 +360,8 @@ function openAuthModal(isSignUp = false, customSubtitle = "") {
     authSub.textContent =
       customSubtitle ||
       (isSignUp
-        ? "Sign up in one click to save favourites and track your effects."
-        : "Sign in to like effects, save favourites, and explore contributors.");
+        ? "Sign up in one click to unlock designs, save favourites, and explore profiles."
+        : "Sign in to explore card designs, like effects, and browse contributors.");
   }
   if (authGoogleLabel) {
     authGoogleLabel.textContent = isSignUp ? "Sign up with Google" : "Continue with Google";
@@ -284,7 +379,9 @@ function closeAuthModal() {
 
 async function handleGoogleSignIn() {
   const googleBtn = document.getElementById("cu-google");
+  const exploreBtn = document.getElementById("explore-signin-btn");
   if (googleBtn) googleBtn.disabled = true;
+  if (exploreBtn) exploreBtn.disabled = true;
   if (authFeedback) {
     authFeedback.hidden = true;
     authFeedback.textContent = "";
@@ -310,6 +407,7 @@ async function handleGoogleSignIn() {
     }
   } finally {
     if (googleBtn) googleBtn.disabled = false;
+    if (exploreBtn) exploreBtn.disabled = false;
   }
 }
 
@@ -378,6 +476,10 @@ function renderCodeModalTab(tabKey) {
 }
 
 async function openCodeModal(effectId) {
+  if (!currentUser) {
+    openAuthModal(false, "Sign in to inspect and copy card snippets.");
+    return;
+  }
   const effect = getEffectById(effectId);
   const cardEl = cardElementsById.get(effectId);
   if (!effect || !cardEl || !codeModal) return;
@@ -425,23 +527,17 @@ function hydrateEffectCards() {
 
     cardElementsById.set(effectId, cardEl);
 
-    // Ensure the heading displays UI number, Effect Name, and Contributor clearly
     const heading = cardEl.querySelector(".effect-title");
     if (heading) {
-      heading.innerHTML = `${effect.num}. UI-${effect.num} by <em>${escapeHtml(effect.author)}</em><span class="cu-effect-name">${escapeHtml(effect.name)}</span>`;
+      const authorUrl = `./profile.html?author=${encodeURIComponent(effect.author)}`;
+      heading.innerHTML = `${effect.num}. UI-${effect.num} by <a class="cu-author-link" href="${authorUrl}" title="View ${escapeHtml(effect.author)}'s profile"><em>${escapeHtml(effect.author)}</em></a><span class="cu-effect-name">${escapeHtml(effect.name)}</span>`;
     }
 
-    // Build interactive like + copy code bar below .effect-code
-    const effectCodeEl = cardEl.querySelector(".effect-code");
     let bar = cardEl.querySelector(".cu-likebar");
     if (!bar) {
       bar = document.createElement("div");
       bar.className = "cu-likebar cu-shell";
-      if (effectCodeEl && effectCodeEl.parentNode) {
-        effectCodeEl.parentNode.insertBefore(bar, effectCodeEl.nextSibling);
-      } else {
-        cardEl.appendChild(bar);
-      }
+      cardEl.appendChild(bar);
     }
 
     const likeBtn = document.createElement("button");
@@ -531,27 +627,36 @@ function initSearchAndEvents() {
     }
   });
 
-  // Header & Home CTA Modal triggers (intercept sign in / sign up on index.html for instant Google + Email modal)
   const signinBtn = document.getElementById("cu-signin");
   const signupBtn = document.getElementById("cu-signup");
+  const drawerSigninBtn = document.getElementById("cu-drawer-signin");
+  const drawerSignupBtn = document.getElementById("cu-drawer-signup");
   const homeJoinBtn = document.getElementById("home-join");
+  const exploreSigninBtn = document.getElementById("explore-signin-btn");
   const googleModalBtn = document.getElementById("cu-google");
   const closeAuthBtn = document.getElementById("cu-close");
 
-  if (signinBtn) {
-    signinBtn.addEventListener("click", (e) => {
-      e.preventDefault();
-      openAuthModal(false);
-    });
-  }
-  if (signupBtn) {
-    signupBtn.addEventListener("click", (e) => {
-      e.preventDefault();
-      openAuthModal(true);
-    });
-  }
+  [signinBtn, drawerSigninBtn].forEach((btn) => {
+    if (btn) {
+      btn.addEventListener("click", (e) => {
+        e.preventDefault();
+        openAuthModal(false);
+      });
+    }
+  });
+  [signupBtn, drawerSignupBtn].forEach((btn) => {
+    if (btn) {
+      btn.addEventListener("click", (e) => {
+        e.preventDefault();
+        openAuthModal(true);
+      });
+    }
+  });
   if (homeJoinBtn) {
     homeJoinBtn.addEventListener("click", () => openAuthModal(true));
+  }
+  if (exploreSigninBtn) {
+    exploreSigninBtn.addEventListener("click", handleGoogleSignIn);
   }
   if (googleModalBtn) {
     googleModalBtn.addEventListener("click", handleGoogleSignIn);
@@ -565,7 +670,6 @@ function initSearchAndEvents() {
     });
   }
 
-  // Code modal events
   const closeCodeBtn = document.getElementById("cu-code-close");
   const copySnippetBtn = document.getElementById("cu-copy-snippet");
   if (closeCodeBtn) closeCodeBtn.addEventListener("click", closeCodeModal);
@@ -595,7 +699,6 @@ function initSearchAndEvents() {
     });
   }
 
-  // Escape closes modals
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") {
       closeAuthModal();
@@ -603,7 +706,6 @@ function initSearchAndEvents() {
     }
   });
 
-  // Back to top button
   const backTopBtn = document.getElementById("cu-backtop");
   if (backTopBtn) {
     window.addEventListener(
@@ -624,8 +726,8 @@ hydrateEffectCards();
 renderFilterBar();
 applyCategoryFilter();
 initSearchAndEvents();
+updateExploreGateUI();
 
-// Real-time public like counts from Cloud Firestore (/effects)
 subscribeEffectsLikes(
   (map) => {
     effectsLikesMap = map;
@@ -636,8 +738,9 @@ subscribeEffectsLikes(
   }
 );
 
-initAuthNav((user) => {
+initAuthNav(async (user) => {
   currentUser = user;
+  updateExploreGateUI();
 
   const homeJoinCard = document.getElementById("cu-home-join-card");
   if (homeJoinCard) homeJoinCard.hidden = Boolean(user);
@@ -648,18 +751,37 @@ initAuthNav((user) => {
   }
 
   if (user) {
+    try {
+      await syncUserProfile(user);
+    } catch (syncErr) {
+      console.warn("Profile bootstrap deferred:", mapFirestoreUserError(syncErr));
+    }
+
     unsubscribeUserLikes = subscribeUserLikes(
       user.uid,
       (likedSet) => {
         userLikesSet = likedSet;
         updateLikesUI();
+        if (initialPublicLikesSyncedUid !== user.uid) {
+          initialPublicLikesSyncedUid = user.uid;
+          syncPublicProfileLikes(user, Array.from(likedSet)).catch(() => {});
+        }
       },
       (err) => {
         console.warn("User likes listener notice:", mapFirestoreUserError(err));
       }
     );
+
+    if (pendingDeepEffectId) {
+      const targetId = pendingDeepEffectId;
+      pendingDeepEffectId = null;
+      setTimeout(() => jumpToEffect(targetId), 200);
+    }
   } else {
     userLikesSet = new Set();
+    publicMembersList = [];
+    membersLoadedForUid = null;
+    initialPublicLikesSyncedUid = null;
     updateLikesUI();
   }
 
@@ -671,12 +793,12 @@ initAuthNav((user) => {
 window.addEventListener("hashchange", syncRoute);
 syncRoute();
 
-// Support deep link from profile.html: ./index.html?effect=1#explore
 const params = new URLSearchParams(window.location.search);
 const deepEffectParam = params.get("effect");
 if (deepEffectParam) {
   const match = getEffectByNum(deepEffectParam) || getEffectById(deepEffectParam);
   if (match) {
-    setTimeout(() => jumpToEffect(match.id), 220);
+    pendingDeepEffectId = match.id;
+    setTimeout(() => jumpToEffect(match.id), 240);
   }
 }

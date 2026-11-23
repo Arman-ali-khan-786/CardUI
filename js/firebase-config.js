@@ -7,7 +7,7 @@ export const firebaseConfig = {
   firestoreDatabaseId: "ai-studio-cardui-7db929a7-1eed-4d32-a4eb-a474eb41c1d1",
   storageBucket: "project-b4f18e87-e396-428d-9ef.firebasestorage.app",
   messagingSenderId: "285153644280",
-  appId: "1:285153644280:web:593adbc3e51d4e5148750d"
+  appId: "1:285153644280:web:aa776189c2ea3e3948750d"
 };
 
 // Validation limits synchronized with firebase-blueprint.json & firestore.rules

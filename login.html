@@ -23,20 +23,57 @@
             <a href="./index.html#contributors" id="nav-contrib">Contributors</a>
         </nav>
         <div class="cu-actions">
-            <button type="button" class="cu-btn cu-icon" id="cu-theme" aria-label="Toggle dark mode" title="Toggle theme">◐</button>
-            <div id="cu-auth-guest" class="cu-user-group">
+            <button type="button" class="cu-btn cu-icon" id="cu-theme" aria-label="Toggle theme" title="Toggle theme"></button>
+            <div id="cu-auth-guest" class="cu-user-group cu-desktop-only">
                 <a href="./login.html" class="cu-btn cu-ghost" id="cu-signin">Sign in</a>
                 <a href="./signup.html" class="cu-btn cu-primary" id="cu-signup">Sign up</a>
             </div>
-            <div id="cu-auth-user" class="cu-user-group" hidden>
+            <div id="cu-auth-user" class="cu-user-group cu-desktop-only" hidden>
                 <a href="./profile.html" class="cu-prof-chip" id="cu-prof" title="Your profile">
                     <span class="cu-prof-avatar" id="cu-avatar">C</span>
-                    <span class="cu-prof-name cu-hide-sm" id="cu-prof-name">Profile</span>
+                    <span class="cu-prof-name" id="cu-prof-name">Profile</span>
                 </a>
                 <button type="button" class="cu-btn cu-ghost" id="cu-signout">Sign out</button>
             </div>
+            <button type="button" class="cu-menu-btn" id="cu-menu-btn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="cu-drawer">
+                <svg class="cu-menu-dots" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <circle cx="12" cy="5" r="2"></circle>
+                    <circle cx="12" cy="12" r="2"></circle>
+                    <circle cx="12" cy="19" r="2"></circle>
+                </svg>
+            </button>
         </div>
     </header>
+
+    <div class="cu-drawer-backdrop cu-shell" id="cu-drawer-backdrop"></div>
+    <aside class="cu-drawer cu-shell" id="cu-drawer" aria-label="Mobile navigation">
+        <div class="cu-drawer-head">
+            <a class="cu-logo" href="./index.html#home">CARD<b>Ui</b></a>
+            <button type="button" class="cu-drawer-close" id="cu-drawer-close" aria-label="Close navigation menu">×</button>
+        </div>
+        <nav class="cu-drawer-nav" aria-label="Mobile links">
+            <a href="./index.html#home">Home</a>
+            <a href="./index.html#explore">Explore</a>
+            <a href="./index.html#contributors">Contributors</a>
+        </nav>
+        <div class="cu-drawer-section">
+            <div class="cu-drawer-theme-row">
+                <span>Theme</span>
+                <button type="button" class="cu-btn cu-ghost" id="cu-drawer-theme" aria-label="Toggle theme"></button>
+            </div>
+            <div id="cu-drawer-guest" class="cu-drawer-section" style="border-top:0;padding-top:0">
+                <a href="./login.html" class="cu-btn cu-ghost" id="cu-drawer-signin">Sign in</a>
+                <a href="./signup.html" class="cu-btn cu-primary" id="cu-drawer-signup">Sign up</a>
+            </div>
+            <div id="cu-drawer-user" class="cu-drawer-section" style="border-top:0;padding-top:0" hidden>
+                <a href="./profile.html" class="cu-drawer-user-card">
+                    <span class="cu-prof-avatar" id="cu-drawer-avatar">C</span>
+                    <span class="cu-prof-name" id="cu-drawer-prof-name">Profile</span>
+                </a>
+                <button type="button" class="cu-btn cu-danger" id="cu-drawer-signout">Sign out</button>
+            </div>
+        </div>
+    </aside>
 
     <div class="cu-auth-shell cu-shell">
         <section class="cu-auth-card" aria-labelledby="login-heading">

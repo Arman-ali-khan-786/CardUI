@@ -293,19 +293,13 @@ export function getInitials(name) {
     .toUpperCase() || "C";
 }
 
-export function doesUserMatchAuthor(user, profile, authorName) {
+export function doesUserMatchAuthor(user, _profile, authorName) {
   const target = String(authorName || "").trim().toLowerCase();
-  if (!target) return false;
+  if (!target || !user?.emailVerified) return false;
 
-  const candidates = [
-    profile?.displayName,
-    user?.displayName,
-    KNOWN_AUTHOR_EMAILS[(user?.email || "").toLowerCase()],
-  ]
-    .filter(Boolean)
-    .map((s) => String(s).trim().toLowerCase());
-
-  return candidates.some((c) => c === target);
+  const verifiedEmail = String(user.email || "").trim().toLowerCase();
+  const mappedAuthor = KNOWN_AUTHOR_EMAILS[verifiedEmail];
+  return Boolean(mappedAuthor && mappedAuthor === target);
 }
 
 export function buildContributorsLeaderboard(likesMap = {}) {

@@ -78,6 +78,32 @@ service cloud.firestore {
         && data.updatedAt is timestamp;
     }
 
+    function isValidPublicProfile(data, userId) {
+      return data.keys().hasAll(['uid', 'displayName', 'updatedAt'])
+        && data.keys().hasOnly(['uid', 'displayName', 'photoURL', 'bio', 'likedEffectIds', 'updatedAt'])
+        && data.uid is string
+        && data.uid == userId
+        && isValidId(data.uid)
+        && data.displayName is string
+        && data.displayName.size() >= 1
+        && data.displayName.size() <= 100
+        && (!('photoURL' in data) || (data.photoURL is string && data.photoURL.size() <= 2048))
+        && (!('bio' in data) || (data.bio is string && data.bio.size() <= 300))
+        && (!('likedEffectIds' in data) || (
+          data.likedEffectIds is list
+          && data.likedEffectIds.size() <= 25
+          && (data.likedEffectIds.size() == 0 || data.likedEffectIds[0] is string)
+          && data.likedEffectIds.hasOnly([
+            'ui-1', 'ui-2', 'ui-3', 'ui-4', 'ui-5',
+            'ui-6', 'ui-7', 'ui-8', 'ui-9', 'ui-10',
+            'ui-11', 'ui-12', 'ui-13', 'ui-14', 'ui-15',
+            'ui-16', 'ui-17', 'ui-18', 'ui-19', 'ui-20',
+            'ui-21', 'ui-22', 'ui-23', 'ui-24', 'ui-25'
+          ])
+        ))
+        && data.updatedAt is timestamp;
+    }
+
     match /users/{userId} {
       allow get: if isValidId(userId) && isOwner(userId);
       allow list: if false;
@@ -161,6 +187,31 @@ service cloud.firestore {
             && exists(/databases/$(database)/documents/users/$(request.auth.uid)/likes/$(effectId))
             && !existsAfter(/databases/$(database)/documents/users/$(request.auth.uid)/likes/$(effectId)))
         );
+
+      allow delete: if false;
+    }
+
+    match /publicProfiles/{userId} {
+      allow get: if isSignedIn() && isValidId(userId);
+      allow list: if isSignedIn() && resource.data.displayName >= "";
+
+      allow create: if isValidId(userId)
+        && isOwner(userId)
+        && isValidPublicProfile(incoming(), userId)
+        && incoming().updatedAt == request.time;
+
+      allow update: if isValidId(userId)
+        && isOwner(userId)
+        && isValidPublicProfile(incoming(), userId)
+        && incoming().uid == existing().uid
+        && incoming().updatedAt == request.time
+        && incoming().diff(existing()).affectedKeys().hasOnly([
+          'displayName',
+          'photoURL',
+          'bio',
+          'likedEffectIds',
+          'updatedAt'
+        ]);
 
       allow delete: if false;
     }

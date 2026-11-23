@@ -30,6 +30,7 @@ import {
   serverTimestamp,
   query,
   where,
+  limit,
 } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore.js";
 import { firebaseConfig as fallbackFirebaseConfig, FIELD_LIMITS } from "./firebase-config.js";
 
@@ -212,6 +213,126 @@ function deriveDisplayName(user, fallbackName = "") {
   return clean.length >= 1 ? clean : "CardUI User";
 }
 
+function sanitizeLikedEffectIds(likedEffectIds) {
+  if (!Array.isArray(likedEffectIds)) return undefined;
+  const seen = new Set();
+  const valid = [];
+  for (const id of likedEffectIds) {
+    const clean = String(id || "").trim();
+    if (FIELD_LIMITS.EFFECT_ID_PATTERN.test(clean) && !seen.has(clean)) {
+      seen.add(clean);
+      valid.push(clean);
+      if (valid.length >= 25) break;
+    }
+  }
+  return valid;
+}
+
+export async function syncPublicProfileDoc(user, profileData = {}, likedEffectIds = undefined) {
+  if (!user || !FIELD_LIMITS.UID_PATTERN.test(user.uid)) {
+    return null;
+  }
+
+  const pubPath = `publicProfiles/${user.uid}`;
+  const pubRef = doc(db, "publicProfiles", user.uid);
+  const displayName = deriveDisplayName(user, profileData?.displayName || "");
+  const photoURL = sanitizeString(profileData?.photoURL ?? user.photoURL ?? "", FIELD_LIMITS.PHOTO_URL_MAX);
+  const bio = sanitizeString(profileData?.bio ?? "", FIELD_LIMITS.BIO_MAX);
+  const cleanLikes = sanitizeLikedEffectIds(likedEffectIds);
+
+  let existingSnap;
+  try {
+    existingSnap = await getDoc(pubRef);
+  } catch (error) {
+    handleFirestoreError(error, OperationType.GET, pubPath);
+  }
+
+  if (!existingSnap.exists()) {
+    const initialDoc = {
+      uid: user.uid,
+      displayName,
+      photoURL,
+      bio,
+      likedEffectIds: cleanLikes ?? [],
+      updatedAt: serverTimestamp(),
+    };
+    try {
+      await setDoc(pubRef, initialDoc);
+    } catch (error) {
+      handleFirestoreError(error, OperationType.CREATE, pubPath);
+    }
+    return initialDoc;
+  }
+
+  const updatePayload = {
+    displayName,
+    photoURL,
+    bio,
+    updatedAt: serverTimestamp(),
+  };
+  if (cleanLikes !== undefined) {
+    updatePayload.likedEffectIds = cleanLikes;
+  }
+
+  try {
+    await updateDoc(pubRef, updatePayload);
+  } catch (error) {
+    handleFirestoreError(error, OperationType.UPDATE, pubPath);
+  }
+  return { ...existingSnap.data(), ...updatePayload };
+}
+
+export async function syncPublicProfileLikes(user, likedEffectIds) {
+  if (!user || !FIELD_LIMITS.UID_PATTERN.test(user.uid)) return;
+  const existingPublic = await getPublicProfile(user.uid).catch(() => null);
+  await syncPublicProfileDoc(
+    user,
+    {
+      displayName: existingPublic?.displayName || user.displayName || "",
+      photoURL: existingPublic?.photoURL ?? user.photoURL ?? "",
+      bio: existingPublic?.bio ?? "",
+    },
+    likedEffectIds
+  );
+}
+
+export async function getPublicProfile(uid) {
+  if (!uid || !FIELD_LIMITS.UID_PATTERN.test(uid)) {
+    throw new Error("Invalid user ID.");
+  }
+  const path = `publicProfiles/${uid}`;
+  try {
+    const snap = await getDoc(doc(db, "publicProfiles", uid));
+    return snap.exists() ? snap.data() : null;
+  } catch (error) {
+    handleFirestoreError(error, OperationType.GET, path);
+  }
+}
+
+export async function listPublicProfiles() {
+  const path = "publicProfiles";
+  try {
+    const profilesQuery = query(collection(db, path), where("displayName", ">=", ""), limit(100));
+    const snap = await getDocs(profilesQuery);
+    const results = [];
+    snap.forEach((d) => {
+      const data = d.data();
+      if (data && typeof data.uid === "string" && typeof data.displayName === "string") {
+        results.push({
+          uid: data.uid,
+          displayName: data.displayName,
+          photoURL: data.photoURL || "",
+          bio: data.bio || "",
+          likedEffectIds: Array.isArray(data.likedEffectIds) ? data.likedEffectIds : [],
+        });
+      }
+    });
+    return results.sort((a, b) => a.displayName.localeCompare(b.displayName));
+  } catch (error) {
+    handleFirestoreError(error, OperationType.LIST, path);
+  }
+}
+
 export async function syncUserProfile(user, overrideDisplayName = "") {
   if (!user || !FIELD_LIMITS.UID_PATTERN.test(user.uid)) {
     throw new Error("Invalid authenticated user identifier.");
@@ -246,12 +367,20 @@ export async function syncUserProfile(user, overrideDisplayName = "") {
       handleFirestoreError(error, OperationType.CREATE, path);
     }
 
+    let resolvedCreated = newProfile;
     try {
       const createdSnap = await getDoc(userRef);
-      return createdSnap.exists() ? createdSnap.data() : newProfile;
+      if (createdSnap.exists()) resolvedCreated = createdSnap.data();
     } catch (error) {
       handleFirestoreError(error, OperationType.GET, path);
     }
+
+    try {
+      await syncPublicProfileDoc(user, resolvedCreated);
+    } catch (pubErr) {
+      console.warn("Public profile sync deferred:", pubErr);
+    }
+    return resolvedCreated;
   }
 
   const existingData = existingSnap.data();
@@ -268,6 +397,7 @@ export async function syncUserProfile(user, overrideDisplayName = "") {
     updates.photoURL = sanitizeString(user.photoURL, FIELD_LIMITS.PHOTO_URL_MAX);
   }
 
+  let resolvedProfile = existingData;
   if (Object.keys(updates).length > 0) {
     updates.updatedAt = serverTimestamp();
     try {
@@ -275,10 +405,16 @@ export async function syncUserProfile(user, overrideDisplayName = "") {
     } catch (error) {
       handleFirestoreError(error, OperationType.UPDATE, path);
     }
-    return { ...existingData, ...updates };
+    resolvedProfile = { ...existingData, ...updates };
   }
 
-  return existingData;
+  try {
+    await syncPublicProfileDoc(user, resolvedProfile);
+  } catch (pubErr) {
+    console.warn("Public profile sync deferred:", pubErr);
+  }
+
+  return resolvedProfile;
 }
 
 export async function getUserProfile(uid) {
@@ -328,7 +464,13 @@ export async function updateUserProfileDoc(user, input) {
     handleFirestoreError(error, OperationType.UPDATE, path);
   }
 
-  return getUserProfile(user.uid);
+  const updatedPrivate = await getUserProfile(user.uid);
+  try {
+    await syncPublicProfileDoc(user, updatedPrivate || payload);
+  } catch (pubErr) {
+    console.warn("Public profile sync deferred:", pubErr);
+  }
+  return updatedPrivate;
 }
 
 export {

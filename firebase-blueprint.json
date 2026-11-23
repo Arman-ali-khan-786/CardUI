@@ -123,6 +123,50 @@
         "effectId",
         "createdAt"
       ]
+    },
+    "PublicProfile": {
+      "title": "PublicProfile",
+      "description": "Public, non-PII community profile for CardUI users (no email, phone, or auth provider metadata).",
+      "type": "object",
+      "properties": {
+        "uid": {
+          "type": "string",
+          "description": "Firebase Auth UID matching the document ID.",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "displayName": {
+          "type": "string",
+          "description": "Public display name shown on community directory and profile view.",
+          "minLength": 1,
+          "maxLength": 100
+        },
+        "photoURL": {
+          "type": "string",
+          "description": "Profile avatar URL (HTTPS URL or empty string).",
+          "maxLength": 2048
+        },
+        "bio": {
+          "type": "string",
+          "description": "Short user bio or developer headline.",
+          "maxLength": 300
+        },
+        "likedEffectIds": {
+          "type": "array",
+          "description": "Bounded list of canonical effect IDs liked by the user (ui-1 to ui-25)."
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server timestamp of the latest public profile sync."
+        }
+      },
+      "required": [
+        "uid",
+        "displayName",
+        "updatedAt"
+      ]
     }
   },
   "firestore": {
@@ -143,6 +187,12 @@
         "$ref": "#/entities/EffectStats"
       },
       "description": "Public aggregate like counters for CardUI effects. Readable by everyone; mutations must atomically pair with the signed-in user's /users/{uid}/likes/{effectId} document."
+    },
+    "/publicProfiles/{userId}": {
+      "schema": {
+        "$ref": "#/entities/PublicProfile"
+      },
+      "description": "Non-PII public community profiles readable by signed-in users to view other members' profiles without exposing email or auth details."
     }
   }
 }

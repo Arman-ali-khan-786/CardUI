@@ -14,10 +14,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Merriweather:ital,wght@0,400;0,700;1,400&family=Quicksand:wght@400;500;600;700&family=PT+Sans&family=Noto+Serif:wght@700&family=Roboto&family=Sansita&display=swap" rel="stylesheet" />
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/v4-shims.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link rel="stylesheet" href="./index.css" />
     <link rel="stylesheet" href="./css/app-upgrade.css" />
@@ -32,20 +32,57 @@
             <a href="#contributors" data-nav="contributors" id="nav-contrib">Contributors</a>
         </nav>
         <div class="cu-actions">
-            <button type="button" class="cu-btn cu-icon" id="cu-theme" aria-label="Toggle dark mode" title="Toggle theme">◐</button>
-            <div id="cu-auth-guest" class="cu-user-group">
+            <button type="button" class="cu-btn cu-icon" id="cu-theme" aria-label="Toggle theme" title="Toggle theme"></button>
+            <div id="cu-auth-guest" class="cu-user-group cu-desktop-only">
                 <a href="./login.html" class="cu-btn cu-ghost" id="cu-signin">Sign in</a>
                 <a href="./signup.html" class="cu-btn cu-primary" id="cu-signup">Sign up</a>
             </div>
-            <div id="cu-auth-user" class="cu-user-group" hidden>
+            <div id="cu-auth-user" class="cu-user-group cu-desktop-only" hidden>
                 <a href="./profile.html" class="cu-prof-chip" id="cu-prof" title="Your profile">
                     <span class="cu-prof-avatar" id="cu-avatar">C</span>
-                    <span class="cu-prof-name cu-hide-sm" id="cu-prof-name">Profile</span>
+                    <span class="cu-prof-name" id="cu-prof-name">Profile</span>
                 </a>
                 <button type="button" class="cu-btn cu-ghost" id="cu-signout">Sign out</button>
             </div>
+            <button type="button" class="cu-menu-btn" id="cu-menu-btn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="cu-drawer">
+                <svg class="cu-menu-dots" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <circle cx="12" cy="5" r="2"></circle>
+                    <circle cx="12" cy="12" r="2"></circle>
+                    <circle cx="12" cy="19" r="2"></circle>
+                </svg>
+            </button>
         </div>
     </header>
+
+    <div class="cu-drawer-backdrop cu-shell" id="cu-drawer-backdrop"></div>
+    <aside class="cu-drawer cu-shell" id="cu-drawer" aria-label="Mobile navigation">
+        <div class="cu-drawer-head">
+            <a class="cu-logo" href="#home">CARD<b>Ui</b></a>
+            <button type="button" class="cu-drawer-close" id="cu-drawer-close" aria-label="Close navigation menu">×</button>
+        </div>
+        <nav class="cu-drawer-nav" aria-label="Mobile links">
+            <a href="#home" data-nav="home">Home</a>
+            <a href="#explore" data-nav="explore">Explore</a>
+            <a href="#contributors" data-nav="contributors">Contributors</a>
+        </nav>
+        <div class="cu-drawer-section">
+            <div class="cu-drawer-theme-row">
+                <span>Theme</span>
+                <button type="button" class="cu-btn cu-ghost" id="cu-drawer-theme" aria-label="Toggle theme"></button>
+            </div>
+            <div id="cu-drawer-guest" class="cu-drawer-section" style="border-top:0;padding-top:0">
+                <a href="./login.html" class="cu-btn cu-ghost" id="cu-drawer-signin">Sign in</a>
+                <a href="./signup.html" class="cu-btn cu-primary" id="cu-drawer-signup">Sign up</a>
+            </div>
+            <div id="cu-drawer-user" class="cu-drawer-section" style="border-top:0;padding-top:0" hidden>
+                <a href="./profile.html" class="cu-drawer-user-card">
+                    <span class="cu-prof-avatar" id="cu-drawer-avatar">C</span>
+                    <span class="cu-prof-name" id="cu-drawer-prof-name">Profile</span>
+                </a>
+                <button type="button" class="cu-btn cu-danger" id="cu-drawer-signout">Sign out</button>
+            </div>
+        </div>
+    </aside>
 
     <!-- ==================== HOME VIEW ==================== -->
     <div class="cu-view cu-shell" id="v-home">
@@ -57,7 +94,9 @@
                 <a class="cu-btn cu-primary" href="#explore">Explore designs →</a>
                 <a class="cu-btn cu-ghost" href="https://github.com/Arman-ali-khan-786/CardUI" target="_blank" rel="noopener noreferrer">Star on GitHub</a>
             </div>
-            <img id="banner_image" class="cu-banner" src="./assets/CARDUi.webp" alt="CardUI logo" />
+            <div class="cu-banner-glass">
+                <img id="banner_image" class="cu-banner" src="./assets/CARDUi.webp" alt="CardUI showcase emblem" />
+            </div>
         </section>
 
         <section class="cu-page">
@@ -136,14 +175,26 @@
             <span class="cu-badge" id="cu-count">25 effects · 23 contributors</span>
             <h1>Explore <span>designs &amp; effects</span></h1>
             <p>Search by effect number, name, or contributor, filter by style, grab the code and ship it.</p>
-            <div class="cu-searchwrap">
-                <input class="cu-search" id="cu-search" type="search" placeholder="Try &ldquo;UI-9&rdquo;, &ldquo;Flip&rdquo;, or a contributor name…" autocomplete="off" aria-label="Search card effects" />
-                <div class="cu-results" id="cu-results" role="region" aria-label="Search results"></div>
+            <div id="cu-explore-locked" class="cu-explore-locked-wrap">
+                <div class="cu-gate">
+                    <h2>Sign in to explore card designs</h2>
+                    <p class="cu-sub">Sign in or create a free account to unlock all 25 interactive card effects, copy HTML/CSS/JS snippets, and save favourites.</p>
+                    <div class="cu-cta">
+                        <button type="button" class="cu-btn cu-primary" id="explore-signin-btn">Continue with Google</button>
+                        <a href="./login.html" class="cu-btn cu-ghost">Sign in with Email</a>
+                    </div>
+                </div>
             </div>
-            <div class="cu-filter-bar" id="cu-filter-bar" role="group" aria-label="Filter effects by category"></div>
+            <div id="cu-explore-filters" hidden>
+                <div class="cu-searchwrap">
+                    <input class="cu-search" id="cu-search" type="search" placeholder="Try &ldquo;UI-9&rdquo;, &ldquo;Flip&rdquo;, or a contributor name…" autocomplete="off" aria-label="Search card effects" />
+                    <div class="cu-results" id="cu-results" role="region" aria-label="Search results"></div>
+                </div>
+                <div class="cu-filter-bar" id="cu-filter-bar" role="group" aria-label="Filter effects by category"></div>
+            </div>
         </section>
 
-        <div class="cu-stage">
+        <div class="cu-stage" id="cu-explore-stage" hidden>
             <main>
                 <div id="effects" class="effects">
                     <!-- UI-1 -->
@@ -162,15 +213,6 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="effect-code">
-                            <a href="https://github.com/Arman-ali-khan-786/CardUI" target="_blank" rel="noopener noreferrer"><button class="cta">
-                                    <span>Source Code</span>
-                                    <svg viewBox="0 0 13 10" height="10px" width="15px">
-                                        <path d="M1,5 L11,5"></path>
-                                        <polyline points="8 1 12 5 8 9"></polyline>
-                                    </svg>
-                                </button></a>
-                        </div>
                     </section>
 
                     <!-- UI-2 -->
@@ -181,15 +223,6 @@
                                 <img src="./assets/java.webp" class="lazyload" alt="Java" />
                                 <h3>Java</h3>
                             </div>
-                        </div>
-                        <div class="effect-code">
-                            <a href="https://github.com/Arman-ali-khan-786/CardUI" target="_blank" rel="noopener noreferrer"><button class="cta">
-                                    <span>Source Code</span>
-                                    <svg viewBox="0 0 13 10" height="10px" width="15px">
-                                        <path d="M1,5 L11,5"></path>
-                                        <polyline points="8 1 12 5 8 9"></polyline>
-                                    </svg>
-                                </button></a>
                         </div>
                     </section>
 
@@ -205,15 +238,6 @@
                                         class="btn draw-border">Follow</button></a>
                                 <button class="btn draw-border">Message</button>
                             </div>
-                        </div>
-                        <div class="effect-code">
-                            <a href="https://github.com/Pritam0077/CardUI" target="_blank" rel="noopener noreferrer"><button class="cta">
-                                    <span>Source Code</span>
-                                    <svg viewBox="0 0 13 10" height="10px" width="15px">
-                                        <path d="M1,5 L11,5"></path>
-                                        <polyline points="8 1 12 5 8 9"></polyline>
-                                    </svg>
-                                </button></a>
                         </div>
                     </section>
 
@@ -238,15 +262,6 @@
                                         class="fa fa-linkedin hi"></a>&nbsp;&nbsp;
                                 </div>
                             </div>
-                        </div>
-                        <div class="effect-code">
-                            <a href="https://github.com/zeeshankhan00/CardUI/tree/master" target="_blank" rel="noopener noreferrer"><button class="cta">
-                                    <span>Source Code</span>
-                                    <svg viewBox="0 0 13 10" height="10px" width="15px">
-                                        <path d="M1,5 L11,5"></path>
-                                        <polyline points="8 1 12 5 8 9"></polyline>
-                                    </svg>
-                                </button></a>
                         </div>
                     </section>
 
@@ -274,15 +289,6 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="effect-code">
-                            <a href="https://github.com/hs-07/CardUI" target="_blank" rel="noopener noreferrer"><button class="cta">
-                                    <span>Source Code</span>
-                                    <svg viewBox="0 0 13 10" height="10px" width="15px">
-                                        <path d="M1,5 L11,5"></path>
-                                        <polyline points="8 1 12 5 8 9"></polyline>
-                                    </svg>
-                                </button></a>
-                        </div>
                     </section>
 
                     <!-- UI-6 -->
@@ -305,15 +311,6 @@
                                     </ul>
                                 </div>
                             </div>
-                        </div>
-                        <div class="effect-code">
-                            <a href="https://github.com/DIVYANSHU8055/CardUI" target="_blank" rel="noopener noreferrer"><button class="cta">
-                                    <span>Source Code</span>
-                                    <svg viewBox="0 0 13 10" height="10px" width="15px">
-                                        <path d="M1,5 L11,5"></path>
-                                        <polyline points="8 1 12 5 8 9"></polyline>
-                                    </svg>
-                                </button></a>
                         </div>
                     </section>
 
@@ -356,17 +353,6 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="effect-code">
-                            <a href="https://github.com/SaikiranVoladri/hactoberfest-CardUi" target="_blank" rel="noopener noreferrer">
-                                <button class="cta">
-                                    <span>Source Code</span>
-                                    <svg viewBox="0 0 13 10" height="10px" width="15px">
-                                        <path d="M1,5 L11,5"></path>
-                                        <polyline points="8 1 12 5 8 9"></polyline>
-                                    </svg>
-                                </button>
-                            </a>
-                        </div>
                     </section>
 
                     <!-- UI-8 -->
@@ -391,15 +377,6 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="effect-code">
-                            <a href="https://github.com/ariear/CardUI" target="_blank" rel="noopener noreferrer"><button class="cta">
-                                    <span>Source Code</span>
-                                    <svg viewBox="0 0 13 10" height="10px" width="15px">
-                                        <path d="M1,5 L11,5"></path>
-                                        <polyline points="8 1 12 5 8 9"></polyline>
-                                    </svg>
-                                </button></a>
-                        </div>
                     </section>
 
                     <!-- UI-9 -->
@@ -422,15 +399,6 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="effect-code">
-                            <a href="https://github.com/raghav-rama/CardUI" target="_blank" rel="noopener noreferrer"><button class="cta">
-                                    <span>Source Code</span>
-                                    <svg viewBox="0 0 13 10" height="10px" width="15px">
-                                        <path d="M1,5 L11,5"></path>
-                                        <polyline points="8 1 12 5 8 9"></polyline>
-                                    </svg>
-                                </button></a>
                         </div>
                     </section>
 
@@ -456,15 +424,6 @@
                                 <img src="./assets/cardui10.png" alt="Card Image" width="400pxx" />
                                 <div class="circle"></div>
                             </div>
-                        </div>
-                        <div class="effect-code">
-                            <a href="https://github.com/zaidsidd360/CardUI" target="_blank" rel="noopener noreferrer"><button class="cta">
-                                    <span>Source Code</span>
-                                    <svg viewBox="0 0 13 10" height="10px" width="15px">
-                                        <path d="M1,5 L11,5"></path>
-                                        <polyline points="8 1 12 5 8 9"></polyline>
-                                    </svg>
-                                </button></a>
                         </div>
                     </section>
 
@@ -492,15 +451,6 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="effect-code">
-                            <a href="https://github.com/Anubhavgupta18/CardUI" target="_blank" rel="noopener noreferrer"><button class="cta">
-                                    <span>Source Code</span>
-                                    <svg viewBox="0 0 13 10" height="10px" width="15px">
-                                        <path d="M1,5 L11,5"></path>
-                                        <polyline points="8 1 12 5 8 9"></polyline>
-                                    </svg>
-                                </button></a>
-                        </div>
                     </section>
 
                     <!-- UI-12 -->
@@ -523,15 +473,6 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="effect-code">
-                            <a href="https://github.com/shivang1919/CardUI" target="_blank" rel="noopener noreferrer"><button class="cta">
-                                    <span>Source Code</span>
-                                    <svg viewBox="0 0 13 10" height="10px" width="15px">
-                                        <path d="M1,5 L11,5"></path>
-                                        <polyline points="8 1 12 5 8 9"></polyline>
-                                    </svg>
-                                </button></a>
                         </div>
                     </section>
 
@@ -570,15 +511,6 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="effect-code">
-                            <a href="https://github.com/ManuCoutinho/CardUI" target="_blank" rel="noopener noreferrer"><button class="cta">
-                                    <span>Source Code</span>
-                                    <svg viewBox="0 0 13 10" height="10px" width="15px">
-                                        <path d="M1,5 L11,5"></path>
-                                        <polyline points="8 1 12 5 8 9"></polyline>
-                                    </svg>
-                                </button></a>
-                        </div>
                     </section>
 
                     <!-- UI-14 -->
@@ -609,15 +541,6 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="effect-code">
-                            <a href="https://github.com/subratkumar46/CardUI" target="_blank" rel="noopener noreferrer"><button class="cta">
-                                    <span>Source Code</span>
-                                    <svg viewBox="0 0 13 10" height="10px" width="15px">
-                                        <path d="M1,5 L11,5"></path>
-                                        <polyline points="8 1 12 5 8 9"></polyline>
-                                    </svg>
-                                </button></a>
-                        </div>
                     </section>
 
                     <!-- UI-15 -->
@@ -644,15 +567,6 @@
                                             id="ips_icon"></i></a>
                                 </span>
                             </div>
-                        </div>
-                        <div class="effect-code">
-                            <a href="https://github.com/IpsitaSenapati/CardUI" target="_blank" rel="noopener noreferrer"><button class="cta">
-                                    <span>Source Code</span>
-                                    <svg viewBox="0 0 13 10" height="10px" width="15px">
-                                        <path d="M1,5 L11,5"></path>
-                                        <polyline points="8 1 12 5 8 9"></polyline>
-                                    </svg>
-                                </button></a>
                         </div>
                     </section>
 
@@ -684,15 +598,6 @@
                                     </ul>
                                 </div>
                             </div>
-                        </div>
-                        <div class="effect-code">
-                            <a href="https://github.com/subratkumar46/CardUI" target="_blank" rel="noopener noreferrer"><button class="cta">
-                                    <span>Source Code</span>
-                                    <svg viewBox="0 0 13 10" height="10px" width="15px">
-                                        <path d="M1,5 L11,5"></path>
-                                        <polyline points="8 1 12 5 8 9"></polyline>
-                                    </svg>
-                                </button></a>
                         </div>
                     </section>
 
@@ -727,15 +632,6 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="effect-code">
-                            <a href="https://github.com/RitvikRaj0810/CardUI" target="_blank" rel="noopener noreferrer"><button class="cta">
-                                    <span>Source Code</span>
-                                    <svg viewBox="0 0 13 10" height="10px" width="15px">
-                                        <path d="M1,5 L11,5"></path>
-                                        <polyline points="8 1 12 5 8 9"></polyline>
-                                    </svg>
-                                </button></a>
                         </div>
                     </section>
 
@@ -779,15 +675,6 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="effect-code">
-                            <a href="https://github.com/vijayNerdballer/CardUI" target="_blank" rel="noopener noreferrer"><button class="cta">
-                                    <span>Source Code</span>
-                                    <svg viewBox="0 0 13 10" height="10px" width="15px">
-                                        <path d="M1,5 L11,5"></path>
-                                        <polyline points="8 1 12 5 8 9"></polyline>
-                                    </svg>
-                                </button></a>
-                        </div>
                     </section>
 
                     <!-- UI-19 -->
@@ -813,15 +700,6 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="effect-code">
-                            <a href="https://github.com/sidhartha2002" target="_blank" rel="noopener noreferrer"><button class="cta">
-                                    <span>Source Code</span>
-                                    <svg viewBox="0 0 13 10" height="10px" width="15px">
-                                        <path d="M1,5 L11,5"></path>
-                                        <polyline points="8 1 12 5 8 9"></polyline>
-                                    </svg>
-                                </button></a>
-                        </div>
                     </section>
 
                     <!-- UI-20 -->
@@ -844,15 +722,6 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="effect-code">
-                            <a href="https://github.com/charvibhargava/CardUI" target="_blank" rel="noopener noreferrer"><button class="cta">
-                                    <span>Source Code</span>
-                                    <svg viewBox="0 0 13 10" height="10px" width="15px">
-                                        <path d="M1,5 L11,5"></path>
-                                        <polyline points="8 1 12 5 8 9"></polyline>
-                                    </svg>
-                                </button></a>
                         </div>
                     </section>
 
@@ -879,15 +748,6 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="effect-code">
-                            <a href="https://github.com/nitin-pandita/CardUI" target="_blank" rel="noopener noreferrer"><button class="cta">
-                                    <span>Source Code</span>
-                                    <svg viewBox="0 0 13 10" height="10px" width="15px">
-                                        <path d="M1,5 L11,5"></path>
-                                        <polyline points="8 1 12 5 8 9"></polyline>
-                                    </svg>
-                                </button></a>
-                        </div>
                     </section>
 
                     <!-- UI-22 -->
@@ -911,15 +771,6 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="effect-code">
-                            <a href="https://github.com/AkashDev23/MyCard" target="_blank" rel="noopener noreferrer"><button class="cta">
-                                    <span>Source Code</span>
-                                    <svg viewBox="0 0 13 10" height="10px" width="15px">
-                                        <path d="M1,5 L11,5"></path>
-                                        <polyline points="8 1 12 5 8 9"></polyline>
-                                    </svg>
-                                </button></a>
-                        </div>
                     </section>
 
                     <!-- UI-23 -->
@@ -942,15 +793,6 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="effect-code">
-                            <a href="https://github.com/AseanK/CardUI" target="_blank" rel="noopener noreferrer"><button class="cta">
-                                    <span>Source Code</span>
-                                    <svg viewBox="0 0 13 10" height="10px" width="15px">
-                                        <path d="M1,5 L11,5"></path>
-                                        <polyline points="8 1 12 5 8 9"></polyline>
-                                    </svg>
-                                </button></a>
-                        </div>
                     </section>
 
                     <!-- UI-24 -->
@@ -970,15 +812,6 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="effect-code">
-                            <a href="https://github.com/ShiveshNandan/CardUI-Hacktober22" target="_blank" rel="noopener noreferrer"><button class="cta">
-                                    <span>Source Code</span>
-                                    <svg viewBox="0 0 13 10" height="10px" width="15px">
-                                        <path d="M1,5 L11,5"></path>
-                                        <polyline points="8 1 12 5 8 9"></polyline>
-                                    </svg>
-                                </button></a>
                         </div>
                     </section>
 
@@ -1018,15 +851,6 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="effect-code">
-                            <a href="https://github.com/recdata/CardUI" target="_blank" rel="noopener noreferrer"><button class="cta">
-                                    <span>Source Code</span>
-                                    <svg viewBox="0 0 13 10" height="10px" width="15px">
-                                        <path d="M1,5 L11,5"></path>
-                                        <polyline points="8 1 12 5 8 9"></polyline>
-                                    </svg>
-                                </button></a>
-                        </div>
                     </section>
 
                     <p id="cu-filter-empty" class="cu-sub" style="text-align:center;padding:36px 16px" hidden>No effects match this category.</p>
@@ -1042,6 +866,12 @@
             <p class="cu-sub">Community creators behind CardUI effects, ranked by contributions and real-time likes.</p>
             <div class="cu-stats" id="lb-stats"></div>
             <div class="cu-lb" id="lb"></div>
+
+            <div id="cu-members-section" class="cu-section-divider" hidden>
+                <h2>Community Members</h2>
+                <p class="cu-sub">Browse member profiles across the CardUI community (public info only).</p>
+                <div class="cu-members-grid" id="cu-members-list"></div>
+            </div>
         </section>
     </div>
 
