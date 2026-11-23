@@ -3,10 +3,22 @@ name: CI/CD Docker Pipeline
 on:
   push:
     branches: ["main", "master"]
+    paths-ignore:
+      - "**/*.md"
+      - "LICENSE"
+      - ".gitignore"
   pull_request:
     branches: ["main", "master"]
     types: [opened, synchronize, reopened, ready_for_review]
+    paths-ignore:
+      - "**/*.md"
+      - "LICENSE"
+      - ".gitignore"
   workflow_dispatch:
+
+concurrency:
+  group: ci-cd-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
 
 permissions:
   contents: read
@@ -16,6 +28,7 @@ permissions:
 jobs:
   lint:
     name: Lint Rules & JS Syntax
+    if: github.event_name != 'pull_request' || github.event.pull_request.draft == false
     runs-on: ubuntu-latest
     outputs:
       error_log: ${{ steps.run_lint.outputs.error_log }}
@@ -179,7 +192,7 @@ jobs:
 
   pr-report:
     name: PR Check Feedback
-    if: always() && github.event_name == 'pull_request'
+    if: always() && github.event_name == 'pull_request' && github.event.pull_request.draft == false
     needs: [lint, test, build-and-push]
     runs-on: ubuntu-latest
     env:

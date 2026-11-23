@@ -2,7 +2,19 @@ name: Deploy CardUI to GitHub Pages
 
 on:
   push:
-    branches: ["master","main"]
+    branches: ["master", "main"]
+    paths:
+      - "index.html"
+      - "login.html"
+      - "signup.html"
+      - "profile.html"
+      - "index.css"
+      - "index.js"
+      - "assets/**"
+      - "css/**"
+      - "js/**"
+      - "firebase-applet-config.json"
+      - ".github/workflows/pages.yml"
   workflow_dispatch:
 
 permissions:
@@ -11,8 +23,8 @@ permissions:
   id-token: write
 
 concurrency:
-  group: "pages"
-  cancel-in-progress: false
+  group: pages-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   build:
