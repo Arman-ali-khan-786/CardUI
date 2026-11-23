@@ -13,6 +13,16 @@ export const EFFECTS_CATALOG = [
     cssEnd: "/* -------------------------------  UI-2 css code --------------------------------- */",
   },
   {
+    id: "ui-29",
+    num: 2,
+    name: "Sliding Banner Reveal",
+    author: " Khan",
+    category: "reveal",
+    repoUrl: "https://github.com/Arman-ali-khan-786/CardUI",
+    cssStart: "/* -------------------------------  UI-2 css code --------------------------------- */",
+    cssEnd: "/* -------------------------------  UI-3 css code --------------------------------- */",
+  },
+  {
     id: "ui-2",
     num: 2,
     name: "Sliding Banner Reveal",
